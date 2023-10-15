@@ -32,5 +32,5 @@ Sitios similares, relacionados o de interés:
 -Hipotecario: es muy buena app a la hora del manejo de tarjetas o transferencias
 - Instagram: su diseño simple en videos, imagenes y sus comentarios e interaccion con varios usuarios, nos da un buen ejemplo  para el foro o para propagandas
 
-!spotifyScreenShot
+![Spotify](./spotifyScreenShot.png)
 
