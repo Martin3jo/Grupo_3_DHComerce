@@ -1,3 +1,4 @@
+ECOMMERCE DRINK SHOP
 - 2 
 	El producto a vender sera de bebidas en general
 	Nuestra audiencia es para personas mayores de 13 años, de las cuales los comprendidos entre 13 - 17 solo podran tener una cuenta con autorizacion de un tutor
