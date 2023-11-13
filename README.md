@@ -25,7 +25,7 @@ ECOMMERCE DRINK SHOP
 	- Pulitta, Rocío
 	- Coali, Nicolas
 	- Cortez Alfonso
-	- 
+	
 
 	- Sitios similares, relacionados o de interés:
 		- TaDa: es una plataforma enfocada en la misma temática que la nuestra, pero mas centrada en el alcohol
