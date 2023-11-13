@@ -42,5 +42,5 @@ ECOMMERCE DRINK SHOP
 	- Discord: https://discord.com/channels/1141453977746157629/1161393524122595390
 	- Figma: https://www.figma.com/file/X9aDRGMVxKGTvEEb6DooLr/Untitled?type=whiteboard&node-id=0-1&t=zTGo9wR9HUIgpf54-0
 
-![Logo](./design/Tipografía/Logo2.jpeg)
+![Logo](./design/Logo2.jpeg)
 
