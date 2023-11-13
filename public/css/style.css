@@ -1,0 +1,28 @@
+/*Fuente(fonts)*/
+@font-face {
+    font-family: 'Lobster-Regular';
+    src: url('/fonts/Lobster-Regular.ttf') format('truetype');
+}
+
+
+/*
+HTML del Registro
+*/
+
+/*Generales*/
+body {
+    font-family: 'Lobster-Regular' , sans-serif;
+}
+
+/*Fin Generales*/
+
+/*Imagenes*/
+#logo {
+    width: 30%;
+}
+
+/*Fin Imagenes*/
+
+/*
+Fin del HTML del Registro
+*/

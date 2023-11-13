@@ -1,0 +1,12 @@
+{
+  "name": "grupo_3_dhcomerce",
+  "version": "1.0.0",
+  "description": "ECOMMERCE DRINK SHOP\r - 2 \r \tEl producto a vender sera de bebidas en general\r \tNuestra audiencia es para personas mayores de 13 años, de las cuales los comprendidos entre 13 - 17 solo podran tener una cuenta con autorizacion de un tutor\r \tLos ajustes a tener en cuenta se basan en la edad, ya que los menores de 17 no pueden solicitar bebidas alcoholicas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
