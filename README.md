@@ -25,7 +25,7 @@ ECOMMERCE DRINK SHOP
 	- Pulitta, Rocío
 	- Coali, Nicolas
 	- Cortez Alfonso
-	- 
+	
 
 	- Sitios similares, relacionados o de interés:
 		- TaDa: es una plataforma enfocada en la misma temática que la nuestra, pero mas centrada en el alcohol
@@ -34,5 +34,13 @@ ECOMMERCE DRINK SHOP
 		- Hipotecario: es muy buena app a la hora del manejo de tarjetas o transferencias
 		- Instagram: su diseño simple en videos, imagenes y sus comentarios e interaccion con varios usuarios, nos da un buen ejemplo  para el foro o para propagandas
 
-![Spotify](./images/spotifyScreenShot.png)
+- Enlaces de interes:
+	- Trello Intro: https://trello.com/w/ecommercedrinkshopworktable
+	- Trello WorkTable: https://trello.com/b/eEk8Ob0H/que-hacer-que-no-hacer
+	- GitHub: https://github.com/Martin3jo/Grupo_3_DHComerce
+	- WhatsApp: https://chat.whatsapp.com/BPaYL2tRSrI2U3nom9WRgA
+	- Discord: https://discord.com/channels/1141453977746157629/1161393524122595390
+	- Figma: https://www.figma.com/file/X9aDRGMVxKGTvEEb6DooLr/Untitled?type=whiteboard&node-id=0-1&t=zTGo9wR9HUIgpf54-0
+
+![Logo](./design/Logo2.jpeg)
 
