@@ -1,28 +1,57 @@
-/*Fuente(fonts)*/
+/*Importaciones*/
 @font-face {
     font-family: 'Lobster-Regular';
     src: url('/fonts/Lobster-Regular.ttf') format('truetype');
 }
+/*Fin Importaciones*/
 
+/*Generales*/
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Lobster-Regular' , sans-serif;
+}
+
+.navegador-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/*Fin Generales*/
 
 /*
 HTML del Registro
 */
 
-/*Generales*/
-body {
-    font-family: 'Lobster-Regular' , sans-serif;
-}
-
-/*Fin Generales*/
-
 /*Imagenes*/
-#logo {
+.logo {
     width: 30%;
 }
-
 /*Fin Imagenes*/
+
+/*Formulario Registro*/
+.formulario-registro{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+/*Fin Formulario Registro*/
 
 /*
 Fin del HTML del Registro
 */
+
+
+/*Media query*/
+
+/*Tablet*/
+@media(min-width: 768px){
+
+}
+
+/*Desktop*/
+@media(min-width: 1024px){
+
+}
