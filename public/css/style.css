@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+/*Estilos Nav Index*/
+nav {
+  background-color: rgb(189, 227, 255);
+}
+nav ul {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+nav ul li {
+  list-style: none;
+  margin-right: 10px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: medium;
+}
+
+/*Estilos en el header Index*/
+header {
+  background-color: rgb(13, 153, 255);
+}
+header section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  color: black;
+  -webkit-text-stroke: 1px white;
+}
+.sin-alcohol {
+  background-image: url("/public/img/jugos-antigripales.jpg");
+  opacity: 0.8;
+  background-size: cover;
+  text-align: center;
+  align-items: center;
+  height: max-content;
+}
+.gaseosas {
+  background-image: url("/public/img/gaseosas.jpg");
+  opacity: 0.8;
+  background-size: cover;
+  text-align: center;
+  align-items: center;
+  height: max-content;
+}
+.cervezas {
+  background-image: url("/public/img/cervezas.jpg");
+  opacity: 0.8;
+  background-size: cover;
+  text-align: center;
+  align-items: center;
+  height: max-content;
+}
+
+.tragos {
+  background-image: url("/public/img/tragos.jpg");
+  opacity: 0.8;
+  background-size: cover;
+  text-align: center;
+  align-items: center;
+  height: max-content;
+}
+.boton {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+header section div {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 20%;
+  margin: 5px;
+  border: 3px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+}
