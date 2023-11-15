@@ -1,22 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!--Header-->
+  <header class="header-registro">
     <nav>
-      <ul>
-          <li><a href="./">Home</a></li>
-          <li><a href="./detalle_producto.html">Producto</a></li>
-          <li><a href="./carrito.html">Carrito</a></li>
-          <li><a href="./registro.html">Registro</a></li>
-          <li><a href="#">Usuario</a></li>
+      <ul class="navegador-header">
+        <li><a href="./">Home</a></li>
+        <li><a href="./detalle_producto.html">Producto</a></li>
+        <li><a href="./carrito.html">Carrito</a></li>
+        <li><a href="#">Registro</a></li>
+        <li><a href="./usuario.html">Usuario</a></li>
       </ul>
-  </nav>
-    <header></header>
-    <main></main>
-    <footer></footer>
-  </body>
+    </nav>
+    <div class="header-main">
+      <img class="logo" src="/img/Logo2.jpeg" alt="Logo" />
+      <button class="menu-baar-position">
+        <img class="menu-baar" src="/img/menu.ico" alt="menu">
+      </button>
+    </div>
+    <button class="articulo-registro">
+      <i class="fa-solid fa-cart-arrow-down"></i>
+    </button>
+  </header>
+  <!--Main-->
+  <main class="main-registro">
+    <p class="borde-inferior">REGISTRATE</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laboriosam eius reiciendis quaerat quam error
+      eaque vero dignissimos unde officiis temporibus similique inventore ad in recusandae labore voluptatum,
+      officia architecto?</p>
+    <form class="formulario-registro" action="/registro" method="POST">
+      <div>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" placeholder="Apellido">
+      </div>
+      <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" placeholder="Nombre">
+      </div>
+      <div>
+        <label for="DNI">DNI</label>
+        <input type="number" name="DNI" placeholder="14546756">
+      </div>
+      <div>
+        <label for="fecha">fecha</label>
+        <input type="date" name="fecha" min="1970-01-01" max="2030-01-01">
+      </div>
+      <div>
+        <label for="celular">Celular</label>
+        <input type="tel" name="celular" placeholder="3855987543">
+      </div>
+      <div>
+        <label for="genero">Genero</label>
+        <select name="genero">
+          <option value="1" selected>
+            Masculino
+          </option>
+          <option value="2">
+            Femenino
+          </option>
+        </select>
+      </div>
+      <div class="form-div-button">
+        <button type="submit">enviar</button>
+        <button type="reset">cancelar</button>
+      </div>
+      <img class="imagen-fondo" src="/img/registroImagenFondo.jpg" alt="">
+    </form>
+  </main>
+
+  <!--Footer-->
+  <footer class="footer-registro">
+    <div>
+      <p>preba 2</p>
+    </div>
+    <div>
+      <p>pueba 1</p>
+    </div>
+    <div>
+      <i class="fa-brands fa-square-whatsapp">Whatsapp</i>
+      <i class="fa-brands fa-square-instagram">Instagram</i>
+      <i class="fa-brands fa-facebook">Facebook</i>
+    </div>
+  </footer>
+</body>
+
 </html>
