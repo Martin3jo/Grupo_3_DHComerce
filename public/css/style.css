@@ -3,22 +3,31 @@
     font-family: 'Lobster-Regular';
     src: url('/fonts/Lobster-Regular.ttf') format('truetype');
 }
+
 /*Fin Importaciones*/
 
 /*Generales*/
-*{
+* {
     box-sizing: border-box;
-}
-body {
-    font-family: 'Lobster-Regular' , sans-serif;
+    margin: 0;
 }
 
-.navegador-header{
+body {
+    font-family: 'Lobster-Regular', sans-serif;
+}
+
+header {
+    background-color: aqua;
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.navegador-header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
 }
+
 /*Fin Generales*/
 
 /*
@@ -27,17 +36,60 @@ HTML del Registro
 
 /*Imagenes*/
 .logo {
-    width: 30%;
+    width: 80px;
+    height: 80px;
 }
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-baar {
+    width: 80px;
+    height: 80px;
+    background-color: aqua;
+
+}
+
+.menu-baar-position {
+    background-color: aqua;
+}
+
 /*Fin Imagenes*/
 
 /*Formulario Registro*/
-.formulario-registro{
+.formulario-registro div {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 10px 10px 10px;
 }
+
+.formulario-registro div input {
+    width: 300px;
+    height: 30px;
+}
+
+.form-div-button{
+    width: 150pxpx;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
 /*Fin Formulario Registro*/
+
+/*Main Varios*/
+
+.borde-inferior {
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+}
 
 /*
 Fin del HTML del Registro
@@ -45,13 +97,19 @@ Fin del HTML del Registro
 
 
 /*Media query*/
+/*celular*/
+@media(max-width:768px) {
+    header nav {
+        display: none;
+    }
+}
 
 /*Tablet*/
-@media(min-width: 768px){
-
+@media(min-width: 768px) {
+    .menu-baar-position {
+        display: none;
+    }
 }
 
 /*Desktop*/
-@media(min-width: 1024px){
-
-}
+@media(min-width: 1024px) {}
