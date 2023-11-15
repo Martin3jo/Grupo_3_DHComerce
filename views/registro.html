@@ -23,11 +23,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
     <!--Header-->
-    <header>
+    <header class="header-registro">
         <nav>
             <ul class="navegador-header">
                 <li><a href="./">Home</a></li>
@@ -37,36 +38,56 @@
                 <li><a href="./usuario.html">Usuario</a></li>
             </ul>
         </nav>
-    </header>
-    <p>Pruebaade letra</p>
-    <!--Main-->>
-    <main>
-        <form class="formulario-registro" action="/registro" method="POST">
+        <div class="header-main">
             <img class="logo" src="/img/Logo2.jpeg" alt="Logo" />
-
-            <label for="apellido">apellido</label>
-            <input type="text" name="apellido">
-
-            <label for="nombre">nombre</label>
-            <input type="text" name="nombre">
-
-            <label for="DNI">DNI</label>
-            <input type="number" name="DNI">
-
-            <label for="fecha">fecha</label>
-            <input type="date" name="fecha" value="1990-01-09" min="1970-01-01" max="2030-01-01">
-
-            <label for="genero">Genero</label>
-            <select name="genero">
-                <option value="1" selected>
-                    Masculino
-                </option>
-                <option value="2">
-                    Femenino
-                </option>
-            </select>
+            <button class="menu-baar-position">
+                <img class="menu-baar" src="/img/menu.ico" alt="menu">
+            </button>
+        </div>
+    </header>
+    <!--Main-->
+    <main class="main-registro">
+        <p class="borde-inferior">REGISTRATE</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laboriosam eius reiciendis quaerat quam error
+            eaque vero dignissimos unde officiis temporibus similique inventore ad in recusandae labore voluptatum,
+            officia architecto?</p>
+        <form class="formulario-registro" action="/registro" method="POST">
+            <div>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" placeholder="Apellido">
+            </div>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" placeholder="Nombre">
+            </div>
+            <div>
+                <label for="DNI">DNI</label>
+                <input type="number" name="DNI" placeholder="14546756">
+            </div>
+            <div>
+                <label for="fecha">fecha</label>
+                <input type="date" name="fecha"  min="1970-01-01" max="2030-01-01">
+            </div>
+            <div>
+                <label for="celular">Celular</label>
+                <input type="tel" name="celular" placeholder="3855987543">
+            </div>
+            <div>
+                <label for="genero">Genero</label>
+                <select name="genero">
+                    <option value="1" selected>
+                        Masculino
+                    </option>
+                    <option value="2">
+                        Femenino
+                    </option>
+                </select>
+            </div>
+            <div class="form-div-button">
             <button type="submit">enviar</button>
             <button type="reset">cancelar</button>
+        </div>
+        <img class="imagen-fondo" src="/img/registroImagenFondo.jpg" alt="">
         </form>
         <section>
             <article>
@@ -76,8 +97,18 @@
     </main>
 
     <!--Footer-->
-    <footer>
-        <div>frase p</div>
+    <footer class="footer-registro">
+        <div>
+            <p>preba 2</p>
+        </div>
+        <div>
+            <p>pueba 1</p>
+        </div>
+        <div>
+            <i class="fa-brands fa-square-whatsapp">Whatsapp</i>
+            <i class="fa-brands fa-square-instagram">Instagram</i>
+            <i class="fa-brands fa-facebook">Facebook</i>
+        </div>
     </footer>
 >>>>>>> a0b6060c61b21166d18b2d65fa4be499f44757bb
 </body>
