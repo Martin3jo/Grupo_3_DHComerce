@@ -52,7 +52,7 @@ header section {
 }
 
 .sin-alcohol {
-    background-image: url("/public/img/jugos-antigripales.jpg");
+    background-image: url("/img/jugos-antigripales.jpg");
     opacity: 0.8;
     background-size: cover;
     text-align: center;
@@ -65,7 +65,7 @@ header section {
 }
 
 .gaseosas {
-    background-image: url("/public/img/gaseosas.jpg");
+    background-image: url("/img/gaseosas.jpg");
     opacity: 0.8;
     background-size: cover;
     text-align: center;
@@ -78,7 +78,7 @@ header section {
 }
 
 .cervezas {
-    background-image: url("/public/img/cervezas.jpg");
+    background-image: url("/img/cervezas.jpg");
     opacity: 0.8;
     background-size: cover;
     text-align: center;
@@ -91,7 +91,7 @@ header section {
 }
 
 .tragos {
-    background-image: url("/public/img/tragos.jpg");
+    background-image: url("/img/tragos.jpg");
     opacity: 0.8;
     background-size: cover;
     text-align: center;
