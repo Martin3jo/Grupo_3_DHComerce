@@ -1,177 +1,198 @@
 * {
-  box-sizing: border-box;
-  font-family: "Lobster-Regular", sans-serif;
-  margin: 0;
+    box-sizing: border-box;
+    font-family: "Lobster-Regular", sans-serif;
+    margin: 0;
 }
+
 /*Estilos Nav Index*/
 nav {
-  background-color: rgb(189, 227, 255);
-  font-size: x-large;
-  font-weight: bold;
+    background-color: rgb(189, 227, 255);
+    font-size: x-large;
+    font-weight: bold;
 }
+
 nav ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
+
 nav ul li {
-  list-style: none;
-  margin-right: 10px;
+    list-style: none;
+    margin-right: 10px;
 }
+
 nav ul li a:link,
 a:visited,
 a:active {
-  list-style: none;
-  text-decoration: none;
-  color: black;
-  font-size: medium;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-size: medium;
 }
 
 nav ul li a:hover {
-  background-color: orangered;
+    background-color: orangered;
 }
 
 /*Estilos en el header Index*/
 header {
-  background-color: rgb(13, 153, 255);
+    background-color: rgb(13, 153, 255);
 }
+
 header section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  color: black;
-  -webkit-text-stroke: 2px rgba(245, 67, 177, 0.575);
-  font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: black;
+    -webkit-text-stroke: 2px rgba(245, 67, 177, 0.575);
+    font-weight: bold;
 }
+
 .sin-alcohol {
-  background-image: url("/public/img/jugos-antigripales.jpg");
-  opacity: 0.8;
-  background-size: cover;
-  text-align: center;
-  align-items: center;
-  height: max-content;
+    background-image: url("/public/img/jugos-antigripales.jpg");
+    opacity: 0.8;
+    background-size: cover;
+    text-align: center;
+    align-items: center;
+    height: max-content;
 }
+
 .sin-alcohol:hover {
-  transform: scale(1.3);
+    transform: scale(1.3);
 }
+
 .gaseosas {
-  background-image: url("/public/img/gaseosas.jpg");
-  opacity: 0.8;
-  background-size: cover;
-  text-align: center;
-  align-items: center;
-  height: max-content;
+    background-image: url("/public/img/gaseosas.jpg");
+    opacity: 0.8;
+    background-size: cover;
+    text-align: center;
+    align-items: center;
+    height: max-content;
 }
+
 .gaseosas:hover {
-  transform: scale(1.3);
+    transform: scale(1.3);
 }
+
 .cervezas {
-  background-image: url("/public/img/cervezas.jpg");
-  opacity: 0.8;
-  background-size: cover;
-  text-align: center;
-  align-items: center;
-  height: max-content;
+    background-image: url("/public/img/cervezas.jpg");
+    opacity: 0.8;
+    background-size: cover;
+    text-align: center;
+    align-items: center;
+    height: max-content;
 }
+
 .cervezas:hover {
-  transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 .tragos {
-  background-image: url("/public/img/tragos.jpg");
-  opacity: 0.8;
-  background-size: cover;
-  text-align: center;
-  align-items: center;
-  height: max-content;
+    background-image: url("/public/img/tragos.jpg");
+    opacity: 0.8;
+    background-size: cover;
+    text-align: center;
+    align-items: center;
+    height: max-content;
 }
+
 .tragos:hover {
-  transform: scale(1.3);
+    transform: scale(1.3);
 }
+
 .boton {
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
 }
+
 header section div {
-  display: flex;
-  flex-direction: column;
-  height: 80%;
-  width: 20%;
-  margin: 5px;
-  border: 3px;
-  padding: 10px;
-  background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 20%;
+    margin: 5px;
+    border: 3px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
 }
+
 /*Estilos en el main Index*/
 
 main section article {
-  border: 2px solid blue;
-  width: 30%;
-  flex: 1;
-  padding: 20px;
-  margin: 30px 10px;
-  background-color: rgb(189, 227, 255);
-  text-align: center;
+    border: 2px solid blue;
+    width: 30%;
+    flex: 1;
+    padding: 20px;
+    margin: 30px 10px;
+    background-color: rgb(189, 227, 255);
+    text-align: center;
 }
+
 .imagen-main {
-  max-width: 80%;
+    max-width: 80%;
 }
+
 .contenedor-1 {
-  display: flex;
-  margin-top: 5px;
+    display: flex;
+    margin-top: 5px;
 }
+
 .contenedor-2 {
-  display: flex;
-  margin-top: 5px;
+    display: flex;
+    margin-top: 5px;
 }
+
 /*Estilos en el footer-Index*/
 footer {
-  display: flex;
+    display: flex;
 }
+
 footer ul li a:link,
 a:visited,
 a:active {
-  list-style: none;
-  text-decoration: none;
-  color: black;
-  font-size: medium;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-size: medium;
 }
 /*Estilos Registro*/
 
 .header-registro {
-  background-color: aqua;
-  border-bottom: 1px solid black;
-  margin-bottom: 5px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 90px;
+    background-color: aqua;
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
 }
 
 .footer-registro {
-  background-color: aqua;
-  display: flex;
-  flex-direction: row;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
 }
+
 .footer-registro div {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    flex: 1;
 }
 
 .main-registro {
-  margin-top: 90px;
+    margin-top: 90px;
 }
 
 .navegador-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 /*Fin Generales*/
@@ -182,28 +203,28 @@ HTML del Registro
 
 /*Imagenes*/
 .logo {
-  width: 80px;
-  height: 80px;
+    width: 80px;
+    height: 80px;
 }
 
 .header-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu-baar {
-  width: 40px;
-  height: 40px;
-  background-color: aqua;
+    width: 40px;
+    height: 40px;
+    background-color: aqua;
 }
 
 .menu-baar-position {
-  background-color: aqua;
+    background-color: aqua;
 }
 
 .imagen-fondo {
-  width: 100%;
+    width: 100%;
 }
 
 /*Footer Imagenes*/
@@ -213,25 +234,36 @@ HTML del Registro
 /*Fin Imagenes*/
 
 /*Formulario Registro*/
+.articulo-registro{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    top: 150px;
+    border-radius: 100%;
+}
+
 .formulario-registro div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 10px 10px 10px;
 }
 
 .formulario-registro div input {
-  width: 300px;
-  height: 30px;
+    width: 300px;
+    height: 30px;
 }
 
 .form-div-button {
-  width: 150pxpx;
-  height: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+    width: 150pxpx;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 /*Fin Formulario Registro*/
@@ -239,8 +271,8 @@ HTML del Registro
 /*Main Varios*/
 
 .borde-inferior {
-  border-bottom: 2px solid black;
-  margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
 }
 
 /*
@@ -250,18 +282,17 @@ Fin del HTML del Registro
 /*Media query*/
 /*celular*/
 @media (max-width: 768px) {
-  header nav {
-    display: none;
-  }
+    header nav {
+        display: none;
+    }
 }
 
 /*Tablet*/
 @media (min-width: 768px) {
-  .menu-baar-position {
-    display: none;
-  }
+    .menu-baar-position {
+        display: none;
+    }
 }
 
 /*Desktop*/
-@media (min-width: 1024px) {
-}
+@media (min-width: 1024px) {}
