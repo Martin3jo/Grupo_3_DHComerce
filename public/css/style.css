@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
+  font-family: "Lobster-Regular", sans-serif;
+  margin: 0;
 }
-<<<<<<< HEAD
 /*Estilos Nav Index*/
 nav {
   background-color: rgb(189, 227, 255);
@@ -139,51 +140,37 @@ a:active {
   color: black;
   font-size: medium;
 }
-=======
-
-/*Fin Importaciones*/
-
-/*Generales*/
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-body {
-    font-family: 'Lobster-Regular', sans-serif;
-}
 
 .header-registro {
-    background-color: aqua;
-    border-bottom: 1px solid black;
-    margin-bottom: 5px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 90px;
+  background-color: aqua;
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
 }
 
-.footer-registro{
-    background-color: aqua;
-    display: flex;
-    flex-direction: row;
-    
+.footer-registro {
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
 }
-.footer-registro div{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    flex: 1;
+.footer-registro div {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  flex: 1;
 }
 
-.main-registro{
-    margin-top: 90px;
+.main-registro {
+  margin-top: 90px;
 }
 
 .navegador-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 /*Fin Generales*/
@@ -194,29 +181,28 @@ HTML del Registro
 
 /*Imagenes*/
 .logo {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 .header-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-baar {
-    width: 40px;
-    height: 40px;
-    background-color: aqua;
-
+  width: 40px;
+  height: 40px;
+  background-color: aqua;
 }
 
 .menu-baar-position {
-    background-color: aqua;
+  background-color: aqua;
 }
 
-.imagen-fondo{
-    width: 100%;
+.imagen-fondo {
+  width: 100%;
 }
 
 /*Footer Imagenes*/
@@ -227,25 +213,24 @@ HTML del Registro
 
 /*Formulario Registro*/
 .formulario-registro div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 10px 10px 10px;
 }
 
 .formulario-registro div input {
-    width: 300px;
-    height: 30px;
+  width: 300px;
+  height: 30px;
 }
 
-.form-div-button{
-    width: 150pxpx;
-    height: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    
+.form-div-button {
+  width: 150pxpx;
+  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 /*Fin Formulario Registro*/
@@ -253,30 +238,29 @@ HTML del Registro
 /*Main Varios*/
 
 .borde-inferior {
-    border-bottom: 2px solid black;
-    margin-bottom: 10px;
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
 }
 
 /*
 Fin del HTML del Registro
 */
 
-
 /*Media query*/
 /*celular*/
-@media(max-width:768px) {
-    header nav {
-        display: none;
-    }
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+  }
 }
 
 /*Tablet*/
-@media(min-width: 768px) {
-    .menu-baar-position {
-        display: none;
-    }
+@media (min-width: 768px) {
+  .menu-baar-position {
+    display: none;
+  }
 }
 
 /*Desktop*/
-@media(min-width: 1024px) {}
->>>>>>> f8372934ece42546ca0de26499cf986dc7219b88
+@media (min-width: 1024px) {
+}
