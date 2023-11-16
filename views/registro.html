@@ -2,18 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="stylesheet" href="/css/registro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
-    <!--Header-->
-    <header class="header-registro">
+    <header>
+        <div class="img-header">
+            <img class="img-logo" src="/img/Logo2.png" alt="Logo">
+            <button class="icon-menu">
+                <i class="fa-solid fa-square-caret-down"></i>
+            </button>
+        </div>
         <nav>
-            <ul class="navegador-header">
+            <ul>
                 <li><a href="./">Home</a></li>
                 <li><a href="./detalle_producto.html">Producto</a></li>
                 <li><a href="./carrito.html">Carrito</a></li>
@@ -21,74 +27,33 @@
                 <li><a href="./usuario.html">Usuario</a></li>
             </ul>
         </nav>
-        <div class="header-main">
-            <img class="logo" src="/img/Logo2.jpeg" alt="Logo" />
-            <button class="menu-baar-position">
-                <img class="menu-baar" src="/img/menu.ico" alt="menu">
-            </button>
-        </div>
-        <button class="articulo-registro">
-            <i class="fa-solid fa-cart-arrow-down"></i>
-        </button>
     </header>
-    <!--Main-->
-    <main class="main-registro">
-        <p class="borde-inferior">REGISTRATE</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laboriosam eius reiciendis quaerat quam error
-            eaque vero dignissimos unde officiis temporibus similique inventore ad in recusandae labore voluptatum,
-            officia architecto?</p>
-        <form class="formulario-registro" action="/registro" method="POST">
-            <div>
-                <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" placeholder="Apellido">
-            </div>
-            <div>
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" placeholder="Nombre">
-            </div>
-            <div>
-                <label for="DNI">DNI</label>
-                <input type="number" name="DNI" placeholder="14546756">
-            </div>
-            <div>
-                <label for="fecha">fecha</label>
-                <input type="date" name="fecha" min="1970-01-01" max="2030-01-01">
-            </div>
-            <div>
-                <label for="celular">Celular</label>
-                <input type="tel" name="celular" placeholder="3855987543">
-            </div>
-            <div>
-                <label for="genero">Genero</label>
-                <select name="genero">
-                    <option value="1" selected>
-                        Masculino
-                    </option>
-                    <option value="2">
-                        Femenino
-                    </option>
-                </select>
-            </div>
-            <div class="form-div-button">
-                <button type="submit">enviar</button>
-                <button type="reset">cancelar</button>
-            </div>
-            <img class="imagen-fondo" src="/img/registroImagenFondo.jpg" alt="">
-        </form>
+    <main>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolor ad natus, praesentium voluptatibus
+            ullam in aperiam error, vel assumenda voluptate, repudiandae facere? Quisquam aliquid consequatur nulla
+            labore officiis itaque.</p>
     </main>
-
-    <!--Footer-->
-    <footer class="footer-registro">
+    <footer class="footer-column">
         <div>
-            <p>preba 2</p>
+            <a href="#">Contactanos</a>
+            <a href="#">Sugerencias</a>
+            <a href="#">Sucursales</a>
         </div>
         <div>
-            <p>pueba 1</p>
+            <a href="#">Dejanos tu CV</a>
+            <a href="#">GPS</a>
+            <a href="#">algo mas</a>
         </div>
         <div>
-            <i class="fa-brands fa-square-whatsapp">Whatsapp</i>
-            <i class="fa-brands fa-square-instagram">Instagram</i>
-            <i class="fa-brands fa-facebook">Facebook</i>
+            <a href="https://wa.me/1234567890">
+                <i class="fa-brands fa-square-whatsapp">Whatsapp</i>
+            </a>
+            <a href="https://www.instagram.com/tu_nombre_de_usuario">
+                <i class="fa-brands fa-square-instagram">Instagram</i>
+            </a>
+            <a href="https://www.facebook.com/tu_nombre_de_usuario">
+                <i class="fa-brands fa-facebook">Facebook</i>
+            </a>
         </div>
     </footer>
 </body>

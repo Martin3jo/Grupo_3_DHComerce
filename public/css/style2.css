@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+body {
+    background-color:lavender;
+}
+
+/* HEADER y FOOTER "COLOR"*/
+header,
+footer {
+    background: linear-gradient(to right, #003F6E, #007AC0,#00A0E3);
+}
+
+/*HEADER*/
+header nav{
+    display: none;
+}
+
+.img-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-logo{
+    width: 80px;
+}
+
+.icon-menu{
+    align-self: flex-end;
+    background-color:transparent;
+    padding: 10px; 
+    border-radius: 50%;
+}
+/*HEADER FIN*/
+
+/*FOOTER*/
+.footer-column{
+    display: flex;
+}
+
+.footer-column div {
+    display: flex;
+    flex-grow:1;
+    flex-wrap: wrap;
+}
+
+.footer-column div a{
+    flex-grow: 1;
+    border: 1px solid #000; 
+    margin: 0;
+    padding: 10px; 
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+/*FOOTER FIN*/
+
+
+/*tablet*/
+@media(min-width: 768px){
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    header nav{
+        display:block;
+        align-self: flex-end;
+    }
+
+    .icon-menu{
+        display: none;
+    }
+
+    header nav ul{
+        display: flex;
+        flex-direction: row;
+    }
+    header nav ul li {
+        margin: 0 15px;
+        list-style-type: none; 
+    }
+    
+    header nav ul li a {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Ajusta estos valores según tus necesidades */
+    }
+}
+
+/*Desktop*/
+@media (min-width: 1024px) {}
