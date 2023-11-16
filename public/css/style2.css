@@ -29,7 +29,7 @@ header nav{
 
 .icon-menu{
     align-self: flex-end;
-    background-color:transparent;
+    background: linear-gradient(to right, #003F6E, #007AC0,#00A0E3);
     padding: 10px; 
     border-radius: 50%;
 }

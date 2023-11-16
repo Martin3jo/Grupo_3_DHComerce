@@ -1,0 +1,24 @@
+.icono-carrito-fixed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    top: 150px;
+    border-radius: 100%;
+    background: linear-gradient(to right, #003F6E, #007AC0,#00A0E3);
+}
+.registrate{
+    border-bottom: 2px solid black;
+    margin: 10px;
+}
+.registrate-texto{
+    text-align: justify;
+    margin: 10px;
+}
+
+main form{
+    display:flex;
+    flex-wrap: wrap;
+}
