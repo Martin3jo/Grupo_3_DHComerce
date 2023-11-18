@@ -33,9 +33,10 @@
         </button>
     </header>
     <!--Main-->
-    <main>
+    <main id="main-fondo">
         <p class="registrate">REGISTRATE</p>
-        <p class="registrate-texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laboriosam eius reiciendis quaerat quam error
+        <p class="registrate-texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laboriosam eius
+            reiciendis quaerat quam error
             eaque vero dignissimos unde officiis temporibus similique inventore ad in recusandae labore voluptatum,
             officia architecto?</p>
 
@@ -53,7 +54,7 @@
                 <input type="number" name="DNI" placeholder="14546756">
             </div>
             <div>
-                <label for="fecha">fecha</label>
+                <label for="fecha">Fecha de Nacimiento</label>
                 <input type="date" name="fecha" min="1970-01-01" max="2030-01-01">
             </div>
             <div>
@@ -72,10 +73,14 @@
                 </select>
             </div>
             <div>
-                <button type="submit">enviar</button>
-                <button type="reset">cancelar</button>
+                <button type="submit">Enviar</button>
             </div>
-            <img width="300px" class="imagen-fondo" src="/img/registroImagenFondo.jpg" alt="">
+            <div>
+                <button type="reset">Cancelar</button>
+            </div>
+            <div class="imagen-fondo">
+                <img class src="/img/background-registro.jpg" alt="imagen de fondo">
+            </div>
         </form>
     </main>
 
