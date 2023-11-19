@@ -2,9 +2,15 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(207, 235, 255); /* Celeste */
+    }
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
-
+header {
+    text-align: center;
+}
 nav {
     background-color: rgb(13, 153, 255); /* Azul */
     color: white;
@@ -13,15 +19,16 @@ nav {
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 nav li {
     display: inline;
+    list-style: none;
+    margin-right: 10px;
 }
 
 nav a {
@@ -29,20 +36,147 @@ nav a {
     text-decoration: none;
 }
 
-header {
-    text-align: center;
-    padding: 20px;
+.productos-categoria {
+    display: flex;
+    margin-top: 5px;
+    gap: 20px; /* Espacio entre los productos */
+    justify-content: center;
+}
+.cerveza1{
+    display: flex;
+    align-items: center;
+    gap: 3%;
+}
+img {
+    width: 50%;
+}
+.productos-categoria .product {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.productos-categoria .liters {
+    font-size: 2rem;
+    margin-top: 20px;
 }
 
-main {
-    padding: 20px;
+.productos-categoria .price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
 }
+
+.delivery {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.productos-categoria .desc {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.contador {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-top: 20px;
+    border: 2px solid #ccc; /* Borde del contador */
+    border-radius: 15px; /* Borde circular */
+    overflow: hidden; /* Evita que los bordes redondeados se vean afectados por el contenido interno */
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.contador button, .contador span {
+    /* padding: 8px; */
+    border: none;
+    background-color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold; /* Hace que el texto esté en negrita */
+    outline: none; /* Elimina el contorno del botón */
+}
+.contador button  {
+    color: blue;
+}
+
+.productos-categoria .add {
+    font-size: 2rem;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 7px;
+
+}
+
+.productos-recomendados {
+    display: flex;
+}
+
+/* Estilo para el contenedor de productos */
+.productos-recomendados {
+    display: flex;
+    overflow-x: auto; /*Permite desplazarse horizontalmente si hay muchos productos */
+    justify-content: center;
+    gap: 3%;
+    margin-top: 20px;
+  }
+   /* Estilo para cada artículo de producto */
+  .productos-recomendados article {
+    border: 1px solid #ccc; /* Borde gris de 1px */
+    margin: 10px; /* Margen exterior */
+    padding: 10px; /* Relleno interno */
+    text-align: center; /* Centra el contenido */
+  }
+  
+  /* Estilo para la clase .product */
+  .productos-recomendados article .product {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Estilo para la clase .price */
+  .productos-recomendados article .price {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Estilo para la clase .add (botón AGREGAR) */
+  .productos-recomendados article .add {
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Bordes redondeados */
+    color: #555; /* Color de texto gris */
+    padding: 8px 16px; /* Relleno interno del botón */
+    cursor: pointer;
+  }
+  
+  /* Estilo para la imagen dentro del artículo */
+  .productos-recomendados article img {
+    width: 200px;
+    height: 200px;
+
+  }
+  
+  /* Estilo para la clase .brand, .desc y .liters (opcional, personaliza según sea necesario) */
+  .productos-recomendados article .brand,
+  .productos-recomendados article .desc,
+  .productos-recomendados article .liters {
+    font-size: 1rem; /* Tamaño de fuente opcional */
+    color: #888; /* Color de texto opcional */
+  }
+  
 
 footer {
+    display: flex;
     text-align: center;
     padding: 10px;
-    background-color: rgb(13, 153, 255); /* Azul */
+    background-color: rgb(13, 153, 255);
     color: white;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Agrega más estilos según sea necesario */
+.contact-section{
+    display: flex;
+}
+
