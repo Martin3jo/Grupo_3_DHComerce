@@ -157,7 +157,7 @@ img {
 
   }
   
-  /* Estilo para la clase .brand, .desc y .liters (opcional, personaliza según sea necesario) */
+  /* Estilo para la clase .brand, .desc y .liters */
   .productos-recomendados article .brand,
   .productos-recomendados article .desc,
   .productos-recomendados article .liters {
