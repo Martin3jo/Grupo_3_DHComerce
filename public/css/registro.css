@@ -1,0 +1,47 @@
+.icono-carrito-fixed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    top: 150px;
+    border-radius: 100%;
+    background: linear-gradient(to right, #003F6E, #007AC0,#00A0E3);
+}
+.registrate{
+    text-align: center;
+    border-bottom: 2px solid black;
+    margin: 10px;
+}
+.registrate-texto{
+    width: 250px;
+    text-align: justify;
+    margin: 10px;
+}
+
+main form div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 250px;
+    margin-left: 10vw;
+    
+}
+.imagen-fondo{
+    width:100vw;
+    margin: 0%;
+}
+
+#main-fondo {
+    width: fit-content;
+    background-color: #00c1e3;
+    padding: 10px;
+    border-radius: 10%;
+}
+@media(min-width:768px){
+
+    .imagen-fondo{
+        display: none;
+    }
+}
