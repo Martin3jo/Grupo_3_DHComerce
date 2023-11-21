@@ -1,40 +1,67 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     }
 main {
-    padding: 20px;
+    padding: 20px 0px 0px 0px;
     display: flex;
     flex-direction: column;
 }
+/* .imgbanner{
+    background-image: url(/img/productos/banner2.jpg);
+    width: 100%;
+    height: 664px;
+    background-size: cover;
+    background-position: center;
+} */
+
+.imgbanner img {
+    width: 100%;
+    height: 500px;
+    padding: 25px 0px 0px 0px;
+  }
+
+
 header {
     text-align: center;
 }
 nav {
-    background-color: rgb(13, 153, 255); /* Azul */
-    color: white;
-    padding: 10px;
-    border-bottom: 2px solid rgb(0, 0, 255); /* Bordes azules */
-}
-
-nav ul {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: flex-end;
+    background-color: rgb(13 52 255);
+    color: white;
+    border-bottom: 2px solid rgb(0, 0, 255); /* Bordes azules */
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    align-items: center;
 }
 
-nav li {
+nav ul li {
     display: inline;
     list-style: none;
     margin-right: 10px;
+    /* transition: all 0.2s ease-in; */
+   
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    margin: 50px;
+    font-size: 1.2rem;
+    
 }
+/* nav ul li:hover {
+    background-color: #dcd6d6c6;
+    border-color: #dcd6d6c6; 
+  } */
 
 .productos-categoria {
     display: flex;
@@ -48,7 +75,7 @@ nav a {
     gap: 3%;
 }
 img {
-    width: 50%;
+    width: 45%;
 }
 .productos-categoria .product {
     font-size: 2.5rem;
@@ -99,18 +126,40 @@ img {
 }
 
 .productos-categoria .add {
-    font-size: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
     margin-top: 20px;
-    border: 2px solid #ccc;
+    background-color: #ffcf01;
+    color: #fff;
+    padding: 10px 30px;
     border-radius: 15px;
-    overflow: hidden;
-    justify-content: space-between;
-    padding: 7px;
-
+    border: 2px solid #ffcf01;
+    cursor: pointer;
+    width: 52%;
+    /* overflow: hidden; */
 }
+
+.add:hover, .productos-recomendados article .add:hover{
+    background-color: #ffd00185; /* Cambia el color de fondo al pasar el ratón */
+    border-color: #ffcf01; /* Cambia el color del borde al pasar el ratón */
+  }
 
 .productos-recomendados {
     display: flex;
+}
+
+.titulo1{
+    font-size: 1.5rem;
+    color: darkorange;
+    padding: 0px 15px;
+}
+
+.flecha1, .flecha2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: blue;
+    font-size: 2rem;
 }
 
 /* Estilo para el contenedor de productos */
@@ -120,6 +169,7 @@ img {
     justify-content: center;
     gap: 3%;
     margin-top: 20px;
+    padding: 0px 0px 100px 0px;
   }
    /* Estilo para cada artículo de producto */
   .productos-recomendados article {
@@ -143,17 +193,22 @@ img {
   
   /* Estilo para la clase .add (botón AGREGAR) */
   .productos-recomendados article .add {
-    border: 1px solid #ccc;
-    border-radius: 5px; /* Bordes redondeados */
-    color: #555; /* Color de texto gris */
+    
+    border-radius: 10px; /* Bordes redondeados */
     padding: 8px 16px; /* Relleno interno del botón */
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: #ffcf01;
+    color: #fff;
+    border: 2px solid #ffcf01;
     cursor: pointer;
   }
   
   /* Estilo para la imagen dentro del artículo */
   .productos-recomendados article img {
     width: 200px;
-    height: 200px;
+    height: 180px;
 
   }
   
@@ -169,14 +224,41 @@ img {
 footer {
     display: flex;
     text-align: center;
-    padding: 10px;
-    background-color: rgb(13, 153, 255);
+    padding: 50px 0px 0px 0px;
+    background-color: rgb(13 52 255);
     color: white;
     flex-direction: column;
     align-items: center;
 }
 
+.redes ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Muestra los elementos de la lista en línea (en una fila) */
+    justify-content: center; /* Centra los elementos de la lista horizontalmente */
+  }
+
+  .redes ul li {
+    margin: 0 10px; /* Espacio entre cada ícono de red social */
+  }
+
+  .redes i {
+    color: white;
+    font-size: 2rem;
+    padding: 20px 10px
+}
+
+.linea-divisoria{
+    border: 1% solid #ece7e7; 
+    width: 85%; 
+    margin: 25px 0px 0px 0px;
+}
 .contact-section{
     display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 15px 0px 15px 0px;
+    font-size: 12px;
 }
+
 
