@@ -12,13 +12,11 @@
 
 <body>
     <!--Header-->
-    <header class="header-registro">
-        <div class="img-header">
-            <img class="img-logo" src="/img/Logo2.png" alt="Logo">
-            <button class="icon-menu">
-                <i class="fa-solid fa-square-caret-down"></i>
-            </button>
-        </div>
+    <header>
+        <button class="header-carro">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+        </button>
+        <a href="./"><img class="logo" src="/img/Logo2.png" alt="Logo"></a>
         <nav>
             <ul>
                 <li><a href="./">Home</a></li>
@@ -28,40 +26,37 @@
                 <li><a href="./usuario.html">Usuario</a></li>
             </ul>
         </nav>
-        <button class="icono-carrito-fixed">
-            <i class="fa-solid fa-cart-arrow-down"></i>
-        </button>
     </header>
     <!--Main-->
-    <main id="main-fondo">
+    <main>
         <p class="registrate">REGISTRATE</p>
-        <p class="registrate-texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laboriosam eius
+        <p class="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa laboriosam eius
             reiciendis quaerat quam error
             eaque vero dignissimos unde officiis temporibus similique inventore ad in recusandae labore voluptatum,
             officia architecto?</p>
 
         <form action="/registro" method="POST">
-            <div>
+            <div class="formulario-div">
                 <label for="apellido">Apellido</label>
                 <input type="text" name="apellido" placeholder="Apellido">
             </div>
-            <div>
+            <div class="formulario-div">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" placeholder="Nombre">
             </div>
-            <div>
+            <div class="formulario-div">
                 <label for="DNI">DNI</label>
                 <input type="number" name="DNI" placeholder="14546756">
             </div>
-            <div>
+            <div class="formulario-div">
                 <label for="fecha">Fecha de Nacimiento</label>
                 <input type="date" name="fecha" min="1970-01-01" max="2030-01-01">
             </div>
-            <div>
+            <div class="formulario-div">
                 <label for="celular">Celular</label>
                 <input type="tel" name="celular" placeholder="3855987543">
             </div>
-            <div>
+            <div class="formulario-div">
                 <label for="genero">Genero</label>
                 <select name="genero">
                     <option value="1" selected>
@@ -72,20 +67,15 @@
                     </option>
                 </select>
             </div>
-            <div>
+            <div class="enviar-cancelar">
                 <button type="submit">Enviar</button>
-            </div>
-            <div>
                 <button type="reset">Cancelar</button>
-            </div>
-            <div class="imagen-fondo">
-                <img class src="/img/background-registro.jpg" alt="imagen de fondo">
             </div>
         </form>
     </main>
 
     <!--Footer-->
-    <footer class="footer-column">
+    <footer>
         <div>
             <a href="#">Contactanos</a>
             <a href="#">Sugerencias</a>
