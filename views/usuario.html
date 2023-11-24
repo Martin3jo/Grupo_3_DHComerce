@@ -6,48 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Usuario</title>
   <link rel="stylesheet" href="/css/style2.css">
-  <link rel="stylesheet" href="/css/registro.css">
+  <link rel="stylesheet" href="/css/usuario.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
   <header>
-    <div class="img-header">
-      <img class="img-logo" src="/img/Logo2.png" alt="Logo">
-      <button class="icon-menu">
-        <i class="fa-solid fa-square-caret-down"></i>
-      </button>
-    </div>
+    <button class="header-carro">
+      <i class="fa-solid fa-cart-arrow-down"></i>
+    </button>
+    <a href="./"><img class="logo" src="/img/Logo2.png" alt="Logo"></a>
     <nav>
       <ul>
         <li><a href="./">Home</a></li>
         <li><a href="./detalle_producto.html">Producto</a></li>
         <li><a href="./carrito.html">Carrito</a></li>
-        <li><a href="registro.html">Registro</a></li>
+        <li><a href="./registro.html">Registro</a></li>
         <li><a href="#">Usuario</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="main-registro">
-    <form class="formulario-registro" action="/usuario" method="POST">
-      <div>
+  <main>
+    <form action="/usuario" method="POST">
+      <div class="formulario-div">
         <label for="email">E-Mail*</label>
         <input type="email" name="email" placeholder="Ingresa tu correo Electrónico">
       </div>
-      <div>
+      <div class="formulario-div">
         <label for="contraseña">Contraseña*</label>
         <input type="password" name="contraseña" placeholder="Ingresa tu Contraseña">
       </div>
-      <label for="usuario">Recordar Usuario</label>
-      <input type="checkbox" name="usuario">
-      <br>
-      <label for="contraseña">Recordar Contraseña</label>
-      <input type="checkbox" name="contraseña">
-      <div class="form-div-button">
-        <button type="submit">Ingresar</button>
+      <div class="checkbox">
+        <input type="checkbox" name="usuario">
+        <label for="usuario">Recordar Usuario</label>
       </div>
-      <p>¿Olvidaste tu contraseña? haz clic <a href="#">aqui!</a></p>
+      <div class="checkbox">
+        <input type="checkbox" name="contraseña">
+        <label for="contraseña">Recordar Contraseña</label>
+      </div>
+      <button class="ingresar" type="submit">Ingresar</button>
+      <p class="olvidadizo">¿Olvidaste tu contraseña? haz clic <a href="#">aqui!</a></p>
     </form>
   </main>
 

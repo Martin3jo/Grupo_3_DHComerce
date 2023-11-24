@@ -1,11 +1,10 @@
-/*MAIN*/
 main {
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
     background-color: rgba(255, 255, 255);
-    width: 50%;
+    width: 40%;
     margin: 10px auto;
     color: black;
     font-size: 20px;
@@ -13,20 +12,6 @@ main {
     border: solid 3px black;
     border-radius: 5%;
     box-shadow: 10px 10px 5px rgb(0, 0, 0);
-}
-
-/*FORMULARIO*/
-.registrate{
-    width: 100%;
-    text-align: center;
-    border-bottom: solid 3px black;
-    margin: 5px;
-    padding: 5px;
-}
-.texto1{
-    margin: 0 auto;
-    padding: 10px 10px 30px;
-    width: 90%;
 }
 
 main form{
@@ -43,20 +28,26 @@ main form{
     padding: 5px;
     margin: 10px;
 }
+
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: flex-start;
+    padding: 5px;
+    margin: 5px;
+}
+
 main input{
     border-radius: 20px;
 }
-.enviar-cancelar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 50%;
-    padding: 5px;
-    margin: 10px;
-}
-.enviar-cancelar button{
-    width: 80%;
+
+.ingresar {
+    width: 120px;
     margin: 5px;
     border-radius: 20px;
 }
-/*FIN FORMULARIO*/
+.olvidadizo{
+    padding: 5px;
+    margin: 5px;
+}
