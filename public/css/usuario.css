@@ -1,0 +1,53 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: rgba(255, 255, 255);
+    width: 40%;
+    margin: 10px auto;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border: solid 3px black;
+    border-radius: 5%;
+    box-shadow: 10px 10px 5px rgb(0, 0, 0);
+}
+
+main form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+.formulario-div{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 5px;
+    margin: 10px;
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: flex-start;
+    padding: 5px;
+    margin: 5px;
+}
+
+main input{
+    border-radius: 20px;
+}
+
+.ingresar {
+    width: 120px;
+    margin: 5px;
+    border-radius: 20px;
+}
+.olvidadizo{
+    padding: 5px;
+    margin: 5px;
+}

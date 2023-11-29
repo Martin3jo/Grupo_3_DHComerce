@@ -1,48 +1,494 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(207, 235, 255); /* Celeste */
-}
-
-nav {
-    background-color: rgb(13, 153, 255); /* Azul */
-    color: white;
-    padding: 10px;
-    border-bottom: 2px solid rgb(0, 0, 255); /* Bordes azules */
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-nav li {
-    display: inline;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-header {
-    text-align: center;
-    padding: 20px;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-    padding: 20px;
+  padding: 20px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
 }
+
+.imgbanner img {
+  width: 100%;
+  height: 310px;
+  padding: 25px 0px 0px 0px;
+}
+
+.flechavolver {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: blue;
+  font-size: 1.5rem;
+  gap: 15px;
+  margin-top: 30px;
+  padding: 0px 0px 0px 80px;
+}
+
+.flechavolver p {
+  color: blue;
+  font-size: 1rem;
+}
+
+header {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(13 52 255);
+  color: white;
+  border-bottom: 2px solid rgb(0, 0, 255);
+  /* Bordes azules */
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+}
+
+nav ul li {
+  display: inline;
+  list-style: none;
+  margin-right: 10px;
+  /* transition: all 0.2s ease-in; */
+
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 50px;
+  font-size: 1.2rem;
+
+}
+
+.productos-categoria {
+  display: flex;
+  margin-top: 5px;
+  gap: 20px;
+  /* Espacio entre los productos */
+  justify-content: center;
+}
+
+.cerveza1 {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+}
+
+.productos-categoria img {
+  width: 43%;
+}
+
+.productos-categoria .detail {
+  padding: 0px 0px 70px 10px;
+}
+
+.productos-categoria .product {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.productos-categoria .liters {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.productos-categoria .price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.delivery {
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.productos-categoria .desc {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.contador {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  border: 2px solid #ccc;
+  /* Borde del contador */
+  border-radius: 15px;
+  /* Borde circular */
+  overflow: hidden;
+  /* Evita que los bordes redondeados se vean afectados por el contenido interno */
+  justify-content: space-between;
+  padding: 14px;
+  height: 40px;
+  width: 288px;
+}
+
+.contador button,
+.contador span {
+  /* padding: 8px; */
+  border: none;
+  background-color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* Hace que el texto esté en negrita */
+  outline: none;
+  /* Elimina el contorno del botón */
+}
+
+.contador button {
+  color: blue;
+}
+
+.productos-categoria .add {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 25px;
+  background-color: #ffcf01;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 24px;
+  border: 2px solid #ffcf01;
+  cursor: pointer;
+  width: 62%;
+  height: 53px;
+  letter-spacing: 1px;
+}
+
+.add:hover,
+.productos-recomendados article .add:hover {
+  background-color: #ffd00185;
+  /* Cambia el color de fondo al pasar el ratón */
+  border-color: #ffcf01;
+  /* Cambia el color del borde al pasar el ratón */
+}
+
+.productos-recomendados {
+  display: flex;
+}
+
+.titulo1 {
+  font-size: 1.5rem;
+  color: #1100f6;
+  padding: 0px 15px;
+  margin-top: 40px;
+}
+
+.flecha1,
+.flecha2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: blue;
+  font-size: 2rem;
+}
+
+/* Estilo para el contenedor de productos */
+.productos-recomendados {
+  display: flex;
+  overflow-x: auto;
+  /*Permite desplazarse horizontalmente si hay muchos productos */
+  justify-content: center;
+  gap: 3%;
+  margin-top: 20px;
+  padding: 0px 0px 100px 0px;
+}
+
+/* Estilo para cada artículo de producto */
+.productos-recomendados article {
+  border: 1px solid #ccc;
+  /* Borde gris de 1px */
+  margin: 10px;
+  /* Margen exterior */
+  padding: 10px;
+  /* Relleno interno */
+  text-align: center;
+  /* Centra el contenido */
+}
+
+/* Estilo para la clase .product */
+.productos-recomendados article .product {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Estilo para la clase .price */
+.productos-recomendados article .price {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Estilo para la clase .add (botón AGREGAR) */
+.productos-recomendados article .add {
+
+  border-radius: 10px;
+  /* Bordes redondeados */
+  padding: 8px 16px;
+  /* Relleno interno del botón */
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 15px;
+  background-color: #ffcf01;
+  color: #ffffff;
+  border: 2px solid #ffcf01;
+  cursor: pointer;
+
+}
+
+/* Estilo para la imagen dentro del artículo */
+.productos-recomendados article img {
+  width: 200px;
+  height: 180px;
+
+}
+
+/* Estilo para la clase .brand, .desc y .liters */
+.productos-recomendados article .brand,
+.productos-recomendados article .desc,
+.productos-recomendados article .liters {
+  font-size: 1rem;
+  color: #131212;
+  /* Color de texto opcional */
+}
+
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(13, 153, 255); /* Azul */
-    color: white;
+  display: flex;
+  text-align: center;
+  padding: 50px 0px 0px 0px;
+  background-color: rgb(13 52 255);
+  color: white;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Agrega más estilos según sea necesario */
+.redes ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  /* Muestra los elementos de la lista en línea (en una fila) */
+  justify-content: center;
+  /* Centra los elementos de la lista horizontalmente */
+}
+
+.redes ul li {
+  margin: 0 10px;
+  /* Espacio entre cada ícono de red social */
+}
+
+.redes i {
+  color: white;
+  font-size: 2rem;
+  padding: 20px 10px
+}
+
+.linea-divisoria {
+  border: 1% solid #ece7e7;
+  width: 85%;
+  margin: 25px 0px 0px 0px;
+}
+
+.contact-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 15px 0px 15px 0px;
+  font-size: 12px;
+}
+
+/*-----------------------------------------------Media query-------------------------------------------------------*/
+/*-----------------------------------------------Media query-------------------------------------------------------*/
+/*-----------------------------------------------Media query-------------------------------------------------------*/
+/*celular*/
+@media only screen and (max-width: 768px) {
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0px;
+  }
+
+  .imgbanner img {
+    height: 150px;/
+  }
+
+  .flechavolver {
+    padding-left: 20px;
+  }
+
+  .cerveza1 {
+    display: flex;
+    gap: 3%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cerveza1 img {
+    max-width: 90%;
+    padding: 0px 0px 10px 0px;
+  }
+
+
+  .productos-categoria .detail {
+    padding: 0px 0px 70px 10px;
+  }
+
+  .productos-categoria .product {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .productos-categoria .liters {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .productos-categoria .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .contador {
+    width: 100%;
+    /* Ajusta el ancho del contador para ocupar el 100% del contenedor en teléfonos */
+  }
+
+  .productos-categoria .add {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 25px;
+    background-color: #ffcf01;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 24px;
+    border: 2px solid #ffcf01;
+    cursor: pointer;
+    width: 100%;
+    height: 53px;
+    letter-spacing: 1px;
+  }
+
+  .titulo1 {
+    font-size: 1rem;
+    color: #1100f6;
+    padding: 0px 15px;
+    margin-top: 0px;
+  }
+
+  .flecha1,
+  .flecha2 {
+    display: none;
+  }
+
+  .productos-recomendados article img {
+    max-height: 120px;
+    max-width: 150px;
+  }
+
+  /* Estilo para el contenedor de productos */
+  .productos-recomendados {
+    display: flex;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 2%;
+    margin-top: 20px;
+    padding: 0px 0px 30px 23px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Estilo para cada artículo de producto */
+  .productos-recomendados article {
+    padding: 5px 5px 5px 5px;
+    border: 1px solid #ccc;
+    height: 330px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* Estilo para la clase .product */
+  .productos-recomendados article .product {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0px 20px 0px 0px;
+  }
+
+  /* Estilo para la clase .price */
+  .productos-recomendados article .price {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  /* Estilo para la clase .add (botón AGREGAR) */
+  .productos-recomendados article .add {
+
+    border-radius: 10px;
+    /* Bordes redondeados */
+    padding: 8px 16px;
+    /* Relleno interno del botón */
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: #ffcf01;
+    color: #ffffff;
+    border: 2px solid #ffcf01;
+    cursor: pointer;
+
+  }
+
+  /* Estilo para la clase .brand, .desc y .liters */
+  .productos-recomendados article .brand,
+  .productos-recomendados article .desc,
+  .productos-recomendados article .liters {
+    font-size: 0.8rem;
+    color: #131212;
+    /* Color de texto opcional */
+  }
+}
+
+/*Tablet*/
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 35px;
+  }
+
+  .imgbanner img {
+    height: 200px;
+    /* Ajusta la altura de la imagen del banner para tablets */
+  }
+
+  .productos-recomendados {
+    display: flex;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 0%;
+    margin-top: 20px;
+    padding: 0px 0px 30px 30px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .flecha1,
+  .flecha2 {
+    display: none;
+  }
+}
