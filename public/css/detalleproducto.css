@@ -45,9 +45,9 @@ header {
 nav {
   display: flex;
   justify-content: flex-end;
-  background-color: rgb(13 52 255);
+  background-color: rgb(86 48 221);
   color: white;
-  border-bottom: 2px solid rgb(0, 0, 255);
+  border-bottom: 2px solid rgb(86 48 221);
   /* Bordes azules */
   position: fixed;
   width: 100%;
@@ -85,9 +85,12 @@ nav a {
   gap: 3%;
 }
 
-.productos-categoria img {
+/* .productos-categoria img {
   width: 43%;
-}
+} */
+ .cerveza1 img {
+  width: 43%;
+  } 
 
 .productos-categoria .detail {
   padding: 0px 0px 70px 10px;
@@ -267,7 +270,7 @@ footer {
   display: flex;
   text-align: center;
   padding: 50px 0px 0px 0px;
-  background-color: rgb(13 52 255);
+  background-color: rgb(86 48 221);
   color: white;
   flex-direction: column;
   align-items: center;
@@ -335,18 +338,21 @@ footer {
     align-items: center;
   }
 
-  .cerveza1 img {
+  /* .cerveza1 img {
+    max-width: 90%;
+    padding: 0px 0px 10px 0px;
+  } */
+  .productos-categoria img {
     max-width: 90%;
     padding: 0px 0px 10px 0px;
   }
-
 
   .productos-categoria .detail {
     padding: 0px 0px 70px 10px;
   }
 
   .productos-categoria .product {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
   }
 
