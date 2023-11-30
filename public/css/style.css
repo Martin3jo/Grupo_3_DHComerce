@@ -369,16 +369,33 @@ Fin del HTML del Registro
 
 /*Media query*/
 /*celular*/
-@media (max-width: 768px) {
-  header nav {
-    display: none;
+@media only screen and (max-width: 768px) {
+ 
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0px;
+  }
+
+  .imgbanner img {
+    height: 250px;/
   }
 }
 
 /*Tablet*/
-@media (min-width: 768px) {
-  .menu-baar-position {
-    display: none;
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 35px;
+  }
+
+  .imgbanner img {
+    height: 350px;
+    /* Ajusta la altura de la imagen del banner para tablets */
   }
 }
 

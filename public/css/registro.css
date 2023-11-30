@@ -18,7 +18,7 @@ main {
     justify-content:flex-start;
     align-items: center;
     background-color: rgba(255, 255, 255);
-    width: 40%;
+    width: 50%;
     color: black;
     font-size: 20px;
     font-weight: bold;
@@ -47,7 +47,7 @@ main {
 .formulario-div{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     padding: 5px;
     margin: 10px;
 }
@@ -64,7 +64,7 @@ main {
     margin: 10px;
 }
 .enviar-cancelar button{
-    width: 80%;
+    width: 90%;
     margin: 5px;
     border-radius: 20px;
 }

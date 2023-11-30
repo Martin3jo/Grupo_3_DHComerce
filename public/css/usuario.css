@@ -30,7 +30,7 @@ main {
 .formulario-div{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     padding: 5px;
     margin: 10px;
 }
@@ -38,7 +38,7 @@ main {
 .checkbox{
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 90%;
     align-items: flex-start;
     padding: 5px;
     margin: 5px;
@@ -54,7 +54,10 @@ main {
     margin: 5px;
     border-radius: 20px;
 }
-.olvidadizo{
-    padding: 5px;
-    margin: 5px;
+.olvidadizo {
+    padding: 13px;
+    margin: 19px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
 }

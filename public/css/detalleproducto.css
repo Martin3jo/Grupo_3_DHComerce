@@ -327,7 +327,7 @@ position: fixed;
   }
 
   .imgbanner img {
-    height: 150px;/
+    height: 250px;/
   }
 
   .flechavolver {
@@ -341,10 +341,7 @@ position: fixed;
     align-items: center;
   }
 
-  /* .cerveza1 img {
-    max-width: 90%;
-    padding: 0px 0px 10px 0px;
-  } */
+
   .productos-categoria img {
     max-width: 90%;
     padding: 0px 0px 10px 0px;
@@ -482,7 +479,7 @@ position: fixed;
   }
 
   .imgbanner img {
-    height: 200px;
+    height: 350px;
     /* Ajusta la altura de la imagen del banner para tablets */
   }
 
