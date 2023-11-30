@@ -1,20 +1,26 @@
 main {
+    padding: 13% 0px; 
+    display: flex;
+    justify-content: center;
+}
+.header-carro {
+    top: 40%;
+    right: 3%;
+    position: fixed;
+    }
+
+.formulariousuario {
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
     background-color: rgba(255, 255, 255);
     width: 40%;
-    margin: 10px auto;
     color: black;
     font-size: 20px;
     font-weight: bold;
-    border: solid 3px black;
-    border-radius: 5%;
-    box-shadow: 10px 10px 5px rgb(0, 0, 0);
 }
-
-main form{
+.formulariousuario form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,8 +44,9 @@ main form{
     margin: 5px;
 }
 
-main input{
+.formulariousuario input {
     border-radius: 20px;
+    height: 34px;
 }
 
 .ingresar {

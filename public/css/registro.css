@@ -1,21 +1,29 @@
 /*MAIN*/
 main {
+    padding: 10% 0px; 
+    display: flex;
+    justify-content: center;
+}
+
+.header-carro {
+    top: 40%;
+    right: 3%;
+    position: fixed;
+    }
+
+/*FORMULARIO*/
+.formularioregistro {
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
     background-color: rgba(255, 255, 255);
-    width: 50%;
-    margin: 10px auto;
+    width: 40%;
     color: black;
     font-size: 20px;
     font-weight: bold;
-    border: solid 3px black;
-    border-radius: 5%;
-    box-shadow: 10px 10px 5px rgb(0, 0, 0);
 }
 
-/*FORMULARIO*/
 .registrate{
     width: 100%;
     text-align: center;
@@ -29,7 +37,7 @@ main {
     width: 90%;
 }
 
-main form{
+.formularioregistro form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,8 +51,9 @@ main form{
     padding: 5px;
     margin: 10px;
 }
-main input{
+.formularioregistro input{
     border-radius: 20px;
+    height: 34px;
 }
 .enviar-cancelar{
     display: flex;

@@ -2,62 +2,154 @@
   box-sizing: border-box;
   font-family: "Lobster-Regular", sans-serif;
   margin: 0;
+  padding: 0%;
 }
 
-/*Estilos Nav Index*/
+/*********** Header Global************/
+header {
+  text-align: center;
+}
+
 nav {
-  background-color: rgb(189, 227, 255);
-  font-size: x-large;
-  font-weight: bold;
-}
-
-nav ul {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: flex-end;
+  color: white;
+  border-bottom: 2px solid rgb(86 48 221);
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  background-color: rgb(86 48 221);
 }
 
 nav ul li {
+  display: inline;
   list-style: none;
   margin-right: 10px;
 }
 
-nav ul li a:link,
-a:visited,
-a:active {
-  list-style: none;
+nav a {
+  color: white;
   text-decoration: none;
-  color: black;
-  font-size: medium;
+  margin: 50px;
+  font-size: 1.2rem;
+  transition: font-size 0.4s; 
 }
 
 nav ul li a:hover {
-  background-color: orangered;
+  font-size: 1.4rem;
+  color: goldenrod;
 }
 
-/*Estilos en el header Index*/
-header {
-  background-color: rgb(13, 153, 255);
+/*********** FIN Header ************/
+.imgbanner img {
+  width: 100%;
+  height: 500px;
+  padding: 50px 0px 0px 0px;
 }
 
-header section {
+/********ICONO CARRITO Global******/
+.header-carro{
+  position: static;
+  bottom: -200px;
+  right: 10%;
+  border-radius: 50%;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0,0.2);
+  border: 3px;
+  transition: all 0.5s ease;
+} 
+.header-carro .fa-solid.fa-cart-arrow-down {
+  font-size: 30px; 
+  transition: transform 0.5s;
+}
+.header-carro:hover {
+  width: 100px;
+  height: 100px;
+}
+
+.header-carro:hover .fa-solid.fa-cart-arrow-down{
+  transform: scale(2);
+} 
+.fa-cart-arrow-down{
+  color:white;
+} 
+/*****FIN ICONO CARRITO ****/
+
+/******** FOOTER Global *********/
+footer {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  color: black;
-  -webkit-text-stroke: 2px rgba(245, 67, 177, 0.575);
-  font-weight: bold;
+  text-align: center;
+  padding: 50px 0px 0px 0px;
+  background-color: rgb(86 48 221);
+  color: white;
+  flex-direction: column;
+  align-items: center;
 }
 
+.redes ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  /* Muestra los elementos de la lista en línea (en una fila) */
+  justify-content: center;
+  /* Centra los elementos de la lista horizontalmente */
+}
+
+.redes ul li {
+  margin: 0 10px;
+  /* Espacio entre cada ícono de red social */
+}
+
+.redes i {
+  color: white;
+  font-size: 2rem;
+  padding: 20px 10px
+}
+
+.linea-divisoria {
+  border: 1% solid #ece7e7;
+  width: 85%;
+  margin: 25px 0px 0px 0px;
+}
+
+.contact-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 15px 0px 15px 0px;
+  font-size: 12px;
+}
+.contact-section2 {
+  font-size: 0.8rem;
+}
+.copy {
+  font-size: 0.8rem;
+}
+/********FIN FOOTER*********/
+
+
+/********BOTONES HOME*********/
+.botonesbebidas h3{
+  color: #1b07ff;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
 .sin-alcohol {
   background-image: url("/img/jugos-antigripales.jpg");
-  opacity: 0.8;
   background-size: cover;
   text-align: center;
-  align-items: center;
   height: max-content;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0px 9px 0px;
+  position: relative; /* Nuevo: posición relativa */
 }
 
 .sin-alcohol:hover {
@@ -66,11 +158,14 @@ header section {
 
 .gaseosas {
   background-image: url("/img/gaseosas.jpg");
-  opacity: 0.8;
   background-size: cover;
   text-align: center;
-  align-items: center;
   height: max-content;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0px 9px 0px;
 }
 
 .gaseosas:hover {
@@ -79,11 +174,14 @@ header section {
 
 .cervezas {
   background-image: url("/img/cervezas.jpg");
-  opacity: 0.8;
   background-size: cover;
   text-align: center;
-  align-items: center;
   height: max-content;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0px 9px 0px;
 }
 
 .cervezas:hover {
@@ -92,11 +190,14 @@ header section {
 
 .tragos {
   background-image: url("/img/tragos.jpg");
-  opacity: 0.8;
   background-size: cover;
   text-align: center;
-  align-items: center;
   height: max-content;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0px 9px 0px;
 }
 
 .tragos:hover {
@@ -104,32 +205,32 @@ header section {
 }
 
 .boton {
-  background-color: black;
+  background-color: #5b42b5;
   color: white;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
+  margin-top: 3%;
+  padding: 3px 12px;
 }
 
-header section div {
+.botonesbebidas {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   height: 80%;
-  width: 20%;
-  margin: 5px;
   border: 3px;
-  padding: 10px;
-  background-color: rgb(255, 255, 255);
+  padding: 0px 0px 100px 0px;
 }
+/***********FIN BOTONES HOME*************/
+
 
 /*Estilos en el main Index*/
 
 main section article {
-  border: 2px solid blue;
   width: 30%;
   flex: 1;
   padding: 20px;
   margin: 30px 10px;
-  background-color: rgb(189, 227, 255);
+  background-color: rgb(86 48 221 / 16%);
   text-align: center;
 }
 
@@ -147,25 +248,9 @@ main section article {
   margin-top: 5px;
 }
 
-/*Estilos en el footer-Index*/
-#footer-index {
-  background-color: rgb(13, 153, 255);
-}
-#footer-index ul {
-  display: flex;
-}
-
-footer ul li a:link,
-a:visited,
-a:active {
-  list-style: none;
-  text-decoration: none;
-  color: black;
-  font-size: medium;
-}
 /*Estilos Registro*/
 
-.footer-registro {
+/* .footer-registro {
   background-color: aqua;
   display: flex;
   flex-direction: row;
@@ -176,7 +261,7 @@ a:active {
   flex-direction: column;
   border: 1px solid black;
   flex: 1;
-}
+} */
 
 .main-registro {
   margin-top: 90px;
@@ -259,7 +344,7 @@ HTML del Registro
   align-items: center;
 }
 
-.header-registro {
+/* .header-registro {
   background-color: aqua;
   border-bottom: 1px solid black;
   margin-bottom: 5px;
@@ -267,7 +352,7 @@ HTML del Registro
   top: 0;
   width: 100%;
   height: 80px;
-}
+} */
 
 /*Fin Formulario Registro*/
 

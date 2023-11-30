@@ -1,15 +1,44 @@
-* {
+/* * {
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
-}
+} */
 
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
 }
+/*********** Header ************/
+/* header {
+  text-align: center;
+}
 
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(86 48 221);
+  color: white;
+  border-bottom: 2px solid rgb(86 48 221);
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+}
+
+nav ul li {
+  display: inline;
+  list-style: none;
+  margin-right: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 50px;
+  font-size: 1.2rem;
+} */
+/*********** Header ************/
 main {
   padding: 20px 0px 0px 0px;
   display: flex;
@@ -18,10 +47,15 @@ main {
 
 .imgbanner img {
   width: 100%;
-  height: 310px;
+  height: 500px;
   padding: 25px 0px 0px 0px;
 }
-
+.header-carro {
+top: 70%;
+right: 3%;
+position: fixed;
+}
+  
 .flechavolver {
   display: flex;
   flex-direction: row;
@@ -38,39 +72,6 @@ main {
   font-size: 1rem;
 }
 
-header {
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  justify-content: flex-end;
-  background-color: rgb(86 48 221);
-  color: white;
-  border-bottom: 2px solid rgb(86 48 221);
-  /* Bordes azules */
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  align-items: center;
-}
-
-nav ul li {
-  display: inline;
-  list-style: none;
-  margin-right: 10px;
-  /* transition: all 0.2s ease-in; */
-
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 50px;
-  font-size: 1.2rem;
-
-}
-
 .productos-categoria {
   display: flex;
   margin-top: 5px;
@@ -84,10 +85,6 @@ nav a {
   align-items: center;
   gap: 3%;
 }
-
-/* .productos-categoria img {
-  width: 43%;
-} */
  .cerveza1 img {
   width: 43%;
   } 
@@ -179,6 +176,7 @@ nav a {
 
 .productos-recomendados {
   display: flex;
+  
 }
 
 .titulo1 {
@@ -202,7 +200,6 @@ nav a {
   display: flex;
   overflow-x: auto;
   /*Permite desplazarse horizontalmente si hay muchos productos */
-  justify-content: center;
   gap: 3%;
   margin-top: 20px;
   padding: 0px 0px 100px 0px;
@@ -265,8 +262,8 @@ nav a {
   /* Color de texto opcional */
 }
 
-
-footer {
+/*********** Footer ************/
+/* footer {
   display: flex;
   text-align: center;
   padding: 50px 0px 0px 0px;
@@ -280,14 +277,14 @@ footer {
   list-style: none;
   padding: 0;
   display: flex;
-  /* Muestra los elementos de la lista en línea (en una fila) */
+  
   justify-content: center;
-  /* Centra los elementos de la lista horizontalmente */
+  
 }
 
 .redes ul li {
   margin: 0 10px;
-  /* Espacio entre cada ícono de red social */
+   
 }
 
 .redes i {
@@ -309,7 +306,13 @@ footer {
   padding: 15px 0px 15px 0px;
   font-size: 12px;
 }
-
+.contact-section2 {
+  font-size: 0.8rem;
+}
+.copy {
+  font-size: 0.8rem;
+} */
+/*********** Fin Footer ************/
 /*-----------------------------------------------Media query-------------------------------------------------------*/
 /*-----------------------------------------------Media query-------------------------------------------------------*/
 /*-----------------------------------------------Media query-------------------------------------------------------*/
