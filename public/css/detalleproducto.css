@@ -153,6 +153,21 @@ position: fixed;
   margin-left: 10%;
   padding: 2% 0% 5% 0%;
 }
+/* Estilo para la barra de desplazamiento */
+.contenedorcarrusel::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo para el "pulgar" de la barra de desplazamiento */
+.contenedorcarrusel::-webkit-scrollbar-thumb {
+  background-color: #4CAF50; /* Color del "pulgar" */
+  border-radius: 6px; /* Bordes redondeados del "pulgar" */
+}
+
+/* Estilo para la pista (fondo) de la barra de desplazamiento */
+.contenedorcarrusel::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color de la pista */
+}
 
 .flecha1,
 .flecha2 {
