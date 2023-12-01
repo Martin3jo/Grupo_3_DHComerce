@@ -1,44 +1,10 @@
-/* * {
-  padding: 0%;
-  margin: 0%;
-  box-sizing: border-box;
-} */
 
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
 }
-/*********** Header ************/
-/* header {
-  text-align: center;
-}
 
-nav {
-  display: flex;
-  justify-content: flex-end;
-  background-color: rgb(86 48 221);
-  color: white;
-  border-bottom: 2px solid rgb(86 48 221);
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  align-items: center;
-}
-
-nav ul li {
-  display: inline;
-  list-style: none;
-  margin-right: 10px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 50px;
-  font-size: 1.2rem;
-} */
-/*********** Header ************/
 main {
   padding: 20px 0px 0px 0px;
   display: flex;
@@ -174,16 +140,18 @@ position: fixed;
   /* Cambia el color del borde al pasar el ratón */
 }
 
-.productos-recomendados {
-  display: flex;
-  
-}
-
 .titulo1 {
   font-size: 1.5rem;
   color: #1100f6;
   padding: 0px 15px;
   margin-top: 40px;
+}
+
+.contenedorcarrusel {
+  display: flex;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 2% 0% 5% 0%;
 }
 
 .flecha1,
@@ -195,15 +163,16 @@ position: fixed;
   font-size: 2rem;
 }
 
+
 /* Estilo para el contenedor de productos */
 .productos-recomendados {
   display: flex;
-  overflow-x: auto;
-  /*Permite desplazarse horizontalmente si hay muchos productos */
-  gap: 3%;
-  margin-top: 20px;
-  padding: 0px 0px 100px 0px;
+    overflow-x: auto;
+    gap: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
+
 
 /* Estilo para cada artículo de producto */
 .productos-recomendados article {
@@ -262,57 +231,6 @@ position: fixed;
   /* Color de texto opcional */
 }
 
-/*********** Footer ************/
-/* footer {
-  display: flex;
-  text-align: center;
-  padding: 50px 0px 0px 0px;
-  background-color: rgb(86 48 221);
-  color: white;
-  flex-direction: column;
-  align-items: center;
-}
-
-.redes ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  
-  justify-content: center;
-  
-}
-
-.redes ul li {
-  margin: 0 10px;
-   
-}
-
-.redes i {
-  color: white;
-  font-size: 2rem;
-  padding: 20px 10px
-}
-
-.linea-divisoria {
-  border: 1% solid #ece7e7;
-  width: 85%;
-  margin: 25px 0px 0px 0px;
-}
-
-.contact-section {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  padding: 15px 0px 15px 0px;
-  font-size: 12px;
-}
-.contact-section2 {
-  font-size: 0.8rem;
-}
-.copy {
-  font-size: 0.8rem;
-} */
-/*********** Fin Footer ************/
 /*-----------------------------------------------Media query-------------------------------------------------------*/
 /*-----------------------------------------------Media query-------------------------------------------------------*/
 /*-----------------------------------------------Media query-------------------------------------------------------*/
