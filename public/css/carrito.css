@@ -1,31 +1,89 @@
-.article-carrito {
-  border: 1px solid blue;
-  width: 40%;
-  padding: 10px;
-  margin-top: 50px;
-  margin-left: 30px;
-  background-color: rgb(207, 235, 255);
-}
-.article-carrito img {
-  max-width: 20%;
+
+main {
+  padding: 8% 0px 0px 0px;
   display: flex;
   flex-direction: column;
 }
 
-.tarjetas-main {
-  display: flex;
-}
-#main-carrito {
+.carrito {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.5rem;
 }
-.imagen-main-carrito {
-  max-width: 60%;
+
+
+/* *** INICIO Estilo para el contenedor de productos *****/
+.contenedorcarrusel {
+  display: flex;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 10% 0% 5% 0%;
 }
-.boton-main-carrito {
-  border-top: 20px;
+
+.flecha1,
+.flecha2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: blue;
+  font-size: 2rem;
 }
-.article-main-carrito {
-  background-color: rgb(13, 153, 255);
+
+.productos-recomendados {
+  display: flex;
+  overflow-x: auto;
+  gap: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
+
+
+/* Estilo para cada artículo de producto */
+.productos-recomendados article {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Estilo para la clase .product */
+.productos-recomendados article .product {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Estilo para la clase .price */
+.productos-recomendados article .price {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Estilo para la clase .add (botón AGREGAR) */
+.productos-recomendados article .add {
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 15px;
+  background-color: #ffcf01;
+  color: #ffffff;
+  border: 2px solid #ffcf01;
+  cursor: pointer;
+}
+
+/* Estilo para la imagen dentro del artículo */
+.productos-recomendados article img {
+  width: 200px;
+  height: 180px;
+}
+
+/* Estilo para la clase .brand, .desc y .liters */
+.productos-recomendados article .brand,
+.productos-recomendados article .desc,
+.productos-recomendados article .liters {
+  font-size: 1rem;
+  color: #131212;
+}
+
+/* *** FIN Estilo para el contenedor de productos *****/
