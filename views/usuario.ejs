@@ -1,78 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuario</title>
+    <link rel="stylesheet" href="/css/style2.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/usuario.css" />
+    <script
+      src="https://kit.fontawesome.com/91be3b2f24.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Usuario</title>
-  <link rel="stylesheet" href="/css/style2.css">
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/usuario.css">
-  <script src="https://kit.fontawesome.com/91be3b2f24.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
+  <body>
+    <header>
+      <!-- <a href="./"><img class="logo" src="/img/Logo2.png" alt="Logo"></a> -->
+      <nav>
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./detalle_producto">Producto</a></li>
+          <li><a href="./carrito">Carrito</a></li>
+          <li><a href="./registro">Registro</a></li>
+          <li><a href="#">Usuario</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    
-    <!-- <a href="./"><img class="logo" src="/img/Logo2.png" alt="Logo"></a> -->
-    <nav>
-      <ul>
-        <li><a href="./">Home</a></li>
-        <li><a href="./detalle_producto.html">Producto</a></li>
-        <li><a href="./carrito.html">Carrito</a></li>
-        <li><a href="./registro.html">Registro</a></li>
-        <li><a href="#">Usuario</a></li>
-      </ul>
-    </nav>
-  </header>
+    <main>
+      <button class="header-carro">
+        <i class="fa-solid fa-cart-arrow-down"></i>
+      </button>
+      <div class="formulariousuario">
+        <form action="/usuario" method="POST">
+          <div class="formulario-div">
+            <label for="email">E-Mail*</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Ingresa tu correo Electrónico"
+            />
+          </div>
+          <div class="formulario-div">
+            <label for="contraseña">Contraseña*</label>
+            <input
+              type="password"
+              name="contraseña"
+              placeholder="Ingresa tu Contraseña"
+            />
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="usuario" />
+            <label for="usuario">Recordar Usuario</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="contraseña" />
+            <label for="contraseña">Recordar Contraseña</label>
+          </div>
+          <button class="ingresar" type="submit">Ingresar</button>
+          <p class="olvidadizo">
+            ¿Olvidaste tu contraseña? haz clic <a href="#">aqui!</a>
+          </p>
+        </form>
+      </div>
+    </main>
 
-  <main>
-    <button class="header-carro">
-      <i class="fa-solid fa-cart-arrow-down"></i>
-    </button>
-    <div class="formulariousuario">
-    <form action="/usuario" method="POST">
-      <div class="formulario-div">
-        <label for="email">E-Mail*</label>
-        <input type="email" name="email" placeholder="Ingresa tu correo Electrónico">
+    <footer>
+      <div class="redes">
+        <p>Seguinos en nuestras redes</p>
+        <ul>
+          <li>
+            <a href=""><i class="fa-brands fa-telegram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+          </li>
+        </ul>
       </div>
-      <div class="formulario-div">
-        <label for="contraseña">Contraseña*</label>
-        <input type="password" name="contraseña" placeholder="Ingresa tu Contraseña">
+      <hr class="linea-divisoria" />
+      <div class="contact-section">
+        <div class="copy">© 2023 SHOP DRINK</div>
+        <div class="contact-section2">
+          BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS
+        </div>
       </div>
-      <div class="checkbox">
-        <input type="checkbox" name="usuario">
-        <label for="usuario">Recordar Usuario</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="contraseña">
-        <label for="contraseña">Recordar Contraseña</label>
-      </div>
-      <button class="ingresar" type="submit">Ingresar</button>
-      <p class="olvidadizo">¿Olvidaste tu contraseña? haz clic <a href="#">aqui!</a></p>
-    </form>
-  </div>
-  </main>
-
-  <footer>
-    <div class="redes">
-      <p>Seguinos en nuestras redes</p>
-      <ul>
-        <li><a href=""><i class="fa-brands fa-telegram"></i></a></li>
-        <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
-        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-        <li><a href=""><i class="fa-brands fa-tiktok"></i></a></li>
-        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-      </ul>
-    </div>
-    <hr class="linea-divisoria">
-    <div class="contact-section">
-    <div class="copy"> © 2023 SHOP DRINK</div>  
-    <div class="contact-section2"> BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS </div>
-    </div>
-  </footer>
-  <!-- <footer class="footer-column">
+    </footer>
+    <!-- <footer class="footer-column">
     <div>
       <a href="#">Contactanos</a>
       <a href="#">Sugerencias</a>
@@ -95,6 +121,5 @@
       </a>
     </div>
   </footer> -->
-</body>
-
+  </body>
 </html>
