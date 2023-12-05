@@ -3,6 +3,11 @@ const app = express();
 const path = require("path");
 let port = 4000;
 
+const mainRoutes = require("./routes/mainRoutes.routes");
+
+app.set("view engine", "ejs");
+app.use("/", mainRoutes);
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
 });
