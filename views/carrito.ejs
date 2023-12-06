@@ -4,19 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito</title>
-    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Drink Shop</h1>
-    </header>
-    <nav>
-      <a href="./">Home</a>
-      <a href="./detalle_producto">Producto</a>
-      <a href="./carrito">Carrito</a>
-      <a href="./registro">Registro</a>
-      <a href="./usuario">Usuario</a>
-    </nav>
+    <%- include('partials/header.ejs')%>
 
     <main>
       <section id="productos"></section>
@@ -79,7 +71,7 @@
         </div>
       </section>
     </main>
-
+    <%- include('partials/footer.ejs')%>
     <script src="tuscript.js"></script>
   </body>
 </html>
