@@ -1,89 +1,57 @@
+main{
+  padding-top: 60px;
+  font-size: 12px;
+}
 
-main {
-  padding: 8% 0px 0px 0px;
+/*CARRITO*/
+.carrito-form{
   display: flex;
   flex-direction: column;
+  margin: 5px;
 }
-
-.carrito {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.5rem;
+.carrito-form *{
+  margin: 5px 20%;
 }
-
-
-/* *** INICIO Estilo para el contenedor de productos *****/
-.contenedorcarrusel {
-  display: flex;
-  margin-right: 10%;
-  margin-left: 10%;
-  padding: 10% 0% 5% 0%;
-}
-
-.flecha1,
-.flecha2 {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: blue;
-  font-size: 2rem;
-}
-
-.productos-recomendados {
-  display: flex;
-  overflow-x: auto;
-  gap: 3%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-
-/* Estilo para cada artículo de producto */
-.productos-recomendados article {
-  border: 1px solid #ccc;
-  margin: 10px;
-  padding: 10px;
+.carrito-form h3{
+  border-bottom: 1px solid black;
   text-align: center;
 }
-
-/* Estilo para la clase .product */
-.productos-recomendados article .product {
-  font-size: 1rem;
-  font-weight: bold;
+.carrito-img{
+  width: 120px;
+}
+.carrito-descripcion-caja{
+  background-color:rgb(86 48 221);
+  margin: 5px auto;
+}
+.carrito-descripcion{
+  display: inline-flex;
+  margin: 5px;
 }
 
-/* Estilo para la clase .price */
-.productos-recomendados article .price {
-  font-size: 1rem;
-  font-weight: bold;
+/*CARRITO-FIN*/
+
+/*RULETA*/
+.ruleta-section{
+  all: initial;
+  width: auto;
+  display: flex;
+  margin: 10px 10vw;
+  overflow-x: auto;
+  background-color: rgb(86 48 221);
+}
+.ruleta-article {
+  all: initial;
+  flex: 0 0 auto;
+  border: 1px solid black;
+  margin: 2px;
+  background-color: white;
+  text-align: center;
+}
+.ruleta-article *{
+  margin-bottom: 2px;
+}
+.ruleta-img{
+  width: 100px;
 }
 
-/* Estilo para la clase .add (botón AGREGAR) */
-.productos-recomendados article .add {
-  border-radius: 10px;
-  padding: 8px 16px;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 15px;
-  background-color: #ffcf01;
-  color: #ffffff;
-  border: 2px solid #ffcf01;
-  cursor: pointer;
-}
-
-/* Estilo para la imagen dentro del artículo */
-.productos-recomendados article img {
-  width: 200px;
-  height: 180px;
-}
-
-/* Estilo para la clase .brand, .desc y .liters */
-.productos-recomendados article .brand,
-.productos-recomendados article .desc,
-.productos-recomendados article .liters {
-  font-size: 1rem;
-  color: #131212;
-}
-
-/* *** FIN Estilo para el contenedor de productos *****/
+/*RULETA FIN*/

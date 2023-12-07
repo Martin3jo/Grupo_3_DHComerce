@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrito</title>
 
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body>
-    <%- include('partials/header.ejs')%>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/carrito.css">
+</head>
+
+<body>
+  <%- include('partials/header.ejs')%>
 
     <main>
-      <section id="productos"></section>
-
-      <section id="carrito">
-        <h2>Carrito</h2>
-        <ul id="lista-carrito"></ul>
-        <div id="detalles-carrito">
-          <img id="imagen-producto" src="" alt="Productos del carrito" />
-          <div id="acciones-carrito">
-            <button id="eliminar">Eliminar</button>
-            <button id="guardar">Guardar</button>
-            <button id="modificar">Modificar</button>
-            <button id="comprar">Comprar ahora</button>
+      <!--CARRITO-->
+      <section>
+        <div class="carrito-descripcion-caja">
+          <div class="carrito-descripcion">
+            <img class="carrito-img" src="/img/carrito/botellahielo.jpg" alt="Productos del carrito" />
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia corporis veritatis quis molestias
+              molestiae consequuntur autem, nostrum minus. Tempore eum vero officiis modi quaerat. Quam fugiat ipsam
+              labore quia tempora.</p>
           </div>
           <div>
-            <h3>Detalles de envío</h3>
-            <form id="envio-form">
-              <label for="calle">Calle:</label>
-              <input type="text" id="calle" name="calle" required />
-              <label for="numero">Número:</label>
-              <input type="number" id="numero" name="numero" required />
-              <label for="barrio">Barrio:</label>
-              <input type="text" id="barrio" name="barrio" required />
-              <button type="submit">Guardar detalles de envío</button>
-            </form>
-          </div>
-
-          <div>
-            <h3>También te interesó</h3>
-
-            <div class="producto">
-              <img src="producto.jpg" alt="Producto 1" />
-              <h4>Producto 1</h4>
-              <p>Precio: $</p>
-              <button class="agregar-carrito">Añadir al carrito</button>
-            </div>
-
-            <div class="producto">
-              <img src="producto.jpg" alt="Producto 2" />
-              <h4>Producto 2</h4>
-              <p>Precio: $</p>
-              <button class="agregar-carrito">Añadir al carrito</button>
-            </div>
-
-            <div class="producto">
-              <img src="producto.jpg" alt="Producto 3" />
-              <h4>Producto 3</h4>
-              <p>Precio: $</p>
-              <button class="agregar-carrito">Añadir al carrito</button>
-            </div>
-
-            <div class="producto">
-              <img src="producto.jpg" alt="Producto 4" />
-              <h4>Producto 4</h4>
-              <p>Precio: $</p>
-              <button class="agregar-carrito">Añadir al carrito</button>
-            </div>
+            <button>Eliminar</button>
+            <button>Guardar</button>
+            <button>Modificar</button>
+            <button>Comprar ahora</button>
           </div>
         </div>
+        <form class="carrito-form">
+          <h3>Detalles de envío</h3>
+          <label for="calle"></label>
+          <input type="text" id="calle" name="calle" placeholder="Calle">
+          <label for="numero"></label>
+          <input type="number" id="numero" name="numero" placeholder="Número">
+          <label for="barrio"></label>
+          <input type="text" id="barrio" name="barrio" placeholder="Barrio">
+          <button type="submit">Guardar detalles de envío</button>
+        </form>
       </section>
+      <!--RULETA----Tambien te interesó-->
+      <h3>También te interesó</h3>
+      <section class="ruleta-section">
+
+        <article class="ruleta-article">
+          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 1" />
+          <h4>Producto 1</h4>
+          <p>Precio: $</p>
+          <button>Añadir al carrito</button>
+        </article>
+
+        <article class="ruleta-article">
+          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 2" />
+          <h4>Producto 2</h4>
+          <p>Precio: $</p>
+          <button>Añadir al carrito</button>
+        </article>
+
+        <article class="ruleta-article">
+          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 3" />
+          <h4>Producto 3</h4>
+          <p>Precio: $</p>
+          <button>Añadir al carrito</button>
+        </article>
+
+        <article class="ruleta-article">
+          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 4" />
+          <h4>Producto 4</h4>
+          <p>Precio: $</p>
+          <button>Añadir al carrito</button>
+        </article>
+
+      </section>
+      </div>
     </main>
     <%- include('partials/footer.ejs')%>
-    <script src="tuscript.js"></script>
-  </body>
+</body>
+
 </html>
