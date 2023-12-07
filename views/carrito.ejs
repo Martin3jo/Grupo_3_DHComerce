@@ -14,22 +14,58 @@
 
     <main>
       <!--CARRITO-->
-      <section>
-        <div class="carrito-descripcion-caja">
-          <div class="carrito-descripcion">
-            <img class="carrito-img" src="/img/carrito/botellahielo.jpg" alt="Productos del carrito" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia corporis veritatis quis molestias
-              molestiae consequuntur autem, nostrum minus. Tempore eum vero officiis modi quaerat. Quam fugiat ipsam
-              labore quia tempora.</p>
-          </div>
+      <section class="carrito-section">
+        <div class="carrito-img-agregados">
+          <!--IMAGEN-NOMBRE-->
           <div>
-            <button>Eliminar</button>
-            <button>Guardar</button>
-            <button>Modificar</button>
-            <button>Comprar ahora</button>
+            <h3>Nombre Producto</h3>
+            <img class="carrito-img-grande" src="/img/carrito/botellahielo.jpg" alt="Productos del carrito" />
+          </div>
+
+          <div class="carrito-descripcion">
+            <h2>Resumen de compras</h2>
+            <!--Compras agregadas al carrito-->
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 1</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 2</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 3</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 3</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 3</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 3</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 3</p>
+            </div>
           </div>
         </div>
-        <form class="carrito-form">
+
+        <div class="carrito-botones">
+          <button>Eliminar</button>
+          <button>Guardar</button>
+          <button>Modificar</button>
+          <button>Comprar ahora</button>
+        </div>
+      </section>
+      <!--DETALLES  DEL ENVIO-->
+      <section>
+        <form>
           <h3>Detalles de envío</h3>
           <label for="calle"></label>
           <input type="text" id="calle" name="calle" placeholder="Calle">

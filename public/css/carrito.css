@@ -4,28 +4,38 @@ main{
 }
 
 /*CARRITO*/
-.carrito-form{
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-}
-.carrito-form *{
-  margin: 5px 20%;
-}
-.carrito-form h3{
-  border-bottom: 1px solid black;
-  text-align: center;
-}
-.carrito-img{
+.carrito-img-grande{
   width: 120px;
 }
-.carrito-descripcion-caja{
-  background-color:rgb(86 48 221);
+.carrito-img-chica{
+  width: 30px;
+  height: 30px;
+}
+.carrito-section{
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+}
+.carrito-img-agregados{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin: 5px auto;
 }
 .carrito-descripcion{
-  display: inline-flex;
-  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 150px;
+  margin: auto 5px;
+}
+.carrito-descripcion div{
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+}
+.carrito-botones{
+
 }
 
 /*CARRITO-FIN*/
