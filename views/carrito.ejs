@@ -15,15 +15,16 @@
     <main>
       <!--CARRITO-->
       <section class="carrito-section">
+
         <div class="carrito-img-agregados">
-          <!--IMAGEN-NOMBRE-->
-          <div>
-            <h3>Nombre Producto</h3>
+          <!--Nombre Producto-->
+          <div class="carrito-producto">
+            <h2>Producto</h2>
             <img class="carrito-img-grande" src="/img/carrito/botellahielo.jpg" alt="Productos del carrito" />
           </div>
-
+          <!--Resumen de Compras-->
           <div class="carrito-descripcion">
-            <h2>Resumen de compras</h2>
+            <h2>Carrito</h2>
             <!--Compras agregadas al carrito-->
             <div>
               <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
@@ -39,15 +40,11 @@
             </div>
             <div>
               <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
-              <p>compra 3</p>
+              <p>compra 1</p>
             </div>
             <div>
               <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
-              <p>compra 3</p>
-            </div>
-            <div>
-              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
-              <p>compra 3</p>
+              <p>compra 2</p>
             </div>
             <div>
               <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
@@ -55,29 +52,19 @@
             </div>
           </div>
         </div>
-
+        <!--Detalle Producto-->
+        <div class="carrito-detalle">
+          <p>En este lugar ira una pequeña reseña sobre el producto seleccionado en carrito, el mismo puede dividrse en pestañas dando caracteristicas importantes, o bien simplemente un resumen de su sabor</p>
+          </div>
+        <!--Botones-->
         <div class="carrito-botones">
           <button>Eliminar</button>
           <button>Guardar</button>
           <button>Modificar</button>
           <button>Comprar ahora</button>
         </div>
-      </section>
-      <!--DETALLES  DEL ENVIO-->
-      <section>
-        <form>
-          <h3>Detalles de envío</h3>
-          <label for="calle"></label>
-          <input type="text" id="calle" name="calle" placeholder="Calle">
-          <label for="numero"></label>
-          <input type="number" id="numero" name="numero" placeholder="Número">
-          <label for="barrio"></label>
-          <input type="text" id="barrio" name="barrio" placeholder="Barrio">
-          <button type="submit">Guardar detalles de envío</button>
-        </form>
-      </section>
       <!--RULETA----Tambien te interesó-->
-      <h3>También te interesó</h3>
+      <h3 class="titulo-ruleta">También te interesó</h3>
       <section class="ruleta-section">
 
         <article class="ruleta-article">

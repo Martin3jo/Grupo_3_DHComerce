@@ -1,47 +1,99 @@
-main{
+main {
   padding-top: 60px;
   font-size: 12px;
 }
 
 /*CARRITO*/
-.carrito-img-grande{
+.carrito-img-grande {
   width: 120px;
 }
-.carrito-img-chica{
+
+.carrito-img-chica {
   width: 30px;
   height: 30px;
 }
-.carrito-section{
-  background-color: aqua;
+
+.carrito-section {
   display: flex;
   flex-direction: column;
 }
-.carrito-img-agregados{
+
+.carrito-img-agregados {
+  /*PADRE de carrito-producto y carrito-descripcion*/
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 5px auto;
+  align-items: center;
+  width: 100%;
 }
-.carrito-descripcion{
+
+.carrito-producto {
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  max-height: 150px;
-  margin: auto 5px;
+  flex-grow: 1;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(86 48 221);
+  box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
 }
-.carrito-descripcion div{
+
+.carrito-descripcion {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 160px;
+  margin: 5px;
+  padding: 10px;
+  overflow-y: scroll;
+  background-color: rgb(86 48 221);
+  box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
+}
+
+.carrito-descripcion div {
   display: flex;
   flex-direction: row;
   font-size: 20px;
 }
-.carrito-botones{
 
+.carrito-detalle{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(86 48 221);
+  box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
+  border-bottom: 1px solid black;
+
+}
+
+.carrito-botones{
+  display: flex;
+  width: 100%;
+}
+.carrito-botones  button{
+  border-radius: 10%;
+  flex-grow: 1;
+  margin: 5px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
 }
 
 /*CARRITO-FIN*/
 
 /*RULETA*/
-.ruleta-section{
+.titulo-ruleta{
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.ruleta-section {
   all: initial;
   width: auto;
   display: flex;
@@ -49,6 +101,7 @@ main{
   overflow-x: auto;
   background-color: rgb(86 48 221);
 }
+
 .ruleta-article {
   all: initial;
   flex: 0 0 auto;
@@ -56,11 +109,23 @@ main{
   margin: 2px;
   background-color: white;
   text-align: center;
+  box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
 }
-.ruleta-article *{
+
+.ruleta-article * {
   margin-bottom: 2px;
 }
-.ruleta-img{
+
+.ruleta-article button{
+  border-radius: 10%;
+  flex-grow: 1;
+  margin: 5px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
+}
+
+.ruleta-img {
   width: 100px;
 }
 
