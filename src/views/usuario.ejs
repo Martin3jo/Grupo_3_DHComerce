@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuario</title>
+    <link rel="stylesheet" href="/css/style2.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/usuario.css" />
+    <script
+      src="https://kit.fontawesome.com/91be3b2f24.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <%- include('partials/header.ejs')%>
+
+    <main>
+      <button class="header-carro">
+        <i class="fa-solid fa-cart-arrow-down"></i>
+      </button>
+      <div class="formulariousuario">
+        <form action="/usuario" method="POST">
+          <div class="formulario-div">
+            <label for="email">E-Mail*</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Ingresa tu correo Electrónico"
+            />
+          </div>
+          <div class="formulario-div">
+            <label for="contraseña">Contraseña*</label>
+            <input
+              type="password"
+              name="contraseña"
+              placeholder="Ingresa tu Contraseña"
+            />
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="usuario" />
+            <label for="usuario">Recordar Usuario</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="contraseña" />
+            <label for="contraseña">Recordar Contraseña</label>
+          </div>
+          <button class="ingresar" type="submit">Ingresar</button>
+          <p class="olvidadizo">
+            ¿Olvidaste tu contraseña? haz clic <a href="#">aqui!</a>
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <%- include('partials/footer.ejs')%>
+  </body>
+</html>

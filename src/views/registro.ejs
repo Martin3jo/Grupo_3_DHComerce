@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/registro.css" />
+    <script
+      src="https://kit.fontawesome.com/91be3b2f24.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!--Header-->
+    <%- include('partials/header.ejs')%>
+    <!--Main-->
+    <main>
+      <button class="header-carro">
+        <i class="fa-solid fa-cart-arrow-down"></i>
+      </button>
+
+      <div class="formularioregistro">
+        <p class="registrate">REGISTRATE</p>
+        <p class="texto1"></p>
+
+        <form action="/registro" method="POST">
+          <div class="formulario-div">
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" placeholder="Apellido" />
+          </div>
+          <div class="formulario-div">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="Nombre" />
+          </div>
+          <div class="formulario-div">
+            <label for="DNI">DNI</label>
+            <input type="number" name="DNI" placeholder="14546756" />
+          </div>
+          <div class="formulario-div">
+            <label for="fecha">Fecha de Nacimiento</label>
+            <input type="date" name="fecha" min="1970-01-01" max="2030-01-01" />
+          </div>
+          <div class="formulario-div">
+            <label for="celular">Celular</label>
+            <input type="tel" name="celular" placeholder="3855987543" />
+          </div>
+          <div class="formulario-div">
+            <label for="genero">Genero</label>
+            <select name="genero">
+              <option value="1" selected>Masculino</option>
+              <option value="2">Femenino</option>
+            </select>
+          </div>
+          <div class="enviar-cancelar">
+            <button type="submit">Enviar</button>
+            <button type="reset">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!--Footer-->
+    <%- include('partials/footer.ejs')%>
+  </body>
+</html>

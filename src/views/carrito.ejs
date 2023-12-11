@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/carrito.css">
+</head>
+
+<body>
+  <%- include('partials/header.ejs')%>
+
+    <main>
+      <!--CARRITO-->
+      <section class="carrito-section">
+
+        <div class="carrito-img-agregados">
+          <!--Nombre Producto-->
+          <div class="carrito-producto">
+            <h2>Producto</h2>
+            <img class="carrito-img-grande" src="/img/carrito/botellahielo.jpg" alt="Productos del carrito" />
+          </div>
+          <!--Resumen de Compras-->
+          <div class="carrito-descripcion">
+            <h2>Carrito</h2>
+            <!--Compras agregadas al carrito-->
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 1</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 2</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 3</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 1</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 2</p>
+            </div>
+            <div>
+              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
+              <p>compra 3</p>
+            </div>
+          </div>
+        </div>
+        <!--Detalle Producto-->
+        <div class="carrito-detalle">
+          <p>En este lugar ira una pequeña reseña sobre el producto seleccionado en carrito, el mismo puede dividrse en pestañas dando caracteristicas importantes, o bien simplemente un resumen de su sabor</p>
+          </div>
+        <!--Botones-->
+        <div class="carrito-botones">
+          <button>Eliminar</button>
+          <button>Guardar</button>
+          <button>Modificar</button>
+          <button>Comprar ahora</button>
+        </div>
+      <!--RULETA----Tambien te interesó-->
+      <h3 class="titulo-ruleta">También te interesó</h3>
+      <section class="ruleta-section">
+
+        <article class="ruleta-article">
+          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 1" />
+          <h4>Producto 1</h4>
+          <p>Precio: $</p>
+          <button>Añadir al carrito</button>
+        </article>
+
+        <article class="ruleta-article">
+          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 2" />
+          <h4>Producto 2</h4>
+          <p>Precio: $</p>
+          <button>Añadir al carrito</button>
+        </article>
+
+        <article class="ruleta-article">
+          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 3" />
+          <h4>Producto 3</h4>
+          <p>Precio: $</p>
+          <button>Añadir al carrito</button>
+        </article>
+
+        <article class="ruleta-article">
+          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 4" />
+          <h4>Producto 4</h4>
+          <p>Precio: $</p>
+          <button>Añadir al carrito</button>
+        </article>
+
+      </section>
+      </div>
+    </main>
+    <%- include('partials/footer.ejs')%>
+</body>
+
+</html>
