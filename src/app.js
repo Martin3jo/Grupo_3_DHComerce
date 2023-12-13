@@ -25,7 +25,5 @@ const rutasUsuarios = require("./routes/users.routes");
 
 /*ENTRY POINTS*/
 app.use("/", rutasIndex);
-app.use("/carrito", rutasProductos);
-app.use("/detalle_producto", rutasProductos);
-app.use("/registro", rutasUsuarios);
-app.use("/usuario", rutasUsuarios);
+app.use("/", rutasProductos);
+app.use("/", rutasUsuarios);
