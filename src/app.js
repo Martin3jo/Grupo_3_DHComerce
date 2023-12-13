@@ -17,17 +17,13 @@ app.listen(port, () => {
 });
 
 /*ROUTES*/
-const rutasIndex = require("./routes/index.routes");
-const rutasCarrito = require("./routes/carrito.routes");
-const rutasDetalleProducto = require("./routes/detalle_producto.routes");
-const rutasRegistro = require("./routes/registro.routes");
-const rutasUsuario = require("./routes/usuario.routes");
-
+const rutasIndex = require("./routes/main.routes");
+const rutasProductos = require("./routes/products.routes");
+const rutasUsuarios = require("./routes/users.routes");
 
 /*ENTRY POINTS*/
-app.use('/', rutasIndex);
-app.use('/carrito', rutasCarrito);
-app.use('/detalle_producto',rutasDetalleProducto);
-app.use('/registro', rutasRegistro);
-app.use('/usuario', rutasUsuario);
-
+app.use("/", rutasIndex);
+app.use("/carrito", rutasProductos);
+app.use("/detalle_producto", rutasProductos);
+app.use("/registro", rutasUsuarios);
+app.use("/usuario", rutasUsuarios);
