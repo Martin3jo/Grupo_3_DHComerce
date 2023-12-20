@@ -2,13 +2,21 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-app.set("views", path.join(__dirname, "views"));
 
 app.set("view engine", "ejs");
 
 /*STATICS*/
 const carpetaPublic = path.resolve(__dirname, "../public");
 app.use(express.static(carpetaPublic));
+
+/*CAPTURADOR DE INFORMACION*/
+/*Capturamos datos de un formulario en forma de objeto*/
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
+/*MEJORA A LOS VERBOS HTTP: PUT - DELETE*/
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
 
 /*PUERTO*/
 let port = 4000;
