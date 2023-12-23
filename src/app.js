@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+/*LLAMADO AL EJS*/
 app.set("view engine", "ejs");
 
 /*STATICS*/
@@ -35,3 +36,8 @@ const rutasUsuarios = require("./routes/users.routes");
 app.use("/", rutasIndex);
 app.use("/", rutasProductos);
 app.use("/", rutasUsuarios);
+
+/*RESPUESTA AL ERROR 404*/
+app.use((req,res,next)=>{
+  res.status(404).render("No-Encontrado")
+})
