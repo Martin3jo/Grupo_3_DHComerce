@@ -5,6 +5,7 @@ const path = require("path");
 
 /*LLAMADO AL EJS*/
 app.set("view engine", "ejs");
+app.set('views', __dirname + '/views')
 
 /*STATICS*/
 const carpetaPublic = path.resolve(__dirname, "../public");
@@ -20,7 +21,7 @@ const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 /*PUERTO*/
-let port = 4000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`
     Nuestra app funciona en
