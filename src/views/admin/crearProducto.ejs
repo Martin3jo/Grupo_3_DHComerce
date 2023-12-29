@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="" POST="">
+    <form action="../../controllers/productsControllers.js" method="post" enctype="multipart/form-data">
         <div>
             <label for="nombreProducto">Nombre del Producto</label>
             <input type="text" name="nombreProducto" placeholder="Coca Cola" />
@@ -18,8 +18,8 @@
             <input type="text" name="descripcion" />
         </div>
         <div>
-            <label for="imagen">imagen Producto:</label><br>
-            <input type="file" id="imagen" name="imagen" accept="image/*">
+            <label for="imagenProducto">imagen Producto:</label><br>
+            <input type="file" id="imagen" name="imagenProducto" accept="image/*">
         </div>
         <div>
             <label for="categoria">Categoría</label>
@@ -29,6 +29,7 @@
             <label for="precio">Precio</label>
             <input type="text" name="precio" />
         </div>
+        <input type="submit" value="crear">
     </form>
 </body>
 

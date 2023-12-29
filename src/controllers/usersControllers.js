@@ -6,7 +6,7 @@ const usersController = {
     res.render("registro");
   },
   userAdmin: (req,res)=>{
-    res.render("userAdmin")
+    res.render("admin/userAdmin")
   }
 };
 module.exports = usersController;

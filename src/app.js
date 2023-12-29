@@ -1,15 +1,16 @@
-/*EXPRESS/PATH/EJS*/
+/*EXPRESS/PATH/EJS/MULTER*/
 const express = require("express");
 const app = express();
 const path = require("path");
 
+
 /*LLAMADO AL EJS*/
 app.set("view engine", "ejs");
-app.set('views', __dirname + '/views')
+app.set('views',path.join(__dirname,'views'))
 
 /*STATICS*/
 const carpetaPublic = path.resolve(__dirname, "../public");
-app.use(express.static(carpetaPublic));
+app.use(express.static(path.join(carpetaPublic)));
 
 /*CAPTURADOR DE INFORMACION*/
 /*Capturamos datos de un formulario en forma de objeto*/
@@ -38,7 +39,13 @@ app.use("/", rutasIndex);
 app.use("/", rutasProductos);
 app.use("/", rutasUsuarios);
 
+
+
+
+
+
+
 /*RESPUESTA AL ERROR 404*/
 app.use((req,res,next)=>{
-  res.status(404).render("No-Encontrado")
+  res.status(404).render("404")
 })
