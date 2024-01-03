@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear</title>
-</head>
+<!--<%- include('../partials/head', {titulo : 'crear', estilo : '404.css'}) %>-->
 
 <body>
-    <form action="../../controllers/productsControllers.js" method="post" enctype="multipart/form-data">
-        <div>
-            <label for="nombreProducto">Nombre del Producto</label>
-            <input type="text" name="nombreProducto" placeholder="Coca Cola" />
-        </div>
-        <div>
-            <label for="descripcion">Descripcion</label>
-            <input type="text" name="descripcion" />
-        </div>
+    <!--<%- include('../partials/header') %> -->
+    <main>
+        <form action="/crearProducto/:id" method="post">
+            <div>
+                <label for="nombreProducto">Nombre del Producto</label>
+                <input type="text" name="nombreProducto" placeholder="Coca Cola" />
+            </div>
+            <div>
+                <label for="descripcion">Descripcion</label>
+                <input type="text" name="descripcion" />
+            </div><!--
         <div>
             <label for="imagenProducto">imagen Producto:</label><br>
             <input type="file" id="imagen" name="imagenProducto" accept="image/*">
-        </div>
-        <div>
-            <label for="categoria">Categoría</label>
-            <input type="text" name="categoria" />
-        </div>
-        <div>
-            <label for="precio">Precio</label>
-            <input type="text" name="precio" />
-        </div>
-        <input type="submit" value="crear">
-    </form>
+        </div>-->
+            <div>
+                <label for="categoria">Categoría</label>
+                <input type="text" name="categoria" />
+            </div>
+            <div>
+                <label for="precio">Precio</label>
+                <input type="text" name="precio" />
+            </div>
+            <input type="submit" value="crear">
+        </form>
+        <article>
+            <% for(let i=0; i < productos.length; i++) { %>
+                <%= productos[i].nombreProducto %>
+                    <% } %>
+        </article>
+    </main>
+    <!-- <%- include('../partials/footer') %> -->
 </body>
 
 </html>

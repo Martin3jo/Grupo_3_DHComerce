@@ -33,11 +33,13 @@ app.listen(port, () => {
 const rutasIndex = require("./routes/main.routes");
 const rutasProductos = require("./routes/products.routes");
 const rutasUsuarios = require("./routes/users.routes");
+const rutasAdmin = require("./routes/admin.routes")
 
 /*ENTRY POINTS*/
 app.use("/", rutasIndex);
 app.use("/", rutasProductos);
 app.use("/", rutasUsuarios);
+app.use("/", rutasAdmin);
 
 
 
