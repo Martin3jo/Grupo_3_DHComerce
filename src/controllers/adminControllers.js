@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
 const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
 let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -12,20 +13,31 @@ let admin = (req, res) => {
 }
 
 //crear
-let crear = (req, res) => {
-    if (req.method === 'POST') {
-        let nombreProducto = req.params.nombreProducto;
-        let productosFiltrados = productos.filter(producto => producto.nombreProducto === nombreProducto);
-
-        if (productosFiltrados.length > 0) {
-            console.log("el producto se repite");
-        } else {
-            productos.push(req.body)
-        }
-        res.redirect('/crearProducto')
-    } else {
-        res.render('admin/crearProducto', { productos })
+let store = (req, res) => {
+    // Obtenemos los campos del body con destructuring
+    const {nombreProducto, descripcion, imagenProducto, categoria, precio} = req.body
+    // Creamos un nuevo producto con todos los campos 
+    const newProduct = {
+        // id: Date.now(),
+        id: uuidv4(),
+        nombreProducto: nombreProducto,
+        //name: req.body.name,
+        descripcion: descripcion,
+        imagenProducto: req.file?.filename || 'default-image.png',
+        categoria: categoria,
+        precio: precio,
     }
+    // Agregamos ese producto nuevo al listado
+    productos.push(newProduct)
+    //  Convertimos en json el listado
+    let productsJSON = JSON.stringify(productos, null, ' ')
+    // Sobreescribimos json con el nuevo listado
+    fs.writeFileSync(productsFilePath, productsJSON)
+    // redireccionamos
+    res.redirect('/crearProducto')
+}
+let crear = (req,res) => {
+    res.render('admin/crearProducto', {productos})
 }
 
 //eliminar
@@ -45,7 +57,8 @@ let buscar = (req,res)=>{
 
 module.exports = {
     admin: admin,
-    crear: crear,
+    crear : crear,
+    store: store,
     eliminar : eliminar,
     modificar : modificar,
     buscar : buscar,

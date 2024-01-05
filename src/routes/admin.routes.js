@@ -24,7 +24,7 @@ router.get("/admin", adminControllers.admin);
 //http://localhost:4000/crearProducto
 router.get("/crearProducto", adminControllers.crear);
 
-router.post('/crearProducto', upload.single('imagenProducto'), adminControllers.crear)
+router.post('/crearProducto', upload.single('imagenProducto'), adminControllers.store)
 
 //http://localhost:4000/eliminarProducto
 router.get("/eliminarProducto", adminControllers.eliminar);
