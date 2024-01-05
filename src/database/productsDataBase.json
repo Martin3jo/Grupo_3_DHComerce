@@ -1,0 +1,23 @@
+[
+    {
+        "id" : 0,
+        "nombreProducto": "coca cola",
+        "descripcion": "mucho azucar",
+        "categoria": "gaseosa",
+        "precio": 750
+    },
+    {
+        "id" : 1,
+        "nombreProducto": "pepsi",
+        "descripcion": "mucho azucar",
+        "categoria": "gaseosa",
+        "precio": 600
+    },
+    {
+        "id" : 2,
+        "nombreProducto": "agua",
+        "descripcion": "mineral",
+        "categoria": "agua",
+        "precio": 400
+    }
+]
