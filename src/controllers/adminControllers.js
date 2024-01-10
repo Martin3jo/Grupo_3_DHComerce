@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
+var upload = multer().single('avatarFile')
 
 const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
 let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -35,6 +37,14 @@ let store = (req, res) => {
     fs.writeFileSync(productsFilePath, productsJSON)
     // redireccionamos
     res.redirect('/crearProducto')
+
+    //atrapamos errores
+    upload(req, res, (err) => {
+        if(err) {
+        res.status(400).send("Algo salió mal!");
+        }
+        res.send(req.file);
+        });
 }
 let crear = (req,res) => {
     res.render('admin/crearProducto', {productos})

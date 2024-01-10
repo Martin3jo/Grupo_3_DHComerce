@@ -1,23 +1,31 @@
 [
-    {
-        "id": 0,
-        "nombreProducto": "coca cola",
-        "descripcion": "mucho azucar",
-        "categoria": "gaseosa",
-        "precio": 750
-    },
-    {
-        "id": 1,
-        "nombreProducto": "pepsi",
-        "descripcion": "mucho azucar",
-        "categoria": "gaseosa",
-        "precio": 600
-    },
-    {
-        "id": 2,
-        "nombreProducto": "agua",
-        "descripcion": "mineral",
-        "categoria": "agua",
-        "precio": 400
-    }
+ {
+  "id": 0,
+  "nombreProducto": "coca cola",
+  "descripcion": "mucho azucar",
+  "categoria": "gaseosa",
+  "precio": 750
+ },
+ {
+  "id": 1,
+  "nombreProducto": "pepsi",
+  "descripcion": "mucho azucar",
+  "categoria": "gaseosa",
+  "precio": 600
+ },
+ {
+  "id": 2,
+  "nombreProducto": "agua",
+  "descripcion": "mineral",
+  "categoria": "agua",
+  "precio": 400
+ },
+ {
+  "id": "d8a123eb-a72b-40ff-98c4-d38fcaf8c7c6",
+  "nombreProducto": "sd ",
+  "descripcion": "asd ",
+  "imagenProducto": "1704914606440_img.png",
+  "categoria": "vzxc",
+  "precio": "222"
+ }
 ]
