@@ -43,11 +43,7 @@ nav ul li a:hover {
 }
 
 /*********** FIN Header ************/
-.imgbanner img {
-  width: 100%;
-  height: 500px;
-  padding: 50px 0px 0px 0px;
-}
+
 
 /********ICONO CARRITO Global******/
 .header-carro{
@@ -367,10 +363,7 @@ Fin del HTML del Registro
     
   }
 
-  .imgbanner img {
-    height: 350px;
-    /* Ajusta la altura de la imagen del banner para tablets */
-  }
+  
  
 }
 

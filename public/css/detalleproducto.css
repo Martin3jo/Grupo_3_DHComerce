@@ -13,7 +13,7 @@ main {
 
 .imgbanner img {
   width: 100%;
-  height: 500px;
+  height: 175px;
   padding: 25px 0px 0px 0px;
 }
 .header-carro {
@@ -249,19 +249,8 @@ position: fixed;
 /*-----------------------------------------------Media query-------------------------------------------------------*/
 /*-----------------------------------------------Media query-------------------------------------------------------*/
 /*-----------------------------------------------Media query-------------------------------------------------------*/
-/*celular*/
-/*@media only screen and (max-width: 768px) {
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    margin: 0px;
-  }*/
-
-  .imgbanner img {
-    height: 250px;/
-  }
+ 
 
   .flechavolver {
     padding-left: 20px;
@@ -406,7 +395,7 @@ position: fixed;
   
 
   .imgbanner img {
-    height: 350px;
+    height: 280px;
     /* Ajusta la altura de la imagen del banner para tablets */
   }
   
@@ -418,7 +407,7 @@ position: fixed;
   
   
   .imgbanner img {
-    height: 350px;
+    height: 325px;
     /* Ajusta la altura de la imagen del banner para tablets */
   }
 
