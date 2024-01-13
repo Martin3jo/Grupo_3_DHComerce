@@ -27,5 +27,13 @@
   "imagenProducto": "1704914606440_img.png",
   "categoria": "vzxc",
   "precio": "222"
+ },
+ {
+  "id": "d21af54d-8fbc-4fef-b6ce-82c0a9baf79a",
+  "nombreProducto": "secco",
+  "descripcion": "manzana",
+  "imagenProducto": "1705086918980_img.png",
+  "categoria": "gaseosa",
+  "precio": "1400"
  }
 ]

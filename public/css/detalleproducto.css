@@ -250,14 +250,14 @@ position: fixed;
 /*-----------------------------------------------Media query-------------------------------------------------------*/
 /*-----------------------------------------------Media query-------------------------------------------------------*/
 /*celular*/
-@media only screen and (max-width: 768px) {
+/*@media only screen and (max-width: 768px) {
 
   nav a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
     margin: 0px;
-  }
+  }*/
 
   .imgbanner img {
     height: 250px;/
@@ -399,18 +399,24 @@ position: fixed;
     color: #131212;
     /* Color de texto opcional */
   }
-}
+
 
 /*Tablet*/
-@media only screen and (min-width: 769px) and (max-width: 1023px) {
+@media (min-width:460px) {
   
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin: 35px;
-  }
 
+  .imgbanner img {
+    height: 350px;
+    /* Ajusta la altura de la imagen del banner para tablets */
+  }
+  
+}
+
+
+/*Desktop*/
+@media (min-width: 768px) {
+  
+  
   .imgbanner img {
     height: 350px;
     /* Ajusta la altura de la imagen del banner para tablets */
