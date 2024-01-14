@@ -16,27 +16,7 @@ main {
   height: 175px;
   padding: 25px 0px 0px 0px;
 }
-.header-carro {
-top: 70%;
-right: 3%;
-position: fixed;
 
-bottom: -200px;
-  
-border-radius: 50%;
-width: 46px;
-height: 46px;
-align-items: center;
-justify-content: center;
-background-color: rgb(0, 0, 0,0.2);
-border: 3px;
-transition: all 0.5s ease;
-padding: 10px;
-}
-.header-carro .fa-solid.fa-cart-arrow-down {
-  font-size: 22px;
-  transition: transform 0.5s;
-}
 .flechavolver {
   display: flex;
   flex-direction: row;
@@ -413,16 +393,7 @@ padding: 10px;
     height: 280px;
     /* Ajusta la altura de la imagen del banner para tablets */
   }
-  .header-carro {
-    
-      width: 60px;
-      height: 60px;
-      
-    }
-    .header-carro .fa-solid.fa-cart-arrow-down {
-      font-size: 30px;
-      
-    }
+  
 }
 
 
@@ -430,14 +401,5 @@ padding: 10px;
 @media (min-width: 768px) {
   
   
-  .header-carro {
-    
-    width: 80px;
-    height: 80px;
-    
-  }
-  .header-carro .fa-solid.fa-cart-arrow-down {
-    font-size: 40px;
-    
-  }
+  
 }

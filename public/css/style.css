@@ -46,28 +46,29 @@ nav ul li a:hover {
 
 
 /********ICONO CARRITO Global******/
-.header-carro{
-  position: static;
+.header-carro {
+  top: 70%;
+  right: 3%;
+  position: fixed;
+  
   bottom: -200px;
-  right: 10%;
+    
   border-radius: 50%;
-  padding: 10px;
-  width: 80px;
-  height: 80px;
+  width: 46px;
+  height: 46px;
   align-items: center;
   justify-content: center;
   background-color: rgb(0, 0, 0,0.2);
   border: 3px;
   transition: all 0.5s ease;
-} 
-.header-carro .fa-solid.fa-cart-arrow-down {
-  font-size: 30px; 
-  transition: transform 0.5s;
-}
-.header-carro:hover {
-  width: 100px;
-  height: 100px;
-}
+  padding: 10px;
+  }
+  .header-carro .fa-solid.fa-cart-arrow-down {
+    font-size: 22px;
+    transition: transform 0.5s;
+  }
+
+
 
 .header-carro:hover .fa-solid.fa-cart-arrow-down{
   transform: scale(2);
@@ -362,7 +363,16 @@ Fin del HTML del Registro
     font-size: 1rem;
     
   }
-
+  .header-carro {
+    
+    width: 60px;
+    height: 60px;
+    
+  }
+  .header-carro .fa-solid.fa-cart-arrow-down {
+    font-size: 30px;
+    
+  }
   
  
 }
@@ -373,5 +383,15 @@ Fin del HTML del Registro
     
     
     font-size: 1.1rem;
+  }
+  .header-carro {
+    
+    width: 80px;
+    height: 80px;
+    
+  }
+  .header-carro .fa-solid.fa-cart-arrow-down {
+    font-size: 40px;
+    
   }
 }
