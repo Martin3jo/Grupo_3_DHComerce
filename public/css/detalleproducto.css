@@ -26,7 +26,10 @@ main {
   gap: 15px;
   margin-top: 30px;
   padding: 0px 0px 0px 80px;
+  padding-left: 20px;
 }
+
+  
 
 .flechavolver p {
   color: blue;
@@ -41,11 +44,7 @@ main {
   justify-content: center;
 }
 
-.cerveza1 {
-  display: flex;
-  align-items: center;
-  gap: 3%;
-}
+
  .cerveza1 img {
   width: 43%;
   } 
@@ -54,20 +53,27 @@ main {
   padding: 0px 0px 70px 10px;
 }
 
+
 .productos-categoria .product {
-  font-size: 2.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .productos-categoria .liters {
-  font-size: 2rem;
-  margin-top: 20px;
+  font-size: 1rem;
+  
 }
 
+
 .productos-categoria .price {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+/* Estilo para la clase .price */
+ .price {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .delivery {
@@ -93,8 +99,9 @@ main {
   justify-content: space-between;
   padding: 14px;
   height: 40px;
-  width: 288px;
+  width: 100%;
 }
+
 
 .contador button,
 .contador span {
@@ -106,11 +113,21 @@ main {
   /* Hace que el texto esté en negrita */
   outline: none;
   /* Elimina el contorno del botón */
-}
+} 
 
 .contador button {
   color: blue;
+} 
+.addContador{
+  margin-top: 12px;
+  width: 100%;
+  border-radius: 7px;
+  font-size: 1.1rem;
+  background-color: blue;
+    color: white;
+    border: 2px solid black;
 }
+
 
 .productos-categoria .add {
   font-size: 1rem;
@@ -122,7 +139,7 @@ main {
   border-radius: 24px;
   border: 2px solid #ffcf01;
   cursor: pointer;
-  width: 62%;
+  width: 100%;
   height: 53px;
   letter-spacing: 1px;
 }
@@ -136,10 +153,10 @@ main {
 }
 
 .titulo1 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #1100f6;
   padding: 0px 15px;
-  margin-top: 40px;
+  
 }
 
 .contenedorcarrusel {
@@ -184,32 +201,34 @@ main {
 }
 
 
+
 /* Estilo para cada artículo de producto */
 .productos-recomendados article {
+  padding: 5px 5px 5px 5px;
   border: 1px solid #ccc;
-  /* Borde gris de 1px */
+  height: 330px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   margin: 10px;
-  /* Margen exterior */
-  padding: 10px;
-  /* Relleno interno */
   text-align: center;
-  /* Centra el contenido */
 }
+
 
 /* Estilo para la clase .product */
-.productos-recomendados article .product {
+ .product {
   font-size: 1rem;
   font-weight: bold;
 }
 
-/* Estilo para la clase .price */
-.productos-recomendados article .price {
-  font-size: 1rem;
-  font-weight: bold;
-}
+
+
+
 
 /* Estilo para la clase .add (botón AGREGAR) */
-.productos-recomendados article .add {
+.add {
 
   border-radius: 10px;
   /* Bordes redondeados */
@@ -224,33 +243,20 @@ main {
   cursor: pointer;
 
 }
+ 
 
 /* Estilo para la imagen dentro del artículo */
 .productos-recomendados article img {
   width: 200px;
-  height: 180px;
-
-}
-
-/* Estilo para la clase .brand, .desc y .liters */
-.productos-recomendados article .brand,
-.productos-recomendados article .desc,
-.productos-recomendados article .liters {
-  font-size: 1rem;
-  color: #131212;
-  /* Color de texto opcional */
-}
-
-/*-----------------------------------------------Media query-------------------------------------------------------*/
-/*-----------------------------------------------Media query-------------------------------------------------------*/
-/*-----------------------------------------------Media query-------------------------------------------------------*/
-
  
+  max-height: 120px;
+  max-width: 150px;
 
-  .flechavolver {
-    padding-left: 20px;
-  }
-
+}
+.descripcionProducto{
+  font-size: 0.8rem;
+  color: #131212;
+}
   .cerveza1 {
     display: flex;
     gap: 3%;
@@ -264,63 +270,12 @@ main {
     padding: 0px 0px 10px 0px;
   }
 
-  .productos-categoria .detail {
-    padding: 0px 0px 70px 10px;
-  }
-
-  .productos-categoria .product {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-
-  .productos-categoria .liters {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-
-  .productos-categoria .price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-
-  .contador {
-    width: 100%;
-    /* Ajusta el ancho del contador para ocupar el 100% del contenedor en teléfonos */
-  }
-
-  .productos-categoria .add {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 25px;
-    background-color: #ffcf01;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 24px;
-    border: 2px solid #ffcf01;
-    cursor: pointer;
-    width: 100%;
-    height: 53px;
-    letter-spacing: 1px;
-  }
-
-  .titulo1 {
-    font-size: 1rem;
-    color: #1100f6;
-    padding: 0px 15px;
-    margin-top: 0px;
-  }
-
   .flecha1,
   .flecha2 {
     display: none;
   }
 
-  .productos-recomendados article img {
-    max-height: 120px;
-    max-width: 150px;
-  }
-
+ 
   /* Estilo para el contenedor de productos */
   .productos-recomendados {
     display: flex;
@@ -332,59 +287,6 @@ main {
     flex-direction: row;
     align-items: center;
   }
-
-  /* Estilo para cada artículo de producto */
-  .productos-recomendados article {
-    padding: 5px 5px 5px 5px;
-    border: 1px solid #ccc;
-    height: 330px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  /* Estilo para la clase .product */
-  .productos-recomendados article .product {
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0px 20px 0px 0px;
-  }
-
-  /* Estilo para la clase .price */
-  .productos-recomendados article .price {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-
-  /* Estilo para la clase .add (botón AGREGAR) */
-  .productos-recomendados article .add {
-
-    border-radius: 10px;
-    /* Bordes redondeados */
-    padding: 8px 16px;
-    /* Relleno interno del botón */
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 15px;
-    background-color: #ffcf01;
-    color: #ffffff;
-    border: 2px solid #ffcf01;
-    cursor: pointer;
-
-  }
-
-  /* Estilo para la clase .brand, .desc y .liters */
-  .productos-recomendados article .brand,
-  .productos-recomendados article .desc,
-  .productos-recomendados article .liters {
-    font-size: 0.8rem;
-    color: #131212;
-    /* Color de texto opcional */
-  }
-
-
 /*Tablet*/
 @media (min-width:460px) {
   
