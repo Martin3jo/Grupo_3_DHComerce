@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
+const { log } = require('console');
 var upload = multer().single('avatarFile')
 
 const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
@@ -11,7 +12,7 @@ let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 //admin
 let admin = (req, res) => {
-    res.render('admin/admin')
+    res.render('admin/admin', {productos})
 }
 
 //crear
@@ -32,7 +33,7 @@ let store = (req, res) => {
     // Agregamos ese producto nuevo al listado
     productos.push(newProduct)
     //  Convertimos en json el listado
-    let productsJSON = JSON.stringify(productos, null, ' ')
+    let productsJSON = JSON.stringify(productos, null, '   ')
     // Sobreescribimos json con el nuevo listado
     fs.writeFileSync(productsFilePath, productsJSON)
     // redireccionamos
@@ -62,7 +63,14 @@ let modificar = (req,res)=>{
 
 //Buscar
 let buscar = (req,res)=>{
-    res.render('admin/buscarProducto')
+    let queryBusqueda = req.query.buscar
+    let busquedaResultante = [];
+    for (let i = 0; i < productos.length; i++) {
+        if (productos[i].nombreProducto.includes(queryBusqueda)) {
+            busquedaResultante.push(productos[i])
+        }
+    }
+    res.render('admin/admin', {busquedaResultante})
 }
 
 module.exports = {

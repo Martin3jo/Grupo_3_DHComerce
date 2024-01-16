@@ -8,13 +8,32 @@
         <%- include('../partials/header.ejs')%>
             <!--Main-->
             <main>
-                
-                    <div>
-                        <a href=""><input type="search" placeholder="Buscar"></a>
-                        <a href="/crearProducto"><button>Crear Producto</button></a>
-                        <a href="/modificarProducto"><button>Modificar Producto</button></a>
-                        <a href="/eliminarProducto"><button>Eliminar Producto</button></a>
-                    </div>
+
+                <section class="box-selection">
+                    <a href="/crearProducto"><button>Crear Producto</button></a>
+                    <a href="/modificarProducto"><button>Modificar Producto</button></a>
+                    <a href="/eliminarProducto"><button>Eliminar Producto</button></a>
+                </section>
+                <section class="box-render">
+                    <form action="/buscarProducto" method="get">
+                        <input type="text" name="buscar">
+                        <input type="submit" value="buscar">
+                    </form>
+                    <% if (typeof productos !== 'undefined') { %>
+
+                        <article>
+                            <% for( let i=0; i < productos.length; i++ ) { %>
+                                <%= productos[i].nombreProducto %>
+                                    <% } %>
+                        </article>
+                        <% } else { %>
+                            <article>
+                                <% for( let i=0; i < busquedaResultante.length; i++ ) { %>
+                                    <%= busquedaResultante[i].nombreProducto %>
+                                        <% } %>
+                            </article>
+                            <% } %>
+                </section>
 
             </main>
             <%- include('../partials/footer') %>

@@ -35,5 +35,13 @@
   "imagenProducto": "1705086918980_img.png",
   "categoria": "gaseosa",
   "precio": "1400"
+ },
+ {
+  "id": "07b59da5-5c2a-43b4-9ee3-51e9d287a5cf",
+  "nombreProducto": "asd",
+  "descripcion": "asd",
+  "imagenProducto": "1705384147906_img.png",
+  "categoria": "asd",
+  "precio": "213"
  }
 ]
