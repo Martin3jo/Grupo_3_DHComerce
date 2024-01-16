@@ -21,6 +21,9 @@ const upload = multer({storage});
 
 router.get("/admin", adminControllers.admin);
 
+//Buscar
+router.get("/admin/buscarProducto", adminControllers.buscar);
+
 //http://localhost:4000/crearProducto
 router.get("/crearProducto", adminControllers.crear);
 
@@ -36,10 +39,7 @@ router.get("/modificarProducto", adminControllers.modificar);
 
 router.post('/modificarProducto', upload.single('imagenProducto'), adminControllers.modificar);
 
-//Buscar
-router.get("/buscarProducto", adminControllers.buscar);
 
-router.post('/buscarProducto', adminControllers.buscar)
 
 
 
