@@ -35,7 +35,7 @@ main {
   align-items: center;
   margin: 5px;
   padding: 10px;
-  background-color: rgb(86 48 221);
+  border: 2px solid rgb(86 48 221);
   box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
 }
 
@@ -44,18 +44,21 @@ main {
   flex-direction: column;
   flex-grow: 1;
   overflow-y: auto;
-  max-height: 160px;
+  
   margin: 5px;
   padding: 10px;
   overflow-y: scroll;
-  background-color: rgb(86 48 221);
+  text-align: center;
   box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
+  border: 2px solid rgb(86 48 221);
+  max-height: 165px;
 }
 
 .carrito-descripcion div {
   display: flex;
   flex-direction: row;
   font-size: 20px;
+  justify-content: center
 }
 
 .carrito-detalle{
@@ -65,7 +68,7 @@ main {
   align-items: center;
   margin: 5px;
   padding: 10px;
-  background-color: rgb(86 48 221);
+  border: 2px solid rgb(86 48 221);
   box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
   border-bottom: 1px solid black;
 

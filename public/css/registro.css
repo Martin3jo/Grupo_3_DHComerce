@@ -1,71 +1,72 @@
-/*MAIN*/
-main {
-    padding: 10% 0px; 
+.body-registro{
     display: flex;
     justify-content: center;
-}
-
-.header-carro {
-    top: 40%;
-    right: 3%;
-    position: fixed;
-    }
-
-/*FORMULARIO*/
-.formularioregistro {
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
     align-items: center;
-    background-color: rgba(255, 255, 255);
-    width: 50%;
+    min-height: 100vh;
+    
+
+}
+.form-registro{
+    width: 420px;
+    background: transparent;
     color: black;
-    font-size: 20px;
-    font-weight: bold;
+    border-radius: 10px;
+    padding: 30px 40px;
+    border: 2px solid blue;
+    margin: 60px;
 }
-
-.registrate{
-    width: 100%;
+.form-registro h1{
+    font-size: 25px;
     text-align: center;
-    border-bottom: solid 3px black;
-    margin: 5px;
-    padding: 5px;
+
+
 }
-.texto1{
-    margin: 0 auto;
-    padding: 10px 10px 30px;
-    width: 90%;
+.form-registro .input-box{
+    width: 100%;
+    height: 50px;
+   
+    margin: 20px 0px;
 }
 
-.formularioregistro form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.input-box input{
     width: 100%;
-    justify-content: space-around;
+    background: transparent;
+    
+    outline: none;
+    border: 2px solid blue;
+    border-radius: 40px;
+    font-size: 14px;
+    color: black;
+    padding: 5px  20px ;
 }
-.formulario-div{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    padding: 5px;
-    margin: 10px;
+
+.input-box input::placeholder{
+    color: grey;
 }
-.formularioregistro input{
-    border-radius: 20px;
-    height: 34px;
+.form-registro .boton-registro{
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
 }
-.enviar-cancelar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 50%;
-    padding: 5px;
-    margin: 10px;
+.fecNac{
+    cursor: pointer;
 }
-.enviar-cancelar button{
-    width: 90%;
-    margin: 5px;
-    border-radius: 20px;
-}
-/*FIN FORMULARIO*/
+
+/*Tablet*/
+@media (min-width:460px) {
+   
+    
+   
+  }
+  
+  /*Desktop*/
+  @media (min-width: 768px) {
+    
+  }
