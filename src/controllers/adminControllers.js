@@ -48,7 +48,7 @@ let store = (req, res) => {
         });
 }
 let crear = (req,res) => {
-    res.render('admin/crearProducto', {productos})
+    res.render('admin/crearProducto')
 }
 
 //eliminar

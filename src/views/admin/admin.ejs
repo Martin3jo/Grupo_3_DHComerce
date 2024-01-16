@@ -15,11 +15,12 @@
                     <a href="/eliminarProducto"><button>Eliminar Producto</button></a>
                 </section>
                 <section class="box-render">
-                    <form action="/buscarProducto" method="get">
+                    <!--SEARCH-->
+                    <form action="/admin/buscarProducto" method="get">
                         <input type="text" name="buscar">
                         <input type="submit" value="buscar">
                     </form>
-                    <% if (typeof productos !== 'undefined') { %>
+                    <% if (typeof productos !=='undefined' ) { %>
 
                         <article>
                             <% for( let i=0; i < productos.length; i++ ) { %>
@@ -36,7 +37,6 @@
                 </section>
 
             </main>
-            <%- include('../partials/footer') %>
     </body>
 
 </html>
