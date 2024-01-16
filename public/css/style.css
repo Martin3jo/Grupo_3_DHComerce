@@ -137,17 +137,9 @@ footer {
 
 
 
-/*Estilos Registro*/
 
-.main-registro {
-  margin-top: 90px;
-}
 
-.navegador-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+
 
 /*Fin Generales*/
 
@@ -263,6 +255,10 @@ Fin del HTML del Registro
   .header-carro .fa-solid.fa-cart-arrow-down {
     font-size: 30px;
     
+  }
+  header {
+    text-align: center;
+    height: 60px;
   }
   
  

@@ -55,6 +55,9 @@
     font-weight: 600;
     cursor: pointer;
 }
+.form-registro .boton-registro:hover{
+    background-color: #ffd00185;
+}
 .fecNac{
     cursor: pointer;
 }
