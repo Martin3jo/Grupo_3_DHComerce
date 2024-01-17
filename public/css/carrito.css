@@ -1,7 +1,3 @@
-main {
-  padding-top: 60px;
-  font-size: 12px;
-}
 
 /*CARRITO*/
 .carrito-img-grande {
@@ -133,3 +129,8 @@ main {
 }
 
 /*RULETA FIN*/
+
+nav ul li a i{
+  color: white;
+  font-size: larger;
+}
