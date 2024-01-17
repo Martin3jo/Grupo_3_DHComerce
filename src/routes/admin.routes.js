@@ -19,28 +19,26 @@ const upload = multer({storage});
 
 //RUTAS
 
-router.get("/admin", adminControllers.admin);
+//http://localhost:4000/admin
+router.get("/", adminControllers.admin);
 
-//Buscar
-router.get("/admin/buscarProducto", adminControllers.buscar);
+//http://localhost:4000/admin/buscarProducto
+router.get("/buscarProducto", adminControllers.buscar);
 
-//http://localhost:4000/crearProducto
+//http://localhost:4000/admin/crearProducto
 router.get("/crearProducto", adminControllers.crear);
 
 router.post('/crearProducto', upload.single('imagenProducto'), adminControllers.store)
 
-//http://localhost:4000/eliminarProducto
+//http://localhost:4000/admin/modificarProducto
+router.get("/:idProducto/modificarProducto", adminControllers.modificar);
+
+router.put('/:idProducto/modificarProducto', upload.single('imagenProducto'), adminControllers.modificar);
+
+//http://localhost:4000/admin/eliminarProducto
 router.get("/eliminarProducto", adminControllers.eliminar);
 
 router.post('/eliminarProducto', adminControllers.eliminar);
-
-//http://localhost:4000/modificarProducto
-router.get("/modificarProducto", adminControllers.modificar);
-
-router.post('/modificarProducto', upload.single('imagenProducto'), adminControllers.modificar);
-
-
-
 
 
 

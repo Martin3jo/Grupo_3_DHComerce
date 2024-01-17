@@ -1,47 +1,34 @@
 [
- {
-  "id": 0,
-  "nombreProducto": "coca cola",
-  "descripcion": "mucho azucar",
-  "categoria": "gaseosa",
-  "precio": 750
- },
- {
-  "id": 1,
-  "nombreProducto": "pepsi",
-  "descripcion": "mucho azucar",
-  "categoria": "gaseosa",
-  "precio": 600
- },
- {
-  "id": 2,
-  "nombreProducto": "agua",
-  "descripcion": "mineral",
-  "categoria": "agua",
-  "precio": 400
- },
- {
-  "id": "d8a123eb-a72b-40ff-98c4-d38fcaf8c7c6",
-  "nombreProducto": "sd ",
-  "descripcion": "asd ",
-  "imagenProducto": "1704914606440_img.png",
-  "categoria": "vzxc",
-  "precio": "222"
- },
- {
-  "id": "d21af54d-8fbc-4fef-b6ce-82c0a9baf79a",
-  "nombreProducto": "secco",
-  "descripcion": "manzana",
-  "imagenProducto": "1705086918980_img.png",
-  "categoria": "gaseosa",
-  "precio": "1400"
- },
- {
-  "id": "07b59da5-5c2a-43b4-9ee3-51e9d287a5cf",
-  "nombreProducto": "asd",
-  "descripcion": "asd",
-  "imagenProducto": "1705384147906_img.png",
-  "categoria": "asd",
-  "precio": "213"
- }
+   {
+      "id": "d8a123eb-a72b-40ff-98c4-d38fcaf8c7c6",
+      "nombreProducto": "sd ",
+      "descripcion": "asd ",
+      "imagenProducto": "1704914606440_img.png",
+      "categoria": "vzxc",
+      "precio": "222"
+   },
+   {
+      "id": "d21af54d-8fbc-4fef-b6ce-82c0a9baf79a",
+      "nombreProducto": "secco",
+      "descripcion": "manzana",
+      "imagenProducto": "1705086918980_img.png",
+      "categoria": "gaseosa",
+      "precio": "1400"
+   },
+   {
+      "id": "07b59da5-5c2a-43b4-9ee3-51e9d287a5cf",
+      "nombreProducto": "asd",
+      "descripcion": "asd",
+      "imagenProducto": "1705384147906_img.png",
+      "categoria": "asd",
+      "precio": "213"
+   },
+   {
+      "id": "019b69af-0ee7-43bd-aff9-57960029f159",
+      "nombreProducto": "asd",
+      "descripcion": "",
+      "imagenProducto": "default-image.png",
+      "categoria": "",
+      "precio": ""
+   }
 ]

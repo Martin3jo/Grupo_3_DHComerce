@@ -6,7 +6,7 @@
 <body>
     <!--<%- include('../partials/header') %> -->
     <main>
-        <form action="/crearProducto" method="post" enctype="multipart/form-data">
+        <form action="/admin/crearProducto" method="post" enctype="multipart/form-data">
             <div>
                 <label for="nombreProducto">Nombre del Producto</label>
                 <input type="text" name="nombreProducto" placeholder="Coca Cola" />
@@ -28,8 +28,6 @@
                 <input type="text" name="precio" />
             </div>
             <button type="submit" name="accion" value="crear">Crear</button>
-            <button type="submit" name="accion" value="eliminar">Eliminar</button>
-            <button type="submit" name="accion" value="modificar">Modificar</button>
         </form>
     </main>
     <!-- <%- include('../partials/footer') %> -->

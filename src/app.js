@@ -39,7 +39,7 @@ const rutasAdmin = require("./routes/admin.routes")
 app.use("/", rutasIndex);
 app.use("/", rutasProductos);
 app.use("/", rutasUsuarios);
-app.use("/", rutasAdmin);
+app.use("/admin", rutasAdmin);
 
 
 

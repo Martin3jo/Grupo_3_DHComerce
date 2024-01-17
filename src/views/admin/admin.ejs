@@ -10,9 +10,8 @@
             <main>
 
                 <section class="box-selection">
-                    <a href="/crearProducto"><button>Crear Producto</button></a>
-                    <a href="/modificarProducto"><button>Modificar Producto</button></a>
-                    <a href="/eliminarProducto"><button>Eliminar Producto</button></a>
+                    <a href="/admin/crearProducto"><button>Crear Producto</button></a>
+                    <a href="/admin/eliminarProducto"><button>Eliminar Producto</button></a>
                 </section>
                 <section class="box-render">
                     <!--SEARCH-->
@@ -25,6 +24,7 @@
                         <article>
                             <% for( let i=0; i < productos.length; i++ ) { %>
                                 <%= productos[i].nombreProducto %>
+                                <a href="/admin/<%= productos[i].id %>/modificarProducto"><button type="submit" name="accion" value="modificar">Modificar</button></a>
                                     <% } %>
                         </article>
                         <% } else { %>
