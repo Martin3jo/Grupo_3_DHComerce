@@ -34,6 +34,10 @@
   border: 2px solid rgb(86 48 221);
   box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
 }
+.titulo-carrito{
+  font-size: 18px;
+  
+}
 
 .carrito-descripcion {
   display: flex;
