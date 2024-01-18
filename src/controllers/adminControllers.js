@@ -4,6 +4,7 @@ const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 const { log } = require('console');
 var upload = multer().single('avatarFile')
+const { validationResult } = require('express-validator')
 
 const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
 let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -17,34 +18,39 @@ let admin = (req, res) => {
 
 //crear
 let store = (req, res) => {
-    // Obtenemos los campos del body con destructuring
-    const { nombreProducto, descripcion, imagenProducto, categoria, precio } = req.body
-    // Creamos un nuevo producto con todos los campos 
-    const newProduct = {
-        // id: Date.now(),
-        id: uuidv4(),
-        nombreProducto: nombreProducto,
-        descripcion: descripcion,
-        imagenProducto: req.file?.filename || 'default-image.png',
-        categoria: categoria,
-        precio: precio
-    }
-    // Agregamos ese producto nuevo al listado
-    productos.push(newProduct)
-    //  Convertimos en json el listado
-    let productsJSON = JSON.stringify(productos, null, '   ')
-    // Sobreescribimos json con el nuevo listado
-    fs.writeFileSync(productsFilePath, productsJSON)
-    // redireccionamos
-    res.redirect('/admin/crearProducto')
+    //validacion
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
 
-    //atrapamos errores
-    upload(req, res, (err) => {
-        if (err) {
-            res.status(400).send("Algo salió mal!");
+        // Obtenemos los campos del body con destructuring
+        const { nombreProducto, descripcion, imagenProducto, categoria, precio } = req.body
+        // Creamos un nuevo producto con todos los campos 
+        const newProduct = {
+            // id: Date.now(),
+            id: uuidv4(),
+            nombreProducto,
+            descripcion,
+            imagenProducto: req.file?.filename || 'default-image.png',
+            /*imagenProducto: (req.file && req.file.filename) ? imagenProducto = req.file.filename :
+                imagenProducto = 'default-image.png', */
+            categoria,
+            precio
         }
-        res.send(req.file);
-    });
+
+        productos.push(newProduct)
+
+        let productsJSON = JSON.stringify(productos, null, '   ')
+
+        fs.writeFileSync(productsFilePath, productsJSON)
+
+        res.redirect('/admin')
+    } else {
+        res.render('admin/crearProducto', {
+            errors: errors.array(),
+            old: req.body
+        })
+    }
+
 }
 let crear = (req, res) => {
     res.render('admin/crearProducto')
@@ -52,14 +58,13 @@ let crear = (req, res) => {
 
 //eliminar
 let eliminar = (req, res) => {
-		const id = req.params.id
-		// Buscar el producto a eliminar
-		productos = productos.filter(producto => producto.id != id)
-		// Eliminar la imagen si es que no es una por defecto
-		fs.writeFileSync(productsFilePath, JSON.stringify(productos, null,  ' '))
-		res.redirect('/admin')
-	}
+    const id = req.params.id
 
+    productos = productos.filter(producto => producto.id != id)
+
+    fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '))
+    res.redirect('/admin')
+}
 
 //modificar
 let modificar = (req, res) => {
@@ -76,16 +81,12 @@ let modificar = (req, res) => {
             precio: precio || productoModificar.precio
         };
 
-        // Encontrar el índice del producto en el arreglo
         const index = productos.findIndex(p => p.id === id);
 
-        // Reemplazar el objeto del producto existente en la posición del índice con el objeto actualizado
         productos[index] = productoActualizado;
 
-        // Escribir el arreglo completo de productos en el archivo
         fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 2));
 
-        // Respondemos con una vista renderizada que muestra los datos del producto actualizado
         res.render('admin/modificarProducto', { productoActualizado });
     }
 }
