@@ -11,7 +11,6 @@
 
                 <section class="box-selection">
                     <a href="/admin/crearProducto"><button>Crear Producto</button></a>
-                    <a href="/admin/eliminarProducto"><button>Eliminar Producto</button></a>
                 </section>
                 <section class="box-render">
                     <!--SEARCH-->
@@ -20,17 +19,26 @@
                         <input type="submit" value="buscar">
                     </form>
                     <% if (typeof productos !=='undefined' ) { %>
-
                         <article>
-                            <% for( let i=0; i < productos.length; i++ ) { %>
+                            <% for (let i=0; i < productos.length; i++) { %>
                                 <%= productos[i].nombreProducto %>
-                                <a href="/admin/<%= productos[i].id %>/modificarProducto"><button type="submit" name="accion" value="modificar">Modificar</button></a>
+                                    <a href="/admin/<%= productos[i].id %>/modificarProducto"><button type="submit"
+                                            name="accion" value="modificar">Modificar</button></a>
+                                    <form action="/admin/<%= productos[i].id %>?_method=DELETE" method="post">
+                                        <button>Borrar</button>
+                                    </form>
                                     <% } %>
                         </article>
-                        <% } else { %>
+                        <% } else if (typeof busquedaResultante !=='undefined' ) { %>
                             <article>
-                                <% for( let i=0; i < busquedaResultante.length; i++ ) { %>
+                                <% for (let i=0; i < busquedaResultante.length; i++) { %>
                                     <%= busquedaResultante[i].nombreProducto %>
+                                        <a href="/admin/<%= busquedaResultante[i].id %>/modificarProducto"><button
+                                                type="submit" name="accion" value="modificar">Modificar</button></a>
+                                        <form action="/admin/<%= busquedaResultante[i].id %>?_method=DELETE"
+                                            method="post">
+                                            <button>Borrar</button>
+                                        </form>
                                         <% } %>
                             </article>
                             <% } %>

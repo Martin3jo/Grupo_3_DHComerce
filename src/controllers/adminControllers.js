@@ -27,7 +27,7 @@ let store = (req, res) => {
         descripcion: descripcion,
         imagenProducto: req.file?.filename || 'default-image.png',
         categoria: categoria,
-        precio: precio,
+        precio: precio
     }
     // Agregamos ese producto nuevo al listado
     productos.push(newProduct)
@@ -52,15 +52,43 @@ let crear = (req, res) => {
 
 //eliminar
 let eliminar = (req, res) => {
-    res.render('admin/eliminarProducto')
-}
+		const id = req.params.id
+		// Buscar el producto a eliminar
+		productos = productos.filter(producto => producto.id != id)
+		// Eliminar la imagen si es que no es una por defecto
+		fs.writeFileSync(productsFilePath, JSON.stringify(productos, null,  ' '))
+		res.redirect('/admin')
+	}
+
 
 //modificar
 let modificar = (req, res) => {
-    let idProducto = req.params.idProducto;
-    let productoModificar = productos.find(p => p.id === idProducto);
-    res.render('admin/modificarProducto', { productoModificar });
-};
+    let id = req.params.id;
+    let productoModificar = productos.find(p => p.id === id);
+    if (productoModificar) {
+        const { nombreProducto, descripcion, imagenProducto, categoria, precio } = req.body;
+        const productoActualizado = {
+            id: id,
+            nombreProducto: nombreProducto || productoModificar.nombreProducto,
+            descripcion: descripcion || productoModificar.descripcion,
+            imagenProducto: imagenProducto || productoModificar.imagenProducto,
+            categoria: categoria || productoModificar.categoria,
+            precio: precio || productoModificar.precio
+        };
+
+        // Encontrar el índice del producto en el arreglo
+        const index = productos.findIndex(p => p.id === id);
+
+        // Reemplazar el objeto del producto existente en la posición del índice con el objeto actualizado
+        productos[index] = productoActualizado;
+
+        // Escribir el arreglo completo de productos en el archivo
+        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 2));
+
+        // Respondemos con una vista renderizada que muestra los datos del producto actualizado
+        res.render('admin/modificarProducto', { productoActualizado });
+    }
+}
 
 //Buscar
 let buscar = (req, res) => {

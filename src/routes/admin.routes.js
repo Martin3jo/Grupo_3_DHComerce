@@ -31,14 +31,14 @@ router.get("/crearProducto", adminControllers.crear);
 router.post('/crearProducto', upload.single('imagenProducto'), adminControllers.store)
 
 //http://localhost:4000/admin/modificarProducto
-router.get("/:idProducto/modificarProducto", adminControllers.modificar);
+router.get("/:id/modificarProducto", adminControllers.modificar);
 
-router.put('/:idProducto/modificarProducto', upload.single('imagenProducto'), adminControllers.modificar);
+router.put('/:id/modificarProducto', upload.single('imagenProducto'), adminControllers.modificar);
 
 //http://localhost:4000/admin/eliminarProducto
-router.get("/eliminarProducto", adminControllers.eliminar);
+router.get("/:id", adminControllers.eliminar);
 
-router.post('/eliminarProducto', adminControllers.eliminar);
+router.delete('/:id', adminControllers.eliminar);
 
 
 
