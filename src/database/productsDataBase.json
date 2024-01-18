@@ -1,47 +1,34 @@
 [
- {
-  "id": 0,
-  "nombreProducto": "coca cola",
-  "descripcion": "mucho azucar",
-  "categoria": "gaseosa",
-  "precio": 750
- },
- {
-  "id": 1,
-  "nombreProducto": "pepsi",
-  "descripcion": "mucho azucar",
-  "categoria": "gaseosa",
-  "precio": 600
- },
- {
-  "id": 2,
-  "nombreProducto": "agua",
-  "descripcion": "mineral",
-  "categoria": "agua",
-  "precio": 400
- },
- {
-  "id": "d8a123eb-a72b-40ff-98c4-d38fcaf8c7c6",
-  "nombreProducto": "sd ",
-  "descripcion": "asd ",
-  "imagenProducto": "1704914606440_img.png",
-  "categoria": "vzxc",
-  "precio": "222"
- },
- {
-  "id": "d21af54d-8fbc-4fef-b6ce-82c0a9baf79a",
-  "nombreProducto": "secco",
-  "descripcion": "manzana",
-  "imagenProducto": "1705086918980_img.png",
-  "categoria": "gaseosa",
-  "precio": "1400"
- },
- {
-  "id": "07b59da5-5c2a-43b4-9ee3-51e9d287a5cf",
-  "nombreProducto": "asd",
-  "descripcion": "asd",
-  "imagenProducto": "1705384147906_img.png",
-  "categoria": "asd",
-  "precio": "213"
- }
+   {
+      "id": "d21af54d-8fbc-4fef-b6ce-82c0a9baf79a",
+      "nombreProducto": "secco",
+      "descripcion": "manzana",
+      "imagenProducto": "1705086918980_img.png",
+      "categoria": "gaseosa",
+      "precio": "1400"
+   },
+   {
+      "id": "5011b6bd-bdb1-417c-bb30-3da85259f953",
+      "nombreProducto": "prueba numero 1000",
+      "descripcion": "coca cola fitnes",
+      "imagenProducto": "1705571215911_img.png",
+      "categoria": "gaseosas",
+      "precio": "2000"
+   },
+   {
+      "id": "c7960c50-7f2d-4b0a-9afe-bab5cb786d94",
+      "nombreProducto": "asda",
+      "descripcion": "asd",
+      "imagenProducto": "default-image.png",
+      "categoria": "asd",
+      "precio": "asd"
+   },
+   {
+      "id": "f4324e7c-e4ea-4466-8351-4e39ca1c6901",
+      "nombreProducto": "martin",
+      "descripcion": "maretin",
+      "imagenProducto": "1705613335180_img.jpg",
+      "categoria": "asrinsdf",
+      "precio": "isndfsdf"
+   }
 ]

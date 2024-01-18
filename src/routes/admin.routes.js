@@ -2,7 +2,20 @@ const express = require("express");
 const router = express.Router();
 const multer = require('multer')
 const path = require('path')
+const {body} = require('express-validator')
+
+//validaciones
+const validarCrearProducto = [
+    body('nombreProducto').notEmpty().withMessage('Debes completar el campo de nombre'),
+    body('categoria').notEmpty().withMessage('Debes seleccionar la categoria'),
+    body('precio').notEmpty().toFloat().withMessage('Debes completar el campo de precio')
+]
+
+//direcciones de RUTAS
 const adminControllers = require("../controllers/adminControllers");
+
+//Middlewares
+const logDBMiddleware = require('../middlewares/logDBMiddleware')
 
 //lugar donde almacenara las imagenes del formulario - MULTER
 const storage = multer.diskStorage({
@@ -19,28 +32,26 @@ const upload = multer({storage});
 
 //RUTAS
 
-router.get("/admin", adminControllers.admin);
+//http://localhost:4000/admin
+router.get("/", adminControllers.admin);
 
-//Buscar
-router.get("/admin/buscarProducto", adminControllers.buscar);
+//http://localhost:4000/admin/buscarProducto
+router.get("/buscarProducto", adminControllers.buscar);
 
-//http://localhost:4000/crearProducto
+//http://localhost:4000/admin/crearProducto
 router.get("/crearProducto", adminControllers.crear);
 
-router.post('/crearProducto', upload.single('imagenProducto'), adminControllers.store)
+router.post('/crearProducto', validarCrearProducto, logDBMiddleware, upload.single('imagenProducto'), adminControllers.store)
 
-//http://localhost:4000/eliminarProducto
-router.get("/eliminarProducto", adminControllers.eliminar);
+//http://localhost:4000/admin/modificarProducto
+router.get("/:id/modificarProducto", adminControllers.modificar);
 
-router.post('/eliminarProducto', adminControllers.eliminar);
+router.put('/:id/modificarProducto',validarCrearProducto , logDBMiddleware, upload.single('imagenProducto'), adminControllers.modificar);
 
-//http://localhost:4000/modificarProducto
-router.get("/modificarProducto", adminControllers.modificar);
+//http://localhost:4000/admin/eliminarProducto
+router.get("/:id", adminControllers.eliminar);
 
-router.post('/modificarProducto', upload.single('imagenProducto'), adminControllers.modificar);
-
-
-
+router.delete('/:id', adminControllers.eliminar);
 
 
 

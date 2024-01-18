@@ -6,7 +6,7 @@ const path = require("path");
 
 /*LLAMADO AL EJS*/
 app.set("view engine", "ejs");
-app.set('views',path.join(__dirname,'views'))
+app.set('views',path.join(__dirname,'views'));
 
 /*STATICS*/
 const carpetaPublic = path.resolve(__dirname, "../public");
@@ -29,19 +29,21 @@ app.listen(port, () => {
     http://localhost:${port}`);
 });
 
+//MIDDLEWARES
+const logMiddleware = require('./middlewares/logMiddleware');
+app.use(logMiddleware);
+
 /*ROUTES*/
 const rutasIndex = require("./routes/main.routes");
 const rutasProductos = require("./routes/products.routes");
 const rutasUsuarios = require("./routes/users.routes");
-const rutasAdmin = require("./routes/admin.routes")
+const rutasAdmin = require("./routes/admin.routes");
 
 /*ENTRY POINTS*/
 app.use("/", rutasIndex);
 app.use("/", rutasProductos);
 app.use("/", rutasUsuarios);
-app.use("/", rutasAdmin);
-
-
+app.use("/admin", rutasAdmin);
 
 
 
