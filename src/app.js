@@ -1,7 +1,15 @@
-/*EXPRESS/PATH/EJS/MULTER*/
+/*EXPRESS/PATH/EJS*/
 const express = require("express");
 const app = express();
 const path = require("path");
+
+//SESSION de USUARIO
+const session = require('express-session')
+app.use(session({
+  secret: 'Mi secreto',
+  resave: false,
+  saveUninitialized: false
+}));
 
 
 /*LLAMADO AL EJS*/

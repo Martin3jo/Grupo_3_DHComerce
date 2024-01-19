@@ -60,11 +60,15 @@ let crear = (req, res) => {
 //eliminar
 let eliminar = (req, res) => {
     const id = req.params.id
-
-    productos = productos.filter(producto => producto.id != id)
-
-    fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '))
-    res.redirect('/admin')
+    if (id) {
+        productos = productos.filter(producto => producto.id != id)
+    
+        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '))
+        res.redirect('/admin')
+        
+    }else{
+        res.send('el producto a eliminar ya no existe')
+    }
 }
 
 //modificar
@@ -90,6 +94,7 @@ let modificar = (req, res) => {
 
         res.render('admin/modificarProducto', { productoActualizado });
     }
+    else{res.send('no se encuentra el producto solicitado')}
 }
 
 //Buscar
@@ -105,10 +110,10 @@ let buscar = (req, res) => {
 }
 
 module.exports = {
-    admin: admin,
-    crear: crear,
-    store: store,
-    eliminar: eliminar,
-    modificar: modificar,
-    buscar: buscar,
+    admin,
+    crear,
+    store,
+    eliminar,
+    modificar,
+    buscar
 }

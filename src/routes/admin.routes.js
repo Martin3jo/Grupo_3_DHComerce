@@ -53,13 +53,12 @@ router.get("/crearProducto", adminControllers.crear);
 
 router.post('/crearProducto', upload.single('imagenProducto'), validarCrearProducto, logDBMiddleware, adminControllers.store)
 
-//http://localhost:4000/admin/modificarProducto
+//http://localhost:4000/admin/:id/modificarProducto
 router.get("/:id/modificarProducto", adminControllers.modificar);
 
 router.put('/:id/modificarProducto', upload.single('imagenProducto'), validarCrearProducto, logDBMiddleware, adminControllers.modificar);
 
-//http://localhost:4000/admin/eliminarProducto
-router.get("/:id", adminControllers.eliminar);
+//http://localhost:4000/admin/:id
 
 router.delete('/:id', adminControllers.eliminar);
 
