@@ -19,9 +19,14 @@ let admin = (req, res) => {
 //crear
 let store = (req, res) => {
     //validacion
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
+    let resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+        return res.render('admin/crearProducto', {
+            errors: resultValidation.mapped(),
+            old: req.body
+        })
 
+    } else {
         // Obtenemos los campos del body con destructuring
         const { nombreProducto, descripcion, imagenProducto, categoria, precio } = req.body
         // Creamos un nuevo producto con todos los campos 
@@ -44,11 +49,7 @@ let store = (req, res) => {
         fs.writeFileSync(productsFilePath, productsJSON)
 
         res.redirect('/admin')
-    } else {
-        res.render('admin/crearProducto', {
-            errors: errors.array(),
-            old: req.body
-        })
+        
     }
 
 }

@@ -30,5 +30,13 @@
       "imagenProducto": "1705613335180_img.jpg",
       "categoria": "asrinsdf",
       "precio": "isndfsdf"
+   },
+   {
+      "id": "fed2c2d3-f20d-42fe-a030-1b099d00f63a",
+      "nombreProducto": "asd",
+      "descripcion": "",
+      "imagenProducto": "default-image.png",
+      "categoria": "asd",
+      "precio": null
    }
 ]

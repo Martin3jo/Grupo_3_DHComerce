@@ -6,15 +6,20 @@
 <body>
     <!--<%- include('../partials/header') %> -->
     <main>
-        <%  if(locals.errors) {%>
-        <% errors.forEach(error => { %>
-            <p><%= error.msg %></p>
-        <% }); %>
-        <% } %>
         <form action="/admin/crearProducto" method="post" enctype="multipart/form-data">
             <div>
                 <label for="nombreProducto">Nombre del Producto</label>
-                <input type="text" name="nombreProducto" value="<%= locals.old && old.nombreProducto ? old.nombreProducto : '' %>"/>
+                <input 
+                type="text" 
+                name="nombreProducto" 
+                value="<%= locals.old && old.nombreProducto ? old.nombreProducto : null %>"
+                class=" <%= locals.errors && errors.nombreProducto? 'is-invalid' : null %> "/> 
+                <!--comentario para los errores-->
+                    <% if (locals.errors && errors.nombreProducto) { %>
+                        <div>
+                            <%= errors.nombreProducto.msg %>
+                        </div>
+                    <% } %>
             </div>
             <div>
                 <label for="descripcion">Descripcion</label>
@@ -22,15 +27,43 @@
             </div>
         <div>
             <label for="imagenProducto">imagen Producto:</label><br>
-            <input type="file" id="imagen" name="imagenProducto" accept="image/*">
+            <input 
+                type="file" 
+                id="imagen" 
+                name="imagenProducto" 
+                accept="image/*">
+                <!--comentario para los errores-->
+                <% if (locals.errors && errors.imagenProducto) { %>
+                    <div>
+                        <%= errors.imagenProducto.msg %>
+                    </div>
+                <% } %>
         </div>
             <div>
                 <label for="categoria">Categoría</label>
-                <input type="text" name="categoria" value="<%= locals.old && old.categoria ? old.categoria : '' %>"/>
+                <input 
+                    type="text" 
+                    name="categoria" 
+                    value="<%= locals.old && old.categoria ? old.categoria : null %>"/>
+                <!--comentario para los errores-->
+                <% if (locals.errors && errors.categoria) { %>
+                    <div>
+                        <%= errors.categoria.msg %>
+                    </div>
+                <% } %>
             </div>
             <div>
                 <label for="precio">Precio</label>
-                <input type="text" name="precio" value="<%= locals.old && old.precio ? old.precio : '' %>"/>
+                <input 
+                    type="text" 
+                    name="precio" 
+                    value="<%= locals.old && old.precio ? old.precio : null %>"/>
+                <!--comentario para los errores-->
+                <% if (locals.errors && errors.precio) { %>
+                    <div>
+                        <%= errors.precio.msg %>
+                    </div>
+                <% } %>
             </div>
             <button type="submit" name="accion" value="crear">Crear</button>
         </form>
