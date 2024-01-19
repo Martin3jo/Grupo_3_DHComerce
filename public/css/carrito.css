@@ -5,8 +5,8 @@
 }
 
 .carrito-img-chica {
-  width: 30px;
-  height: 30px;
+  width: 68px;
+  height: 68px;
 }
 
 .carrito-section {
@@ -17,7 +17,7 @@
 .carrito-img-agregados {
   /*PADRE de carrito-producto y carrito-descripcion*/
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   margin: 5px auto;
   align-items: center;
@@ -33,6 +33,7 @@
   padding: 10px;
   border: 2px solid rgb(86 48 221);
   box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
+  width: 100%;
 }
 .titulo-carrito{
   font-size: 18px;
@@ -43,8 +44,6 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  overflow-y: auto;
-  
   margin: 5px;
   padding: 10px;
   overflow-y: scroll;
@@ -52,13 +51,14 @@
   box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
   border: 2px solid rgb(86 48 221);
   max-height: 165px;
+  width: 100%;
 }
 
 .carrito-descripcion div {
   display: flex;
-  flex-direction: row;
-  font-size: 20px;
-  justify-content: center
+  align-items: start;
+  font-size: 15px;
+  
 }
 
 .carrito-detalle{
@@ -79,12 +79,21 @@
   width: 100%;
 }
 .carrito-botones  button{
-  border-radius: 10%;
-  flex-grow: 1;
+  border-radius: 4px;
   margin: 5px;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  box-shadow: rgba(0, 0, 0) 0px 2px 4px 0px;
+  background-color: blue;
+  color:white;
+ 
+}
+.item-carrito{
+
+  flex-direction: column;
+  border-bottom: 1px solid black;
+}
+.info-item{
+  
+  flex-direction: column;
+ 
 }
 
 /*CARRITO-FIN*/
@@ -100,9 +109,10 @@
   all: initial;
   width: auto;
   display: flex;
-  margin: 10px 10vw;
+  margin: 10px 2vw;
   overflow-x: auto;
   background-color: rgb(86 48 221);
+  
 }
 
 .ruleta-article {
