@@ -38,5 +38,13 @@
       "imagenProducto": "default-image.png",
       "categoria": "asd",
       "precio": null
+   },
+   {
+      "id": "98b14244-5c40-43bd-a87a-f2a80528d833",
+      "nombreProducto": "asd",
+      "descripcion": "asd",
+      "imagenProducto": "default-image.png",
+      "categoria": "asd",
+      "precio": 222
    }
 ]
