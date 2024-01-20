@@ -211,8 +211,12 @@ footer {
     text-align: center;
     height: 60px;
   }
+  button{
+    cursor: pointer;
+  }
   
  
+
 }
 
 /*Desktop*/
