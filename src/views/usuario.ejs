@@ -1,40 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head', {estilo : "usuario.css", titulo : "Usuario"}) %>
+<%- include('partials/head', {estilo : "usuario.css" , titulo : "Usuario" }) %>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
   <body>
     <%- include('partials/header.ejs')%>
 
-    <main>
-     
-      <div class="form-registro">
-        <form action="">
-          <h1>Cuenta</h1>
-          
-          
-          <div class="input-box">
-            <label for="Usuario">Usuario</label>
-            <div>
-              <input type="text" placeholder="Usuario" required>
-              <i class='bx bxs-user'></i>
-            </div>
-           
-          </div>
-          <div class="input-box">
-            <label for="Contraseña">Contraseña</label>
-            <div>
-              <input type="password" placeholder="Contraseña" required>
-              <i class='bx bxs-lock-alt'></i>
-            </div>
-            
-          </div>
-          
+      <main>
 
-          <button type="submit" class="boton-registro">Ingresar</button>
-        </form>
-      </div>
-    </main>
+        <div class="form-registro">
+          <form action="">
+            <h1>Cuenta</h1>
 
-    <%- include('partials/footer.ejs')%>
+
+            <div class="input-box">
+              <label for="Usuario">Usuario</label>
+              <div>
+                <input type="text" name="usuario" placeholder="Usuario" required>
+                <i class='bx bxs-user'></i>
+                <!--comentario para los errores-->
+                <% if (locals.errors && errors.usuario) { %>
+                  <div>
+                    <%= errors.usuario.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+            </div>
+            <div class="input-box">
+              <label for="Contraseña">Contraseña</label>
+              <div>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <i class='bx bxs-lock-alt'></i>
+                <!--comentario para los errores-->
+                <% if (locals.errors && errors.password) { %>
+                  <div>
+                    <%= errors.password.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+            </div>
+
+
+            <button type="submit" class="boton-registro">Ingresar</button>
+          </form>
+        </div>
+      </main>
+
+      <%- include('partials/footer.ejs')%>
   </body>
+
 </html>

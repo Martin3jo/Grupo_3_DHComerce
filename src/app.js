@@ -50,7 +50,7 @@ const rutasAdmin = require("./routes/admin.routes");
 /*ENTRY POINTS*/
 app.use("/", rutasIndex);
 app.use("/", rutasProductos);
-app.use("/", rutasUsuarios);
+app.use("/usuario", rutasUsuarios);
 app.use("/admin", rutasAdmin);
 
 
