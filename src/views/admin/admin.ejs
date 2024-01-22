@@ -21,13 +21,21 @@
                     <% if (typeof productos !=='undefined' ) { %>
                         <article>
                             <% for (let i=0; i < productos.length; i++) { %>
-                                <%= productos[i].nombreProducto %>
-                                    <a href="/admin/<%= productos[i].id %>/modificarProducto"><button type="submit"
-                                            name="accion" value="modificar">Modificar</button></a>
-                                    <form action="/admin/<%= productos[i].id %>?_method=DELETE" method="post">
-                                        <button>Borrar</button>
-                                    </form>
-                                    <% } %>
+                                <div class="prueba1">
+                                    <img src="/img/avatars/<%= productos[i].imagenProducto %>" alt="imagen">
+                                    <div class="prueba2">
+                                        <%= productos[i].nombreProducto %>
+                                        <div class="pruebabotones">
+                                            <a href="/admin/<%= productos[i].id %>/modificarProducto"><button
+                                                    type="submit" name="accion" value="modificar">Modificar</button></a>
+                                            <form action="/admin/<%= productos[i].id %>?_method=DELETE" method="post">
+                                                <button>Borrar</button>
+                                            </div>
+                                    </div>
+
+                                </div>
+                                </form>
+                                <% } %>
                         </article>
                         <% } else if (typeof busquedaResultante !=='undefined' ) { %>
                             <article>

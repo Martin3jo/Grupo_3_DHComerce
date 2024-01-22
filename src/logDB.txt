@@ -24,3 +24,6 @@ se guardó desde la pagina /crearProducto
 se guardó desde la pagina /d21af54d-8fbc-4fef-b6ce-82c0a9baf79a/modificarProducto?_method=PUT
 se guardó desde la pagina /crearProducto
 se guardó desde la pagina /crearProducto
+se guardó desde la pagina /crearProducto
+se guardó desde la pagina /crearProducto
+se guardó desde la pagina /5011b6bd-bdb1-417c-bb30-3da85259f953/modificarProducto?_method=PUT

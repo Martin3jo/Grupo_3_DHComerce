@@ -6,7 +6,9 @@ const { body } = require('express-validator')
 const validarCrearProducto = [
     body('usuario')
         .notEmpty()
-        .withMessage('Campo Obligatorio').bail(),
+        .withMessage('Campo Obligatorio').bail()
+        .isEmail()
+        .withMessage('debe ser un Email'),
     body('password')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
@@ -18,7 +20,7 @@ const usersControllers = require("../controllers/usersControllers");
 
 
 router.get('/login', usersControllers.login)
-router.get('/login', validarCrearProducto, usersControllers.processLogin)
+router.post('/login', validarCrearProducto, usersControllers.processLogin)
 router.get("/registro", usersControllers.registro);
 
 
