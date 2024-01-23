@@ -3,10 +3,12 @@ main{
 }
 .box-selection{
     display: flex;
-    background-color: aqua;
+    
     flex: 20%;
     flex-direction: column;
     height: 100vw;
+    background-color: rgba(255,207,1,0.2);
+    padding: 5px;
 }
 .box-selection button{
     width: 100%;
@@ -26,6 +28,7 @@ main{
 
 .prueba1{
     display: flex;
+    padding: 6px;
 }
 .prueba1 img{
     max-width: 25%;
@@ -37,4 +40,26 @@ main{
 .pruebabotones{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    
+}
+.pruebabotones button{
+    border: none;
+    color: blue;
+}
+.form-admin{
+    padding: 5px;
+}
+.carrousel-admin{
+    display: flex;
+    flex-direction: column;
+    
+    
+    padding: 10px;
+    overflow-y: scroll;
+    text-align: center;
+    
+    
+    max-height: 345px;
+    width: 100%;
 }
