@@ -2,12 +2,13 @@
 <html lang="en">
 
 <!--<%- include('../partials/head', {titulo : 'crear', estilo : '404.css'}) %>-->
-
+<%- include('../partials/head', {titulo : 'crear', estilo : 'crearProducto.css'}) %>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <body>
-    <!--<%- include('../partials/header') %> -->
-    <main>
-        <form action="/admin/crearProducto" method="post" enctype="multipart/form-data">
-            <div>
+    <%- include('../partials/header') %> 
+    <main class="main-adminProducto">
+        <form action="/admin/crearProducto" method="post" enctype="multipart/form-data" class="form-crearProducto">
+            <div class="form-input-admin">
                 <label for="nombreProducto">Nombre del Producto</label>
                 <input 
                 type="text" 
@@ -21,11 +22,11 @@
                         </div>
                     <% } %>
             </div>
-            <div>
+            <div class="form-input-admin">
                 <label for="descripcion">Descripcion</label>
                 <textarea name="descripcion" id="comentario" cols="30" rows="5"></textarea>
             </div>
-        <div>
+        <div class="form-input-admin">
             <label for="imagenProducto">imagen Producto:</label><br>
             <input 
                 type="file" 
@@ -39,7 +40,7 @@
                     </div>
                 <% } %>
         </div>
-            <div>
+            <div class="form-input-admin">
                 <label for="categoria">Categoría</label>
                 <input 
                     type="text" 
@@ -52,7 +53,7 @@
                     </div>
                 <% } %>
             </div>
-            <div>
+            <div class="form-input-admin">
                 <label for="precio">Precio</label>
                 <input 
                     type="text" 
@@ -65,9 +66,14 @@
                     </div>
                 <% } %>
             </div>
-            <button type="submit" name="accion" value="crear">Crear</button>
+            <div class="boton-crear">
+                <button type="submit" name="accion" value="crear">Crear</button >
+            </div>
+            
         </form>
-        <a href="/admin"><button>Volver</button></a>
+       <div class="boton-volver">
+        <a href="/admin"><button><i class='bx bx-arrow-back'></i></button></a>
+       </div> 
     </main>
     <!-- <%- include('../partials/footer') %> -->
 </body>
