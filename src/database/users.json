@@ -1,9 +1,18 @@
 [
-    {
-        "id": 1,
-        "fullName": "Coronel atilio",
-        "email": "maxi@vosve.com",
-        "password": "123456",
-        "country": "argentina"
-    }
+   {
+      "id": 1,
+      "fullName": "Coronel atilio",
+      "email": "maxi@vosve.com",
+      "password": "123456",
+      "country": "argentina"
+   },
+   {
+      "id": "ff9b18e7-412b-46db-ad8b-7b147f57446b",
+      "nombre": "atilio",
+      "apellido": "coronel",
+      "usuario": "usuario",
+      "password": "contraseña",
+      "email": "maxi-935@hotmail.com",
+      "fechaNac": "1990-09-01"
+   }
 ]
