@@ -1,34 +1,42 @@
 [
-  {
-    "id": "5011b6bd-bdb1-417c-bb30-3da85259f953",
-    "nombreProducto": "prueba numero 1000",
-    "descripcion": "coca cola fitnes",
-    "imagenProducto": "1705571215911_img.png",
-    "categoria": "gaseosas",
-    "precio": 3000
-  },
-  {
-    "id": "c7960c50-7f2d-4b0a-9afe-bab5cb786d94",
-    "nombreProducto": "asda",
-    "descripcion": "asd",
-    "imagenProducto": "default-image.png",
-    "categoria": "asd",
-    "precio": "asd"
-  },
-  {
-    "id": "f4324e7c-e4ea-4466-8351-4e39ca1c6901",
-    "nombreProducto": "martin",
-    "descripcion": "maretin",
-    "imagenProducto": "1705613335180_img.jpg",
-    "categoria": "asrinsdf",
-    "precio": "isndfsdf"
-  },
-  {
-    "id": "fed2c2d3-f20d-42fe-a030-1b099d00f63a",
-    "nombreProducto": "asd",
-    "descripcion": "",
-    "imagenProducto": "default-image.png",
-    "categoria": "asd",
-    "precio": null
-  }
+   {
+      "id": "69b4097d-148c-4cb5-9b75-0688c5bf68dc",
+      "nombreProducto": "Coca-Cola 3 lts",
+      "descripcion": "Gaseosa de sabor cola original",
+      "imagenProducto": "1705967791201_img.jpg",
+      "categoria": "gaseosa",
+      "precio": 1800
+   },
+   {
+      "id": "7affd061-632a-402b-ba70-218e1a8936cf",
+      "nombreProducto": "Stella Artois 269 ml",
+      "descripcion": "Cerveza rubia",
+      "imagenProducto": "1705967918794_img.jpg",
+      "categoria": "Cerveza",
+      "precio": 1400
+   },
+   {
+      "id": "c39d6367-0c51-49ed-8a85-da7708d172f7",
+      "nombreProducto": "Soda Manaos 2lts",
+      "descripcion": "Bebida sin alcohol",
+      "imagenProducto": "1705967968392_img.jpg",
+      "categoria": "Soda",
+      "precio": 1200
+   },
+   {
+      "id": "34aace58-6387-4f03-8ae0-1a6c6cae3418",
+      "nombreProducto": "Quilmes 473 ml",
+      "descripcion": "Cerveza rubia en lata",
+      "imagenProducto": "1705968000484_img.jpg",
+      "categoria": "Cerveza",
+      "precio": 1300
+   },
+   {
+      "id": "cb7f15bf-b1e7-4bd6-8647-28b5813be6b8",
+      "nombreProducto": "Coca-Cola 1,5 lts",
+      "descripcion": "Coca cola zero",
+      "imagenProducto": "1705968564771_img.jpg",
+      "categoria": "gaseosa",
+      "precio": 1200
+   }
 ]

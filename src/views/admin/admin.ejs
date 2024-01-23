@@ -14,12 +14,12 @@
                 </section>
                 <section class="box-render">
                     <!--SEARCH-->
-                    <form action="/admin/buscarProducto" method="get">
+                    <form action="/admin/buscarProducto" method="get" class="form-admin">
                         <input type="text" name="buscar">
                         <input type="submit" value="buscar">
                     </form>
                     <% if (typeof productos !=='undefined' ) { %>
-                        <article>
+                        <article class="carrousel-admin">
                             <% for (let i=0; i < productos.length; i++) { %>
                                 <div class="prueba1">
                                     <img src="/img/avatars/<%= productos[i].imagenProducto %>" alt="imagen">
@@ -53,6 +53,7 @@
                 </section>
 
             </main>
+           
     </body>
 
 </html>
