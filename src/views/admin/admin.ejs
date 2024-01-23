@@ -22,7 +22,10 @@
                         <article class="carrousel-admin">
                             <% for (let i=0; i < productos.length; i++) { %>
                                 <div class="prueba1">
-                                    <img src="/img/avatars/<%= productos[i].imagenProducto %>" alt="imagen">
+                                    <div class="div-img">
+                                        <img src="/img/avatars/<%= productos[i].imagenProducto %>" alt="imagen">
+                                    </div>
+                                    
                                     <div class="prueba2">
                                         <%= productos[i].nombreProducto %>
                                         <div class="pruebabotones">

@@ -165,3 +165,17 @@ se ingreso a la pagina /admin
 se ingreso a la pagina /admin
 se ingreso a la pagina /admin
 se ingreso a la pagina /admin
+se ingreso a la pagina /carrito
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
+se ingreso a la pagina /favicon.ico
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
+se ingreso a la pagina /admin
