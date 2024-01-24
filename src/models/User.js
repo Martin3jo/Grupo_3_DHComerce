@@ -1,9 +1,9 @@
 
-const { log } = require('console')
+const path=require('path')
 const fs = require('fs')
-const { Module } = require('module')
+
 const User = {
-    fileName : './database/users.json',
+    fileName :path.join(__dirname,'../database/users.json'),
     getData : function(){
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'))
     },
