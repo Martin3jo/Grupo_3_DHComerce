@@ -245,3 +245,5 @@ se ingreso a la pagina /admin/crearProducto
 se ingreso a la pagina /admin/crearProducto
 se ingreso a la pagina /admin
 se ingreso a la pagina /admin/69b4097d-148c-4cb5-9b75-0688c5bf68dc/modificarProducto
+se ingreso a la pagina /
+se ingreso a la pagina /
