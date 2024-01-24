@@ -1,15 +1,3 @@
 se ingreso a la pagina /
-se ingreso a la pagina /usuario/registro
-se ingreso a la pagina /
-se ingreso a la pagina /
 se ingreso a la pagina /favicon.ico
-se ingreso a la pagina /carrito
-se ingreso a la pagina /usuario/registro
 se ingreso a la pagina /usuario/login
-se ingreso a la pagina /usuario/login
-se ingreso a la pagina /
-se ingreso a la pagina /usuario/profile
-se ingreso a la pagina /usuario/logout
-se ingreso a la pagina /
-se ingreso a la pagina /
-se ingreso a la pagina /favicon.ico
