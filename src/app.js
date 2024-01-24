@@ -12,7 +12,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
-
+//COOKIES
+const cookies = require('cookie-parser')
+app.use(cookies())
 
 /*LLAMADO AL EJS*/
 app.set("view engine", "ejs");

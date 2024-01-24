@@ -60,7 +60,6 @@ const usersController = {
   }
   ,
   login: (req, res) => {
-    console.log(req.session)
     res.render("usuario");
   },
   processLogin: (req, res) => {
@@ -81,7 +80,10 @@ const usersController = {
           //GUARDO USUARIO EN SESSION
           delete userToLogin.password
           req.session.userLogged = userToLogin
-          res.redirect('/')
+          if (req.body.rememberUser) {
+            res.cookie('userEmail', req.body.email, {maxAge : (1000 * 60) * 2})
+          }
+          return res.redirect('/')
         }else{
           return res.render('usuario', {
             errors: {
@@ -107,6 +109,7 @@ const usersController = {
     res.render('userProfile')
   },
   logout : (req,res)=>{
+    res.clearCookie('userEmail')
     req.session.destroy()
     return res.redirect('/')
   }
