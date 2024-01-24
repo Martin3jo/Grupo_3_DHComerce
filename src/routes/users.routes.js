@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { body } = require('express-validator')
 
-//USUARIO
+//USUARIO VALIDATION
 const validarUsuario = [
     body('usuario')
         .notEmpty()
@@ -16,7 +16,7 @@ const validarUsuario = [
         .withMessage('Debe tener un minimo de 6 caracteres')
 ]
 
-//REGISTRO
+//REGISTRO VALIDATION
 const validarRegistro = [
     body('nombre')
         .notEmpty()
@@ -40,9 +40,11 @@ const validarRegistro = [
 
 const usersControllers = require("../controllers/usersControllers");
 
-
+//LOGIN
 router.get('/login', usersControllers.login)
 router.post('/login', validarUsuario, usersControllers.processLogin)
+
+//REGISTRO
 router.get("/registro",usersControllers.registro);
 router.post('/registro', validarRegistro, usersControllers.registroValidation)
 

@@ -43,6 +43,9 @@
                         <% } else if (typeof busquedaResultante !=='undefined' ) { %>
                             <article>
                                 <% for (let i=0; i < busquedaResultante.length; i++) { %>
+                                    <div class="div-img">
+                                        <img src="/img/avatars/<%= busquedaResultante[i].imagenProducto %>" alt="imagen">
+                                    </div>
                                     <%= busquedaResultante[i].nombreProducto %>
                                         <a href="/admin/<%= busquedaResultante[i].id %>/modificarProducto"><button
                                                 type="submit" name="accion" value="modificar">Modificar</button></a>

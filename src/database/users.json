@@ -1,12 +1,5 @@
 [
    {
-      "id": 1,
-      "fullName": "Coronel atilio",
-      "email": "maxi@vosve.com",
-      "password": "123456",
-      "country": "argentina"
-   },
-   {
       "id": "ff9b18e7-412b-46db-ad8b-7b147f57446b",
       "nombre": "atilio",
       "apellido": "coronel",
@@ -14,5 +7,14 @@
       "password": "contraseña",
       "email": "maxi-935@hotmail.com",
       "fechaNac": "1990-09-01"
+   },
+   {
+      "id": "ca10db75-3681-47e5-a9f2-0c9429b721ee",
+      "nombre": "martin",
+      "apellido": "apellido",
+      "usuario": "usuario",
+      "password": "123654",
+      "email": "martin@hotmail.com",
+      "fechaNac": "2024-01-11"
    }
 ]
