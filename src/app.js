@@ -7,6 +7,7 @@ const path = require("path");
 const session = require('express-session')
 app.use(session({
   secret: 'Mi secreto',
+  //POR LO VISTO ESTAN DEPRECADOS
   resave: false,
   saveUninitialized: false
 }));
@@ -40,7 +41,9 @@ app.listen(port, () => {
 
 //MIDDLEWARES
 const logMiddleware = require('./middlewares/logMiddleware');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 app.use(logMiddleware);
+app.use(userLoggedMiddleware)
 
 /*ROUTES*/
 const rutasIndex = require("./routes/main.routes");
@@ -54,11 +57,7 @@ app.use("/", rutasProductos);
 app.use("/usuario", rutasUsuarios);
 app.use("/admin", rutasAdmin);
 
-
-
-
-
 /*RESPUESTA AL ERROR 404*/
-app.use((req,res,next)=>{
-  res.status(404).render("404")
-})
+app.use((req, res, next) => {
+  res.status(404).render("404");
+});

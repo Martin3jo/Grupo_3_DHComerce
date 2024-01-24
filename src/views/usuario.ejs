@@ -14,23 +14,23 @@
 
 
             <div class="input-box">
-              <label for="Usuario">Usuario</label>
+              <label for="email">Usuario</label>
               <div>
-                <input type="text" name="usuario" placeholder="Usuario" required>
+                <input type="text" name="email" placeholder="Usuario">
                 <i class='bx bxs-user'></i>
                 <!--comentario para los errores-->
-                <% if (locals.errors && errors.usuario) { %>
+                <% if (locals.errors && errors.email) { %>
                   <div>
-                    <%= errors.usuario.msg %>
+                    <%= errors.email.msg %>
                   </div>
                   <% } %>
               </div>
 
             </div>
             <div class="input-box">
-              <label for="Contraseña">Contraseña</label>
+              <label for="password">Contraseña</label>
               <div>
-                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="password" name="password" placeholder="Contraseña">
                 <i class='bx bxs-lock-alt'></i>
                 <!--comentario para los errores-->
                 <% if (locals.errors && errors.password) { %>

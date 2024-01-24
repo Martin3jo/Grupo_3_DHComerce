@@ -1,20 +1,20 @@
 [
    {
-      "id": "ff9b18e7-412b-46db-ad8b-7b147f57446b",
-      "nombre": "atilio",
+      "id": "319a31c8-bcd2-4203-affb-5ff9cfdd6836",
+      "nombre": "atilio maximiliano",
       "apellido": "coronel",
-      "usuario": "usuario",
-      "password": "contraseña",
+      "usuario": "maxi935",
+      "password": "$2a$10$wZCt1/G7toXtaRVfIMvOWO.rWx6AMIYbDEBBSB6RLCyVjiVLQFZ7a",
       "email": "maxi-935@hotmail.com",
-      "fechaNac": "1990-09-01"
+      "fechaNac": "1990-01-09"
    },
    {
-      "id": "ca10db75-3681-47e5-a9f2-0c9429b721ee",
+      "id": "ff10e750-051f-4e2d-9c20-3797b44c831b",
       "nombre": "martin",
       "apellido": "apellido",
       "usuario": "usuario",
-      "password": "123654",
+      "password": "$2a$10$8R8NJOBn0o3hD1VDNxK5C.6aeowIJbmNm4kGzMryFtXYD0/29wrti",
       "email": "martin@hotmail.com",
-      "fechaNac": "2024-01-11"
+      "fechaNac": "1990-01-09"
    }
 ]
