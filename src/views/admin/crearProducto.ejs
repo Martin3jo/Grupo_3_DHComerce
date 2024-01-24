@@ -41,7 +41,15 @@
                 <% } %>
         </div>
             <div class="form-input-admin">
-                <label for="categoria">Categoría</label>
+                <label for="categoria">Categoría:</label>
+                <select name="categoria" id="categoria">
+                    <option disabled>Seleccione una categoria</option>
+                    <option value="gaseosa">Gaseosa</option>
+                    <option value="sin-azucar">Sin-Azúcar</option>
+                    <option value="cerveza">Cerveza</option>
+                    <option value="soda">Soda</option>
+                    <option value="vino">Vino</option>
+                </select>
                 <input 
                     type="text" 
                     name="categoria" 
