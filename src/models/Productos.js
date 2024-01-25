@@ -3,7 +3,11 @@ const path=require('path')
 const fs = require('fs')
 
 const Productos = {
+<<<<<<< HEAD
     fileName : path.join(__dirname,'../database/productsDataBase.json'),
+=======
+    fileName : path.join(__dirname,'../database/productosCarritoDB.json'),
+>>>>>>> carrito
     getData : function(){
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'))
     },

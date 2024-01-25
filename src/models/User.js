@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
 const path=require('path')
+=======
+const path = require('path')
+>>>>>>> carrito
 const fs = require('fs')
 
 const User = {

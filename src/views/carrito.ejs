@@ -29,14 +29,21 @@
                       <p>
                         <%= productos[index].descripción %>
                       </p>
+<<<<<<< HEAD
                       <form action="/carrito/<%= productos[index].id %>" method="get">
                         <label for="cantidad">Cantidad</label>
                         <input type="number" name="cantidad">
+=======
+                      <form action="/carrito/<%= productos[index].id %>?_method=PUT" method="post">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" name="cantidad" value="<%= productos[index].cantidad %>">
+>>>>>>> carrito
 
                         <div class="carrito-botones">
                           <button type="submit">Modificar</button>
                         </div>
                       </form>
+<<<<<<< HEAD
                     </div>
 
                   </div>
@@ -48,6 +55,16 @@
 
                     </div>
                   </div>
+=======
+                      <form action="/carrito/<%= productos[index].id %>?_method=DELETE" method="post">
+                        <div class="carrito-botones">
+                          <button>Eliminar</button>
+                        </div>
+                      </form>
+                    </div>
+
+                  </div>
+>>>>>>> carrito
                 </div>
 
                 <% } %>
