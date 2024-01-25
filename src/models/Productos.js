@@ -25,9 +25,6 @@ const Productos = {
         allProducts.push(productData)
         fs.writeFileSync(this.fileName, JSON.stringify(allProducts, null, '   '))
         return true
-    },
-    modificate : function (productData) {
-        
     }
 }
 
