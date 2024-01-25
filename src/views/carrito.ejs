@@ -1,190 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('partials/head.ejs', {titulo: "Carrito", estilo: "carrito.css"})%>
+<%- include('partials/head.ejs', {titulo: "Carrito" , estilo: "carrito.css" })%>
 
-<body>
-  <%- include('partials/header.ejs')%>
+  <body>
+    <%- include('partials/header.ejs')%>
 
-    <main>
-      <!--CARRITO-->
-      <section class="carrito-section">
+      <main>
+        <!--CARRITO-->
+        <section class="carrito-section">
 
-        <div class="carrito-img-agregados">
-          
-          <!--Resumen de Compras-->
-          <div class="carrito-descripcion">
-            
-            <!--Compras agregadas al carrito-->
-          
-            <div class="item-carrito">
-              <div>
-                <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
-                <div class="info-item">
-                  <p>Marca</p>
-                  <p>Descripción producto 1</p>
-                  <p>litros</p>
-                  <p>cantidad:</p>
+          <div class="carrito-img-agregados">
+
+            <!--Resumen de Compras-->
+            <div class="carrito-descripcion">
+
+              <!--Compras agregadas al carrito-->
+
+              <% for( let index=0; index < productos.length; index++ ) { %>
+
+                <div class="item-carrito">
+                  <div>
+                    <img class="carrito-img-chica" src="/img/avatars/<%= productos[index].imagenProducto %>" alt="">
+                    <div class="info-item">
+                      <p>
+                        <%= productos[index].nombreProducto %>
+                      </p>
+                      <p>
+                        <%= productos[index].descripción %>
+                      </p>
+                      <form action="/carrito/<%= productos[index].id %>?_method=PUT" method="post">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" name="cantidad" value="<%= productos[index].cantidad %>">
+
+                        <div class="carrito-botones">
+                          <button type="submit">Modificar</button>
+                        </div>
+                      </form>
+                      <form action="/carrito/<%= productos[index].id %>?_method=DELETE" method="post">
+                        <div class="carrito-botones">
+                          <button>Eliminar</button>
+                        </div>
+                      </form>
+                    </div>
+
+                  </div>
                 </div>
-                
-              </div>
-              
-              <div>
-                <div class="carrito-botones">
-                <button>Eliminar</button>
-                <button>Guardar</button>
-                <button>Modificar</button>
-                
-              </div>
+
+                <% } %>
             </div>
-          </div>
-          <div class="item-carrito">
-            <div>
-              <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
-              <div class="info-item">
-                <p>Marca</p>
-                <p>Descripción producto 1</p>
-                <p>litros</p>
-                <p>cantidad:</p>
-              </div>
-              
-            </div>
-            
-            <div>
-              <div class="carrito-botones">
-              <button>Eliminar</button>
-              <button>Guardar</button>
-              <button>Modificar</button>
-              
-            </div>
-          </div>
-        </div>
-        <div class="item-carrito">
-          <div>
-            <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
-            <div class="info-item">
-              <p>Marca</p>
-              <p>Descripción producto 2</p>
-              <p>litros</p>
-              <p>cantidad:</p>
-            </div>
-            
-          </div>
-          
-          <div>
-            <div class="carrito-botones">
-            <button>Eliminar</button>
-            <button>Guardar</button>
-            <button>Modificar</button>
-            
-          </div>
-        </div>
-      </div>
-      <div class="item-carrito">
-        <div>
-          <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
-          <div class="info-item">
-            <p>Marca</p>
-            <p>Descripción producto 3</p>
-            <p>litros</p>
-            <p>cantidad:</p>
-          </div>
-          
-        </div>
-        
-        <div>
-          <div class="carrito-botones">
-          <button>Eliminar</button>
-          <button>Guardar</button>
-          <button>Modificar</button>
-          
-        </div>
-      </div>
-    </div>
-    <div class="item-carrito">
-      <div>
-        <img class="carrito-img-chica" src="/img/carrito/botellahielo.jpg" alt="">
-        <div class="info-item">
-          <p>Marca</p>
-          <p>Descripción producto 4</p>
-          <p>litros</p>
-          <p>cantidad:</p>
-        </div>
-        
-      </div>
-      
-      <div>
-        <div class="carrito-botones">
-        <button>Eliminar</button>
-        <button>Guardar</button>
-        <button>Modificar</button>
-        
-      </div>
-    </div>
-  </div>
-     </div>
-          <!--Nombre Producto-->
-          <div class="carrito-producto">
-            <h2 class="titulo-carrito">Resumen de Compra</h2>
-            <div class="total-items">
-              
+
+
+            <!--Nombre Producto-->
+            <div class="carrito-producto">
+              <h2 class="titulo-carrito">Resumen de Compra</h2>
+              <div class="total-items">
+
                 <h3>Producto/s(cantidad)</h3>
                 <h3>$Precio</h>
-              
+
+              </div>
+              <div class="total-items">
+                <h3>Envio</h3>
+                <h3>$Precio</h3>
+              </div>
+              <div class="total-items">
+                <h3>TOTAL</h3>
+                <h3>$Precio</h3>
+              </div>
+              <div class="boton-compra">
+                <button>Comprar</button>
+              </div>
+
             </div>
-            <div class="total-items">
-              <h3>Envio</h3>
-              <h3>$Precio</h3>
-            </div>
-            <div class="total-items">
-              <h3 >TOTAL</h3>
-              <h3>$Precio</h3>
-            </div>
-            <div class="boton-compra">
-              <button>Comprar</button>
-            </div>
-            
           </div>
-        </div>
-        
-        <!--Botones-->
-        
-      <!--RULETA----Tambien te interesó-->
-      <h3 class="titulo-ruleta">También te interesó</h3>
-      <section class="ruleta-section">
 
-        <article class="ruleta-article">
-          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 1" />
-          <h4>Producto 1</h4>
-          <p>Precio: $</p>
-          <button>Añadir al carrito</button>
-        </article>
+          <!--Botones-->
 
-        <article class="ruleta-article">
-          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 2" />
-          <h4>Producto 2</h4>
-          <p>Precio: $</p>
-          <button>Añadir al carrito</button>
-        </article>
+          <!--RULETA----Tambien te interesó-->
+          <h3 class="titulo-ruleta">También te interesó</h3>
+          <section class="ruleta-section">
 
-        <article class="ruleta-article">
-          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 3" />
-          <h4>Producto 3</h4>
-          <p>Precio: $</p>
-          <button>Añadir al carrito</button>
-        </article>
+            <article class="ruleta-article">
+              <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 1" />
+              <h4>Producto 1</h4>
+              <p>Precio: $</p>
+              <button>Añadir al carrito</button>
+            </article>
 
-        <article class="ruleta-article">
-          <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 4" />
-          <h4>Producto 4</h4>
-          <p>Precio: $</p>
-          <button>Añadir al carrito</button>
-        </article>
+            <article class="ruleta-article">
+              <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 2" />
+              <h4>Producto 2</h4>
+              <p>Precio: $</p>
+              <button>Añadir al carrito</button>
+            </article>
 
-      </section>
-      </div>
-    </main>
-    <%- include('partials/footer.ejs')%>
-</body>
+            <article class="ruleta-article">
+              <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 3" />
+              <h4>Producto 3</h4>
+              <p>Precio: $</p>
+              <button>Añadir al carrito</button>
+            </article>
+
+            <article class="ruleta-article">
+              <img class="ruleta-img" src="/img/carrito/botellahielo.jpg" alt="Producto 4" />
+              <h4>Producto 4</h4>
+              <p>Precio: $</p>
+              <button>Añadir al carrito</button>
+            </article>
+
+          </section>
+          </div>
+      </main>
+      <%- include('partials/footer.ejs')%>
+  </body>
 
 </html>
