@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head', {estilo : "userProfile.css" , titulo : "Profile" }) %>
-<body>
+  <%- include('partials/head', {estilo : "userProfile.css" , titulo : "Profile"
+  }) %>
+  <body>
     <%- include('partials/header.ejs')%>
-    <main>
-        <a href="/usuario/logout"><button>logout</button></a>
+    <main class="main-perfil">
+      <div class="foto-datos-perfil">
+        <div class="datos-perfil">
+            <div>
+                <img src="" alt="foto-perfil" class="img-perfil">
+            </div>
+            <div >
+                <h2>Nombre y apellido</h2>
+                <h3>mail</h3>
+            </div>
+        </div>
+        
+
+        <section>
+            <h3>Información Personal</h3>
+
+        </section>
+      </div>
+      <a href="/usuario/logout"><button>logout</button></a>
     </main>
     <%- include('partials/footer.ejs')%>
-</body>
+  </body>
 </html>

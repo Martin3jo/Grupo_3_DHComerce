@@ -1,9 +1,5 @@
 const path = require('path')
 const fs = require('fs')
-<<<<<<< HEAD
-const Productos = require('../models/Productos')
-=======
->>>>>>> carrito
 
 const productsFilePath = path.join(__dirname, '../database/productosCarritoDB.json');
 let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -13,17 +9,6 @@ module.exports = {
     res.render("detalleProducto");
   },
   carrito: (req, res) => {
-<<<<<<< HEAD
-    res.render("carrito", {productos});
-  },
-  contarProducto : (req,res)=>{
-    let id = req.params.id
-    let cantidad = req.body.cantidad
-    console.log(cantidad)
-    res.redirect('/carrito')
-  }
-};
-=======
     res.render("carrito", { productos });
   },
   contarProducto: (req, res) => {
@@ -58,4 +43,3 @@ module.exports = {
     }
 }
 }
->>>>>>> carrito
