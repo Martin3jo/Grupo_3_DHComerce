@@ -12,8 +12,8 @@ module.exports = {
     // Calcular la suma CANTIDAD
     const sumaCantidad = productos.reduce((total, obj) => total + parseInt(obj.cantidad), 0);
 
-    // Calcular la suma CANTIDAD
-    const sumaPrecio = productos.reduce((total, obj) => total + parseInt(obj.precio), 0);
+    // Calcular la suma PRECIO
+    const sumaPrecio = productos.reduce((total, obj) => total + (parseFloat(obj.precio) * parseFloat(obj.cantidad)), 0);
     res.render("carrito", { productos, sumaCantidad, sumaPrecio });
   },
   contarProducto: (req, res) => {
