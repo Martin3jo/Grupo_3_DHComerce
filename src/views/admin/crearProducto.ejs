@@ -42,7 +42,7 @@
         </div>
             <div class="form-input-admin">
                 <label for="categoria">Categoría:</label>
-                <select name="categoria" id="categoria">
+                <select name="categoria" id="categoria"  value="<%= locals.old && old.categoria ? old.categoria : null %>">
                     <option disabled>Seleccione una categoria</option>
                     <option value="gaseosa">Gaseosa</option>
                     <option value="sin-azucar">Sin-Azúcar</option>
@@ -50,10 +50,6 @@
                     <option value="soda">Soda</option>
                     <option value="vino">Vino</option>
                 </select>
-                <input 
-                    type="text" 
-                    name="categoria" 
-                    value="<%= locals.old && old.categoria ? old.categoria : null %>"/>
                 <!--comentario para los errores-->
                 <% if (locals.errors && errors.categoria) { %>
                     <div>

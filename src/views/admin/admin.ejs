@@ -41,19 +41,26 @@
                                 <% } %>
                         </article>
                         <% } else if (typeof busquedaResultante !=='undefined' ) { %>
-                            <article>
+                            <article class="carrousel-admin">
                                 <% for (let i=0; i < busquedaResultante.length; i++) { %>
-                                    <div class="div-img">
-                                        <img src="/img/avatars/<%= busquedaResultante[i].imagenProducto %>" alt="imagen">
+                                    <div class="prueba1">
+                                        <div class="div-img">
+                                            <img src="/img/avatars/<%= busquedaResultante[i].imagenProducto %>" alt="imagen">
+                                        </div>
+                                        
+                                        <div class="prueba2">
+                                            <%= busquedaResultante[i].nombreProducto %>
+                                            <div class="pruebabotones">
+                                                <a href="/admin/<%= busquedaResultante[i].id %>/modificarProducto"><button
+                                                        type="submit" name="accion" value="modificar">Modificar</button></a>
+                                                <form action="/admin/<%= busquedaResultante[i].id %>?_method=DELETE" method="post">
+                                                    <button>Borrar</button>
+                                                </div>
+                                        </div>
+    
                                     </div>
-                                    <%= busquedaResultante[i].nombreProducto %>
-                                        <a href="/admin/<%= busquedaResultante[i].id %>/modificarProducto"><button
-                                                type="submit" name="accion" value="modificar">Modificar</button></a>
-                                        <form action="/admin/<%= busquedaResultante[i].id %>?_method=DELETE"
-                                            method="post">
-                                            <button>Borrar</button>
-                                        </form>
-                                        <% } %>
+                                    </form>
+                                    <% } %>
                             </article>
                             <% } %>
                 </section>

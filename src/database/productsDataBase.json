@@ -5,7 +5,7 @@
     "descripcion": "Gaseosa de sabor cola original",
     "imagenProducto": "1705967791201_img.jpg",
     "categoria": "gaseosa",
-    "precio": 1800
+    "precio": 2000
   },
   {
     "id": "7affd061-632a-402b-ba70-218e1a8936cf",
@@ -38,5 +38,13 @@
     "imagenProducto": "1705968564771_img.jpg",
     "categoria": "gaseosa",
     "precio": 1200
+  },
+  {
+    "id": "8d9e5c7d-dced-4990-a1f1-3c64de11a16b",
+    "nombreProducto": "fullssss",
+    "descripcion": "descripcion",
+    "imagenProducto": "default-image.png",
+    "categoria": "vino",
+    "precio": 123123
   }
 ]
