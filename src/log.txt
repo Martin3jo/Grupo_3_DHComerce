@@ -111,3 +111,11 @@ se ingreso a la pagina /carrito
 se ingreso a la pagina /carrito
 se ingreso a la pagina /carrito/69b4097d-148c-4cb5-9b75-0688c5bf68dc?_method=PUT
 se ingreso a la pagina /carrito
+se ingreso a la pagina /
+se ingreso a la pagina /carrito
+se ingreso a la pagina /
+se ingreso a la pagina /carrito
+se ingreso a la pagina /carrito/69b4097d-148c-4cb5-9b75-0688c5bf68dc?_method=PUT
+se ingreso a la pagina /carrito
+se ingreso a la pagina /carrito/69b4097d-148c-4cb5-9b75-0688c5bf68dc?_method=DELETE
+se ingreso a la pagina /carrito
