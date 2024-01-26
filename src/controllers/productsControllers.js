@@ -9,7 +9,12 @@ module.exports = {
     res.render("detalleProducto");
   },
   carrito: (req, res) => {
-    res.render("carrito", { productos });
+    // Calcular la suma CANTIDAD
+    const sumaCantidad = productos.reduce((total, obj) => total + parseInt(obj.cantidad), 0);
+
+    // Calcular la suma CANTIDAD
+    const sumaPrecio = productos.reduce((total, obj) => total + parseInt(obj.precio), 0);
+    res.render("carrito", { productos, sumaCantidad, sumaPrecio });
   },
   contarProducto: (req, res) => {
     let id = req.params.id;
@@ -18,7 +23,7 @@ module.exports = {
       const { cantidad } = req.body;
       const productoActualizado = {
         ...productoModificar,
-        cantidad : cantidad
+        cantidad: cantidad
       };
 
       const index = productos.findIndex(p => p.id === id);
@@ -30,16 +35,16 @@ module.exports = {
     }
 
   },
-  eliminarProducto : (req, res) => {
+  eliminarProducto: (req, res) => {
     const id = req.params.id
     if (id) {
-        productos = productos.filter(producto => producto.id != id)
-    
-        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '))
-        res.redirect('/carrito')
-        
-    }else{
-        res.send('el producto a eliminar ya no existe')
+      productos = productos.filter(producto => producto.id != id)
+
+      fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '))
+      res.redirect('/carrito')
+
+    } else {
+      res.send('el producto a eliminar ya no existe')
     }
-}
+  }
 }

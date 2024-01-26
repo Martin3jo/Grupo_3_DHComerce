@@ -29,6 +29,9 @@
                       <p>
                         <%= productos[index].descripción %>
                       </p>
+                      <p>
+                        Precio $<%= productos[index].precio %>
+                      </p>
 
                       <form action="/carrito/<%= productos[index].id %>?_method=PUT" method="post">
                         <label for="cantidad">Cantidad</label>
@@ -58,7 +61,7 @@
               <div class="total-items">
 
                 <h3>Producto/s(cantidad)</h3>
-                <h3>$Precio</h>
+                <h3><%= sumaCantidad %></h3>
 
               </div>
               <div class="total-items">
@@ -67,7 +70,7 @@
               </div>
               <div class="total-items">
                 <h3>TOTAL</h3>
-                <h3>$Precio</h3>
+                <h3>$<%= sumaPrecio %></h3>
               </div>
               <div class="boton-compra">
                 <button>Comprar</button>
