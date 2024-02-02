@@ -2,84 +2,78 @@
 <html lang="en">
 
 <!--<%- include('../partials/head', {titulo : 'crear', estilo : '404.css'}) %>-->
-<%- include('../partials/head', {titulo : 'crear', estilo : 'crearProducto.css'}) %>
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<body>
-    <%- include('../partials/header') %> 
-    <main class="main-adminProducto">
-        <form action="/admin/crearProducto" method="post" enctype="multipart/form-data" class="form-crearProducto">
-            <div class="form-input-admin">
-                <label for="nombreProducto">Nombre del Producto</label>
-                <input 
-                type="text" 
-                name="nombreProducto" 
-                value="<%= locals.old && old.nombreProducto ? old.nombreProducto : null %>"
-                class=" <%= locals.errors && errors.nombreProducto? 'is-invalid' : null %> "/> 
-                <!--comentario para los errores-->
-                    <% if (locals.errors && errors.nombreProducto) { %>
-                        <div>
-                            <%= errors.nombreProducto.msg %>
-                        </div>
-                    <% } %>
-            </div>
-            <div class="form-input-admin">
-                <label for="descripcion">Descripcion</label>
-                <textarea name="descripcion" id="comentario" cols="30" rows="5"></textarea>
-            </div>
-        <div class="form-input-admin">
-            <label for="imagenProducto">imagen Producto:</label><br>
-            <input 
-                type="file" 
-                id="imagen" 
-                name="imagenProducto" 
-                accept="image/*">
-                <!--comentario para los errores-->
-                <% if (locals.errors && errors.imagenProducto) { %>
-                    <div>
-                        <%= errors.imagenProducto.msg %>
+<%- include('../partials/head', {titulo : 'crear' , estilo : 'crearProducto.css' }) %>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main class="main-adminProducto">
+                <form action="/admin/crearProducto" method="post" enctype="multipart/form-data"
+                    class="form-crearProducto">
+                    <div class="form-input-admin">
+                        <label for="nombreProducto">Nombre del Producto</label>
+                        <input type="text" name="nombreProducto"
+                            value="<%= locals.old && old.nombreProducto ? old.nombreProducto : null %>"
+                            class=" <%= locals.errors && errors.nombreProducto? 'is-invalid' : null %> " />
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.nombreProducto) { %>
+                            <div>
+                                <%= errors.nombreProducto.msg %>
+                            </div>
+                            <% } %>
                     </div>
-                <% } %>
-        </div>
-            <div class="form-input-admin">
-                <label for="categoria">Categoría:</label>
-                <select name="categoria" id="categoria"  value="<%= locals.old && old.categoria ? old.categoria : null %>">
-                    <option disabled>Seleccione una categoria</option>
-                    <option value="gaseosa">Gaseosa</option>
-                    <option value="sin-azucar">Sin-Azúcar</option>
-                    <option value="cerveza">Cerveza</option>
-                    <option value="soda">Soda</option>
-                    <option value="vino">Vino</option>
-                </select>
-                <!--comentario para los errores-->
-                <% if (locals.errors && errors.categoria) { %>
-                    <div>
-                        <%= errors.categoria.msg %>
+                    <div class="form-input-admin">
+                        <label for="descripcion">Descripcion</label>
+                        <textarea name="descripcion" id="comentario" cols="30" rows="5"></textarea>
                     </div>
-                <% } %>
-            </div>
-            <div class="form-input-admin">
-                <label for="precio">Precio</label>
-                <input 
-                    type="text" 
-                    name="precio" 
-                    value="<%= locals.old && old.precio ? old.precio : null %>"/>
-                <!--comentario para los errores-->
-                <% if (locals.errors && errors.precio) { %>
-                    <div>
-                        <%= errors.precio.msg %>
+                    <div class="form-input-admin">
+                        <label for="imagenProducto">imagen Producto:</label><br>
+                        <input type="file" id="imagen" name="imagenProducto" accept="image/*">
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.imagenProducto) { %>
+                            <div>
+                                <%= errors.imagenProducto.msg %>
+                            </div>
+                            <% } %>
                     </div>
-                <% } %>
-            </div>
-            <div class="boton-crear">
-                <button type="submit" name="accion" value="crear">Crear</button >
-            </div>
-            
-        </form>
-       <div class="boton-volver">
-        <a href="/admin"><button><i class='bx bx-arrow-back'></i></button></a>
-       </div> 
-    </main>
-    <!-- <%- include('../partials/footer') %> -->
-</body>
+                    <div class="form-input-admin">
+                        <label for="categoria">Categoría:</label>
+                        <select name="categoria" id="categoria"
+                            value="<%= locals.old && old.categoria ? old.categoria : null %>">
+                            <option disabled>Seleccione una categoria</option>
+                            <option value="gaseosa">Gaseosa</option>
+                            <option value="sin-azucar">Sin-Azúcar</option>
+                            <option value="cerveza">Cerveza</option>
+                            <option value="soda">Soda</option>
+                            <option value="vino">Vino</option>
+                        </select>
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.categoria) { %>
+                            <div>
+                                <%= errors.categoria.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="form-input-admin">
+                        <label for="precio">Precio</label>
+                        <input type="text" name="precio" value="<%= locals.old && old.precio ? old.precio : null %>" />
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.precio) { %>
+                            <div>
+                                <%= errors.precio.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="boton-crear">
+                        <button type="submit" name="accion" value="crear">Crear</button>
+                    </div>
+
+                </form>
+                <div class="boton-volver">
+                    <a href="/admin/productos"><button><i class='bx bx-arrow-back'></i></button></a>
+                </div>
+            </main>
+            <!-- <%- include('../partials/footer') %> -->
+    </body>
 
 </html>

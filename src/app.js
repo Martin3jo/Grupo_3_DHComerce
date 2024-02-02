@@ -42,9 +42,7 @@ app.listen(port, () => {
 });
 
 //MIDDLEWARES
-const logMiddleware = require('./middlewares/logMiddleware');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
-app.use(logMiddleware);
 app.use(userLoggedMiddleware)
 
 /*ROUTES*/

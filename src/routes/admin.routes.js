@@ -4,8 +4,7 @@ const multer = require('multer')
 const path = require('path')
 const { body } = require('express-validator')
 
-//Middlewares
-const logDBMiddleware = require('../middlewares/logDBMiddleware')
+
 //validaciones
 const validarCrearProducto = [
     body('nombreProducto').notEmpty().withMessage('Debes completar el campo de nombre'),
@@ -24,7 +23,6 @@ const validarCrearProducto = [
 
 //direcciones de RUTAS
 const adminControllers = require("../controllers/adminControllers");
-const { error } = require("console");
 
 
 //lugar donde almacenara las imagenes del formulario - MULTER
@@ -41,29 +39,36 @@ const upload = multer({ storage });
 
 
 //RUTAS
+router.get('/',adminControllers.admin)
 
 //http://localhost:4000/admin
-router.get("/", adminControllers.admin);
+router.get("/productos", adminControllers.adminProductos);
+
+
+//CRUD
 
 //http://localhost:4000/admin/buscarProducto
-router.get("/buscarProducto", adminControllers.buscar);
+router.get("/productos/buscar", adminControllers.buscar);
 
 //http://localhost:4000/admin/crearProducto
 router.get("/crearProducto", adminControllers.crear);
 
-router.post('/crearProducto', upload.single('imagenProducto'), validarCrearProducto, logDBMiddleware, adminControllers.store)
+router.post('/crearProducto', upload.single('imagenProducto'), validarCrearProducto, adminControllers.store)
 
 //http://localhost:4000/admin/:id/modificarProducto
 router.get("/:id/modificarProducto", adminControllers.modificar);
 
-router.put('/:id/modificarProducto', upload.single('imagenProducto'), validarCrearProducto, logDBMiddleware, adminControllers.modificar);
+router.put('/:id/modificarProducto', upload.single('imagenProducto'), validarCrearProducto, adminControllers.modificar);
 
 //http://localhost:4000/admin/:id
 
-router.delete('/:id', adminControllers.eliminar);
+router.delete('/productos/:id', adminControllers.eliminar);
 
 
+//ADMIN TAREAS
 
+router.get('/pedidos', adminControllers.adminPedidos);
+router.post('/pedidos', adminControllers.adminPedidosPost);
 
 //EXPORTACION
 module.exports = router;

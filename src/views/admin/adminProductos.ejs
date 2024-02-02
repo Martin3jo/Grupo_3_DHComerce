@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head-->
+<%- include('../partials/head.ejs', {titulo: "Admin" , estilo: "admin.css" })%>
+
+    <body>
+        <!--Header-->
+        <%- include('../partials/header.ejs')%>
+            <!--Main-->
+            <main>
+
+                <section class="box-selection">
+                    <%- include('../partials/botonesAdmin.ejs') %>
+                </section>
+                <section class="box-render">
+                    <a href="/admin/crearProducto"><button class="btn btn-block">Crear Producto</button></a>
+                    <!--SEARCH-->
+                    <form action="/admin/productos/buscar" method="get" class="form-admin">
+                        <input type="text" name="buscar">
+                        <input type="submit" value="buscar">
+                    </form>
+                    <article class="carrousel-admin">
+                        <% for (let i=0; i < productos.length; i++) { %>
+                            <div class="prueba1">
+                                <div class="div-img">
+                                    <img src="/img/avatars/<%= productos[i].imagenProducto %>" alt="imagen">
+                                </div>
+                                <div class="prueba2">
+                                    <%= productos[i].nombreProducto %>
+                                        <div class="pruebabotones">
+                                            <a href="/admin/<%= productos[i].id %>/modificarProducto"><button
+                                                    type="submit" name="accion" value="modificar">Modificar</button></a>
+                                            <form action="/admin/productos/<%= productos[i].id %>?_method=DELETE" method="post">
+                                                <button>Borrar</button>
+                                            </form>
+                                        </div>
+                                </div>
+                            </div>
+                            <% } %>
+                                </form>
+
+                    </article>
+
+                </section>
+
+            </main>
+    </body>
+
+</html>

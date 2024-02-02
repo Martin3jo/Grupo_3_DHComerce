@@ -1,19 +1,32 @@
 const fs = require('fs');
 const path = require('path');
-const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
-const { log } = require('console');
-var upload = multer().single('avatarFile')
 const { validationResult } = require('express-validator')
 
+//BASE DE DATOS PRODUCTOS
 const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
 let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+//BASE DE DATOS PEDIDOS
+const pedidosFilePath = path.join(__dirname, '../database/pedidosDB.json')
+let pedidos = JSON.parse(fs.readFileSync(pedidosFilePath, 'utf-8'))
 
 
-//admin
+//ADMIN
 let admin = (req, res) => {
-    res.render('admin/admin', { productos })
+    res.render('admin/admin')
+}
+
+
+// ADMIN TAREAS
+let adminProductos = (req, res) => {
+    res.render('admin/adminProductos', { productos })
+}
+let adminPedidos = (req,res) =>{
+    res.render('admin/adminPedidos', {pedidos})
+}
+let adminPedidosPost = (req,res) => {
+    res.send('hola')
 }
 
 //crear
@@ -49,7 +62,7 @@ let store = (req, res) => {
         fs.writeFileSync(productsFilePath, productsJSON)
 
         res.redirect('/admin')
-        
+
     }
 
 }
@@ -62,12 +75,12 @@ let eliminar = (req, res) => {
     const id = req.params.id
     if (id) {
         productos = productos.filter(producto => producto.id != id)
-    
-        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '))
-        res.redirect('/admin')
-        
-    }else{
-        res.send('el producto a eliminar ya no existe')
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, '   '))
+        return res.render('admin/adminProductos', { productos })
+
+    } else {
+        return res.send('el producto a eliminar ya no existe')
     }
 }
 
@@ -94,23 +107,26 @@ let modificar = (req, res) => {
 
         res.render('admin/modificarProducto', { productoActualizado });
     }
-    else{res.send('no se encuentra el producto solicitado')}
+    else { res.send('no se encuentra el producto solicitado') }
 }
 
 //Buscar
 let buscar = (req, res) => {
-    let queryBusqueda = req.query.buscar
+    let queryBusqueda = req.query.buscar.toLowerCase();
     let busquedaResultante = [];
     for (let i = 0; i < productos.length; i++) {
-        if (productos[i].nombreProducto.includes(queryBusqueda)) {
+        if (productos[i].nombreProducto.toLowerCase().includes(queryBusqueda)) {
             busquedaResultante.push(productos[i])
         }
     }
-    res.render('admin/admin', { busquedaResultante })
+    res.render('admin/adminProductos', { productos: busquedaResultante })
 }
 
 module.exports = {
     admin,
+    adminProductos,
+    adminPedidos,
+    adminPedidosPost,
     crear,
     store,
     eliminar,

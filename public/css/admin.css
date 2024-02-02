@@ -1,70 +1,80 @@
-main{
+main {
     display: flex;
 }
-.box-selection{
+
+.box-selection {
     display: flex;
-    
+
     flex: 20%;
     flex-direction: column;
     height: 100vw;
-    background-color: rgba(255,207,1,0.2);
+    background-color: rgba(255, 207, 1, 0.2);
     padding: 5px;
 }
-.box-selection button{
+
+.box-selection button {
     width: 100%;
 }
-.box-render{
+
+.box-render {
     background-color: beige;
     flex: 80%;
     height: 100vw;
 }
 
-.prueba{
+.prueba {
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
     background-color: brown;
 }
 
-.prueba1{
+.prueba1 {
     display: flex;
     padding: 6px;
 }
-.prueba1 img{
+
+.prueba1 img {
     max-width: 25%;
 }
-.prueba2{
+
+.prueba2 {
     display: flex;
     flex-direction: column;
-    
+
 }
-.pruebabotones{
+
+.pruebabotones {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
+
 }
-.pruebabotones button{
+
+.pruebabotones button {
     border: none;
     color: blue;
 }
-.form-admin{
+
+.form-admin {
     padding: 5px;
 }
-.carrousel-admin{
+
+.carrousel-admin {
     display: flex;
     flex-direction: column;
-    
-    
+
+
     padding: 10px;
     overflow-y: scroll;
     text-align: center;
-    
-    
+
+
     max-height: 345px;
     width: 100%;
 }
-.div-img{
+
+.div-img {
     width: 110px;
     text-align: center;
     display: flex;
@@ -72,25 +82,52 @@ main{
     justify-content: center;
 }
 
+
+.btn-block {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+    background-color: #04AA6D;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    background-color: #45a049;
+}
+.btn:active{
+    background-color: #3e8e41;
+}
+
+
+
+
+
+
+
 /*Tablet*/
 @media (min-width:460px) {
-    .div-img{
+    .div-img {
         width: 130px;
-        
+
     }
 
-    
-    
-  }
-  
-  
-  /*Desktop*/
-  @media (min-width: 768px) {
-    .div-img{
+}
+
+
+/*Desktop*/
+@media (min-width: 768px) {
+    .div-img {
         width: 160px;
-        
+
     }
 
-    
-    
-  }
+
+
+}

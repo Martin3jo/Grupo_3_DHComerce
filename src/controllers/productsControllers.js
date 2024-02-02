@@ -23,7 +23,7 @@ module.exports = {
       const { cantidad } = req.body;
       const productoActualizado = {
         ...productoModificar,
-        cantidad: cantidad
+        cantidad: parseFloat(cantidad)
       };
 
       const index = productos.findIndex(p => p.id === id);

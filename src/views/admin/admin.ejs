@@ -10,63 +10,12 @@
             <main>
 
                 <section class="box-selection">
-                    <a href="/admin/crearProducto"><button>Crear Producto</button></a>
+                    <%- include('../partials/botonesAdmin.ejs') %>
                 </section>
                 <section class="box-render">
-                    <!--SEARCH-->
-                    <form action="/admin/buscarProducto" method="get" class="form-admin">
-                        <input type="text" name="buscar">
-                        <input type="submit" value="buscar">
-                    </form>
-                    <% if (typeof productos !=='undefined' ) { %>
-                        <article class="carrousel-admin">
-                            <% for (let i=0; i < productos.length; i++) { %>
-                                <div class="prueba1">
-                                    <div class="div-img">
-                                        <img src="/img/avatars/<%= productos[i].imagenProducto %>" alt="imagen">
-                                    </div>
-                                    
-                                    <div class="prueba2">
-                                        <%= productos[i].nombreProducto %>
-                                        <div class="pruebabotones">
-                                            <a href="/admin/<%= productos[i].id %>/modificarProducto"><button
-                                                    type="submit" name="accion" value="modificar">Modificar</button></a>
-                                            <form action="/admin/<%= productos[i].id %>?_method=DELETE" method="post">
-                                                <button>Borrar</button>
-                                            </div>
-                                    </div>
-
-                                </div>
-                                </form>
-                                <% } %>
-                        </article>
-                        <% } else if (typeof busquedaResultante !=='undefined' ) { %>
-                            <article class="carrousel-admin">
-                                <% for (let i=0; i < busquedaResultante.length; i++) { %>
-                                    <div class="prueba1">
-                                        <div class="div-img">
-                                            <img src="/img/avatars/<%= busquedaResultante[i].imagenProducto %>" alt="imagen">
-                                        </div>
-                                        
-                                        <div class="prueba2">
-                                            <%= busquedaResultante[i].nombreProducto %>
-                                            <div class="pruebabotones">
-                                                <a href="/admin/<%= busquedaResultante[i].id %>/modificarProducto"><button
-                                                        type="submit" name="accion" value="modificar">Modificar</button></a>
-                                                <form action="/admin/<%= busquedaResultante[i].id %>?_method=DELETE" method="post">
-                                                    <button>Borrar</button>
-                                                </div>
-                                        </div>
-    
-                                    </div>
-                                    </form>
-                                    <% } %>
-                            </article>
-                            <% } %>
+                    
                 </section>
-
             </main>
-           
     </body>
 
 </html>
