@@ -4,17 +4,17 @@ const app = express();
 const path = require("path");
 
 //SESSION de USUARIO
-const session = require('express-session')
-app.use(session({
-  secret: 'Mi secreto',
-  //POR LO VISTO ESTAN DEPRECADOS
-  resave: false,
-  saveUninitialized: false
-}));
+// const session = require('express-session')
+// app.use(session({
+//   secret: 'Mi secreto',
+//   //POR LO VISTO ESTAN DEPRECADOS
+//   resave: false,
+//   saveUninitialized: false
+// }));
 
 //COOKIES
-const cookies = require('cookie-parser')
-app.use(cookies())
+// const cookies = require('cookie-parser')
+// app.use(cookies())
 
 /*LLAMADO AL EJS*/
 app.set("view engine", "ejs");
@@ -41,21 +41,21 @@ app.listen(port, () => {
     http://localhost:${port}`);
 });
 
-//MIDDLEWARES
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
-app.use(userLoggedMiddleware)
+// //MIDDLEWARES
+// const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+// app.use(userLoggedMiddleware)
 
 /*ROUTES*/
 const rutasIndex = require("./routes/main.routes");
-const rutasProductos = require("./routes/products.routes");
-const rutasUsuarios = require("./routes/users.routes");
-const rutasAdmin = require("./routes/admin.routes");
+// const rutasProductos = require("./routes/products.routes");
+// const rutasUsuarios = require("./routes/users.routes");
+// const rutasAdmin = require("./routes/admin.routes");
 
 /*ENTRY POINTS*/
 app.use("/", rutasIndex);
-app.use("/", rutasProductos);
-app.use("/usuario", rutasUsuarios);
-app.use("/admin", rutasAdmin);
+// app.use("/", rutasProductos);
+// app.use("/usuario", rutasUsuarios);
+// app.use("/admin", rutasAdmin);
 
 /*RESPUESTA AL ERROR 404*/
 app.use((req, res, next) => {
