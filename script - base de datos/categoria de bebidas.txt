@@ -1,0 +1,59 @@
+Agua:
+
+Agua embotellada
+Agua con gas
+Agua sin gas
+Refrescos:
+
+Colas
+Limonadas
+Naranjadas
+Refrescos de frutas
+Jugos:
+
+Jugos naturales
+Jugos envasados
+Néctares
+Cervezas:
+
+Cervezas ligeras
+Cervezas artesanales
+Cervezas importadas
+Vinos:
+
+Vinos tintos
+Vinos blancos
+Vinos rosados
+Vinos espumosos
+Licores:
+
+Whisky
+Ron
+Vodka
+Tequila
+Ginebra
+Brandy
+Otros licores
+Bebidas energéticas:
+
+Bebidas energéticas con alcohol
+Bebidas energéticas sin alcohol
+Bebidas deportivas:
+
+Bebidas para deportistas
+Tés y cafés:
+
+Tés
+Cafés
+Bebidas de café helado
+Bebidas lácteas:
+
+Leche
+Batidos
+Bebidas de soja y almendra
+Bebidas funcionales:
+
+Bebidas con ingredientes específicos para la salud
+Bebidas para cócteles:
+
+Ingredientes para cócteles

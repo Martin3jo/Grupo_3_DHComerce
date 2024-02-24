@@ -1,15 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
     let alias = "Pedido"
     let cols = {
-        idpcliente: {
+        idpedido: {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
             autoIncrement: true
     
-        },
-        detalles: {
-            type: DataTypes.STRING(100),
-            defaultValue : null
         },
         estado: {
             type: DataTypes.STRING(15),
@@ -23,12 +19,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
         },
-        cantidad: {
-            type: DataTypes.INTEGER.UNSIGNED,
-            defaultValue : null
-        },
         fk_idcliente :{
             type : DataTypes.INTEGER.UNSIGNED,
+            defaultValue : null
+        },
+        cantidad: {
+            type: DataTypes.INTEGER.UNSIGNED,
             defaultValue : null
         }
     }
