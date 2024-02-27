@@ -2,134 +2,131 @@ const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator')
+let db = require('../database/models')
 
 //BASE DE DATOS PRODUCTOS
-const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
-let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
+// let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 //BASE DE DATOS PEDIDOS
-const pedidosFilePath = path.join(__dirname, '../database/pedidosDB.json')
-let pedidos = JSON.parse(fs.readFileSync(pedidosFilePath, 'utf-8'))
+// const pedidosFilePath = path.join(__dirname, '../database/pedidosDB.json')
+// let pedidos = JSON.parse(fs.readFileSync(pedidosFilePath, 'utf-8'))
 
-
-//ADMIN
-let admin = (req, res) => {
-    res.render('admin/admin')
-}
 
 
 // ADMIN TAREAS
-let adminProductos = (req, res) => {
-    res.render('admin/adminProductos', { productos })
-}
-let adminPedidos = (req,res) =>{
-    res.render('admin/adminPedidos', {pedidos})
-}
-let adminPedidosPost = (req,res) => {
-    res.send('hola')
-}
+// let adminProductos = 
+// let adminPedidos = (req,res) =>{
+//     res.render('admin/adminPedidos', {pedidos})
+// }
+// let adminPedidosPost = (req,res) => {
+//     res.send('hola')
+// }
 
 //crear
-let store = (req, res) => {
-    //validacion
-    let resultValidation = validationResult(req);
-    if (resultValidation.errors.length > 0) {
-        return res.render('admin/crearProducto', {
-            errors: resultValidation.mapped(),
-            old: req.body
-        })
-
-    } else {
-        // Obtenemos los campos del body con destructuring
-        const { nombreProducto, descripcion, imagenProducto, categoria, precio } = req.body
-        // Creamos un nuevo producto con todos los campos 
-        const newProduct = {
-            // id: Date.now(),
-            id: uuidv4(),
-            nombreProducto,
-            descripcion,
-            imagenProducto: req.file?.filename || 'default-image.png',
-            /*imagenProducto: (req.file && req.file.filename) ? imagenProducto = req.file.filename :
-                imagenProducto = 'default-image.png', */
-            categoria,
-            precio
-        }
-
-        productos.push(newProduct)
-
-        let productsJSON = JSON.stringify(productos, null, '   ')
-
-        fs.writeFileSync(productsFilePath, productsJSON)
-
-        res.redirect('/admin')
-
-    }
-
-}
-let crear = (req, res) => {
-    res.render('admin/crearProducto')
-}
+// let 
+// let crear = 
 
 //eliminar
-let eliminar = (req, res) => {
-    const id = req.params.id
-    if (id) {
-        productos = productos.filter(producto => producto.id != id)
+// let eliminar = (req, res) => {
+//     const id = req.params.id
+//     if (id) {
+//         productos = productos.filter(producto => producto.id != id)
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, '   '))
-        return res.render('admin/adminProductos', { productos })
+//         fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, '   '))
+//         return res.render('admin/adminProductos', { productos })
 
-    } else {
-        return res.send('el producto a eliminar ya no existe')
-    }
-}
+//     } else {
+//         return res.send('el producto a eliminar ya no existe')
+//     }
+// }
 
 //modificar
-let modificar = (req, res) => {
-    let id = req.params.id;
-    let productoModificar = productos.find(p => p.id === id);
-    if (productoModificar) {
-        const { nombreProducto, descripcion, imagenProducto, categoria, precio } = req.body;
-        const productoActualizado = {
-            id: id,
-            nombreProducto: nombreProducto || productoModificar.nombreProducto,
-            descripcion: descripcion || productoModificar.descripcion,
-            imagenProducto: imagenProducto || productoModificar.imagenProducto,
-            categoria: categoria || productoModificar.categoria,
-            precio: precio || productoModificar.precio
-        };
+// let modificar = (req, res) => {
+//     let id = req.params.id;
+//     let productoModificar = productos.find(p => p.id === id);
+//     if (productoModificar) {
+//         const { nombreProducto, descripcion, imagenProducto, categoria, precio } = req.body;
+//         const productoActualizado = {
+//             id: id,
+//             nombreProducto: nombreProducto || productoModificar.nombreProducto,
+//             descripcion: descripcion || productoModificar.descripcion,
+//             imagenProducto: imagenProducto || productoModificar.imagenProducto,
+//             categoria: categoria || productoModificar.categoria,
+//             precio: precio || productoModificar.precio
+//         };
 
-        const index = productos.findIndex(p => p.id === id);
+//         const index = productos.findIndex(p => p.id === id);
 
-        productos[index] = productoActualizado;
+//         productos[index] = productoActualizado;
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 2));
+//         fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, 2));
 
-        res.render('admin/modificarProducto', { productoActualizado });
-    }
-    else { res.send('no se encuentra el producto solicitado') }
-}
+//         res.render('admin/modificarProducto', { productoActualizado });
+//     }
+//     else { res.send('no se encuentra el producto solicitado') }
+// }
 
 //Buscar
-let buscar = (req, res) => {
-    let queryBusqueda = req.query.buscar.toLowerCase();
-    let busquedaResultante = [];
-    for (let i = 0; i < productos.length; i++) {
-        if (productos[i].nombreProducto.toLowerCase().includes(queryBusqueda)) {
-            busquedaResultante.push(productos[i])
-        }
-    }
-    res.render('admin/adminProductos', { productos: busquedaResultante })
-}
+// let buscar = (req, res) => {
+//     let queryBusqueda = req.query.buscar.toLowerCase();
+//     let busquedaResultante = [];
+//     for (let i = 0; i < productos.length; i++) {
+//         if (productos[i].nombreProducto.toLowerCase().includes(queryBusqueda)) {
+//             busquedaResultante.push(productos[i])
+//         }
+//     }
+//     res.render('admin/adminProductos', { productos: busquedaResultante })
+// }
 
 module.exports = {
-    admin,
-    adminProductos,
-    adminPedidos,
-    adminPedidosPost,
-    crear,
-    store,
-    eliminar,
-    modificar,
-    buscar
+    admin: (req, res) => {
+        res.render('admin/admin')
+    },
+    adminProductos: async (req, res) => {
+        const productos = await db.Producto.findAll()
+        return res.render('admin/adminProductos', { productos });
+    },
+    crear: (req, res) => {
+        res.render('admin/crearProducto')
+    },
+    store: (req, res) => {
+        //validacion
+        let resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('admin/crearProducto', {
+                errors: resultValidation.mapped(),
+                old: req.body
+            })
+
+        } else {
+            let { marca, descripcion, volumen, categoria, disponibilidad, precio, avatar } = req.body
+            db.Producto.create({
+                marca,
+                descripcion,
+                volumen,
+                categoria,
+                disponibilidad,
+                precio,
+                avatar
+            })
+                .then(() => {
+                    res.redirect('/admin/productos')
+                })
+                .catch(error => console.log(error.message))
+        }
+    },
+    modificar:(req,res)=>{
+        db.Producto.findByPk(req.params.id).then(function(producto){
+            if(producto){
+                res.render('admin/modificarProducto',{productos: producto})
+            } else{
+                res.send('no se encontro el producto')
+            }
+        })
+
+    
+       
+    }
+
 }

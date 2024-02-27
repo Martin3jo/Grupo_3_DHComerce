@@ -1,133 +1,101 @@
-main {
-    display: flex;
-}
-
-.box-selection {
-    display: flex;
-
-    flex: 20%;
-    flex-direction: column;
-    height: 100vw;
-    background-color: rgba(255, 207, 1, 0.2);
-    padding: 5px;
-}
-
-.box-selection button {
-    width: 100%;
-}
-
-.box-render {
-    background-color: beige;
-    flex: 80%;
-    height: 100vw;
-}
-
-.prueba {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-    background-color: brown;
-}
-
-.prueba1 {
-    display: flex;
-    padding: 6px;
-}
-
-.prueba1 img {
-    max-width: 25%;
-}
-
-.prueba2 {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.pruebabotones {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-}
-
-.pruebabotones button {
+/*BOTONES*/
+/* .btn {
     border: none;
-    color: blue;
-}
-
-.form-admin {
-    padding: 5px;
-}
-
-.carrousel-admin {
-    display: flex;
-    flex-direction: column;
-
-
-    padding: 10px;
-    overflow-y: scroll;
-    text-align: center;
-
-
-    max-height: 345px;
-    width: 100%;
-}
-
-.div-img {
-    width: 110px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-
-.btn-block {
-    width: 100%;
-    display: block;
-    margin-bottom: 5px;
-    background-color: #04AA6D;
-}
-
-.btn {
-    border: none;
-    color: white;
+    color: black;
     padding: 14px 28px;
     cursor: pointer;
     border-radius: 5px;
 }
 
-.btn:hover{
-    background-color: #45a049;
-}
-.btn:active{
-    background-color: #3e8e41;
+.primary {
+    background-color: white;
+    border: 2px solid #007bff;
 }
 
+.primary:hover {
+    background: #0b7dda;
+    color: white;
+} */
 
+/*FIN BOTONES ADMIN*/
 
+/*BARRA MENU*/
+.menu {
+    position: absolute;
+    z-index: 4;
+    height: 100vh;
+    width: 0;
+    background-color: #333;
+    color: #fff;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: width 0.3s ease-in-out;
+}
 
+.ul-menu {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+}
 
+.menu li {
+    padding: 15px;
+    border-bottom: 1px solid #555;
+}
 
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
 
-/*Tablet*/
-@media (min-width:460px) {
-    .div-img {
-        width: 130px;
-
-    }
-
+#toggleBtn {
+    background-color: rgb(86 48 221);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
 }
 
 
-/*Desktop*/
-@media (min-width: 768px) {
-    .div-img {
-        width: 160px;
+/*FIN BARRA MENU*/
 
-    }
+.imagen-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -4;
+}
+.bloque-carrusel{
+    border-radius: 4px;
+    border: 5px solid aquamarine;
+    display: flex;
+    justify-content: space-evenly;
+}
 
+.botones-productos{
+    display: flex;
+    justify-content: space-around;
+}
 
-
+.info-producto{
+    display: flex;
+    justify-content: center;
+}
+.info-columna-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.info-columna-2{
+    display: flex;
+    flex-direction: column;
+    
 }

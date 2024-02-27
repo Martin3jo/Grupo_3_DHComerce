@@ -10,32 +10,44 @@
             <main class="main-adminProducto">
                 <form action="/admin/crearProducto" method="post" enctype="multipart/form-data"
                     class="form-crearProducto">
+                    <!--MARCA-->
                     <div class="form-input-admin">
-                        <label for="nombreProducto">Nombre del Producto</label>
-                        <input type="text" name="nombreProducto"
-                            value="<%= locals.old && old.nombreProducto ? old.nombreProducto : null %>"
-                            class=" <%= locals.errors && errors.nombreProducto? 'is-invalid' : null %> " />
+                        <label for="marca">Nombre del Producto</label>
+                        <input type="text" name="marca"
+                            value="<%= locals.old && old.marca ? old.marca : null %>"
+                            class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " />
                         <!--comentario para los errores-->
-                        <% if (locals.errors && errors.nombreProducto) { %>
+                        <% if (locals.errors && errors.marca) { %>
                             <div>
-                                <%= errors.nombreProducto.msg %>
+                                <%= errors.marca.msg %>
                             </div>
                             <% } %>
                     </div>
+                    <!--DESCRIPCION-->
                     <div class="form-input-admin">
                         <label for="descripcion">Descripcion</label>
                         <textarea name="descripcion" id="comentario" cols="30" rows="5"></textarea>
                     </div>
+                    <!--VOLUMEN-->
                     <div class="form-input-admin">
-                        <label for="imagenProducto">imagen Producto:</label><br>
-                        <input type="file" id="imagen" name="imagenProducto" accept="image/*">
-                        <!--comentario para los errores-->
-                        <% if (locals.errors && errors.imagenProducto) { %>
-                            <div>
-                                <%= errors.imagenProducto.msg %>
-                            </div>
-                            <% } %>
+                        <label for="volumen">Volumen:</label>
+                        <select name="volumen" id="volumen"
+                            value="<%= locals.old && old.volumen ? old.volumen : null %>">
+                            <option disabled>Seleccione una volumen</option>
+                            <option value="0.250">250 cm3</option>
+                            <option value="0.300">300 cm3</option>
+                            <option value="0.330">330 cm3</option>
+                            <option value="0.500">500 cm3</option>
+                            <option value="0.700">700 cm3</option>
+                            <option value="0.750">750 cm3</option>
+                            <option value="1.000">1000 cm3</option>
+                            <option value="1.500">1500 cm3</option>
+                            <option value="2.000">2000 cm3</option>
+                            <option value="2.500">2500 cm3</option>
+                            <option value="3.000">3000 cm3</option>
+                        </select>
                     </div>
+                    <!--CATEGORIA-->
                     <div class="form-input-admin">
                         <label for="categoria">Categoría:</label>
                         <select name="categoria" id="categoria"
@@ -54,6 +66,12 @@
                             </div>
                             <% } %>
                     </div>
+                    <!--DISPONIBILIDAD-->
+                    <div class="form-input-admin">
+                        <label for="disponibilidad">Disponibilidad</label>
+                        <input type="text" name="disponibilidad"/>
+                    </div>
+                    <!--PRECIO-->
                     <div class="form-input-admin">
                         <label for="precio">Precio</label>
                         <input type="text" name="precio" value="<%= locals.old && old.precio ? old.precio : null %>" />
@@ -61,6 +79,17 @@
                         <% if (locals.errors && errors.precio) { %>
                             <div>
                                 <%= errors.precio.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <!--AVATAR-->
+                    <div class="form-input-admin">
+                        <label for="avatar">imagen Producto:</label><br>
+                        <input type="file" id="imagen" name="avatar" accept="image/*">
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div>
+                                <%= errors.avatar.msg %>
                             </div>
                             <% } %>
                     </div>

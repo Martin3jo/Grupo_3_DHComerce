@@ -24,3 +24,8 @@ Dinámica - Estrella de Mar:
         - No hablar
     5. Dejar de hacer.
         - No hablar
+
+        Nota : 18/02/2024
+            Los unicos integrantes activos actuales : Coronel Atilio, Trejo Martin
+            La division del trabajo recaen en la estructura MVC, por el momento nuestros esfuerzos estan centrados en la base de datos y la implementacion de una logica mas eficiente.
+            La vision del sitio web sigue siendo de importancia secundaria, pero aun asi no menos importante

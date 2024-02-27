@@ -16,5 +16,14 @@
       "password": "$2a$10$8R8NJOBn0o3hD1VDNxK5C.6aeowIJbmNm4kGzMryFtXYD0/29wrti",
       "email": "martin@hotmail.com",
       "fechaNac": "1990-01-09"
+   },
+   {
+      "id": "c4f42ebc-37f6-40da-955f-1d74142c0345",
+      "nombre": "asd",
+      "apellido": "coronel",
+      "usuario": "maxi935",
+      "password": "$2a$10$7ZfyyMo7GnWH7tXxFQaDc./1Cr5ZQzzxVaE4HEA6U/7awNgAEBxgS",
+      "email": "jose@gmail.com",
+      "fechaNac": "1990-01-09"
    }
 ]

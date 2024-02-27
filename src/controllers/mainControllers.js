@@ -1,6 +1,10 @@
+const db = require('../database/models')
 const indexController = {
   index: (req, res) => {
-    res.render("index");
+    db.Producto.findAll()
+    .then(producto=>{
+      res.render("index", {producto});
+    })
   },
 };
 module.exports = indexController;

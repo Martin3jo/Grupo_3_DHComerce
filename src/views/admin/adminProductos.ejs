@@ -8,42 +8,64 @@
         <%- include('../partials/header.ejs')%>
             <!--Main-->
             <main>
+                <%- include('../partials/botonesAdmin.ejs') %>
+                    <section>
+                        <a href="/admin/crearProducto"><button>Crear Producto</button></a>
+                        <!--SEARCH-->
+                        <form action="/admin/productos/buscar" method="get" class="form-admin">
+                            <input type="text" name="buscar">
+                            <input type="submit" value="buscar">
+                        </form>
+                        <section>
+                            <% for (let i=0; i < productos.length; i++) { %>
+                                <article class="bloque-carrusel">
+                                    <div>
+                                        <div class="info-producto">
+                                            <div class="info-columna-1">
+                                                <div>
+                                                    <%= productos[i].marca %>
+                                                        <%= productos[i].volumen %>
+                                                </div>
+                                                <div>
+                                                    <%= productos[i].descripcion %>
+                                                </div>
+                                            </div>
+                                            <div class="info-columna-2">
+                                                <%= productos[i].precio %>
+                                                    <%= productos[i].disponibilidad %>
+                                            </div>
 
-                <section class="box-selection">
-                    <%- include('../partials/botonesAdmin.ejs') %>
-                </section>
-                <section class="box-render">
-                    <a href="/admin/crearProducto"><button class="btn btn-block">Crear Producto</button></a>
-                    <!--SEARCH-->
-                    <form action="/admin/productos/buscar" method="get" class="form-admin">
-                        <input type="text" name="buscar">
-                        <input type="submit" value="buscar">
-                    </form>
-                    <article class="carrousel-admin">
-                        <% for (let i=0; i < productos.length; i++) { %>
-                            <div class="prueba1">
-                                <div class="div-img">
-                                    <img src="/img/avatars/<%= productos[i].imagenProducto %>" alt="imagen">
-                                </div>
-                                <div class="prueba2">
-                                    <%= productos[i].nombreProducto %>
-                                        <div class="pruebabotones">
-                                            <a href="/admin/<%= productos[i].id %>/modificarProducto"><button
-                                                    type="submit" name="accion" value="modificar">Modificar</button></a>
-                                            <form action="/admin/productos/<%= productos[i].id %>?_method=DELETE" method="post">
-                                                <button>Borrar</button>
-                                            </form>
+
                                         </div>
-                                </div>
-                            </div>
-                            <% } %>
-                                </form>
+                                        <div class="botones-productos">
+                                            <div>
+                                                <a href="/admin/modificarProducto/<%= productos[i].idproducto %>"><button
+                                                        class="btn primary" type="submit" name="accion"
+                                                        value="modificar">Modificar</button></a>
+                                            </div>
+                                            <div>
+                                                <form
+                                                    action="/admin/productos/<%= productos[i].idproducto %>?_method=DELETE"
+                                                    method="post">
+                                                    <button class="btn primary">Borrar</button>
+                                                </form>
+                                            </div>
 
-                    </article>
+                                        </div>
 
-                </section>
+                                    </div>
+
+                                    <div>
+                                        <img src="/img/avatars/<%= productos[i].avatar %>" alt="avatar">
+                                    </div>
+
+                                </article>
+                                <% } %>
+                        </section>
+                    </section>
 
             </main>
+            <script src="/js/admin.js"></script>
     </body>
 
 </html>

@@ -1,53 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include('../partials/head', {titulo : 'Modificar' , estilo : 'crearProducto.css' }) %>
 
-<!--<%- include('../partials/head', {titulo : 'crear', estilo : '404.css'}) %>-->
-<%- include('../partials/head', {titulo : 'modificar', estilo : 'modificarProducto.css'}) %>
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <body>
+        <%- include('../partials/header') %>
+            <main class="main-adminProducto">
+                <form action="/admin/modificarProducto/<%= productos.idproducto %>?_method=PUT" method="post" enctype="multipart/form-data"
+                    class="form-crearProducto">
+                    <!--MARCA-->
+                    <div class="form-input-admin">
+                        <label for="marca">Nombre del Producto</label>
+                        <input type="text" name="marca"
+                            value="<%= productos.marca %>"
+                            class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " />
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.marca) { %>
+                            <div>
+                                <%= errors.marca.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <!--DESCRIPCION-->
+                    <div class="form-input-admin">
+                        <label for="descripcion">Descripcion</label>
+                        <textarea name="descripcion" id="comentario" cols="30" rows="5" ><%= productos.descripcion %></textarea>
+                    </div>
+                    <!--VOLUMEN-->
+                    <div class="form-input-admin">
+                        <label for="volumen">Volumen:</label>
+                        <select name="volumen" id="volumen" 
+                            value="<%= locals.old && old.volumen ? old.volumen : null %>">
+                            <option disabled>Seleccione una volumen</option>
+                            <option value="0.250" <%= productos.volumen == "0.250" ? 'selected' : '' %>>250 cm3</option>
+                            <option value="0.300" <%= productos.volumen == "0.300" ? 'selected' : '' %>>300 cm3</option>
+                            <option value="0.330" <%= productos.volumen == "0.330" ? 'selected' : '' %>>330 cm3</option>
+                            <option value="0.500" <%= productos.volumen == "0.500" ? 'selected' : '' %>>500 cm3</option>
+                            <option value="0.700" <%= productos.volumen == "0.700" ? 'selected' : '' %>>700 cm3</option>
+                            <option value="0.750" <%= productos.volumen == "0.750" ? 'selected' : '' %>>750 cm3</option>
+                            <option value="1.000" <%= productos.volumen == "1.000" ? 'selected' : '' %>>1000 cm3</option>
+                            <option value="1.500" <%= productos.volumen == "1.500" ? 'selected' : '' %>>1500 cm3</option>
+                            <option value="2.000" <%= productos.volumen == "2.000" ? 'selected' : '' %>>2000 cm3</option>
+                            <option value="2.500" <%= productos.volumen == "2.500" ? 'selected' : '' %>>2500 cm3</option>
+                            <option value="3.000" <%= productos.volumen == "3.000" ? 'selected' : '' %>>3000 cm3</option>
+                        </select>
+                    </div>
+                    <!--CATEGORIA-->
+                    <div class="form-input-admin">
+                        <label for="categoria">Categoría:</label>
+                        <select name="categoria" id="categoria"
+                            value="<%= locals.old && old.categoria ? old.categoria : null %>">
+                            <option disabled>Seleccione una categoría</option>
+                            <option value="Gaseosa" <%= productos.categoria === "Gaseosa" ? 'selected' : '' %>>Gaseosa</option>
+                            <option value="Alcohol" <%= productos.categoria === "Alcohol" ? 'selected' : '' %>>Alcohol</option>
+                            <option value="cerveza" <%= productos.categoria === "cerveza" ? 'selected' : '' %>>Cerveza</option>
+                            <option value="Agua" <%= productos.categoria === "Agua" ? 'selected' : '' %>>Agua</option>
+                            <option value="vino" <%= productos.categoria === "vino" ? 'selected' : '' %>>Vino</option>
+                            <option value="Energética" <%= productos.categoria === "Energética" ? 'selected' : '' %>>Energética</option>
+                            <option value="Coctel" <%= productos.categoria === "Coctel" ? 'selected' : '' %>>Coctel</option>
+                        </select>
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.categoria) { %>
+                            <div>
+                                <%= errors.categoria.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <!--DISPONIBILIDAD-->
+                    <div class="form-input-admin">
+                        <label for="disponibilidad">Disponibilidad</label>
+                        <input type="text" name="disponibilidad"/>
+                    </div>
+                    <!--PRECIO-->
+                    <div class="form-input-admin">
+                        <label for="precio">Precio</label>
+                        <input type="text" name="precio" value="<%= locals.old && old.precio ? old.precio : null %>" />
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.precio) { %>
+                            <div>
+                                <%= errors.precio.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <!--AVATAR-->
+                    <div class="form-input-admin">
+                        <label for="avatar">imagen Producto:</label><br>
+                        <input type="file" id="imagen" name="avatar" accept="image/*">
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div>
+                                <%= errors.avatar.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="boton-crear">
+                        <button type="submit" name="accion" value="crear">Crear</button>
+                    </div>
 
-<body>
-    <%- include('../partials/header') %> 
-    <main class="main-modificarProducto">
-        <form action="/admin/<%= productoActualizado.id %>/modificarProducto?_method=PUT" method="post" enctype="multipart/form-data" class="form-modificarProducto">
-            <div class="form-input-modificar">
-                <label for="nombreProducto">Nombre del Producto</label>
-                <input type="text" name="nombreProducto" value="<%= productoActualizado.nombreProducto %>" />
-            </div>
-            <div class="form-input-modificar">
-                <label for="descripcion">Descripcion</label>
-                <input type="text" name="descripcion" value="<%= productoActualizado.descripcion %>"/>
-            </div>
-        <div class="form-input-modificar">
-            <label for="imagenProducto">imagen Producto:</label><br>
-            <input type="file" id="imagen" name="imagenProducto" accept="image/*" value="<%= productoActualizado.imagenProducto %>">
-        </div>
-            <div class="form-input-modificar">
-                <label for="categoria">Categoría</label>
-                <select name="categoria" id="categoria" value="<%= productoActualizado.categoria %>">
-                    <option disabled>Seleccione una categoria</option>
-                    <option value="gaseosa">Gaseosa</option>
-                    <option value="sin-azucar">Sin-Azúcar</option>
-                    <option value="cerveza">Cerveza</option>
-                    <option value="soda">Soda</option>
-                    <option value="vino">Vino</option>
-                </select>
-    
-            </div>
-            <div class="form-input-modificar">
-                <label for="precio">Precio</label>
-                <input type="text" name="precio" value="<%= productoActualizado.precio %>"/>
-            </div>
-            <div class="boton-modificar">
-                <button type="submit" name="accion" value="modificar">Modificar</button>
-            </div>
-            
-        </form>
-        <div class="boton-volver">
-            <a href="/admin/productos"><button><i class='bx bx-arrow-back'></i></button></a>
-        </div>
-        
-    </main>
-    <!-- <%- include('../partials/footer') %> -->
-</body>
+                </form>
+                <div class="boton-volver">
+                    <a href="/admin/productos"><button><i class='bx bx-arrow-back'></i></button></a>
+                </div>
+            </main>
+            <!-- <%- include('../partials/footer') %> -->
+    </body>
 
 </html>
