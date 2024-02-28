@@ -41,16 +41,11 @@ app.listen(port, () => {
     http://localhost:${port}`);
 });
 
-<<<<<<< HEAD
 //MIDDLEWARES
-=======
-// //MIDDLEWARES
->>>>>>> 06e89671e7689b1aaa085b979299ebc95b4d6c45
 // const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 // app.use(userLoggedMiddleware)
 
 /*ROUTES*/
-<<<<<<< HEAD
 //const rutasIndex = require("./routes/main.routes");
 // const rutasProductos = require("./routes/products.routes");
 // const rutasUsuarios = require("./routes/users.routes");
@@ -61,18 +56,6 @@ const rutasAdmin = require("./routes/admin.routes");
 // app.use("/productos", rutasProductos);
 // app.use("/usuarios", rutasUsuarios);
 app.use("/admin", rutasAdmin);
-=======
-const rutasIndex = require("./routes/main.routes");
-// const rutasProductos = require("./routes/products.routes");
-// const rutasUsuarios = require("./routes/users.routes");
-// const rutasAdmin = require("./routes/admin.routes");
-
-/*ENTRY POINTS*/
-app.use("/", rutasIndex);
-// app.use("/", rutasProductos);
-// app.use("/usuario", rutasUsuarios);
-// app.use("/admin", rutasAdmin);
->>>>>>> 06e89671e7689b1aaa085b979299ebc95b4d6c45
 
 
 /*RESPUESTA AL ERROR 404*/

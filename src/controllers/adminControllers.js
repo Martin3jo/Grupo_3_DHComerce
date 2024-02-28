@@ -123,10 +123,7 @@ module.exports = {
             } else{
                 res.send('no se encontro el producto')
             }
-        })
-
-    
-       
+        }) 
     }
 
 }
