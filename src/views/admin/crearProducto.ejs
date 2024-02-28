@@ -53,11 +53,13 @@
                         <select name="categoria" id="categoria"
                             value="<%= locals.old && old.categoria ? old.categoria : null %>">
                             <option disabled>Seleccione una categoria</option>
-                            <option value="gaseosa">Gaseosa</option>
-                            <option value="sin-azucar">Sin-Azúcar</option>
-                            <option value="cerveza">Cerveza</option>
-                            <option value="soda">Soda</option>
+                            <option value="Gaseosa">Gaseosa</option>
+                            <option value="Alcohol">Alohol</option>
+                            <option value="Cerveza">Cerveza</option>
+                            <option value="Agua">Agua</option>
                             <option value="vino">Vino</option>
+                            <option value="Energética">Energética</option>
+                            <option value="Coctel">Coctel</option>
                         </select>
                         <!--comentario para los errores-->
                         <% if (locals.errors && errors.categoria) { %>

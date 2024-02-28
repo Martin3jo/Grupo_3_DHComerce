@@ -52,7 +52,7 @@
                             <option disabled>Seleccione una categoría</option>
                             <option value="Gaseosa" <%= productos.categoria === "Gaseosa" ? 'selected' : '' %>>Gaseosa</option>
                             <option value="Alcohol" <%= productos.categoria === "Alcohol" ? 'selected' : '' %>>Alcohol</option>
-                            <option value="cerveza" <%= productos.categoria === "cerveza" ? 'selected' : '' %>>Cerveza</option>
+                            <option value="Cerveza" <%= productos.categoria === "cerveza" ? 'selected' : '' %>>Cerveza</option>
                             <option value="Agua" <%= productos.categoria === "Agua" ? 'selected' : '' %>>Agua</option>
                             <option value="vino" <%= productos.categoria === "vino" ? 'selected' : '' %>>Vino</option>
                             <option value="Energética" <%= productos.categoria === "Energética" ? 'selected' : '' %>>Energética</option>
@@ -68,12 +68,12 @@
                     <!--DISPONIBILIDAD-->
                     <div class="form-input-admin">
                         <label for="disponibilidad">Disponibilidad</label>
-                        <input type="text" name="disponibilidad"/>
+                        <input type="text" name="disponibilidad" value="<%= productos.disponibilidad %>"/>
                     </div>
                     <!--PRECIO-->
                     <div class="form-input-admin">
                         <label for="precio">Precio</label>
-                        <input type="text" name="precio" value="<%= locals.old && old.precio ? old.precio : null %>" />
+                        <input type="text" name="precio" value="<%= productos.precio %>" />
                         <!--comentario para los errores-->
                         <% if (locals.errors && errors.precio) { %>
                             <div>
@@ -84,7 +84,7 @@
                     <!--AVATAR-->
                     <div class="form-input-admin">
                         <label for="avatar">imagen Producto:</label><br>
-                        <input type="file" id="imagen" name="avatar" accept="image/*">
+                        <input type="file" id="imagen" name="avatar" accept="image/*" value="<%= productos.avatar %>">
                         <!--comentario para los errores-->
                         <% if (locals.errors && errors.avatar) { %>
                             <div>
