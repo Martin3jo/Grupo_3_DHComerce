@@ -45,25 +45,20 @@ router.get('/',adminControllers.admin)
 http://localhost:4000/admin/productos
 router.get("/productos", adminControllers.adminProductos);
 
-
 // //CRUD
 //http://localhost:4000/admin/crearProducto
 router.get("/crearProducto", adminControllers.crear);
 router.post('/crearProducto', upload.single('avatar'), validarCrearProducto, adminControllers.store)
 
-// //http://localhost:4000/admin/buscarProducto
-// router.get("/productos/buscar", adminControllers.buscar);
-
-
-
 //http://localhost:4000/admin/modificarProducto/:id
-router.get("/modificarProducto/:id", adminControllers.modificar);
+router.get('/modificarProducto/:id', adminControllers.modificar)
+router.put("/modificarProducto/:id", upload.single('imagenProducto'), validarCrearProducto, adminControllers.modificarProceso);
 
-// router.put('/:id/modificarProducto', upload.single('imagenProducto'), validarCrearProducto, adminControllers.modificar);
+//http://localhost:4000/admin/productos/:id
+router.delete('/productos/:id', adminControllers.eliminar);
 
-// //http://localhost:4000/admin/:id
-
-// router.delete('/productos/:id', adminControllers.eliminar);
+//http://localhost:4000/admin/buscarProducto
+router.get("/productos/buscar", adminControllers.buscar);
 
 
 // //ADMIN TAREAS

@@ -3,6 +3,7 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator')
 let db = require('../database/models')
+const { Op } = require("sequelize");
 
 //BASE DE DATOS PRODUCTOS
 // const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
@@ -116,17 +117,58 @@ module.exports = {
                 .catch(error => console.log(error.message))
         }
     },
-    modificar:(req,res)=>{
-        db.Producto.findByPk(req.params.id).then(function(producto){
-            if(producto){
-                res.render('admin/modificarProducto',{productos: producto})
-            } else{
-                res.send('no se encontro el producto')
-            }
-        })
-
-    
-       
-    }
-
+    modificar:async function (req, res) {
+        try {
+            let idproducto = req.params.id
+            let Producto = await db.Producto.findByPk(idproducto)
+            res.render('admin/modificarProducto', { productos : Producto })
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    modificarProceso:async function (req, res) {
+        try {
+            const { marca, descripcion, volumen, categoria, disponibilidad,precio, avatar } = req.body
+            await db.Producto.update({
+                marca,
+                descripcion,
+                volumen,
+                categoria,
+                disponibilidad,
+                precio,
+                avatar
+            }, {
+                where: { idproducto: req.params.id }
+            })
+            res.redirect('/admin/productos')
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    eliminar : async function (req, res) {
+        try {
+            await db.Producto.destroy({
+                where: { idproducto: req.params.id }
+            })
+            res.redirect('/admin/productos')
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    buscar : async (req, res) => {
+        try {
+            const { buscar } = req.query;
+            const producto = await db.Producto.findAll({
+                where: {
+                    marca: {
+                        [Op.like]: `%${buscar}%`
+                    }
+                }
+            });
+            res.render('admin/adminProductos', { productos : producto });
+        } catch (error) {
+            console.log(error.message);
+            res.send(error.message);
+        }
+    },
 }
