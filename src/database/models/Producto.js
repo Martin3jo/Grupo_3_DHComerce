@@ -20,14 +20,14 @@ let cols = {
         type: DataTypes.STRING(100)
     },
     disponibilidad: {
-        type: DataTypes.BIGINT.UNSIGNED
+        type: DataTypes.INTEGER.UNSIGNED,
+        defaultValue : null
     },
     precio: {
         type: DataTypes.DECIMAL(10, 2).UNSIGNED
     },
     avatar: {
-        type: DataTypes.BLOB,
-        defaultValue : null
+        type: DataTypes.STRING
     },
     created_at: {
         type: DataTypes.DATE,

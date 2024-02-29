@@ -13,7 +13,7 @@
                         <input type="text" name="marca"
                             value="<%= productos.marca %>"
                             class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " />
-                        <!--comentario para los errores-->
+                        <!--Errores-->
                         <% if (locals.errors && errors.marca) { %>
                             <div>
                                 <%= errors.marca.msg %>
@@ -85,7 +85,7 @@
                     <div class="form-input-admin">
                         <label for="avatar">imagen Producto:</label><br>
                         <input type="file" id="imagen" name="avatar" accept="image/*" value="<%= productos.avatar %>">
-                        <!--comentario para los errores-->
+                        <!--Errores-->
                         <% if (locals.errors && errors.avatar) { %>
                             <div>
                                 <%= errors.avatar.msg %>
@@ -93,7 +93,7 @@
                             <% } %>
                     </div>
                     <div class="boton-crear">
-                        <button type="submit" name="accion" value="crear">Crear</button>
+                        <button type="submit" name="accion" value="modificar">Modificar</button>
                     </div>
 
                 </form>

@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator')
 let db = require('../database/models')
 const { Op } = require("sequelize");
@@ -109,7 +108,7 @@ module.exports = {
                 categoria,
                 disponibilidad,
                 precio,
-                avatar
+                avatar : req.file.filename
             })
                 .then(() => {
                     res.redirect('/admin/productos')
@@ -136,7 +135,7 @@ module.exports = {
                 categoria,
                 disponibilidad,
                 precio,
-                avatar
+                avatar : req.file.filename
             }, {
                 where: { idproducto: req.params.id }
             })

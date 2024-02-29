@@ -52,7 +52,7 @@ router.post('/crearProducto', upload.single('avatar'), validarCrearProducto, adm
 
 //http://localhost:4000/admin/modificarProducto/:id
 router.get('/modificarProducto/:id', adminControllers.modificar)
-router.put("/modificarProducto/:id", upload.single('imagenProducto'), validarCrearProducto, adminControllers.modificarProceso);
+router.put("/modificarProducto/:id", upload.single('avatar'), validarCrearProducto, adminControllers.modificarProceso);
 
 //http://localhost:4000/admin/productos/:id
 router.delete('/productos/:id', adminControllers.eliminar);
