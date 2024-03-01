@@ -27,7 +27,7 @@ let cols = {
         type: DataTypes.DECIMAL(10, 2).UNSIGNED
     },
     avatar: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING(200)
     },
     created_at: {
         type: DataTypes.DATE,

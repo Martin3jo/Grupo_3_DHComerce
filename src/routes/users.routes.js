@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { body } = require('express-validator') 
+const { body } = require('express-validator')
+
 
 //middlewares
-const guestMiddleware = require('../middlewares/guestMiddleware')
-const authMiddleware = require('../middlewares/authMiddleware')
+// const guestMiddleware = require('../middlewares/guestMiddleware')
+// const authMiddleware = require('../middlewares/authMiddleware')
 
 //USUARIO VALIDATION
 const validarUsuario = [
@@ -32,6 +33,10 @@ const validarRegistro = [
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
         .isLength({ min: 6 }),
+    body('password2')
+        .notEmpty()
+        .withMessage('Campo Obligatorio').bail()
+        .isLength({ min: 6 }),
     body('email')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
@@ -44,19 +49,19 @@ const validarRegistro = [
 
 const usersControllers = require("../controllers/usersControllers");
 
-//LOGIN
-router.get('/login', guestMiddleware, usersControllers.login)
-router.post('/login', validarUsuario, usersControllers.processLogin)
-
 //REGISTRO
-router.get("/registro", guestMiddleware,usersControllers.registro);
-router.post('/registro', validarRegistro, usersControllers.registroValidation)
+router.get("/registro"/*, guestMiddleware*/, usersControllers.registro);
+router.post('/registro'/*, validarRegistro*/, usersControllers.registroValidacion)
+
+//LOGIN
+router.get('/login'/*, guestMiddleware*/, usersControllers.login)
+router.post('/login', validarUsuario, usersControllers.loginValidacion)
 
 // PERFIL DE USUARIO
-router.get('/profile', authMiddleware,usersControllers.userProfile)
+// router.get('/profile', authMiddleware,usersControllers.userProfile)
 
 //LOGOUT
-router.get('/logout',usersControllers.logout)
+// router.get('/logout',usersControllers.logout)
 
 
 module.exports = router;
