@@ -3,12 +3,12 @@ const router = express.Router();
 
 const productsControllers = require("../controllers/productsControllers");
 
-
-router.get('/detalleProducto', productsControllers.detalleProducto);
+router.get('/',productsControllers.index)
+router.get('/detalle/:id', productsControllers.detalle);
 
 router.get("/carrito", productsControllers.carrito);
-router.put("/carrito/:id", productsControllers.contarProducto)
-router.delete('/carrito/:id', productsControllers.eliminarProducto)
+// router.put("/carrito/:id", productsControllers.contarProducto)
+// router.delete('/carrito/:id', productsControllers.eliminarProducto)
 
 
 module.exports = router;

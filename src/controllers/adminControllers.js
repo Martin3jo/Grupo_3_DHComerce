@@ -4,6 +4,102 @@ const { validationResult } = require('express-validator')
 let db = require('../database/models')
 const { Op } = require("sequelize");
 
+
+module.exports = {
+    admin: (req, res) => {
+        res.render('admin/admin')
+    },
+    adminProductos: async (req, res) => {
+        const productos = await db.Producto.findAll()
+        return res.render('admin/adminProductos', { productos });
+    },
+    crear: (req, res) => {
+        res.render('admin/crearProducto')
+    },
+    store: (req, res) => {
+        //validacion
+        let resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('admin/crearProducto', {
+                errors: resultValidation.mapped(),
+                old: req.body
+            })
+            
+        } else {
+            let { marca, descripcion, volumen, categoria, disponibilidad, precio, avatar } = req.body
+            db.Producto.create({
+                marca,
+                descripcion,
+                volumen,
+                categoria,
+                disponibilidad,
+                precio,
+                avatar : req.file.filename
+            })
+            .then(() => {
+                    res.redirect('/admin/productos')
+                })
+                .catch(error => console.log(error.message))
+            }
+    },
+    modificar:async function (req, res) {
+        try {
+            let idproducto = req.params.id
+            let Producto = await db.Producto.findByPk(idproducto)
+            res.render('admin/modificarProducto', { productos : Producto })
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    modificarProceso:async function (req, res) {
+        try {
+            const { marca, descripcion, volumen, categoria, disponibilidad,precio, avatar } = req.body
+            await db.Producto.update({
+                marca,
+                descripcion,
+                volumen,
+                categoria,
+                disponibilidad,
+                precio,
+                avatar : req.file.filename
+            }, {
+                where: { idproducto: req.params.id }
+            })
+            res.redirect('/admin/productos')
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    eliminar : async function (req, res) {
+        try {
+            await db.Producto.destroy({
+                where: { idproducto: req.params.id }
+            })
+            res.redirect('/admin/productos')
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    buscar : async (req, res) => {
+        try {
+            const { buscar } = req.query;
+            const producto = await db.Producto.findAll({
+                where: {
+                    marca: {
+                        [Op.like]: `%${buscar}%`
+                    }
+                }
+            });
+            res.render('admin/adminProductos', { productos : producto });
+        } catch (error) {
+            console.log(error.message);
+            res.send(error.message);
+        }
+    },
+}
+
+
+
 //BASE DE DATOS PRODUCTOS
 // const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
 // let productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -78,96 +174,3 @@ const { Op } = require("sequelize");
 //     }
 //     res.render('admin/adminProductos', { productos: busquedaResultante })
 // }
-
-module.exports = {
-    admin: (req, res) => {
-        res.render('admin/admin')
-    },
-    adminProductos: async (req, res) => {
-        const productos = await db.Producto.findAll()
-        return res.render('admin/adminProductos', { productos });
-    },
-    crear: (req, res) => {
-        res.render('admin/crearProducto')
-    },
-    store: (req, res) => {
-        //validacion
-        let resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            return res.render('admin/crearProducto', {
-                errors: resultValidation.mapped(),
-                old: req.body
-            })
-
-        } else {
-            let { marca, descripcion, volumen, categoria, disponibilidad, precio, avatar } = req.body
-            db.Producto.create({
-                marca,
-                descripcion,
-                volumen,
-                categoria,
-                disponibilidad,
-                precio,
-                avatar : req.file.filename
-            })
-                .then(() => {
-                    res.redirect('/admin/productos')
-                })
-                .catch(error => console.log(error.message))
-        }
-    },
-    modificar:async function (req, res) {
-        try {
-            let idproducto = req.params.id
-            let Producto = await db.Producto.findByPk(idproducto)
-            res.render('admin/modificarProducto', { productos : Producto })
-        } catch (error) {
-            console.log(error.message);
-        }
-    },
-    modificarProceso:async function (req, res) {
-        try {
-            const { marca, descripcion, volumen, categoria, disponibilidad,precio, avatar } = req.body
-            await db.Producto.update({
-                marca,
-                descripcion,
-                volumen,
-                categoria,
-                disponibilidad,
-                precio,
-                avatar : req.file.filename
-            }, {
-                where: { idproducto: req.params.id }
-            })
-            res.redirect('/admin/productos')
-        } catch (error) {
-            console.log(error.message);
-        }
-    },
-    eliminar : async function (req, res) {
-        try {
-            await db.Producto.destroy({
-                where: { idproducto: req.params.id }
-            })
-            res.redirect('/admin/productos')
-        } catch (error) {
-            console.log(error.message);
-        }
-    },
-    buscar : async (req, res) => {
-        try {
-            const { buscar } = req.query;
-            const producto = await db.Producto.findAll({
-                where: {
-                    marca: {
-                        [Op.like]: `%${buscar}%`
-                    }
-                }
-            });
-            res.render('admin/adminProductos', { productos : producto });
-        } catch (error) {
-            console.log(error.message);
-            res.send(error.message);
-        }
-    },
-}
