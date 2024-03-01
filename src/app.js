@@ -46,13 +46,13 @@ app.listen(port, () => {
 // app.use(userLoggedMiddleware)
 
 /*ROUTES*/
-//const rutasIndex = require("./routes/main.routes");
+const rutasIndex = require("./routes/main.routes");
 // const rutasProductos = require("./routes/products.routes");
 // const rutasUsuarios = require("./routes/users.routes");
 const rutasAdmin = require("./routes/admin.routes");
 
 /*ENTRY POINTS*/
-//app.use("/", rutasIndex);
+app.use("/", rutasIndex);
 // app.use("/productos", rutasProductos);
 // app.use("/usuarios", rutasUsuarios);
 app.use("/admin", rutasAdmin);
