@@ -47,14 +47,14 @@ app.listen(port, () => {
 
 /*ROUTES*/
 const rutasIndex = require("./routes/main.routes");
-// const rutasProductos = require("./routes/products.routes");
-// const rutasUsuarios = require("./routes/users.routes");
+const rutasProductos = require("./routes/products.routes");
+const rutasUsuarios = require("./routes/users.routes");
 const rutasAdmin = require("./routes/admin.routes");
 
 /*ENTRY POINTS*/
 app.use("/", rutasIndex);
-// app.use("/productos", rutasProductos);
-// app.use("/usuarios", rutasUsuarios);
+app.use("/productos", rutasProductos);
+app.use("/usuario", rutasUsuarios);
 app.use("/admin", rutasAdmin);
 
 
