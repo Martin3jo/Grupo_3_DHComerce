@@ -14,7 +14,18 @@ module.exports = {
         return res.render('admin/adminProductos', { productos });
     },
     crear: (req, res) => {
-        res.render('admin/crearProducto')
+        let pedidoProducto = db.Producto.findAll({
+            attributes: ['volumen'],
+            group: ['volumen'],
+            order: [['volumen', 'ASC']]
+        });
+        
+        let pedidoCategoria= db.Categoria.findAll();
+        
+        Promise.all([pedidoProducto,pedidoCategoria]).then (function ([productos,categorias] ){
+            res.render('admin/crearProducto', {productos,categorias})
+        } )
+        
     },
     store: (req, res) => {
         //validacion

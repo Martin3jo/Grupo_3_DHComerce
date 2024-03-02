@@ -33,18 +33,11 @@
                         <label for="volumen">Volumen:</label>
                         <select name="volumen" id="volumen"
                             value="<%= locals.old && old.volumen ? old.volumen : null %>">
-                            <option disabled>Seleccione una volumen</option>
-                            <option value="0.250">250 cm3</option>
-                            <option value="0.300">300 cm3</option>
-                            <option value="0.330">330 cm3</option>
-                            <option value="0.500">500 cm3</option>
-                            <option value="0.700">700 cm3</option>
-                            <option value="0.750">750 cm3</option>
-                            <option value="1.000">1000 cm3</option>
-                            <option value="1.500">1500 cm3</option>
-                            <option value="2.000">2000 cm3</option>
-                            <option value="2.500">2500 cm3</option>
-                            <option value="3.000">3000 cm3</option>
+                            <option disabled>Seleccione un Volumen</option>
+                            <% for( let i = 0; i < productos.length; i++ ) { %>
+                                
+                                <option value="<%= productos[i].idproducto %>"><%= productos[i].volumen %> cm3</option>
+                            <% } %>
                         </select>
                     </div>
                     <!--CATEGORIA-->
@@ -53,13 +46,10 @@
                         <select name="categoria" id="categoria"
                             value="<%= locals.old && old.categoria ? old.categoria : null %>">
                             <option disabled>Seleccione una categoria</option>
-                            <option value="Gaseosa">Gaseosa</option>
-                            <option value="Alcohol">Alohol</option>
-                            <option value="Cerveza">Cerveza</option>
-                            <option value="Agua">Agua</option>
-                            <option value="vino">Vino</option>
-                            <option value="Energética">Energética</option>
-                            <option value="Coctel">Coctel</option>
+                            <% for( let i = 0; i < categorias.length; i++ ) { %>
+                                
+                                <option value="<%= categorias[i].idcategoria %>"><%= categorias[i].nombre %></option>
+                            <% } %>
                         </select>
                         <!--comentario para los errores-->
                         <% if (locals.errors && errors.categoria) { %>
