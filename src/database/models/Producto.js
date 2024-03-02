@@ -16,9 +16,6 @@ let cols = {
     volumen: {
         type: DataTypes.DECIMAL(10, 3).UNSIGNED
     },
-    categoria: {
-        type: DataTypes.STRING(100)
-    },
     disponibilidad: {
         type: DataTypes.INTEGER.UNSIGNED,
         defaultValue : null
@@ -40,6 +37,10 @@ let cols = {
     fk_idpedido: {
         type: DataTypes.INTEGER.UNSIGNED,
         defaultValue : null
+    },
+    fk_idcategoria :{
+        type: DataTypes.INTEGER.UNSIGNED,
+        defaultValue : null
     }
 }
 let config = {
@@ -53,6 +54,12 @@ Producto.associate = function(models){
     Producto.belongsTo(models.Pedido, {
         as : "Pedido",
         foreignKey : "fk_idpedido"
+    })
+}
+Producto.associate = function(models){
+    Producto.belongsTo(models.Categoria, {
+        as : "Categoria",
+        foreignKey : "fk_idcategoria"
     })
 }
 return Producto
