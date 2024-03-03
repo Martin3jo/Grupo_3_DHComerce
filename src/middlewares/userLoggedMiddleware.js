@@ -1,29 +1,32 @@
-const db = require('../database/models')
+const db = require('../database/models');
 
-function userLoggedMiddleware(req, res, next) {
+async function userLoggedMiddleware(req, res, next) {
     res.locals.isLogged = false;
-    //USO COOKIE PARA AUTOINICIO SESION
-    let emailInCookie = req.cookies.userEmail
-    db.Cliente.findOne({
-        where: {
-            email: req.body.email
+
+    try {
+        // Verifica si req.body.email está definido y no es null
+        if (req.body && req.body.email) {
+            const userFromDB = await db.Cliente.findOne({
+                where: {
+                    email: req.body.email
+                }
+            });
+
+            // Verifica si el usuario existe en la base de datos
+            if (userFromDB) {
+                req.session.userLogged = userFromDB;
+            }
         }
-    })
-        .then((userFromCookie) => {
-            if (userFromCookie) {
-                req.session.userLogged = userFromCookie
-            }
 
-        })
-        .then(()=>{
-            if (req.session && req.session.userLogged) {
-                res.locals.isLogged = true;
-                res.locals.userLogged = req.session.userLogged
-            }
-
-        })
-
+        if (req.session && req.session.userLogged) {
+            res.locals.isLogged = true;
+            res.locals.userLogged = req.session.userLogged;
+        }
+    } catch (error) {
+        console.error("Error al verificar el usuario:", error);
+    }
 
     next();
 }
-module.exports = userLoggedMiddleware
+
+module.exports = userLoggedMiddleware;

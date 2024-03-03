@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head', {estilo : "userProfile.css" , titulo : "Profile"
+  <%- include('../partials/head', {estilo : "userProfile.css" , titulo : "Profile"
   }) %>
   <body>
-    <%- include('partials/header.ejs')%>
+    <%- include('../partials/header.ejs')%>
     <main class="main-perfil">
       <div class="foto-datos-perfil">
         <div class="datos-perfil">
@@ -24,6 +24,6 @@
       </div>
       <a href="/usuario/logout"><button>logout</button></a>
     </main>
-    <%- include('partials/footer.ejs')%>
+    <%- include('../partials/footer.ejs')%>
   </body>
 </html>
