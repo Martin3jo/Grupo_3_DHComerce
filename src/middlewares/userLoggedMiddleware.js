@@ -1,7 +1,7 @@
 const db = require('../database/models');
 
 async function userLoggedMiddleware(req, res, next) {
-    res.locals.isLogged = false;
+    //res.locals.isLogged = false;
 
     try {
         // Verifica si req.body.email está definido y no es null
