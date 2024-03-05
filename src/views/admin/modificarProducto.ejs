@@ -12,7 +12,7 @@
                         <label for="marca">Nombre del Producto</label>
                         <input type="text" name="marca"
                             value="<%= productos.marca %>"
-                            class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " />
+                            class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " selected />
                         <!--Errores-->
                         <% if (locals.errors && errors.marca) { %>
                             <div>
@@ -30,18 +30,20 @@
                         <label for="volumen">Volumen:</label>
                         <select name="volumen" id="volumen" 
                             value="<%= locals.old && old.volumen ? old.volumen : null %>">
-                            <option disabled>Seleccione una volumen</option>
-                            <option value="0.250" <%= productos.volumen == "0.250" ? 'selected' : '' %>>250 cm3</option>
-                            <option value="0.300" <%= productos.volumen == "0.300" ? 'selected' : '' %>>300 cm3</option>
-                            <option value="0.330" <%= productos.volumen == "0.330" ? 'selected' : '' %>>330 cm3</option>
-                            <option value="0.500" <%= productos.volumen == "0.500" ? 'selected' : '' %>>500 cm3</option>
-                            <option value="0.700" <%= productos.volumen == "0.700" ? 'selected' : '' %>>700 cm3</option>
-                            <option value="0.750" <%= productos.volumen == "0.750" ? 'selected' : '' %>>750 cm3</option>
-                            <option value="1.000" <%= productos.volumen == "1.000" ? 'selected' : '' %>>1000 cm3</option>
-                            <option value="1.500" <%= productos.volumen == "1.500" ? 'selected' : '' %>>1500 cm3</option>
-                            <option value="2.000" <%= productos.volumen == "2.000" ? 'selected' : '' %>>2000 cm3</option>
-                            <option value="2.500" <%= productos.volumen == "2.500" ? 'selected' : '' %>>2500 cm3</option>
-                            <option value="3.000" <%= productos.volumen == "3.000" ? 'selected' : '' %>>3000 cm3</option>
+                            
+                            <option disabled>Seleccione un volumen</option>
+                            <% for( let i = 0; i < productos.length; i++ ) { %>
+                               
+                                <% if (productos.volumen ) { %>
+                                   
+                                    <option value="<%= productos[i].idproducto %>" selected><%= productos[i].volumen %> cm3</option>
+                                    
+                                <% } else { %>
+                                   
+                                    <option value="<%= productos[i].idproducto %>" ><%= productos[i].volumen %></option>
+                                    <% } %>
+                                
+                            <% } %>
                         </select>
                     </div>
                     <!--CATEGORIA-->
@@ -49,14 +51,19 @@
                         <label for="categoria">Categoría:</label>
                         <select name="categoria" id="categoria"
                             value="<%= locals.old && old.categoria ? old.categoria : null %>">
-                            <option disabled>Seleccione una categoría</option>
-                            <option value="Gaseosa" <%= productos.categoria === "Gaseosa" ? 'selected' : '' %>>Gaseosa</option>
-                            <option value="Alcohol" <%= productos.categoria === "Alcohol" ? 'selected' : '' %>>Alcohol</option>
-                            <option value="Cerveza" <%= productos.categoria === "cerveza" ? 'selected' : '' %>>Cerveza</option>
-                            <option value="Agua" <%= productos.categoria === "Agua" ? 'selected' : '' %>>Agua</option>
-                            <option value="vino" <%= productos.categoria === "vino" ? 'selected' : '' %>>Vino</option>
-                            <option value="Energética" <%= productos.categoria === "Energética" ? 'selected' : '' %>>Energética</option>
-                            <option value="Coctel" <%= productos.categoria === "Coctel" ? 'selected' : '' %>>Coctel</option>
+                            <option disabled>Seleccione una categoria</option>
+                            <% for( let i = 0; i < categorias.length; i++ ) { %>
+                               
+                                <% if (productos.fk_idcategoria == categorias[i].idcategoria) { %>
+                                   
+                                    <option value="<%= categorias[i].idcategoria %>" selected><%= categorias[i].nombre %></option>
+                                    
+                                <% } else { %>
+                                   
+                                    <option value="<%= categorias[i].idcategoria %>" ><%= categorias[i].nombre %></option>
+                                    <% } %>
+                                
+                            <% } %>
                         </select>
                         <!--comentario para los errores-->
                         <% if (locals.errors && errors.categoria) { %>

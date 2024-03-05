@@ -33,10 +33,10 @@
                         <label for="volumen">Volumen:</label>
                         <select name="volumen" id="volumen"
                             value="<%= locals.old && old.volumen ? old.volumen : null %>">
-                            <option disabled>Seleccione un Volumen</option>
-                            <% for( let i = 0; i < productos.length; i++ ) { %>
+                            <option disabled>Seleccione un volumen</option>
+                            <% for( let i = 0; i < listaVolumen.length; i++ ) { %>
                                 
-                                <option value="<%= productos[i].idproducto %>"><%= productos[i].volumen %> cm3</option>
+                                <option name="volumen" value="<%= listaVolumen[i] %>" > <%= listaVolumen[i] %> cm3</option>
                             <% } %>
                         </select>
                     </div>
@@ -46,9 +46,9 @@
                         <select name="categoria" id="categoria"
                             value="<%= locals.old && old.categoria ? old.categoria : null %>">
                             <option disabled>Seleccione una categoria</option>
-                            <% for( let i = 0; i < categorias.length; i++ ) { %>
+                            <% for( let i = 0; i < listaCategoria.length; i++ ) { %>
                                 
-                                <option value="<%= categorias[i].idcategoria %>"><%= categorias[i].nombre %></option>
+                                <option name="categoria"><%= listaCategoria[i] %></option>
                             <% } %>
                         </select>
                         <!--comentario para los errores-->
