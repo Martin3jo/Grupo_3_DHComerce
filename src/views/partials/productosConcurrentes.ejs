@@ -3,26 +3,35 @@
         <i class="fa-solid fa-arrow-left"></i>
     </div>
     <div id="Gaseosas" class="productos-recomendados">
-        <% for( let index = 0; index < productos.length; index++ ) { %>
+        <% for( let index=0; index < productos.length; index++ ) { %>
             <article class="Gaseosa1">
+                <a href="/productos/detalle/<%= productos[index].idproducto %>">
                 <img src="/img/avatars/<%= productos[index].avatar %>" alt="" />
-                <div class="detail">
-                    <div class="product"><%= productos[index].descripcion %></div>
-                    <div class="descripcionProducto">
-                        <div><%= productos[index].marca %></div>
-                        <div><%= productos[index].disponibilidad %></div>
-                        <div><%= productos[index].volumen %></div>
+                    <div class="detail">
+                        <div class="product">
+                            <%= productos[index].descripcion %>
+                        </div>
+                        <div class="descripcionProducto">
+                            <div>
+                                <%= productos[index].marca %>
+                            </div>
+                            <div>
+                                <%= productos[index].disponibilidad %>
+                            </div>
+                            <div>
+                                <%= productos[index].volumen %>
+                            </div>
+                        </div>
+
                     </div>
-    
-                </div>
-                <div class="price">
-                    <p>Precio</p>
-                    $<%= productos[index].precio %>
-                </div>
-                <button class="add">AGREGAR</button>
-            </article>
-        
-        <% } %>
+                    <div class="price">
+                        <p>Precio</p>
+                        $<%= productos[index].precio %>
+                    </div>
+                </a>
+                    <button class="add">AGREGAR</button>
+                </article>
+            <% } %>
     </div>
     <div class="flecha2">
         <i class="fa-solid fa-arrow-right"></i>

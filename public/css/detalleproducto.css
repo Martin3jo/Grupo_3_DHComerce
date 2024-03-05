@@ -216,6 +216,9 @@ main {
   margin: 10px;
   text-align: center;
 }
+.productos-recomendados a{
+  text-decoration: none;
+}
 
 
 /* Estilo para la clase .product */
