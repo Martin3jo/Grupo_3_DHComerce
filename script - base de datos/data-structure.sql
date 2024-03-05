@@ -18,6 +18,20 @@ USE `bebidasonline`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `categorias`
+--
+
+DROP TABLE IF EXISTS `categorias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categorias` (
+  `idcategoria` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`idcategoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `categorias`
 --
 
@@ -26,6 +40,31 @@ LOCK TABLES `categorias` WRITE;
 INSERT INTO `categorias` VALUES (1,'Gaseosa'),(2,'Alcohol'),(3,'Agua'),(4,'Soda'),(5,'Jugo'),(6,'Energetica');
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `clientes`
+--
+
+DROP TABLE IF EXISTS `clientes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `clientes` (
+  `idcliente` int unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `dni` varchar(15) NOT NULL,
+  `fecha_nac` date NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `celular` bigint unsigned NOT NULL,
+  `direccion` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idcliente`),
+  UNIQUE KEY `dni_UNIQUE` (`dni`),
+  UNIQUE KEY `celular_UNIQUE` (`celular`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `clientes`
@@ -38,6 +77,26 @@ INSERT INTO `clientes` VALUES (1,'Juan Pérez','250000','1990-01-01','juanperez@
 UNLOCK TABLES;
 
 --
+-- Table structure for table `pedidos`
+--
+
+DROP TABLE IF EXISTS `pedidos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedidos` (
+  `idpedido` int unsigned NOT NULL AUTO_INCREMENT,
+  `estado` varchar(45) DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fk_idcliente` int unsigned DEFAULT NULL,
+  `cantidad` int unsigned DEFAULT NULL,
+  PRIMARY KEY (`idpedido`),
+  KEY `fk_idcliente` (`fk_idcliente`),
+  CONSTRAINT `fk_idcliente` FOREIGN KEY (`fk_idcliente`) REFERENCES `clientes` (`idcliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `pedidos`
 --
 
@@ -46,6 +105,33 @@ LOCK TABLES `pedidos` WRITE;
 INSERT INTO `pedidos` VALUES (1,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',1,3),(2,'Entregado','2024-02-23 13:34:50','2024-02-23 13:34:50',2,2),(3,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',3,1),(4,'Entregado','2024-02-23 13:34:50','2024-02-23 13:34:50',4,1),(5,'Cancelado','2024-02-23 13:34:50','2024-02-23 13:34:50',5,4),(6,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',6,1),(7,'Entregado','2024-02-23 13:34:50','2024-02-23 13:34:50',7,2),(8,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',8,5),(9,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',9,3),(10,'Entregado','2024-02-23 13:34:50','2024-02-23 13:34:50',8,2),(11,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',1,3),(12,'Entregado','2024-02-23 13:34:50','2024-02-23 13:34:50',2,2),(13,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',3,1),(14,'Entregado','2024-02-23 13:34:50','2024-02-23 13:34:50',4,1),(15,'Cancelado','2024-02-23 13:34:50','2024-02-23 13:34:50',5,4),(16,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',6,1),(17,'Entregado','2024-02-23 13:34:50','2024-02-23 13:34:50',7,2),(18,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',8,5),(19,'En proceso','2024-02-23 13:34:50','2024-02-23 13:34:50',9,3),(20,'Entregado','2024-02-23 13:35:19','2024-02-23 13:35:19',10,2);
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `productos`
+--
+
+DROP TABLE IF EXISTS `productos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `productos` (
+  `idproducto` int unsigned NOT NULL AUTO_INCREMENT,
+  `marca` varchar(100) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `volumen` decimal(10,3) unsigned NOT NULL,
+  `disponibilidad` int unsigned DEFAULT NULL,
+  `precio` decimal(10,2) unsigned NOT NULL,
+  `avatar` varchar(200) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fk_idpedido` int unsigned DEFAULT NULL,
+  `fk_idcategoria` int DEFAULT NULL,
+  PRIMARY KEY (`idproducto`),
+  KEY `fk_idpedido` (`fk_idpedido`),
+  KEY `fk_idcategoria` (`fk_idcategoria`),
+  CONSTRAINT `fk_idcategoria` FOREIGN KEY (`fk_idcategoria`) REFERENCES `categorias` (`idcategoria`),
+  CONSTRAINT `fk_idpedido` FOREIGN KEY (`fk_idpedido`) REFERENCES `pedidos` (`idpedido`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `productos`
@@ -66,4 +152,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-03 23:37:34
+-- Dump completed on 2024-03-03 23:38:21

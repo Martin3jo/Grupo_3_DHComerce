@@ -65,27 +65,37 @@ const usersController = {
     //validacion
     let resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
-        return res.render('usuario/usuarui', {
+        return res.render('usuario/usuario', {
             errors: resultValidation.mapped(),
             old: req.body
           })
         } else {
+          if (!req.body.email) {
+            return res.render('usuario/usuario', {
+                errors: {
+                    email: {
+                        msg: 'El campo de correo electrónico es obligatorio.'
+                    }
+                },
+                old: req.body
+            });
+        }
             //COMPARO EMAIL
             db.Cliente.findOne({
               where: {
                   email: req.body.email
               }
           })
-          .then((userToLogin)=>{
-            if (userToLogin) {
+          .then((usuario)=>{
+            if (usuario) {
                 //COMPARO PASSWORD
-      let verificarPassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+      let verificarPassword = bcrypt.compareSync(req.body.password, usuario.password)
       if (verificarPassword) {
           //GUARDO USUARIO EN SESSION
-          delete userToLogin.password
-          req.session.userLogged = userToLogin
-          if (req.body.rememberUser) {
-              res.cookie('userEmail', req.body.email, {maxAge : (1000 * 60) * 2})
+          delete usuario.password
+          req.session.usuario = usuario
+          if (req.body.recordarUsuario) {
+              res.cookie('usuarioEmail', req.body.email, {maxAge : 900000})
             }
             return res.redirect('/')
           }else{
@@ -108,7 +118,19 @@ const usersController = {
                         old: req.body
                       });
                     })
+                    .catch((error) => {
+                      console.error("Error al buscar el usuario:", error);
+                      return res.status(500).send("Error interno del servidor");
+                  });
                   }
+  },
+  userProfile : (req,res)=>{
+    res.render('usuario/userProfile')
+  },
+  logout : (req,res)=>{
+    res.clearCookie('usuarioEmail')
+    req.session.destroy()
+    return res.redirect('/')
   }
 }
 module.exports = usersController;
@@ -120,11 +142,7 @@ module.exports = usersController;
                     // userProfile : (req,res)=>{
   //   res.render('userProfile')
   // },
-  // logout : (req,res)=>{
-    //   res.clearCookie('userEmail')
-    //   req.session.destroy()
-    //   return res.redirect('/')
-    // }
+  
     
     // const { v4: uuidv4 } = require('uuid');
     // const User = require('../models/User')

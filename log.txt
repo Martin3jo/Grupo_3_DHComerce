@@ -1,5 +1,0 @@
-se ingreso a la pagina /carrito
-se ingreso a la pagina /usuario/login
-se ingreso a la pagina /usuario/login
-se ingreso a la pagina /
-se ingreso a la pagina /usuario/profile

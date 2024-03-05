@@ -4,17 +4,17 @@ const app = express();
 const path = require("path");
 
 //SESSION de USUARIO
-// const session = require('express-session')
-// app.use(session({
-//   secret: 'Mi secreto',
-//   //POR LO VISTO ESTAN DEPRECADOS
-//   resave: false,
-//   saveUninitialized: false
-// }));
+const session = require('express-session')
+app.use(session({
+  secret: 'Mi secreto',
+  //POR LO VISTO ESTAN DEPRECADOS
+  resave: false,
+  saveUninitialized: false
+}));
 
 //COOKIES
-// const cookies = require('cookie-parser')
-// app.use(cookies())
+const cookies = require('cookie-parser')
+app.use(cookies())
 
 /*LLAMADO AL EJS*/
 app.set("view engine", "ejs");
@@ -42,8 +42,8 @@ app.listen(port, () => {
 });
 
 //MIDDLEWARES
-// const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
-// app.use(userLoggedMiddleware)
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+app.use(userLoggedMiddleware)
 
 /*ROUTES*/
 const rutasIndex = require("./routes/main.routes");

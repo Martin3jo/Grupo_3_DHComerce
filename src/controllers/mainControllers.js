@@ -1,7 +1,7 @@
 let db = require('../database/models')
 
 const indexController = {
-  index: (req, res) => {
+    index: (req, res) => {
     db.Cliente.findAll()
     .then(resultado=>{
       res.render("index", {resultado});

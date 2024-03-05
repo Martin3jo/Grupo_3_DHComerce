@@ -14,9 +14,9 @@
 
 
             <div class="input-box">
-              <label for="email">Usuario</label>
+              <label for="email">Email</label>
               <div>
-                <input type="text" name="email" placeholder="Usuario">
+                <input type="email" name="email" placeholder="asd@gmail.com">
                 <i class='bx bxs-user'></i>
                 <!--comentario para los errores-->
                 <% if (locals.errors && errors.email) { %>
@@ -43,7 +43,7 @@
             </div>
 
             <div>
-              <input type="checkbox" name="rememberUser"> Recordar mi Usuario
+              <input type="checkbox" name="recordarUsuario"> Recordar mi Usuario
             </div>
 
             <button type="submit" class="boton-registro">Ingresar</button>

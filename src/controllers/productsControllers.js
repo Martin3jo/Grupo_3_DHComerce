@@ -13,13 +13,18 @@ module.exports = {
   },
   detalle: async (req, res) => {
     try {
+      const vistos = req.cookies.vistos || [];
       let promesaDetalle = db.Producto.findByPk(req.params.id);
-      let promesaLista = db.Producto.findAll();
+      const promesaLista = db.Producto.findAll({
+        where: {
+            idproducto: vistos
+        }
+    });
   
       // Promise.all espera a que ambas promesas se resuelvan
       let [producto, productos] = await Promise.all([promesaDetalle, promesaLista]);
   
-      res.render('productos/detalleProducto', { producto, productos });
+      res.render('productos/detalleProducto', { producto, productos});
     } catch (error) {
       console.error('Error:', error);
       res.status(500).send('Error interno del servidor');
