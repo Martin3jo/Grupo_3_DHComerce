@@ -1,0 +1,296 @@
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.imgbanner img {
+  width: 100%;
+ 
+}
+
+.flechavolver {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: blue;
+  font-size: 1.5rem;
+  gap: 15px;
+  margin-top: 30px;
+  padding: 0px 0px 0px 80px;
+  padding-left: 20px;
+}
+
+  
+
+.flechavolver p {
+  color: blue;
+  font-size: 1rem;
+}
+
+.productos-categoria {
+  display: flex;
+  margin-top: 5px;
+  gap: 20px;
+  /* Espacio entre los productos */
+  justify-content: center;
+}
+
+
+ .cerveza1 img {
+  width: 43%;
+  } 
+
+.productos-categoria .detail {
+  padding: 0px 0px 70px 10px;
+}
+
+
+.productos-categoria .product {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.productos-categoria .liters {
+  font-size: 1rem;
+  
+}
+
+
+.productos-categoria .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Estilo para la clase .price */
+ .price {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.delivery {
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.productos-categoria .desc {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.contador {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  border: 2px solid #ccc;
+  /* Borde del contador */
+  border-radius: 15px;
+  /* Borde circular */
+  overflow: hidden;
+  /* Evita que los bordes redondeados se vean afectados por el contenido interno */
+  justify-content: space-between;
+  padding: 14px;
+  height: 40px;
+  width: 100%;
+}
+
+
+.contador button,
+.contador span {
+  /* padding: 8px; */
+  border: none;
+  background-color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* Hace que el texto esté en negrita */
+  outline: none;
+  /* Elimina el contorno del botón */
+} 
+
+.contador button {
+  color: blue;
+} 
+.addContador{
+  margin-top: 12px;
+  width: 100%;
+  border-radius: 7px;
+  font-size: 1.1rem;
+  background-color: blue;
+    color: white;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+
+ .add {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 15px;
+  background-color: blue;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #ffcf01;
+  cursor: pointer;
+  width: 100%;
+  height: 53px;
+  letter-spacing: 1px;
+}
+/* Estilo para la clase .add (botón AGREGAR) */
+
+
+.add:hover, .addContador:hover {
+  background-color: #ffd00185;
+  /* Cambia el color de fondo al pasar el ratón */
+  border-color: #ffcf01;
+ 
+}
+
+.titulo1 {
+  font-size: 1rem;
+  color: #1100f6;
+  padding: 0px 15px;
+  
+}
+
+.contenedorcarrusel {
+  display: flex;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 2% 0% 5% 0%;
+}
+/* Estilo para la barra de desplazamiento */
+.contenedorcarrusel::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo para el "pulgar" de la barra de desplazamiento */
+.contenedorcarrusel::-webkit-scrollbar-thumb {
+  background-color: #4CAF50; /* Color del "pulgar" */
+  border-radius: 6px; /* Bordes redondeados del "pulgar" */
+}
+
+/* Estilo para la pista (fondo) de la barra de desplazamiento */
+.contenedorcarrusel::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color de la pista */
+}
+
+.flecha1,
+.flecha2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: blue;
+  font-size: 2rem;
+}
+
+
+/* Estilo para el contenedor de productos */
+.productos-recomendados {
+  display: flex;
+    overflow-x: auto;
+    gap: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+
+/* Estilo para cada artículo de producto */
+.productos-recomendados article {
+  padding: 5px 5px 5px 5px;
+  border: 1px solid #ccc;
+  height: 330px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+}
+.productos-recomendados a{
+  text-decoration: none;
+}
+
+
+/* Estilo para la clase .product */
+ .product {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+
+
+
+
+ 
+
+/* Estilo para la imagen dentro del artículo */
+.productos-recomendados article img {
+  width: 200px;
+ 
+  max-height: 120px;
+  max-width: 150px;
+
+}
+.descripcionProducto{
+  font-size: 0.8rem;
+  color: #131212;
+}
+  .cerveza1 {
+    display: flex;
+    gap: 3%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .productos-categoria img {
+    max-width: 90%;
+    padding: 0px 0px 10px 0px;
+  }
+
+  .flecha1,
+  .flecha2 {
+    display: none;
+  }
+
+ 
+  /* Estilo para el contenedor de productos */
+  .productos-recomendados {
+    display: flex;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 2%;
+    margin-top: 20px;
+    padding: 0px 0px 30px 23px;
+    flex-direction: row;
+    align-items: center;
+  }
+/*Tablet*/
+@media (min-width:460px) {
+  
+
+  .imgbanner img {
+    height: 280px;
+    /* Ajusta la altura de la imagen del banner para tablets */
+  }
+  
+}
+
+
+/*Desktop*/
+@media (min-width: 768px) {
+  
+  
+  
+}

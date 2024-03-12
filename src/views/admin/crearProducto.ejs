@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--<%- include('../partials/head', {titulo : 'crear', estilo : '404.css'}) %>-->
+<%- include('../partials/head', {titulo : 'crear' , estilo : 'crearProducto.css' }) %>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main class="main-adminProducto">
+                <form action="/admin/crearProducto" method="post" enctype="multipart/form-data"
+                    class="form-crearProducto">
+                    <!--MARCA-->
+                    <div class="form-input-admin">
+                        <label for="marca">Nombre del Producto</label>
+                        <input type="text" name="marca"
+                            value="<%= locals.old && old.marca ? old.marca : null %>"
+                            class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " />
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.marca) { %>
+                            <div>
+                                <%= errors.marca.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <!--DESCRIPCION-->
+                    <div class="form-input-admin">
+                        <label for="descripcion">Descripcion</label>
+                        <textarea name="descripcion" id="comentario" cols="30" rows="5"></textarea>
+                    </div>
+                    <!--VOLUMEN-->
+                    <div class="form-input-admin">
+                        <label for="volumen">Volumen:</label>
+                        <select name="volumen" id="volumen"
+                            value="<%= locals.old && old.volumen ? old.volumen : null %>">
+                            <option disabled>Seleccione un volumen</option>
+                            <% for( let i = 0; i < listaVolumen.length; i++ ) { %>
+                                
+                                <option name="volumen" value="<%= listaVolumen[i] %>" > <%= listaVolumen[i] %> cm3</option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <!--CATEGORIA-->
+                    <div class="form-input-admin">
+                        <label for="categoria">Categoría:</label>
+                        <select name="categoria" id="categoria"
+                            value="<%= locals.old && old.categoria ? old.categoria : null %>">
+                            <option disabled>Seleccione una categoria</option>
+                            <% for( let i = 0; i < listaCategoria.length; i++ ) { %>
+                                
+                                <option name="categoria"><%= listaCategoria[i] %></option>
+                            <% } %>
+                        </select>
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.categoria) { %>
+                            <div>
+                                <%= errors.categoria.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <!--DISPONIBILIDAD-->
+                    <div class="form-input-admin">
+                        <label for="disponibilidad">Disponibilidad</label>
+                        <input type="text" name="disponibilidad"/>
+                    </div>
+                    <!--PRECIO-->
+                    <div class="form-input-admin">
+                        <label for="precio">Precio</label>
+                        <input type="text" name="precio" value="<%= locals.old && old.precio ? old.precio : null %>" />
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.precio) { %>
+                            <div>
+                                <%= errors.precio.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <!--AVATAR-->
+                    <div class="form-input-admin">
+                        <label for="avatar">imagen Producto:</label><br>
+                        <input type="file" id="imagen" name="avatar" accept="image/*">
+                        <!--comentario para los errores-->
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div>
+                                <%= errors.avatar.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="boton-crear">
+                        <button type="submit" name="accion" value="crear">Crear</button>
+                    </div>
+
+                </form>
+                <div class="boton-volver">
+                    <a href="/admin/productos"><button><i class='bx bx-arrow-back'></i></button></a>
+                </div>
+            </main>
+            <!-- <%- include('../partials/footer') %> -->
+    </body>
+
+</html>

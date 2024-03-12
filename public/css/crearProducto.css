@@ -1,0 +1,45 @@
+.main-adminProducto{
+    background-color: #ffd00185;
+    height: 100%;
+    
+}
+.form-crearProducto{
+padding: 10px;
+}
+.form-input-admin{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.form-input-admin input{
+    border-radius: 4px;
+    outline: 0;
+}
+.boton-crear{
+    display: flex;
+    padding: 10px;
+}
+.boton-volver{
+    padding: 10px;
+   
+}
+
+/*Tablet*/
+@media (min-width:460px) {
+    
+
+    
+    
+  }
+  
+  
+  /*Desktop*/
+  @media (min-width: 768px) {
+    
+    .form-input-admin {
+        
+        width: 728px;
+    }
+    
+    
+  }

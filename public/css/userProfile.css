@@ -1,0 +1,39 @@
+.main-perfil{
+
+
+    background-color: #ffd00185;
+    height: 100vh;
+    
+}
+.foto-datos-perfil{
+    display: flex;
+    flex-direction: column;
+}
+.img-perfil{
+    border-radius: 4px;
+    border: 2px solid blue;
+
+}
+.datos-perfil{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid blue;
+    padding: 10px;
+}
+
+/*Tablet*/
+@media (min-width:460px) {
+    
+
+    
+    
+  }
+  
+  
+  /*Desktop*/
+  @media (min-width: 768px) {
+    
+    
+    
+    
+  }

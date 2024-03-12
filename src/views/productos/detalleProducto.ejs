@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', {titulo : 'Detalles', estilo : 'detalleproducto.css'}) %>
+
+
+  <body>
+    <%- include('../partials/header')%>
+
+    <main>
+      <div class="imgbanner">
+        <img src="/img/productos/bannernew2.webp" alt="Imagen banner" />
+      </div>
+      <div class="flechavolver">
+        <i class="fa-solid fa-arrow-left"></i>
+        <a href="/productos"><button  >Volver</button></a>
+      </div>
+      <button class="header-carro">
+        <i class="fa-solid fa-cart-arrow-down"></i>
+      </button>
+      <div id="Cervezas" class="productos-categoria">
+        <article class="cerveza1">
+          <img src="/img/avatars/<%= producto.avatar %>" alt="Imagen Stella Artois" />
+          <div class="detail">
+            <div class="product"><%= producto.marca %></div>
+            <div class="liters"><%= producto.volumen %> cc</div>
+            <div class="price">$<%= producto.precio %></div>
+            <div class="delivery">Entrega en menos de 45'</div>
+            <div class="desc">Te la entregamos <strong>FRIA</strong></div>
+            <div class="contador">
+              <button onclick="restar()">-</button>
+              <span id="cantidad">0</span>
+              <button onclick="sumar()">+</button>
+            </div>
+            <button class="addContador">AGREGAR</button>
+          </div>
+        </article>
+      </div>
+      
+      <p class="titulo1">Vistos anteriormente</p>
+      <%- include('../partials/productosConcurrentes') %>
+    </main>
+
+    <%- include('../partials/footer')%>
+  </body>
+</html>
