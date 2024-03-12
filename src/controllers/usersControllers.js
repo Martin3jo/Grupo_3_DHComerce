@@ -102,7 +102,7 @@ const usersController = {
               return res.render('usuario/usuario', {
                   errors: {
                       email : {
-                          msg : 'Datos Erroneos'
+                          msg : 'Email incorrecto'
                         }
                       },
                       old: req.body
@@ -112,7 +112,7 @@ const usersController = {
                 return res.render('usuario/usuario', {
                     errors: {
                         email : {
-                            msg : 'Datos Erroneos'
+                            msg : 'contraseña Erronea'
                           }
                         },
                         old: req.body
