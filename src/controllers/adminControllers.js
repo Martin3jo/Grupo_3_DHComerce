@@ -10,82 +10,68 @@ module.exports = {
         res.render('admin/admin')
     },
     adminProductos: async (req, res) => {
-        const productos = await db.Producto.findAll()
+        let productos = await db.Producto.findAll()
         return res.render('admin/adminProductos', { productos });
     },
     crear: (req, res) => {
-        // let pedidoProducto = db.Producto.findAll({
-        //     attributes: ['volumen'],
-        //     group: ['volumen'],
-        //     order: [['volumen', 'ASC']]
-        // });
-        
-        // let pedidoCategoria= db.Categoria.findAll();
-        
-        // Promise.all([pedidoProducto,pedidoCategoria]).then (function ([productos,categorias] ){
-        //     res.render('admin/crearProducto', {productos,categorias})
-        // } )
-        let listaVolumen=[0.250,0.300,0.330,0.500,0.700,0.750,1.000,1.500,2.000,2.500,3.000];
-        let listaCategoria=["Gaseosa","Alcohol","Agua","Soda","Jugo","Energetica"];
-        let listaVolumenFormateada = listaVolumen.map(function (volumen) {
-            return volumen.toFixed(3);
-        });
-        
-        
-            res.render('admin/crearProducto', {listaCategoria,listaVolumen:listaVolumenFormateada})
-        
+        db.Categoria.findAll()
+
+        .then(categorias => res.render('admin/crearProducto', { categorias}))
+
     },
     store: (req, res) => {
-        
         //validacion
         let resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
-            return res.render('admin/crearProducto', {
-                errors: resultValidation.mapped(),
-                old: req.body
+            db.Categoria.findAll()
+            .then((categorias)=>{
+                return res.render('admin/crearProducto', {
+                    errors: resultValidation.mapped(),
+                    old: req.body,
+                    categorias
+                })
             })
             
         } else {
-            
-            let { marca, descripcion, volumen, categoria, disponibilidad, precio, avatar } = req.body
-            volumen = parseFloat(volumen.replace(/[^\d.]/g, ''));
-            let listaCategoria=["Gaseosa","Alcohol","Agua","Soda","Jugo","Energetica"];
-            fk_idcategoria=listaCategoria.indexOf(categoria) +1;
-            console.log(categoria);
+
+            let { marca,tipo, descripcion, volumen, categoria, disponibilidad, precio, avatar } = req.body
+            let listaCategoria = ["Gaseosa", "Alcohol", "Agua", "Soda", "Jugo", "Energetica"];
+            fk_idcategoria = listaCategoria.indexOf(categoria) + 1;
             db.Producto.create({
                 marca,
+                tipo,
                 descripcion,
                 volumen,
                 fk_idcategoria,
                 disponibilidad,
                 precio,
-                avatar : req.file.filename
+                avatar: req.file.filename
             })
-            .then(() => {
+                .then(() => {
                     res.redirect('/admin/productos')
                 })
                 .catch(error => console.log(error.message))
-            }
+        }
     },
-    modificar:async function (req, res) {
+    modificar: async function (req, res) {
         try {
-            
-            let idproducto = req.params.id
-             let Producto = await db.Producto.findByPk(idproducto)
-             let editarCategoria= db.Categoria.findAll();
 
-             Promise.all([Producto,editarCategoria]).then (function ([productos,categorias] ){
-                     res.render('admin/modificarProducto', {productos,categorias})
-                 } )
+            let idproducto = req.params.id
+            let Producto = await db.Producto.findByPk(idproducto)
+            let editarCategoria = db.Categoria.findAll();
+
+            Promise.all([Producto, editarCategoria]).then(function ([productos, categorias]) {
+                res.render('admin/modificarProducto', { productos, categorias })
+            })
 
             //  res.render('admin/modificarProducto', { productos : Producto })
         } catch (error) {
             console.log(error.message);
         }
     },
-    modificarProceso:async function (req, res) {
+    modificarProceso: async function (req, res) {
         try {
-            const { marca, descripcion, volumen, categoria, disponibilidad,precio, avatar } = req.body
+            const { marca, descripcion, volumen, categoria, disponibilidad, precio, avatar } = req.body
             await db.Producto.update({
                 marca,
                 descripcion,
@@ -93,7 +79,7 @@ module.exports = {
                 categoria,
                 disponibilidad,
                 precio,
-                avatar : req.file.filename
+                avatar: req.file.filename
             }, {
                 where: { idproducto: req.params.id }
             })
@@ -102,7 +88,7 @@ module.exports = {
             console.log(error.message);
         }
     },
-    eliminar : async function (req, res) {
+    eliminar: async function (req, res) {
         try {
             await db.Producto.destroy({
                 where: { idproducto: req.params.id }
@@ -112,7 +98,7 @@ module.exports = {
             console.log(error.message);
         }
     },
-    buscar : async (req, res) => {
+    buscar: async (req, res) => {
         try {
             const { buscar } = req.query;
             const producto = await db.Producto.findAll({
@@ -122,7 +108,7 @@ module.exports = {
                     }
                 }
             });
-            res.render('admin/adminProductos', { productos : producto });
+            res.render('admin/adminProductos', { productos: producto });
         } catch (error) {
             console.log(error.message);
             res.send(error.message);

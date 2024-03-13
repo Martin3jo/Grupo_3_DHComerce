@@ -10,11 +10,14 @@ let cols = {
     marca: {
         type: DataTypes.STRING(100)
     },
-    descripcion: {
+    tipo: {
         type: DataTypes.STRING(100)
     },
+    descripcion: {
+        type: DataTypes.STRING(200)
+    },
     volumen: {
-        type: DataTypes.DECIMAL(10, 3).UNSIGNED
+        type: DataTypes.INTEGER.UNSIGNED
     },
     disponibilidad: {
         type: DataTypes.INTEGER.UNSIGNED,

@@ -5,13 +5,12 @@
     <body>
         <%- include('../partials/header') %>
             <main class="main-adminProducto">
-                <form action="/admin/modificarProducto/<%= productos.idproducto %>?_method=PUT" method="post" enctype="multipart/form-data"
-                    class="form-crearProducto">
+                <form action="/admin/modificarProducto/<%= productos.idproducto %>?_method=PUT" method="post"
+                    enctype="multipart/form-data" class="form-crearProducto">
                     <!--MARCA-->
                     <div class="form-input-admin">
                         <label for="marca">Nombre del Producto</label>
-                        <input type="text" name="marca"
-                            value="<%= productos.marca %>"
+                        <input type="text" name="marca" value="<%= productos.marca %>"
                             class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " selected />
                         <!--Errores-->
                         <% if (locals.errors && errors.marca) { %>
@@ -20,30 +19,47 @@
                             </div>
                             <% } %>
                     </div>
+                    <!--TIPO-->
+                    <div class="form-input-admin">
+                        <label for="tipo">Tipo de Producto</label>
+                        <input type="text" name="tipo" value="<%= productos.tipo %>"
+                            class=" <%= locals.errors && errors.tipo? 'is-invalid' : null %> " selected />
+                        <!--Errores-->
+                        <% if (locals.errors && errors.tipo) { %>
+                            <div>
+                                <%= errors.tipo.msg %>
+                            </div>
+                            <% } %>
+                    </div>
                     <!--DESCRIPCION-->
                     <div class="form-input-admin">
                         <label for="descripcion">Descripcion</label>
-                        <textarea name="descripcion" id="comentario" cols="30" rows="5" ><%= productos.descripcion %></textarea>
+                        <textarea name="descripcion" id="comentario" cols="30"
+                            rows="5"><%= productos.descripcion %></textarea>
                     </div>
                     <!--VOLUMEN-->
                     <div class="form-input-admin">
                         <label for="volumen">Volumen:</label>
-                        <select name="volumen" id="volumen" 
+                        <select name="volumen" id="volumen"
                             value="<%= locals.old && old.volumen ? old.volumen : null %>">
-                            
+
                             <option disabled>Seleccione un volumen</option>
-                            <% for( let i = 0; i < productos.length; i++ ) { %>
-                               
+                            <% for( let i=0; i < productos.length; i++ ) { %>
+
                                 <% if (productos.volumen ) { %>
-                                   
-                                    <option value="<%= productos[i].idproducto %>" selected><%= productos[i].volumen %> cm3</option>
-                                    
-                                <% } else { %>
-                                   
-                                    <option value="<%= productos[i].idproducto %>" ><%= productos[i].volumen %></option>
-                                    <% } %>
-                                
-                            <% } %>
+
+                                    <option value="<%= productos[i].idproducto %>" selected>
+                                        <%= productos[i].volumen %> cm3
+                                    </option>
+
+                                    <% } else { %>
+
+                                        <option value="<%= productos[i].idproducto %>">
+                                            <%= productos[i].volumen %>
+                                        </option>
+                                        <% } %>
+
+                                            <% } %>
                         </select>
                     </div>
                     <!--CATEGORIA-->
@@ -52,30 +68,34 @@
                         <select name="categoria" id="categoria"
                             value="<%= locals.old && old.categoria ? old.categoria : null %>">
                             <option disabled>Seleccione una categoria</option>
-                            <% for( let i = 0; i < categorias.length; i++ ) { %>
-                               
-                                <% if (productos.fk_idcategoria == categorias[i].idcategoria) { %>
-                                   
-                                    <option value="<%= categorias[i].idcategoria %>" selected><%= categorias[i].nombre %></option>
-                                    
-                                <% } else { %>
-                                   
-                                    <option value="<%= categorias[i].idcategoria %>" ><%= categorias[i].nombre %></option>
-                                    <% } %>
-                                
-                            <% } %>
+                            <% for( let i=0; i < categorias.length; i++ ) { %>
+
+                                <% if (productos.fk_idcategoria==categorias[i].idcategoria) { %>
+
+                                    <option value="<%= categorias[i].idcategoria %>" selected>
+                                        <%= categorias[i].nombre %>
+                                    </option>
+
+                                    <% } else { %>
+
+                                        <option value="<%= categorias[i].idcategoria %>">
+                                            <%= categorias[i].nombre %>
+                                        </option>
+                                        <% } %>
+
+                                            <% } %>
                         </select>
                         <!--comentario para los errores-->
                         <% if (locals.errors && errors.categoria) { %>
                             <div>
                                 <%= errors.categoria.msg %>
                             </div>
-                        <% } %>
+                            <% } %>
                     </div>
                     <!--DISPONIBILIDAD-->
                     <div class="form-input-admin">
                         <label for="disponibilidad">Disponibilidad</label>
-                        <input type="text" name="disponibilidad" value="<%= productos.disponibilidad %>"/>
+                        <input type="text" name="disponibilidad" value="<%= productos.disponibilidad %>" />
                     </div>
                     <!--PRECIO-->
                     <div class="form-input-admin">

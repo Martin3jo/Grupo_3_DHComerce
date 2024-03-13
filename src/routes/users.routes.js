@@ -2,12 +2,26 @@ const express = require("express");
 const router = express.Router();
 const { body } = require('express-validator')
 
-
 //middlewares
 const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
 
-const registroMiddleware = [
+// Validacion usuario 
+const validarUsuario = [
+    body('email')
+        .notEmpty()
+        .withMessage('Campo Obligatorio').bail()
+        .isEmail()
+        .withMessage('debe ser un Email'),
+    body('password')
+        .notEmpty()
+        .withMessage('Campo Obligatorio').bail()
+        .isLength({ min: 6 })
+        .withMessage('Debe tener un minimo de 6 caracteres')
+]
+
+// Validación Registro
+const validarRegistro = [
     body('nombre')
         .notEmpty()
         .withMessage('Campo Obligatorio'),
@@ -17,37 +31,35 @@ const registroMiddleware = [
     body('dni')
         .notEmpty()
         .withMessage('Campo Obligatorio'),
-    body('req.body.celular')
-        .isLength({ min: 10, max: 10 })
+    body('celular')
+        .isLength({min : 10, max : 10})
         .withMessage('Número de celular no válido'),
-    body('req.body.password')
+    body('password')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
         .isLength({ min: 6 }),
-    body('req.body.password2')
+    body('password2')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
         .isLength({ min: 6 }),
-    body('req.body.email')
+    body('email')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
         .isEmail()
         .withMessage('Debe ser un E-mail valido'),
-    body('req.body.fechaNac')
+    body('fechaNac')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
 ]
-
-
 const usersControllers = require("../controllers/usersControllers");
 
 //REGISTRO
 router.get("/registro", guestMiddleware, usersControllers.registro);
-router.post('/registro', registroMiddleware, usersControllers.registroValidacion)
+router.post('/registro', validarRegistro, usersControllers.registroValidacion)
 
 //LOGIN
 router.get('/login', guestMiddleware, usersControllers.login)
-router.post('/login'/*, loginMiddleware*/, usersControllers.loginValidacion)
+router.post('/login', validarUsuario, usersControllers.loginValidacion)
 
 // PERFIL DE USUARIO
 router.get('/profile', authMiddleware, usersControllers.userProfile)

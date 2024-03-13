@@ -7,17 +7,32 @@ const { body } = require('express-validator')
 
 //validaciones
 const validarCrearProducto = [
-    body('marca').notEmpty().withMessage('Debes completar el campo de nombre'),
-    body('categoria').notEmpty().withMessage('Debes seleccionar la categoria'),
-    body('precio').notEmpty().toFloat().withMessage('Debes completar el campo de precio'),
-    /* LUEGO VER VALIDACION IMAGEN
+    //Nombre
+    body('marca').notEmpty().withMessage('Debes completar el campo').bail()
+        .isLength({ min: 5 }).withMessage('Debe contener minimo 5 carácteres'),
+    body('tipo').notEmpty().withMessage('Debes completar el campo').bail()
+        .isLength({ min: 5 }).withMessage('Debe contener minimo 5 carácteres'),
+    //Descripcion
+    body('descripcion').notEmpty().toFloat().withMessage('Debes completar el campo').bail()
+        .isLength({ min: 20 }).withMessage('Debe contener minimo 20 carácteres'),
+    //IMAGEN
     body('avatar').custom((value, { req }) => {
-        let file = req.file;
+        const file = req.file;
+    
         if (!file) {
-            throw new Error('debes subir una imagen')
+            throw new Error('Debes subir una imagen');
         }
+    
+        const tipoImagen = ['.jpg', '.jpeg', '.png', '.gif'];
+    
+        const fileExtension = path.extname(file.path);
+    
+        if (!tipoImagen.includes(fileExtension.toLowerCase())) {
+            throw new Error('Formato de imagen no permitido. Debes subir una imagen en formato JPG, JPEG, PNG o GIF.');
+        }
+    
+        return true;
     })
-    */
 ]
 
 
@@ -40,7 +55,7 @@ const upload = multer({ storage });
 
 //RUTAS
 http://localhost:4000/admin
-router.get('/',adminControllers.admin)
+router.get('/', adminControllers.admin)
 
 http://localhost:4000/admin/productos
 router.get("/productos", adminControllers.adminProductos);

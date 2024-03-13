@@ -13,8 +13,7 @@
                     <!--MARCA-->
                     <div class="form-input-admin">
                         <label for="marca">Nombre del Producto</label>
-                        <input type="text" name="marca"
-                            value="<%= locals.old && old.marca ? old.marca : null %>"
+                        <input type="text" name="marca" value="<%= locals.old && old.marca ? old.marca : null %>"
                             class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " />
                         <!--comentario para los errores-->
                         <% if (locals.errors && errors.marca) { %>
@@ -23,71 +22,94 @@
                             </div>
                             <% } %>
                     </div>
-                    <!--DESCRIPCION-->
+                    <!--TIPO-->
                     <div class="form-input-admin">
-                        <label for="descripcion">Descripcion</label>
-                        <textarea name="descripcion" id="comentario" cols="30" rows="5"></textarea>
-                    </div>
-                    <!--VOLUMEN-->
-                    <div class="form-input-admin">
-                        <label for="volumen">Volumen:</label>
-                        <select name="volumen" id="volumen"
-                            value="<%= locals.old && old.volumen ? old.volumen : null %>">
-                            <option disabled>Seleccione un volumen</option>
-                            <% for( let i = 0; i < listaVolumen.length; i++ ) { %>
-                                
-                                <option name="volumen" value="<%= listaVolumen[i] %>" > <%= listaVolumen[i] %> cm3</option>
-                            <% } %>
-                        </select>
-                    </div>
-                    <!--CATEGORIA-->
-                    <div class="form-input-admin">
-                        <label for="categoria">Categoría:</label>
-                        <select name="categoria" id="categoria"
-                            value="<%= locals.old && old.categoria ? old.categoria : null %>">
-                            <option disabled>Seleccione una categoria</option>
-                            <% for( let i = 0; i < listaCategoria.length; i++ ) { %>
-                                
-                                <option name="categoria"><%= listaCategoria[i] %></option>
-                            <% } %>
-                        </select>
+                        <label for="tipo">Tipo de Producto</label>
+                        <input type="text" name="tipo" value="<%= locals.old && old.tipo ? old.tipo : null %>"
+                            class=" <%= locals.errors && errors.tipo? 'is-invalid' : null %> " />
                         <!--comentario para los errores-->
-                        <% if (locals.errors && errors.categoria) { %>
+                        <% if (locals.errors && errors.tipo) { %>
                             <div>
-                                <%= errors.categoria.msg %>
+                                <%= errors.tipo.msg %>
                             </div>
                             <% } %>
                     </div>
-                    <!--DISPONIBILIDAD-->
+                    <!-- DESCRIPCION -->
                     <div class="form-input-admin">
-                        <label for="disponibilidad">Disponibilidad</label>
-                        <input type="text" name="disponibilidad"/>
+                        <label for="descripcion">Descripción</label>
+                        <textarea name="descripcion" id="comentario" cols="30"
+                            rows="5"><%= locals.old && locals.old.descripcion ? locals.old.descripcion : '' %></textarea>
                     </div>
-                    <!--PRECIO-->
-                    <div class="form-input-admin">
-                        <label for="precio">Precio</label>
-                        <input type="text" name="precio" value="<%= locals.old && old.precio ? old.precio : null %>" />
-                        <!--comentario para los errores-->
-                        <% if (locals.errors && errors.precio) { %>
-                            <div>
-                                <%= errors.precio.msg %>
+                    <!--comentario para los errores-->
+                    <% if (locals.errors && errors.descripcion) { %>
+                        <div>
+                            <%= errors.descripcion.msg %>
+                        </div>
+                        <% } %>
                             </div>
-                            <% } %>
-                    </div>
-                    <!--AVATAR-->
-                    <div class="form-input-admin">
-                        <label for="avatar">imagen Producto:</label><br>
-                        <input type="file" id="imagen" name="avatar" accept="image/*">
-                        <!--comentario para los errores-->
-                        <% if (locals.errors && errors.avatar) { %>
-                            <div>
-                                <%= errors.avatar.msg %>
+                            <!--VOLUMEN-->
+                            <div class="form-input-admin">
+                                <label for="volumen">volumen[cm3]</label>
+                                <input type="number" placeholder="Ej: 700; 1000..." name="volumen"
+                                    value="<%= locals.old && old.volumen ? old.volumen : null %>" />
+                                <!--comentario para los errores-->
+                                <% if (locals.errors && errors.volumen) { %>
+                                    <div>
+                                        <%= errors.volumen.msg %>
+                                    </div>
+                                    <% } %>
                             </div>
-                            <% } %>
-                    </div>
-                    <div class="boton-crear">
-                        <button type="submit" name="accion" value="crear">Crear</button>
-                    </div>
+                            <!--CATEGORIA-->
+                            <div class="form-input-admin">
+                                <label for="categoria">Categoría:</label>
+                                <select name="categoria" id="categoria">
+                                    <option disabled selected>Seleccione una categoría</option>
+                                    <% for(let i=0; i < categorias.length; i++) { %>
+                                        <option <%=(locals.old && locals.old.categoria==categorias[i].nombre)
+                                            ? 'selected' : '' %>
+                                            value="<%= categorias[i].nombre %>">
+                                                <%= categorias[i].nombre %>
+                                        </option>
+                                        <% } %>
+                                </select>
+                                <!-- Comentario para los errores -->
+                                <% if (locals.errors && locals.errors.categoria) { %>
+                                    <div>
+                                        <%= locals.errors.categoria.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <!--DISPONIBILIDAD-->
+                            <div class="form-input-admin">
+                                <label for="disponibilidad">Disponibilidad</label>
+                                <input type="number" name="disponibilidad" />
+                            </div>
+                            <!--PRECIO-->
+                            <div class="form-input-admin">
+                                <label for="precio">Precio</label>
+                                <input type="number" placeholder="Ej: 0; 2; 550..." name="precio"
+                                    value="<%= locals.old && old.precio ? old.precio : null %>" />
+                                <!--comentario para los errores-->
+                                <% if (locals.errors && errors.precio) { %>
+                                    <div>
+                                        <%= errors.precio.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <!--AVATAR-->
+                            <div class="form-input-admin">
+                                <label for="avatar">imagen Producto:</label><br>
+                                <input type="file" id="imagen" name="avatar" accept="image/*">
+                                <!--comentario para los errores-->
+                                <% if (locals.errors && errors.avatar) { %>
+                                    <div>
+                                        <%= errors.avatar.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class="boton-crear">
+                                <button type="submit" name="accion" value="crear">Crear</button>
+                            </div>
 
                 </form>
                 <div class="boton-volver">
