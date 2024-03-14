@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--<%- include('../partials/head', {titulo : 'crear', estilo : '404.css'}) %>-->
 <%- include('../partials/head', {titulo : 'crear' , estilo : 'crearProducto.css' }) %>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <body>
         <%- include('../partials/header') %>
@@ -86,7 +84,7 @@
                             </div>
                             <!--PRECIO-->
                             <div class="form-input-admin">
-                                <label for="precio">Precio</label>
+                                <label for="precio">Precio/unidad</label>
                                 <input type="number" placeholder="Ej: 0; 2; 550..." name="precio"
                                     value="<%= locals.old && old.precio ? old.precio : null %>" />
                                 <!--comentario para los errores-->

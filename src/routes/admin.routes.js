@@ -13,8 +13,8 @@ const validarCrearProducto = [
     body('tipo').notEmpty().withMessage('Debes completar el campo').bail()
         .isLength({ min: 5 }).withMessage('Debe contener minimo 5 carácteres'),
     //Descripcion
-    body('descripcion').notEmpty().toFloat().withMessage('Debes completar el campo').bail()
-        .isLength({ min: 20 }).withMessage('Debe contener minimo 20 carácteres'),
+    body('descripcion').notEmpty().withMessage('Debes completar el campo').bail()
+        .isLength({ min: 20, max : 200 }).withMessage('Debe contener minimo 20 carácteres y un maximo de 200'),
     //IMAGEN
     body('avatar').custom((value, { req }) => {
         const file = req.file;

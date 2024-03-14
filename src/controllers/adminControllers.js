@@ -34,7 +34,7 @@ module.exports = {
             
         } else {
 
-            let { marca,tipo, descripcion, volumen, categoria, disponibilidad, precio, avatar } = req.body
+            let { marca,tipo, descripcion, volumen, categoria, disponibilidad, precio} = req.body
             let listaCategoria = ["Gaseosa", "Alcohol", "Agua", "Soda", "Jugo", "Energetica"];
             fk_idcategoria = listaCategoria.indexOf(categoria) + 1;
             db.Producto.create({
