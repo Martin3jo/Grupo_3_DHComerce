@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs')
 const db = require('../database/models')
 
+
 const usersController = {
   registro: (req, res) => {
     res.render("usuario/registro");
