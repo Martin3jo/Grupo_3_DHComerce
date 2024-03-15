@@ -45,7 +45,7 @@ module.exports = {
                 fk_idcategoria,
                 disponibilidad,
                 precio,
-                avatar: req.file.filename
+                avatar: (req.file ? req.file.filename : '/img/avatars/default-image.png')
             })
                 .then(() => {
                     res.redirect('/admin/productos')
@@ -55,35 +55,44 @@ module.exports = {
     },
     modificar: async function (req, res) {
         try {
-
-            let idproducto = req.params.id
-            let Producto = await db.Producto.findByPk(idproducto)
-            let editarCategoria = db.Categoria.findAll();
-
-            Promise.all([Producto, editarCategoria]).then(function ([productos, categorias]) {
-                res.render('admin/modificarProducto', { productos, categorias })
-            })
-
-            //  res.render('admin/modificarProducto', { productos : Producto })
+            let idproducto = req.params.id;
+        
+            let [Producto, Categorias] = await Promise.all([
+                db.Producto.findByPk(idproducto),
+                db.Categoria.findAll()
+            ]);
+        
+            res.render('admin/modificarProducto', { producto: Producto, categorias: Categorias });
         } catch (error) {
             console.log(error.message);
         }
     },
     modificarProceso: async function (req, res) {
         try {
-            const { marca, descripcion, volumen, categoria, disponibilidad, precio, avatar } = req.body
+            const { marca, tipo, descripcion, volumen, categoria, disponibilidad, precio } = req.body;
+            
+            // Obtener el nombre del archivo anterior del campo oculto
+            const avatarAnterior = req.body.avatar_anterior;
+    
+            // Determinar el nuevo valor del avatar
+            const avatarNuevo = req.file ? req.file.filename : avatarAnterior;
+    
+            console.log(req.body);
+            // Actualizar el producto en la base de datos
             await db.Producto.update({
                 marca,
+                tipo,
                 descripcion,
                 volumen,
                 categoria,
                 disponibilidad,
                 precio,
-                avatar: req.file.filename
+                avatar: avatarNuevo
             }, {
                 where: { idproducto: req.params.id }
-            })
-            res.redirect('/admin/productos')
+            });
+    
+            res.redirect('/admin/productos');
         } catch (error) {
             console.log(error.message);
         }

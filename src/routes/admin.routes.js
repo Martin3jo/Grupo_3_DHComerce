@@ -14,21 +14,19 @@ const validarCrearProducto = [
         .isLength({ min: 5 }).withMessage('Debe contener minimo 5 carácteres'),
     //Descripcion
     body('descripcion').notEmpty().withMessage('Debes completar el campo').bail()
-        .isLength({ min: 20, max : 200 }).withMessage('Debe contener minimo 20 carácteres y un maximo de 200'),
+        .isLength({ min: 20}).withMessage('Debe contener minimo 20 carácteres').bail()
+        .isLength({ max: 200}).withMessage('ha superado el maximo de 200 carácteres'),
     //IMAGEN
     body('avatar').custom((value, { req }) => {
-        const file = req.file;
-    
-        if (!file) {
-            throw new Error('Debes subir una imagen');
-        }
-    
-        const tipoImagen = ['.jpg', '.jpeg', '.png', '.gif'];
-    
-        const fileExtension = path.extname(file.path);
-    
-        if (!tipoImagen.includes(fileExtension.toLowerCase())) {
-            throw new Error('Formato de imagen no permitido. Debes subir una imagen en formato JPG, JPEG, PNG o GIF.');
+        
+        if (req.file) {
+            const file = req.file;
+            const tipoImagen = ['.jpg', '.jpeg', '.png', '.gif'];
+            const fileExtension = path.extname(file.path);
+            
+            if (!tipoImagen.includes(fileExtension.toLowerCase())) {
+                throw new Error('Formato de imagen no permitido. Debes subir una imagen en formato JPG, JPEG, PNG o GIF.');
+            }
         }
     
         return true;
