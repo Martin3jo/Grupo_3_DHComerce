@@ -78,16 +78,16 @@ const usersController = {
         old: req.body,
       });
     } else {
-      //   if (!req.body.email) {
-      //     return res.render('usuario/usuario', {
-      //         errors: {
-      //             email: {
-      //                 msg: 'El campo de correo electrónico es obligatorio.'
-      //             }
-      //         },
-      //         old: req.body
-      //     });
-      // }
+      // //   if (!req.body.email) {
+      // //     return res.render('usuario/usuario', {
+      // //         errors: {
+      // //             email: {
+      // //                 msg: 'El campo de correo electrónico es obligatorio.'
+      // //             }
+      // //         },
+      // //         old: req.body
+      // //     });
+      // // }
       //COMPARO EMAIL
       db.Cliente.findOne({
         where: {
@@ -104,23 +104,34 @@ const usersController = {
               },
               old: req.body,
             });
-             //else {
-            //   return res.render("usuario/usuario", {
-            //     errors: {
-            //       email: {
-            //         msg: "Email incorrecto",
-            //       },
-            //     },
-            //     old: req.body,
-            //   });
-            // }
+            //  //else {
+            // //   return res.render("usuario/usuario", {
+            // //     errors: {
+            // //       email: {
+            // //         msg: "Email incorrecto",
+            // //       },
+            // //     },
+            // //     old: req.body,
+            // //   });
+            // // }
           } else{
             //COMPARO PASSWORD
             let verificarPassword = bcrypt.compareSync(
               req.body.password,
               usuario.password
             );
-            if (!verificarPassword) {
+            if (verificarPassword) {
+              //GUARDO USUARIO EN SESSION
+              delete usuario.password;
+              req.session.usuario = usuario;
+              if (req.body.recordarUsuario) {
+                res.cookie("usuarioEmail", req.body.email, { maxAge: 900000 });
+              }
+              return res.redirect("/");
+              
+              
+             } else{
+              //Si la contraseña no coincide
               return res.render("usuario/usuario", {
                 errors: {
                   password: {
@@ -129,17 +140,8 @@ const usersController = {
                 },
                 old: req.body,
               });
-              
-             } else{
-              //GUARDO USUARIO EN SESSION
-              delete usuario.password;
-              //req.session.usuario = usuario;
-              if (req.body.recordarUsuario) {
-                res.cookie("usuarioEmail", req.body.email, { maxAge: 900000 });
-              }
-              return res.redirect("/");
              }
-          }
+           }
           
         })
         .catch((error) => {
