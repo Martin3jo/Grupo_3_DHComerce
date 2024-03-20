@@ -33,7 +33,6 @@ const validarCrearProducto = [
     })
 ]
 
-
 //direcciones de RUTAS
 const adminControllers = require("../controllers/adminControllers");
 

@@ -7,12 +7,12 @@
         <%- include('../partials/header') %>
             <main class="main-adminProducto">
                 <form action="/admin/crearProducto" method="post" enctype="multipart/form-data"
-                    class="form-crearProducto">
+                    class="form-crearProducto e-form">
                     <!--MARCA-->
                     <div class="form-input-admin">
                         <label for="marca">Nombre del Producto</label>
                         <input type="text" name="marca" value="<%= locals.old && old.marca ? old.marca : null %>"
-                            class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " />
+                            class="e-marca" />
                         <!--comentario para los errores-->
                         <% if (locals.errors && errors.marca) { %>
                             <div>
@@ -24,7 +24,7 @@
                     <div class="form-input-admin">
                         <label for="tipo">Tipo de Producto</label>
                         <input type="text" name="tipo" value="<%= locals.old && old.tipo ? old.tipo : null %>"
-                            class=" <%= locals.errors && errors.tipo? 'is-invalid' : null %> " />
+                            class="e-tipo" />
                         <!--comentario para los errores-->
                         <% if (locals.errors && errors.tipo) { %>
                             <div>
@@ -35,7 +35,7 @@
                     <!-- DESCRIPCION -->
                     <div class="form-input-admin">
                         <label for="descripcion">Descripción</label>
-                        <textarea name="descripcion" id="comentario" cols="30"
+                        <textarea class="e-descripcion" name="descripcion" id="comentario" cols="30"
                             rows="5"><%= locals.old && locals.old.descripcion ? locals.old.descripcion : '' %></textarea>
                     </div>
                     <!--comentario para los errores-->
@@ -110,11 +110,16 @@
                             </div>
 
                 </form>
+                <!--ERRORES FRONT-->
+                <section class="errores-front">
+                    <ul></ul>
+                </section>
                 <div class="boton-volver">
-                    <a href="/admin/productos"><button><i class='bx bx-arrow-back'></i></button></a>
+                    <a href="/admin/productos"><button><i class="fa-regular fa-circle-left"></i></button></a>
                 </div>
             </main>
             <!-- <%- include('../partials/footer') %> -->
+            <script src="/js/errors-forms.js"></script>
     </body>
 
 </html>
