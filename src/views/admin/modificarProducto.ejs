@@ -11,7 +11,7 @@
                     <div class="form-input-admin">
                         <label for="marca">Nombre del Producto</label>
                         <input type="text" name="marca" value="<%= producto.marca %>"
-                            class=" <%= locals.errors && errors.marca? 'is-invalid' : null %> " selected />
+                            class="e-marca" selected />
                         <!--Errores-->
                         <% if (locals.errors && errors.marca) { %>
                             <div>
@@ -23,7 +23,7 @@
                     <div class="form-input-admin">
                         <label for="tipo">Tipo de Producto</label>
                         <input type="text" name="tipo" value="<%= producto.tipo %>"
-                            class=" <%= locals.errors && errors.tipo? 'is-invalid' : null %> " selected />
+                            class=" e-tipo" selected />
                         <!--Errores-->
                         <% if (locals.errors && errors.tipo) { %>
                             <div>
@@ -34,7 +34,7 @@
                     <!--DESCRIPCION-->
                     <div class="form-input-admin">
                         <label for="descripcion">Descripcion</label>
-                        <textarea name="descripcion" id="comentario" cols="30"
+                        <textarea class="e-descripcion" name="descripcion" id="comentario" cols="30"
                             rows="5"><%= producto.descripcion %></textarea>
                     </div>
                     <!--comentario para los errores-->
@@ -114,11 +114,16 @@
                             </div>
 
                 </form>
+                <!--ERRORES FRONT-->
+                <section class="errores-front">
+                    <ul></ul>
+                </section>
                 <div class="boton-volver">
-                    <a href="/admin/productos"><button><i class='bx bx-arrow-back'></i></button></a>
+                    <a href="/admin/productos"><button><i class="fa-regular fa-circle-left"></i></button></a>
                 </div>
             </main>
             <!-- <%- include('../partials/footer') %> -->
+            <script src="/js/errors-forms.js"></script>
     </body>
 
 </html>

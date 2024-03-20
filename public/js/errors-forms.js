@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
     // Agregar clases para estilos CSS
     errorMarca.classList.add('mensaje-error');
     errorTipo.classList.add('mensaje-error');
-    errorDescripcion.classList.add('mensahe-error')
+    errorDescripcion.classList.add('mensaje-error')
 
     // Insertar elementos de error después de los campos correspondientes
     marca.parentNode.insertBefore(errorMarca, marca.nextSibling);
@@ -50,6 +50,7 @@ window.addEventListener('load', function () {
         }
     });
 
+
     formulario.addEventListener('submit', function (event) {
         let errores = [];
 
@@ -59,11 +60,13 @@ window.addEventListener('load', function () {
         } else if (marca.value.length < 5) {
             errores.push('Nombre debe contener mas de cinco carácteres')
         }
+
         if (tipo.value == "") {
             errores.push('Tipo Obligatorio')
         } else if (tipo.value.length < 5) {
             errores.push('Tipo debe contener mas de cinco carácteres')
         }
+
         if (descripcion.value == "") {
             errores.push('Descripción Obligatorio')
         } else if (descripcion.value.length < 20) {
