@@ -42,15 +42,17 @@ app.listen(port, () => {
     http://localhost:${port}`);
 });
 
-//MIDDLEWARES
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
-app.use(userLoggedMiddleware)
+
 
 /*ROUTES*/
 const rutasIndex = require("./routes/main.routes");
 const rutasProductos = require("./routes/products.routes");
 const rutasUsuarios = require("./routes/users.routes");
 const rutasAdmin = require("./routes/admin.routes");
+
+//MIDDLEWARES
+// const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+// app.use(userLoggedMiddleware)
 
 /*ENTRY POINTS*/
 app.use("/", rutasIndex);

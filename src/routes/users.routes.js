@@ -13,12 +13,13 @@ const validarUsuario = [
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
         .isEmail()
-        .withMessage('debe ser un Email'),
+        .withMessage('Debe ser un Email'),
     body('password')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
         .isLength({ min: 6 })
-        .withMessage('Debe tener un minimo de 6 caracteres')
+        .withMessage('Contraseña inválida')
+        
 ]
 
 // Validación Registro
@@ -38,11 +39,11 @@ const validarRegistro = [
     body('password')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
-        .isLength({ min: 6 }),
+        .isLength({ min: 8 }),
     body('password2')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
-        .isLength({ min: 6 }),
+        .isLength({ min: 8 }),
     body('email')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
@@ -50,7 +51,14 @@ const validarRegistro = [
         .withMessage('Debe ser un E-mail valido'),
     body('fechaNac')
         .notEmpty()
-        .withMessage('Campo Obligatorio').bail()
+        .withMessage('Campo Obligatorio').bail(),
+        body('password2').custom((value, { req }) => {
+            if (value !== req.body.password) {
+                throw new Error('Las contraseñas no coinciden');
+            }
+            return true;
+        })
+    
 ]
 const usersControllers = require("../controllers/usersControllers");
 
