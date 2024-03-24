@@ -3,9 +3,13 @@ const sequelize = db.sequelize;
 
 const apiControllers = {
     'list': (req, res) => {
+        let paginaActual = parseInt(req.query.pagina) > 0? req.query.pagina: 1;
+        let paginaElementos = 10;
         db.Producto.findAll(
             {
                 include: ["Categoria"],
+                offset : (paginaActual - 1) * paginaElementos,
+                limit : paginaElementos,
                 attributes: {
                     include: [
                         [
@@ -23,7 +27,9 @@ const apiControllers = {
                     meta: {
                         status: 200,
                         total: productos.length,
-                        url: req._parsedOriginalUrl.path
+                        url:'http://localhost:4000/api/productos/?pagina=' + paginaActual,
+                        next: 'http://localhost:4000/api/productos/?pagina=' + (parseInt(paginaActual) + 1),
+                        previus: 'http://localhost:4000/api/productos/?pagina=' + (parseInt(paginaActual) - 1)
                     },
                     data: productos,
                 })
