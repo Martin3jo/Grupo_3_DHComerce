@@ -50,6 +50,10 @@ const rutasProductos = require("./routes/products.routes");
 const rutasUsuarios = require("./routes/users.routes");
 const rutasAdmin = require("./routes/admin.routes");
 
+//APIs ROUTES
+const apiProductos = require("./routes/api/apiProductos.routes")
+const apiUsuarios = require("./routes/api/apiUsuarios.routes")
+
 //MIDDLEWARES
 // const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 // app.use(userLoggedMiddleware)
@@ -60,6 +64,9 @@ app.use("/productos", rutasProductos);
 app.use("/usuario", rutasUsuarios);
 app.use("/admin", rutasAdmin);
 
+//APIs POINTS
+app.use("/api/productos", apiProductos)
+app.use("/api/usuarios", apiUsuarios)
 
 /*RESPUESTA AL ERROR 404*/
 app.use((req, res, next) => {

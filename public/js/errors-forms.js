@@ -95,5 +95,7 @@ window.addEventListener('load', function () {
             });
 
         }
+        this.submit()
     })
+
 })
