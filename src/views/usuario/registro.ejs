@@ -21,7 +21,7 @@
               <input type="text" value="<%= locals.old && old.nombre ? old.nombre : null %>"
                 placeholder="Ingrese su Nombre" name="nombre">
               <% if (locals.errors && errors.nombre) { %>
-                <div>
+                <div class="text-danger">
                   <%= errors.nombre.msg %>
                 </div>
                 <% } %>
@@ -31,7 +31,7 @@
               <input type="text" placeholder="Ingrese su Apellido" name="apellido"
                 value="<%= locals.old && old.apellido ? old.apellido : null %>">
               <% if (locals.errors && errors.apellido) { %>
-                <div>
+                <div class="text-danger">
                   <%= errors.apellido.msg %>
                 </div>
                 <% } %>
@@ -53,7 +53,7 @@
               <input type="email" placeholder="martin@gmail.com" name="email"
               value="<%= locals.old && old.email ? old.email : '' %>">
               <% if (locals.errors && errors.email) { %>
-                <div>
+                <div class="text-danger">
                   <%= errors.email.msg %>
                 </div>
                 <% } %>
@@ -63,7 +63,7 @@
                 <input type="password" placeholder="Contraseña" name="password"
                   value="<%= locals.old && old.password ? old.password : '' %>">
                 <% if (locals.errors && errors.password) { %>
-                  <div>
+                  <div class="text-danger">
                     <%= errors.password.msg %>
                   </div>
                   <% } %>
@@ -73,7 +73,7 @@
                 <input type="password" placeholder="Repetir Contraseña" name="password2"
                   value="<%= locals.old && old.password2 ? old.password : null %>">
                   <% if (locals.errors && errors.password2) { %>
-                    <p><%= errors.password2.msg %></p>
+                    <p class="text-danger"><%= errors.password2.msg %></p>
                 <% } %>
                 
               </div>
@@ -82,7 +82,7 @@
               <input type="date" placeholder="Fecha de nacimiento" name="fecha_nac" class="fecNac"
                 value="<%= locals.old && old.fecha_nac ? old.fecha_nac : null %>">
               <% if (locals.errors && errors.fecha_nac) { %>
-                <div>
+                <div class="text-danger">
                   <%= errors.fecha_nac.msg %>
                 </div>
                 <% } %>

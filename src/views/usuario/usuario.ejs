@@ -12,7 +12,7 @@
 
     <main>
       <div class="form-registro">
-        <form action="/usuario/login" method="post">
+        <form action="/usuario/login" method="post" >
           <h1>Cuenta</h1>
 
           <div class="input-box">
@@ -23,11 +23,11 @@
                 name="email"
                 placeholder="asd@gmail.com"
                 value="<%= locals.old && old.email ? old.email : '' %>"
-              />
+              class="email"/>
               <i class="bx bxs-user"></i>
               <!--comentario para los errores-->
               <% if (locals.errors && errors.email) { %>
-              <div><%= errors.email.msg %></div>
+              <div class="text-danger"><%= errors.email.msg %></div>
               <% } %>
             </div>
           </div>
@@ -38,7 +38,7 @@
               <i class="bx bxs-lock-alt"></i>
               <!--comentario para los errores-->
               <% if (locals.errors && errors.password) { %>
-              <div><%= errors.password.msg %></div>
+              <div class="text-danger"><%= errors.password.msg %></div>
               <% } %>
             </div>
           </div>
@@ -49,9 +49,14 @@
 
           <button type="submit" class="boton-registro">Ingresar</button>
         </form>
+        <!--ERRORES FRONT-->
+        <section class="errores-front">
+          <ul></ul>
+      </section>
       </div>
     </main>
 
     <%- include('../partials/footer.ejs')%>
+    <script src="/js/errors-forms.js"></script>
   </body>
 </html>
