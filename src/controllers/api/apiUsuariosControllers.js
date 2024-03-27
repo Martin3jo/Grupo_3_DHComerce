@@ -47,7 +47,22 @@ const apiUsuariosControllers = {
                     data: cliente,
                 })
             })
-    }
+    },
+    'create': (req, res) => {
+        console.log(req.body);
+        db.Cliente.create(
+            req.body
+    )
+    .then((cliente)=> {
+        return res.status(200).json({
+            meta : {
+                status : 200,
+                creadted : "ok"
+            },
+            data : cliente
+        })})            
+    .catch(error => res.send(error))
+}
 }
 
 module.exports = apiUsuariosControllers;

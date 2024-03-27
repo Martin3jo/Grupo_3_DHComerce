@@ -7,4 +7,6 @@ const apiUsuariosControllers = require('../../controllers/api/apiUsuariosControl
 router.get('/', apiUsuariosControllers.list)
 router.get('/detalle/:id', apiUsuariosControllers.detalle)
 
+router.post('/create', apiUsuariosControllers.create)
+
 module.exports = router;
