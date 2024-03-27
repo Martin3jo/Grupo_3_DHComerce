@@ -2,7 +2,33 @@ const db = require('../../database/models');
 const sequelize = db.sequelize;
 
 const apiUsuariosControllers = {
-    'list': (req, res) => {
+    'total':(req,res)=>{
+        db.Cliente.findAll(
+            {
+                attributes: {
+                    include: [
+                        [
+                            sequelize.literal(
+                                `CONCAT('http://localhost:4000/api/usuarios/detalle/', Cliente.idcliente)`
+                            ),
+                            "url",
+                        ],
+                    ],
+                }
+            }
+        )
+            .then(usuarios => {
+                return res.status(200).json({
+                    meta: {
+                        status: 200,
+                        total: usuarios.length,
+                        url: 'http://localhost:4000/api/usuarios'
+                    },
+                    data: usuarios,
+                })
+            })
+    },
+    'paginado': (req, res) => {
         let paginaActual = parseInt(req.query.pagina) > 0 ? req.query.pagina : 1;
         let paginaElementos = 10;
         db.Cliente.findAll(

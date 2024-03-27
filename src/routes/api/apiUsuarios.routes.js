@@ -4,7 +4,8 @@ const router = express.Router();
 
 const apiUsuariosControllers = require('../../controllers/api/apiUsuariosControllers');
 
-router.get('/', apiUsuariosControllers.list)
+router.get('/', apiUsuariosControllers.total)
+router.get('/paginado', apiUsuariosControllers.paginado)
 router.get('/detalle/:id', apiUsuariosControllers.detalle)
 
 module.exports = router;

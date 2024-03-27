@@ -3,6 +3,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+const cors = require('cors')
+
+app.use(cors());
 
 //SESSION de USUARIO
 const session = require('express-session')
@@ -53,6 +56,7 @@ const rutasAdmin = require("./routes/admin.routes");
 //APIs ROUTES
 const apiProductos = require("./routes/api/apiProductos.routes")
 const apiUsuarios = require("./routes/api/apiUsuarios.routes")
+const apiCategorias = require("./routes/api/apiCategorias.routes")
 
 //MIDDLEWARES
 // const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
@@ -67,6 +71,9 @@ app.use("/admin", rutasAdmin);
 //APIs POINTS
 app.use("/api/productos", apiProductos)
 app.use("/api/usuarios", apiUsuarios)
+app.use("/api/categorias", apiCategorias)
+
+
 
 /*RESPUESTA AL ERROR 404*/
 app.use((req, res, next) => {
