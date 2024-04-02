@@ -1,10 +1,20 @@
 //Despliegue de menu
 document.addEventListener('DOMContentLoaded', function () {
-    var toggleBtn = document.getElementById('toggle-btn');
+    var toggleBtn = document.querySelector('.toggle-btn');
     var menu = document.getElementById('menu');
-    console.log(toggleBtn, menu);
+
+
     toggleBtn.addEventListener('click', function () {
         menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+
+    if (toggleBtn.classList.contains('fa-ellipsis')) {
+        toggleBtn.classList.remove('fa-ellipsis');
+        toggleBtn.classList.add('fa-ellipsis-vertical');
+    } else if (toggleBtn.classList.contains('fa-ellipsis-vertical')) {
+        toggleBtn.classList.remove('fa-ellipsis-vertical');
+        toggleBtn.classList.add('fa-ellipsis');
+    }
+
     });
 
     document.addEventListener('click', function (event) {

@@ -14,9 +14,11 @@
                         <form action="/admin/productos/buscar" method="get" class="buscador-caja">
                             <input class="buscador" type="search" name="buscar" placeholder="Buscador">
                         </form>
-                        <a href="/admin/crearProducto"><button>➕</button></a>
+                        
                     </section>
-
+                    <section>
+                    <a href="/admin/crearProducto"><button class="crear-producto primary">Crear Producto</button></a>
+                </section>
                     <section class="productos-main-caja">
                         <% for (let i=0; i < productos.length; i++) { %>
                             <article class="productos-caja">

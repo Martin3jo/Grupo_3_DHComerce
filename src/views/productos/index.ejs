@@ -4,15 +4,19 @@
 
 
     <body>
-        <div>
+        <%- include('../partials/header')%>
+        <section>
+            <%- include('../partials/carrouselProductos') %>
+        </section>
+        <section>
+            <%- include('../partials/carrouselCategorias') %>
+        </section>
+        <section>
+            <strong>También te puede interesar</strong>
+            <%- include('../partials/productosConcurrentes') %>
+        </section>
 
-            <%- include('../partials/header')%>
-    
-                <% for( let index=0; index < productos.length; index++ ) { %>
-                    <a href="/productos/detalle/<%= productos[index].idproducto %>"><%= productos[index].marca %></a> <br> 
-                        <% } %>
-        </div>
-        <%- include('../partials/productosConcurrentes') %>
+        <%- include('../partials/footer')%>
     </body>
 
 </html>
