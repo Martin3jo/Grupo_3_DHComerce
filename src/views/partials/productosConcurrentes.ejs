@@ -8,17 +8,17 @@
                 <a href="/productos/detalle/<%= productos[index].idproducto %>">
                 <img src="/img/avatars/<%= productos[index].avatar %>" alt="" />
                     <div class="detail">
-                        <div class="product">
-                            <%= productos[index].descripcion %>
-                        </div>
+                        
                         <div class="descripcionProducto">
-                            <div>
-                                <%= productos[index].marca %>
+                            <div class="price">
+                                <strong><%= productos[index].marca %></strong>
                             </div>
                             <div>
+                                Unidades: 
                                 <%= productos[index].disponibilidad %>
                             </div>
                             <div>
+                                vol: 
                                 <%= productos[index].volumen %>
                             </div>
                         </div>

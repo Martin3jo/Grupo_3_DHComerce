@@ -3,12 +3,15 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const db = require("../database/models");
+const Op = require('sequelize')
+
 
 const usersController = {
   registro: (req, res) => {
     res.render("usuario/registro");
   },
   registroValidacion: (req, res) => {
+    console.log(req.body);
     let resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       return res.render("usuario/registro", {
@@ -18,23 +21,18 @@ const usersController = {
     } else {
       db.Cliente.findOne({
         where: {
-          email: req.body.email,
-          dni: req.body.dni,
+          email: req.body.email
         },
       }).then((cliente) => {
         if (cliente) {
           return res.render("usuario/registro", {
-            errors: {
-              email: {
-                msg: "Este Email ya existe",
+              errors: {
+                  email: { msg: "Este Email ya existe" },
+                  dni: { msg: "Este D.N.I. ya existe" },
               },
-              dni: {
-                msg: "Este D.N.I. ya existe",
-              },
-            },
-            old: req.body,
+              old: req.body,
           });
-        } else {
+      } else {
           const {
             nombre,
             apellido,
@@ -58,7 +56,6 @@ const usersController = {
               res.redirect("/");
             })
             .catch((error) => {
-              // Manejar errores al guardar en la base de datos
               console.error(error);
               res.redirect("/");
             });
@@ -114,7 +111,7 @@ const usersController = {
             // //     old: req.body,
             // //   });
             // // }
-          } else{
+          } else {
             //COMPARO PASSWORD
             let verificarPassword = bcrypt.compareSync(
               req.body.password,
@@ -122,15 +119,17 @@ const usersController = {
             );
             if (verificarPassword) {
               //GUARDO USUARIO EN SESSION
-              delete usuario.password;
-              req.session.usuario = usuario;
+              console.log(req.session.userLogged);
+              let usuarioPlain = usuario.toJSON(); // Convertir usuario a objeto plano
+              delete usuarioPlain.password;
+              req.session.userLogged = usuarioPlain;
+              console.log(req.session.userLogged);
               if (req.body.recordarUsuario) {
                 res.cookie("usuarioEmail", req.body.email, { maxAge: 900000 });
               }
               return res.redirect("/");
-              
-              
-             } else{
+
+            } else {
               //Si la contraseña no coincide
               return res.render("usuario/usuario", {
                 errors: {
@@ -140,9 +139,9 @@ const usersController = {
                 },
                 old: req.body,
               });
-             }
-           }
-          
+            }
+          }
+
         })
         .catch((error) => {
           console.error("Error al buscar el usuario:", error);

@@ -3,8 +3,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+//Necesario para APIs
 const cors = require('cors')
-
 app.use(cors());
 
 //SESSION de USUARIO
@@ -21,7 +21,7 @@ const cookies = require('cookie-parser')
 app.use(cookies())
 
 /*LLAMADO AL EJS*/
-app.set("view engine", "ejs");
+app.set("view engine", "ejs");  
 app.set('views',path.join(__dirname,'views'));
 
 /*STATICS*/
@@ -59,21 +59,21 @@ const apiUsuarios = require("./routes/api/apiUsuarios.routes")
 const apiCategorias = require("./routes/api/apiCategorias.routes")
 
 //MIDDLEWARES
-// const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
-// app.use(userLoggedMiddleware)
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+app.use(userLoggedMiddleware)
+
+const noAdminMiddleware = require('./middlewares/noAdminMiddleware')
 
 /*ENTRY POINTS*/
 app.use("/", rutasIndex);
 app.use("/productos", rutasProductos);
 app.use("/usuario", rutasUsuarios);
-app.use("/admin", rutasAdmin);
+app.use("/admin",noAdminMiddleware, rutasAdmin);
 
 //APIs POINTS
 app.use("/api/productos", apiProductos)
 app.use("/api/usuarios", apiUsuarios)
 app.use("/api/categorias", apiCategorias)
-
-
 
 /*RESPUESTA AL ERROR 404*/
 app.use((req, res, next) => {

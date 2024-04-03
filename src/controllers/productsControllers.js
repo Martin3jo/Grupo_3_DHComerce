@@ -6,16 +6,26 @@ const db = require('../database/models')
 module.exports = { 
   //PRODUCTOS
   index : (req,res)=>{
-    db.Producto.findAll()
-    .then((productos)=>{
-      res.render('productos/index', {productos})
+  
+    Promise.all([
+      db.Categoria.findAll({
+        include: [{ association: 'Producto' }]
+      }),
+      db.Producto.findAll()
+    ])
+    .then(([categorias, productos]) => {
+      res.render('productos/index', { categorias, productos });
     })
+    .catch(error => {
+      console.error("Error al buscar categorías y productos:", error);
+      res.status(500).send("Error interno del servidor");
+    });
   },
   detalle: async (req, res) => {
     try {
-      const vistos = req.cookies.vistos || [];
+      let vistos = req.cookies.vistos || [];
       let promesaDetalle = db.Producto.findByPk(req.params.id);
-      const promesaLista = db.Producto.findAll({
+      let promesaLista = db.Producto.findAll({
         where: {
             idproducto: vistos
         }
