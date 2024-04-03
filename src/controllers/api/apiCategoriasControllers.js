@@ -4,6 +4,7 @@ const sequelize = db.sequelize;
 const apiCategoriasControllers = {
     'total':(req,res)=>{
         db.Categoria.findAll({
+            include : "Producto",
             attributes: {
                 include: [
                     [
