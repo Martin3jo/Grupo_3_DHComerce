@@ -7,6 +7,7 @@ const { body } = require('express-validator')
 const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
 
+
 // Validacion usuario 
 const validarUsuario = [
     body('email')
@@ -39,19 +40,24 @@ const validarRegistro = [
     body('password')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
-        .isLength({ min: 8 }),
+        .isLength({ min: 8 })
+        .withMessage('Debe Contener más de 8 carácteres'),
     body('password2')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
-        .isLength({ min: 8 }),
+        .isLength({ min: 8 })
+        .withMessage('Debe Contener más de 8 carácteres'),
     body('email')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
         .isEmail()
         .withMessage('Debe ser un E-mail valido'),
-    body('fechaNac')
+    body('fecha_nac')
         .notEmpty()
-        .withMessage('Campo Obligatorio').bail(),
+        .withMessage('Campo Obligatorio').bail()
+        .isDate()
+        .withMessage('Debe ser una fecha Valida')
+        ,
         body('password2').custom((value, { req }) => {
             if (value !== req.body.password) {
                 throw new Error('Las contraseñas no coinciden');

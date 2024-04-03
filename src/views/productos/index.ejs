@@ -4,19 +4,22 @@
 
 
     <body>
+        <button class="header-carro">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+        </button>
         <%- include('../partials/header')%>
-        <section>
-            <%- include('../partials/carrouselProductos') %>
-        </section>
-        <section>
-            <%- include('../partials/carrouselCategorias') %>
-        </section>
-        <section>
-            <strong>También te puede interesar</strong>
-            <%- include('../partials/productosConcurrentes') %>
-        </section>
+            <section>
+                <%- include('../partials/carrouselProductos') %>
+            </section>
+            <section>
+                <%- include('../partials/carrouselCategorias') %>
+            </section>
+            <section>
+                <strong>También te puede interesar</strong>
+                <%- include('../partials/productosConcurrentes') %>
+            </section>
 
-        <%- include('../partials/footer')%>
+            <%- include('../partials/footer')%>
     </body>
 
 </html>

@@ -37,6 +37,7 @@ const validarCrearProducto = [
 const adminControllers = require("../controllers/adminControllers");
 
 
+
 //lugar donde almacenara las imagenes del formulario - MULTER
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -52,7 +53,7 @@ const upload = multer({ storage });
 
 //RUTAS
 http://localhost:4000/admin
-router.get('/', adminControllers.admin)
+router.get('/',adminControllers.admin)
 
 http://localhost:4000/admin/productos
 router.get("/productos", adminControllers.adminProductos);

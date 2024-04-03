@@ -9,9 +9,7 @@
     <%- include('../partials/header.ejs')%>
       <!--Main-->
       <main class="body-registro">
-        <button class="header-carro">
-          <i class="fa-solid fa-cart-arrow-down"></i>
-        </button>
+
 
         <div class="form-registro">
           <form action="/usuario/registro" method="post">
@@ -87,7 +85,7 @@
                 </div>
                 <% } %>
             </div>
-
+            <input type="hidden" name="action" value="registro">
             <button type="submit" class="boton-registro">Registrarme</button>
           </form>
         </div>

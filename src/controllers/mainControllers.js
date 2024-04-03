@@ -4,6 +4,7 @@ const indexController = {
     index: (req, res) => {
     db.Cliente.findAll()
     .then(resultado=>{
+
       res.render("index", {resultado});
 
     })
