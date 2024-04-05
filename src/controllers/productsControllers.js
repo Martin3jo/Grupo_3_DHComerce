@@ -42,10 +42,7 @@ module.exports = {
   },
   //CARRITO
   carrito : (req,res)=>{
-    db.DetallePedido.findAll()
-    .then((productos)=>{
-      res.render('productos/carrito', {productos})
-    })
+      res.render('productos/carrito')
   }
 }
 
