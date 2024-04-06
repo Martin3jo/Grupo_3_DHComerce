@@ -1,69 +1,135 @@
-import React, { Component } from 'react';
-import Total from './Total'
+import React, { useState, useEffect } from 'react';
+import Total from './Total';
 
-class ContentRowMovies extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            api1: "",
-            api2: ""
+const ContentRowMovies = () => {
+    const [totalUsuarios, setTotalUsuarios] = useState(0);
+    const [totalProductos, setTotalProductos] = useState(0);
+    const [totalCategoria, setTotalCategoria] = useState(0);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const [api1Response, api2Response, api3Response] = await Promise.all([
+                    fetch('http://localhost:4000/api/usuarios'),
+                    fetch('http://localhost:4000/api/productos'),
+                    fetch('http://localhost:4000/api/categorias')
+                ]);
+                const [api1Data, api2Data, api3Data] = await Promise.all([
+                    api1Response.json(),
+                    api2Response.json(),
+                    api3Response.json()
+                ]);
+                
+                console.log(api1Data);
+                console.log(api2Data);
+                console.log(api3Data);
+        
+                setTotalUsuarios(api1Data.meta.total);
+                setTotalProductos(api2Data.meta.total);
+                setTotalCategoria(api3Data.meta.total);
+            } catch (error) {
+                console.log('Error fetching data:', error);
+            }
         };
-    }
 
-    async componentDidMount() {
-        try {
-            const [api1Response, api2Response, api3Response] = await Promise.all([
-                fetch('http://localhost:4000/api/usuarios'),
-                fetch('http://localhost:4000/api/productos'),
-                fetch('http://localhost:4000/api/categorias')
-            ]);
-            const api1Data = await api1Response.json();
-            const api2Data = await api2Response.json();
-            const api3Data = await api3Response.json();
-            
-            console.log(api1Data);
-            console.log(api2Data);
-            console.log(api3Data);
-    
-            this.setState({ 
-                totalUsuarios: api1Data.meta.total,
-                totalProductos: api2Data.meta.total,
-                totalCategoria: api3Data.meta.total
-            });
-        } catch (error) {
-            console.log('Error fetching data:', error);
-        }
-    }
+        fetchData();
 
-    render() {
-        const { totalUsuarios, totalProductos, totalCategoria } = this.state;
-        return (
-            <>
+    }, []);
+
+    return (
+        <div className='d-inline-flex container-fluid'>
             <Total 
-            nombre = "Productos"  
-            total={totalProductos}
-            colorBorder = "primary"
-            titulo = "film"
-            
+                nombre="Productos"  
+                total={totalProductos}
+                colorBorder="primary"
+                titulo="box"
             />
             <Total 
-            nombre = "Usuarios"  
-            total={totalUsuarios}  
-            colorBorder = "success"
-            titulo = "award"
+                nombre="Usuarios"  
+                total={totalUsuarios}  
+                colorBorder="success"
+                titulo="user"
             />
             <Total 
-            nombre = "Categorias"  
-            total={totalCategoria}
-            colorBorder = "warning"  
-            titulo = "user"
+                nombre="Categorias"  
+                total={totalCategoria}
+                colorBorder="warning"  
+                titulo="list"
             />
-            </>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default ContentRowMovies;
+
+
+
+// import React, { Component } from 'react';
+// import Total from './Total'
+
+// class ContentRowMovies extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             api1: "",
+//             api2: ""
+//         };
+//     }
+
+//     async componentDidMount() {
+//         try {
+//             const [api1Response, api2Response, api3Response] = await Promise.all([
+//                 fetch('http://localhost:4000/api/usuarios'),
+//                 fetch('http://localhost:4000/api/productos'),
+//                 fetch('http://localhost:4000/api/categorias')
+//             ]);
+//             const api1Data = await api1Response.json();
+//             const api2Data = await api2Response.json();
+//             const api3Data = await api3Response.json();
+            
+//             console.log(api1Data);
+//             console.log(api2Data);
+//             console.log(api3Data);
+    
+//             this.setState({ 
+//                 totalUsuarios: api1Data.meta.total,
+//                 totalProductos: api2Data.meta.total,
+//                 totalCategoria: api3Data.meta.total
+//             });
+//         } catch (error) {
+//             console.log('Error fetching data:', error);
+//         }
+//     }
+
+//     render() {
+//         const { totalUsuarios, totalProductos, totalCategoria } = this.state;
+//         return (
+//             <>
+//             <Total 
+//             nombre = "Productos"  
+//             total={totalProductos}
+//             colorBorder = "primary"
+//             titulo = "film"
+            
+//             />
+//             <Total 
+//             nombre = "Usuarios"  
+//             total={totalUsuarios}  
+//             colorBorder = "success"
+//             titulo = "award"
+//             />
+//             <Total 
+//             nombre = "Categorias"  
+//             total={totalCategoria}
+//             colorBorder = "warning"  
+//             titulo = "user"
+//             />
+//             </>
+//         );
+//     }
+// }
+
+// export default ContentRowMovies;
 
 // export const ContentRowMovies = (props) => {
 //     return (

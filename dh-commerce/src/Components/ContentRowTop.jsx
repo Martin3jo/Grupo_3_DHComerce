@@ -1,7 +1,7 @@
 import React from 'react'
 import ContentRowMovies from './ContentRowMovies'
-import { LastMovieinDB } from './LastMovieinDB'
-import { GenresinDB } from './GenresinDB'
+import LastMovieinDB  from './LastMovieinDB'
+import  GenresinDB   from './GenresinDB'
 
 export const ContentRowTop = () => {
   return (

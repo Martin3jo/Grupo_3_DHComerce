@@ -588,6 +588,9 @@ pre code {
     margin-right: auto;
     margin-left: auto
 }
+.cursor-pointer {
+    cursor: pointer;
+  }
 
 @media (min-width:576px) {
     .container {
