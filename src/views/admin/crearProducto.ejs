@@ -6,10 +6,11 @@
     <body>
         <%- include('../partials/header') %>
             <main class="main-adminProducto">
+                <div class="form-registro">
                 <form action="/admin/crearProducto" method="post" enctype="multipart/form-data"
                     class="form-crearProducto e-form">
                     <!--MARCA-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="marca">Nombre del Producto</label>
                         <input type="text" name="marca" value="<%= locals.old && old.marca ? old.marca : null %>"
                             class="e-marca" />
@@ -21,7 +22,7 @@
                             <% } %>
                     </div>
                     <!--TIPO-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="tipo">Tipo de Producto</label>
                         <input type="text" name="tipo" value="<%= locals.old && old.tipo ? old.tipo : null %>"
                             class="e-tipo" />
@@ -33,10 +34,10 @@
                             <% } %>
                     </div>
                     <!-- DESCRIPCION -->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="descripcion">Descripción</label>
-                        <textarea class="e-descripcion" name="descripcion" id="comentario" cols="30"
-                            rows="5"><%= locals.old && locals.old.descripcion ? locals.old.descripcion : '' %></textarea>
+                        <textarea class="e-descripcion" name="descripcion" id="comentario" 
+                            rows="1"><%= locals.old && locals.old.descripcion ? locals.old.descripcion : '' %></textarea>
                     </div>
                     <!--comentario para los errores-->
                     <% if (locals.errors && errors.descripcion) { %>
@@ -44,9 +45,9 @@
                             <%= errors.descripcion.msg %>
                         </div>
                         <% } %>
-                            </div>
+                            
                             <!--VOLUMEN-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="volumen">volumen[cm3]</label>
                                 <input type="number" placeholder="Ej: 700; 1000..." name="volumen"
                                     value="<%= locals.old && old.volumen ? old.volumen : null %>" />
@@ -58,7 +59,7 @@
                                     <% } %>
                             </div>
                             <!--CATEGORIA-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="categoria">Categoría:</label>
                                 <select name="categoria" id="categoria">
                                     <option disabled selected>Seleccione una categoría</option>
@@ -78,12 +79,12 @@
                                     <% } %>
                             </div>
                             <!--DISPONIBILIDAD-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="disponibilidad">Disponibilidad</label>
                                 <input type="number" name="disponibilidad" />
                             </div>
                             <!--PRECIO-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="precio">Precio/unidad</label>
                                 <input type="number" placeholder="Ej: 0; 2; 550..." name="precio"
                                     value="<%= locals.old && old.precio ? old.precio : null %>" />
@@ -95,7 +96,7 @@
                                     <% } %>
                             </div>
                             <!--AVATAR-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="avatar">imagen Producto:</label><br>
                                 <input type="file" class="e-avatar" name="avatar" accept="image/*">
                                 <!--comentario para los errores-->
@@ -110,6 +111,7 @@
                             </div>
 
                 </form>
+            </div>
                 <!--ERRORES FRONT-->
                 <section class="errores-front">
                     <ul></ul>

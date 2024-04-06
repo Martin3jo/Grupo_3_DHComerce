@@ -5,10 +5,12 @@
     <body>
         <%- include('../partials/header') %>
             <main class="main-adminProducto">
+
+                <div class="form-registro">
                 <form action="/admin/modificarProducto/<%= producto.idproducto %>?_method=PUT" method="post"
                     enctype="multipart/form-data" class="form-crearProducto">
                     <!--MARCA-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="marca">Nombre del Producto</label>
                         <input type="text" name="marca" value="<%= producto.marca %>"
                             class="e-marca" selected />
@@ -20,7 +22,7 @@
                             <% } %>
                     </div>
                     <!--TIPO-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="tipo">Tipo de Producto</label>
                         <input type="text" name="tipo" value="<%= producto.tipo %>"
                             class=" e-tipo" selected />
@@ -31,20 +33,9 @@
                             </div>
                             <% } %>
                     </div>
-                    <!--DESCRIPCION-->
-                    <div class="form-input-admin">
-                        <label for="descripcion">Descripcion</label>
-                        <textarea class="e-descripcion" name="descripcion" id="comentario" cols="30"
-                            rows="5"><%= producto.descripcion %></textarea>
-                    </div>
-                    <!--comentario para los errores-->
-                    <% if (locals.errors && errors.descripcion) { %>
-                        <div>
-                            <%= errors.descripcion.msg %>
-                        </div>
-                        <% } %>
+                    
                             <!--VOLUMEN-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="volumen">volumen[cm3]</label>
                                 <input type="number" placeholder="Ej: 700; 1000..." name="volumen"
                                     value="<%= producto.volumen %>" />
@@ -56,7 +47,7 @@
                                     <% } %>
                             </div>
                             <!--CATEGORIA-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="categoria">Categoría:</label>
                                 <select name="categoria" id="categoria">
                                     <option disabled selected>Seleccione una categoría</option>
@@ -76,13 +67,24 @@
                                     </div>
                                     <% } %>
                             </div>
+                            <!--DESCRIPCION-->
+                    <div class="input-box">
+                        <label for="descripcion">Descripcion</label>
+                        <textarea class="e-descripcion" name="descripcion" id="comentario" rows="1"><%= producto.descripcion %></textarea>
+                    </div>
+                    <!--comentario para los errores-->
+                    <% if (locals.errors && errors.descripcion) { %>
+                        <div>
+                            <%= errors.descripcion.msg %>
+                        </div>
+                        <% } %>
                             <!--DISPONIBILIDAD-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="disponibilidad">Disponibilidad</label>
                                 <input type="text" name="disponibilidad" value="<%= producto.disponibilidad %>" />
                             </div>
                             <!--PRECIO-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="precio">Precio</label>
                                 <input type="text" name="precio" value="<%= producto.precio %>" />
                                 <!--comentario para los errores-->
@@ -93,7 +95,7 @@
                                     <% } %>
                             </div>
                             <!--AVATAR-->
-                            <div class="form-input-admin">
+                            <div class="input-box">
                                 <label for="avatar">Imagen Producto:</label><br>
                                 <input type="file" id="imagen" name="avatar" accept="image/*">
 
@@ -109,11 +111,13 @@
                                     </div>
                                     <% } %>
                             </div>
+                            
                             <div class="boton-crear">
                                 <button type="submit" name="accion" value="modificar">Modificar</button>
                             </div>
 
                 </form>
+            </div>
                 <!--ERRORES FRONT-->
                 <section class="errores-front">
                     <ul></ul>

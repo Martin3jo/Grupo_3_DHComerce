@@ -3,6 +3,7 @@ const path = require('path');
 const { validationResult } = require('express-validator')
 let db = require('../database/models')
 const { Op } = require("sequelize");
+const bcrypt = require("bcryptjs");
 
 
 module.exports = {
@@ -123,6 +124,51 @@ module.exports = {
             res.send(error.message);
         }
     },
+    //USUARIO
+    modificarUsuario: async function (req,res){
+        try {
+            let clientes = await db.Cliente.findAll()
+            
+            res.render('admin/usuario/adminUsuarios', {clientes})
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    modificarUsuarioProcesoGet: async function(req,res){
+        try {
+            let idcliente = req.params.id;
+        
+            let cliente = await db.Cliente.findByPk(idcliente)
+            
+        
+            res.render('admin/usuario/modificarUsuario', { cliente});
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    modificarUsuarioProceso: async function (req,res){
+        try {
+            const { nombre, dni, fecha_nac, email, celular, direccion, password } = req.body;
+    
+            console.log(req.body);
+            // Actualizar el producto en la base de datos
+            await db.Cliente.update({
+                nombre,
+                dni,
+                fecha_nac,
+                email,
+                celular,
+                direccion,
+                password: bcrypt.hashSync(password, 10),
+            }, {
+                where: { idcliente: req.params.id }
+            });
+    
+            res.redirect('/admin/usuarios');
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
 }
 
 
