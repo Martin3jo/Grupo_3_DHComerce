@@ -24,6 +24,20 @@ const apiCategoriasControllers = {
                     data: categorias,
                 })
             })
+    },
+    'detalle': (req,res)=>{
+        db.Categoria.findByPk(req.params.idcategoria, {
+            include: "Producto"
+        })
+        .then(categoria=>{
+            return res.status(200).json({
+                meta: {
+                    status: 200,
+                    url: `http://localhost:4000/api/categorias/${req.params.idcategoria}` 
+                },
+                data: categoria,
+            })
+        })
     }
 }
 
