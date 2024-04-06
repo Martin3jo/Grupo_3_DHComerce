@@ -119,11 +119,9 @@ const usersController = {
             );
             if (verificarPassword) {
               //GUARDO USUARIO EN SESSION
-              console.log(req.session.userLogged);
               let usuarioPlain = usuario.toJSON(); // Convertir usuario a objeto plano
               delete usuarioPlain.password;
               req.session.userLogged = usuarioPlain;
-              console.log(req.session.userLogged);
               if (req.body.recordarUsuario) {
                 res.cookie("userEmail", req.body.email, { maxAge: 900000 });
               }
@@ -149,8 +147,15 @@ const usersController = {
         });
     }
   },
-  userProfile: (req, res) => {
-    res.render("usuario/userProfile");
+  userProfile: async (req, res) => {
+    try {
+      console.log(req.session.userLogged);
+        return res.render("usuario/userProfile");
+      
+    } catch (error) {
+      console.error("Error al buscar el usuario:", error);
+      return res.status(500).send("Error interno del servidor");
+    }
   },
   logout: (req, res) => {
     res.clearCookie("userEmail");

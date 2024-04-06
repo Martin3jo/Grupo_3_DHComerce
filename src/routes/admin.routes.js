@@ -58,7 +58,7 @@ router.get('/',adminControllers.admin)
 http://localhost:4000/admin/productos
 router.get("/productos", adminControllers.adminProductos);
 
-// //CRUD
+// CRUD PRODUCTOS
 //http://localhost:4000/admin/crearProducto
 router.get("/crearProducto", adminControllers.crear);
 router.post('/crearProducto', upload.single('avatar'), validarCrearProducto, adminControllers.store)
@@ -73,6 +73,13 @@ router.delete('/productos/:id', adminControllers.eliminar);
 //http://localhost:4000/admin/buscarProducto
 router.get("/productos/buscar", adminControllers.buscar);
 
+
+//CRUD USUARIOS
+//http://localhost:4000/admin/usuarios
+router.get('/usuarios', adminControllers.modificarUsuario)
+//http://localhost:4000/admin/modificarUsuario/:id
+router.get('/modificarUsuario/:id', adminControllers.modificarUsuarioProcesoGet)
+router.put('/modificarUsuario/:id', adminControllers.modificarUsuarioProceso)
 
 // //ADMIN TAREAS
 
