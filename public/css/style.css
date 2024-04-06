@@ -253,9 +253,20 @@ footer {
 
 /*Desktop*/
 @media (min-width: 768px) {
+  #menu {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 100%;
+    background-color: rgb(86 48 221);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #iconoMenu{
+    display: none;
+  }
   nav a {
-    
-    
     font-size: 1.1rem;
   }
   .header-carro {

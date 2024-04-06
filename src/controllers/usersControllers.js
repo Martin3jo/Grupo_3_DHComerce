@@ -125,7 +125,7 @@ const usersController = {
               req.session.userLogged = usuarioPlain;
               console.log(req.session.userLogged);
               if (req.body.recordarUsuario) {
-                res.cookie("usuarioEmail", req.body.email, { maxAge: 900000 });
+                res.cookie("userEmail", req.body.email, { maxAge: 900000 });
               }
               return res.redirect("/");
 
@@ -153,7 +153,7 @@ const usersController = {
     res.render("usuario/userProfile");
   },
   logout: (req, res) => {
-    res.clearCookie("usuarioEmail");
+    res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");
   },
