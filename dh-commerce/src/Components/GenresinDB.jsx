@@ -37,14 +37,14 @@ const GenresinDB = () => {
 
   return (
     <div className="row">
-      <div className="col-lg-12 mb-4">
-        <div className="card shadow mb-4">
-          <div className="card-header py-3">
+      <div className="col-lg-12 mb-4  ">
+        <div className="card shadow mb-4 bg-color">
+          <div className="card-header py-3 bg-gradient-light">
             <h5 className="m-0 font-weight-bold text-gray-800">
               Listado de Categorias
             </h5>
           </div>
-          <div className="card-body">
+          <div className="card-body bg-color">
             <div className="row">
               {Categoria?.map((categoria) => (
                 <div key={categoria.idcategoria} className="col-lg-6 mb-4">

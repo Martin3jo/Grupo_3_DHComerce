@@ -27,14 +27,14 @@ export const LastMovieinDB = () => {
 
   return (
     <>
-      <div className="col-lg-6 mb-4">
-        <div className="card shadow mb-4">
-          <div className="card-header py-3">
+      <div className="col-lg-6 mb-4 ">
+        <div className="card shadow mb-4 ">
+          <div className="card-header py-3 bg-gradient-light ">
             <h5 className="m-0 font-weight-bold text-gray-800">
               Último producto creado
             </h5>
           </div>
-          <div className="card-body">
+          <div className="card-body  bg-gradient-info text-white">
             <div className="text-center">
           
 
@@ -46,7 +46,7 @@ export const LastMovieinDB = () => {
               />
             </div>
             <p>
-                <strong>Marca:</strong> {UltimoProducto.marca}
+                <strong >Marca:</strong> {UltimoProducto.marca}
               </p>
               <p>
                 <strong>Tipo:</strong> {UltimoProducto.tipo}

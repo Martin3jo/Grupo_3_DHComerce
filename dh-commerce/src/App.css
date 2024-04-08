@@ -591,7 +591,12 @@ pre code {
 .cursor-pointer {
     cursor: pointer;
   }
-
+.imagen-fondo{
+    background-image: url("./assets/images/local-bebidas.png");
+}
+.bg-color{
+    background-color: rgb(152, 171, 238);
+}
 @media (min-width:576px) {
     .container {
         max-width: 540px

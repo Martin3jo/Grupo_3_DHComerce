@@ -7,7 +7,7 @@ import { Footer } from './Footer'
 export const ContentWrapper = () => {
     return (
         <>
-            <div id="content-wrapper" className="d-flex flex-column">
+            <div id="content-wrapper" className="d-flex flex-column imagen-fondo">
 
                 {/* <!-- Main Content --> */}
                 <div id="content">

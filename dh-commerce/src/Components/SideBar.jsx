@@ -5,7 +5,7 @@ export const SideBar = () => {
   return (
     <>
         {/* <!-- Sidebar --> */}
-		<ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+		<ul className="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
 			{/* <!-- Sidebar - Brand --> */}
 			<a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
@@ -21,7 +21,7 @@ export const SideBar = () => {
 			<li className="nav-item active">
 				<a className="nav-link" href="/">
 					<i className="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard - Commerce</span></a>
+					<span>Dashboard - Bebidas</span></a>
 			</li>
 
 			{/* <!-- Divider --> */}

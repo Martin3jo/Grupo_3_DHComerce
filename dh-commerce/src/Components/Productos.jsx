@@ -29,9 +29,9 @@ const Productos = ({ categoriaId }) => {
         <ul>
           {productosCategoriaSeleccionada.map((producto) => (
             <li key={producto.idproducto}>
-              <h6>
-                <strong>{producto.marca}</strong>
-              </h6>
+               <p>
+                <strong>Marca:</strong> {producto.marca}
+              </p>
               <p>
                 <strong>Tipo:</strong> {producto.tipo}
               </p>
