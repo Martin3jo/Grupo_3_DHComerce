@@ -3,7 +3,7 @@ import React from 'react'
 function Total(props){
     return(
         <>
-        <div className="col-md-4 mb-4">
+        <div className="col-md-4 mb-4 ">
                     <div className={`card border-left-${props.colorBorder} shadow h-100 py-2`}>
                         <div className="card-body">
                             <div className="row no-gutters align-items-center">

@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Categorias from "./Categorias";
-import Productos from './Productos';
+
 
 const GenresinDB = () => {
   const [Categoria, setTotalCategoria] = useState([]);
-  const [productosCategoria, setProductosCategoria] = useState({});
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("http://localhost:4000/api/categorias");
         const data = await response.json();
-        console.log(data.data)
+        console.log(data.data);
         setTotalCategoria(data.data);
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -25,22 +23,18 @@ const GenresinDB = () => {
   const handleCategoriaClick = async (categoriaId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/categorias/${categoriaId}/productos`
+        `http://localhost:4000/api/categorias/${categoriaId}`
       );
       const data = await response.json();
       setProductosCategoria((prevProductosCategoria) => ({
         ...prevProductosCategoria,
-        [categoriaId]: data.data.Producto
+        [categoriaId]: data.data.Producto,
       }));
-      setCategoriaSeleccionada(categoriaId);
-      console.log("categoriaSeleccionada:", categoriaId)
-        
-      
     } catch (error) {
       console.log("Error fetching productos de la categoría:", error);
     }
   };
-  console.log(categoriaSeleccionada)
+
   return (
     <div className="row">
       <div className="col-lg-12 mb-4">
@@ -58,9 +52,7 @@ const GenresinDB = () => {
                     nombre={categoria.nombre}
                     cantProd={categoria.cantProd}
                     onClick={() => handleCategoriaClick(categoria.idcategoria)}
-                   
                     categoriaId={categoria.idcategoria}
-                    categoriaSeleccionada={categoriaSeleccionada}
                   />
                 </div>
               ))}
@@ -68,7 +60,6 @@ const GenresinDB = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
