@@ -14,7 +14,7 @@ function Categorias(props) {
     >
       <div className="card-body" onClick={toggleMostrarProductos}>
         <h6 className="m-0 font-weight-bold  text-dark">{props.nombre}</h6>
-        <p className="m-0 text-secondary cursor-pointer pointer">
+        <p className="m-0 text-white cursor-pointer pointer">
           Cantidad de productos: {props.cantProd}
         </p>
         {mostrarProductos && (
