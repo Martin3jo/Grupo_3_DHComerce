@@ -13,6 +13,7 @@ export const LastMovieinDB = () => {
         const productos = datos.data;
         const ultimoProductoCreado = productos[productos.length - 1];
         setUltimoProducto(ultimoProductoCreado);
+        
       } catch (error) {
         console.log("Error fetching data:", error);
       }
@@ -37,11 +38,11 @@ export const LastMovieinDB = () => {
           <div className="card-body  bg-gradient-info text-white">
             <div className="text-center">
           
-
+                
               <img
-                className="img-fluid px-3 px-sm-4 mt-3 mb-4 bg-warning"
+                className="img-fluid px-3 px-sm-4 mt-3 mb-4"
                 style={{ width: "40rem" }}
-                src={`http://localhost:4000/${UltimoProducto.avatar}`}
+                src={`../src/assets/images/avatars/${UltimoProducto.avatar}`}
                 alt={UltimoProducto.marca}
               />
             </div>

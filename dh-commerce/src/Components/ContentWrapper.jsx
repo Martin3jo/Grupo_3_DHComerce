@@ -13,7 +13,7 @@ export const ContentWrapper = () => {
                 <div id="content">
 
                     {/* <!-- Topbar --> */}
-                    {/* <TopBar /> */}
+                    <TopBar />
                     {/* <!-- End of Topbar --> */}
 
                     {/* <!-- Content Row Top --> */}
