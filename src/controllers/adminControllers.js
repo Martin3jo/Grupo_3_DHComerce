@@ -17,7 +17,7 @@ module.exports = {
     crear: (req, res) => {
         db.Categoria.findAll()
 
-        .then(categorias => res.render('admin/crearProducto', { categorias}))
+            .then(categorias => res.render('admin/crearProducto', { categorias }))
 
     },
     store: (req, res) => {
@@ -25,17 +25,17 @@ module.exports = {
         let resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             db.Categoria.findAll()
-            .then((categorias)=>{
-                return res.render('admin/crearProducto', {
-                    errors: resultValidation.mapped(),
-                    old: req.body,
-                    categorias
+                .then((categorias) => {
+                    return res.render('admin/crearProducto', {
+                        errors: resultValidation.mapped(),
+                        old: req.body,
+                        categorias
+                    })
                 })
-            })
-            
+
         } else {
 
-            let { marca,tipo, descripcion, volumen, categoria, disponibilidad, precio} = req.body
+            let { marca, tipo, descripcion, volumen, categoria, disponibilidad, precio } = req.body
             let listaCategoria = ["Gaseosa", "Alcohol", "Agua", "Soda", "Jugo", "Energetica"];
             fk_idcategoria = listaCategoria.indexOf(categoria) + 1;
             db.Producto.create({
@@ -57,12 +57,12 @@ module.exports = {
     modificar: async function (req, res) {
         try {
             let idproducto = req.params.id;
-        
+
             let [Producto, Categorias] = await Promise.all([
                 db.Producto.findByPk(idproducto),
                 db.Categoria.findAll()
             ]);
-        
+
             res.render('admin/modificarProducto', { producto: Producto, categorias: Categorias });
         } catch (error) {
             console.log(error.message);
@@ -71,13 +71,13 @@ module.exports = {
     modificarProceso: async function (req, res) {
         try {
             const { marca, tipo, descripcion, volumen, categoria, disponibilidad, precio } = req.body;
-            
+
             // Obtener el nombre del archivo anterior del campo oculto
             const avatarAnterior = req.body.avatar_anterior;
-    
+
             // Determinar el nuevo valor del avatar
             const avatarNuevo = req.file ? req.file.filename : avatarAnterior;
-    
+
             console.log(req.body);
             // Actualizar el producto en la base de datos
             await db.Producto.update({
@@ -92,7 +92,7 @@ module.exports = {
             }, {
                 where: { idproducto: req.params.id }
             });
-    
+
             res.redirect('/admin/productos');
         } catch (error) {
             console.log(error.message);
@@ -125,31 +125,31 @@ module.exports = {
         }
     },
     //USUARIO
-    modificarUsuario: async function (req,res){
+    modificarUsuario: async function (req, res) {
         try {
             let clientes = await db.Cliente.findAll()
-            
-            res.render('admin/usuario/adminUsuarios', {clientes})
+
+            res.render('admin/usuario/adminUsuarios', { clientes })
         } catch (error) {
             console.log(error.message);
         }
     },
-    modificarUsuarioProcesoGet: async function(req,res){
+    modificarUsuarioProcesoGet: async function (req, res) {
         try {
             let idcliente = req.params.id;
-        
+
             let cliente = await db.Cliente.findByPk(idcliente)
-            
-        
-            res.render('admin/usuario/modificarUsuario', { cliente});
+
+
+            res.render('admin/usuario/modificarUsuario', { cliente });
         } catch (error) {
             console.log(error.message);
         }
     },
-    modificarUsuarioProceso: async function (req,res){
+    modificarUsuarioProceso: async function (req, res) {
         try {
             const { nombre, dni, fecha_nac, email, celular, direccion, password } = req.body;
-    
+
             console.log(req.body);
             // Actualizar el producto en la base de datos
             await db.Cliente.update({
@@ -163,10 +163,29 @@ module.exports = {
             }, {
                 where: { idcliente: req.params.id }
             });
+
+            res.redirect('/admin/usuarios');
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    eliminarUsuario: async function (req, res) {
+        try {
+            // Eliminar primero los pedidos relacionados
+            await db.Pedido.destroy({
+                where: { fk_idcliente: req.params.id }
+            });
+    
+            // Luego eliminar el cliente
+            await db.Cliente.destroy({
+                where: { idcliente: req.params.id }
+            });
     
             res.redirect('/admin/usuarios');
         } catch (error) {
             console.log(error.message);
+            // Manejar el error adecuadamente
+            res.status(500).send("Error al eliminar el usuario");
         }
     }
 }
@@ -184,7 +203,7 @@ module.exports = {
 
 
 // ADMIN TAREAS
-// let adminProductos = 
+// let adminProductos =
 // let adminPedidos = (req,res) =>{
 //     res.render('admin/adminPedidos', {pedidos})
 // }
@@ -193,8 +212,8 @@ module.exports = {
 // }
 
 //crear
-// let 
-// let crear = 
+// let
+// let crear =
 
 //eliminar
 // let eliminar = (req, res) => {

@@ -23,10 +23,6 @@ module.exports = (sequelize, DataTypes) => {
             type : DataTypes.INTEGER.UNSIGNED,
             defaultValue : null
         },
-        cantidad: {
-            type: DataTypes.INTEGER.UNSIGNED,
-            defaultValue : null
-        }
     }
     let config = {
         tableName : "pedidos",

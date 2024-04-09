@@ -6,19 +6,21 @@
         <% for( let index=0; index < productos.length; index++ ) { %>
             <article class="Gaseosa1">
                 <a href="/productos/detalle/<%= productos[index].idproducto %>">
-                <img src="/img/avatars/<%= productos[index].avatar %>" alt="" />
+                    <img src="/img/avatars/<%= productos[index].avatar %>" alt="" />
                     <div class="detail">
-                        
+
                         <div class="descripcionProducto">
                             <div class="price">
-                                <strong><%= productos[index].marca %></strong>
+                                <strong>
+                                    <%= productos[index].marca %>
+                                </strong>
                             </div>
                             <div>
-                                Unidades: 
+                                Unidades:
                                 <%= productos[index].disponibilidad %>
                             </div>
                             <div>
-                                vol: 
+                                vol:
                                 <%= productos[index].volumen %>
                             </div>
                         </div>
@@ -29,8 +31,13 @@
                         $<%= productos[index].precio %>
                     </div>
                 </a>
-                    <button class="add">AGREGAR</button>
-                </article>
+                <form action="/productos/agregarcarrito" method="post">
+                    <input type="hidden" name="cantidad" value="1">
+                    <!-- Input de tipo hidden con nombre y valor fijos -->
+                    <input type="hidden" name="idproducto" value="<%= productos[index].idproducto %>">
+                    <button type="submit" class="add">AGREGAR</button>
+                </form>
+            </article>
             <% } %>
     </div>
     <div class="flecha2">

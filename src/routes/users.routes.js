@@ -55,8 +55,8 @@ const validarRegistro = [
     body('fecha_nac')
         .notEmpty()
         .withMessage('Campo Obligatorio').bail()
-        .isDate()
-        .withMessage('Debe ser una fecha Valida')
+        // .isDate()
+        // .withMessage('Debe ser una fecha Valida')
         ,
         body('password2').custom((value, { req }) => {
             if (value !== req.body.password) {

@@ -79,7 +79,10 @@ router.get("/productos/buscar", adminControllers.buscar);
 router.get('/usuarios', adminControllers.modificarUsuario)
 //http://localhost:4000/admin/modificarUsuario/:id
 router.get('/modificarUsuario/:id', adminControllers.modificarUsuarioProcesoGet)
-router.put('/modificarUsuario/:id', adminControllers.modificarUsuarioProceso)
+router.put('/modificarusuario/:id', adminControllers.modificarUsuarioProceso)
+
+//http://localhost:4000/admin/usuarios/:id
+router.delete('/usuarios/:id', adminControllers.eliminarUsuario);
 
 // //ADMIN TAREAS
 

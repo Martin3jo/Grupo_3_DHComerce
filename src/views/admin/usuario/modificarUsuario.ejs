@@ -4,11 +4,13 @@
 
     <body>
         <%- include('../../partials/header') %>
+
             <main class="main-adminProducto">
-                <form action="/admin/modificarUsuario/<%= cliente.idproducto %>?_method=PUT" method="post"
+                <div class="form-registro">
+                <form action="/admin/modificarusuario/<%= cliente.idcliente %>?_method=PUT" method="post"
                 class="form-crearProducto">
                     <!--nombre-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="nombre">Nombre</label>
                         <input type="text" name="nombre" value="<%= cliente.nombre %>"
                             class="e-marca" selected />
@@ -20,7 +22,7 @@
                             <% } %>
                     </div>
                     <!--dni-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="dni">dni</label>
                         <input type="text" name="dni" value="<%= cliente.dni %>"
                             class=" e-tipo" selected />
@@ -32,7 +34,7 @@
                             <% } %>
                     </div>
                     <!--fecha_nac-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="fecha_nac">fecha_nac</label>
                         <input type="date" class="e-descripcion" name="fecha_nac" id="comentario" cols="30"
                             rows="5"><%= cliente.fecha_nac %></textarea>
@@ -44,7 +46,7 @@
                         </div>
                         <% } %>
                             <!--email-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="email">Email</label>
                         <input type="text" name="email" value="<%= cliente.email %>"
                             class=" e-tipo" selected />
@@ -56,7 +58,7 @@
                             <% } %>
                     </div>
                             <!--celular-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="celular">celular</label>
                         <input type="text" name="celular" value="<%= cliente.celular %>"
                             class=" e-tipo" selected />
@@ -68,7 +70,7 @@
                             <% } %>
                     </div>
                             <!--direccion-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="direccion">direccion</label>
                         <input type="text" name="direccion" value="<%= cliente.direccion %>"
                             class=" e-tipo" selected />
@@ -80,7 +82,7 @@
                             <% } %>
                     </div>
                             <!--password-->
-                    <div class="form-input-admin">
+                    <div class="input-box">
                         <label for="password">password</label>
                         <input type="text" name="password" value="<%= cliente.password %>"
                             class=" e-tipo" selected />
@@ -96,6 +98,7 @@
                             </div>
 
                 </form>
+            </div>
                 <!--ERRORES FRONT-->
                 <section class="errores-front">
                     <ul></ul>
@@ -105,7 +108,6 @@
                 </div>
             </main>
             <!-- <%- include('../../partials/footer') %> -->
-            <script src="/js/errors-forms.js"></script>
     </body>
 
 </html>

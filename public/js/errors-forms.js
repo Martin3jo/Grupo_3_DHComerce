@@ -4,26 +4,22 @@ window.addEventListener('load', function () {
     let marca = document.querySelector(".e-marca")
     let tipo = document.querySelector(".e-tipo")
     let descripcion = document.querySelector(".e-descripcion")
-    let email = document.querySelector('.email')
 
 
     // Crear elementos para mostrar mensajes de error
     let errorMarca = document.createElement('span');
     let errorTipo = document.createElement('span');
     let errorDescripcion = document.createElement('span')
-    let errorEmail=this.document.createElement('p')
 
     // Agregar clases para estilos CSS
     errorMarca.classList.add('mensaje-error');
     errorTipo.classList.add('mensaje-error');
     errorDescripcion.classList.add('mensaje-error')
-    errorEmail.classList.add('mensaje-error')
 
     // Insertar elementos de error después de los campos correspondientes
     marca.parentNode.insertBefore(errorMarca, marca.nextSibling);
     tipo.parentNode.insertBefore(errorTipo, tipo.nextSibling);
     descripcion.parentNode.insertBefore(errorDescripcion, descripcion.nextSibling);
-    email.parentNode.insertBefore(errorEmail, email.nextSibling);
 
     marca.addEventListener('input', function () {
         let marcaV = marca.value.trim();
@@ -76,13 +72,6 @@ window.addEventListener('load', function () {
             errores.push('Descripción Obligatorio')
         } else if (descripcion.value.length < 20) {
             errores.push('Descripción debe contener mas de veinte carácteres')
-        }
-        
-        const emailValido=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email.value == "") {
-            errores.push('email Obligatorio')
-        } else if (email.value.length !== emailValido) {
-            errores.push('Debe ingresar un email válido')
         }
 
         //tratamos errores

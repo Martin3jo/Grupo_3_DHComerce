@@ -159,6 +159,7 @@ const usersController = {
   },
   logout: (req, res) => {
     res.clearCookie("userEmail");
+    res.clearCookie("carrito");
     req.session.destroy();
     return res.redirect("/");
   },
