@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Total from './Total';
 
-const ContentRowMovies = () => {
+const Totales = () => {
     const [totalUsuarios, setTotalUsuarios] = useState(0);
     const [totalProductos, setTotalProductos] = useState(0);
     const [totalCategoria, setTotalCategoria] = useState(0);
@@ -60,7 +60,7 @@ const ContentRowMovies = () => {
     );
 };
 
-export default ContentRowMovies;
+export default Totales;
 
 
 

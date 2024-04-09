@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-export const LastMovieinDB = () => {
+export const UltimoProductoCreado = () => {
   const [UltimoProducto, setUltimoProducto] = useState();
 
   useEffect(() => {
@@ -73,4 +73,4 @@ export const LastMovieinDB = () => {
   );
 };
 
-export default LastMovieinDB;
+export default UltimoProductoCreado;

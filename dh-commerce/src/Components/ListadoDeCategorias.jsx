@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Categorias from "./Categorias";
 
 
-const GenresinDB = () => {
+const ListadoDeCategorias = () => {
   const [Categoria, setTotalCategoria] = useState([]);
 
   useEffect(() => {
@@ -64,4 +64,4 @@ const GenresinDB = () => {
   );
 };
 
-export default GenresinDB;
+export default ListadoDeCategorias;

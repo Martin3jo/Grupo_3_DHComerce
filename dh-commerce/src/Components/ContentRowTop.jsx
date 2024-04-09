@@ -1,7 +1,7 @@
 import React from 'react'
-import ContentRowMovies from './ContentRowMovies'
-import LastMovieinDB  from './LastMovieinDB'
-import  GenresinDB   from './GenresinDB'
+import Totales from './Totales'
+import UltimoProductoCreado  from './UltimoProductoCreado'
+import  ListadoDeCategorias   from './ListadoDeCategorias'
 
 export const ContentRowTop = () => {
   return (
@@ -12,16 +12,16 @@ export const ContentRowTop = () => {
                         </div>
 
                         {/* <!-- Content Row Movies--> */}
-                        <ContentRowMovies />
+                        <Totales />
                         {/* <!-- End movies in Data Base --> */}
 
 
                         {/* <!-- Content Row Last Movie in Data Base --> */}
                         <div className="row">
                             {/* <!-- Last Movie in DB --> */}
-                            <LastMovieinDB />
+                            <UltimoProductoCreado />
                             {/* <!-- End content row last movie in Data Base --> */}
-                            <GenresinDB />
+                            <ListadoDeCategorias />
                             {/* <!-- Genres in DB --> */}
                             
                         </div>
