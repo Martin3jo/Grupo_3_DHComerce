@@ -12,7 +12,7 @@
 
     <main>
       <div class="form-registro">
-        <form action="/usuario/login" method="post" >
+        <form action="/usuario/login" method="post" class="e-form">
           <h1>Cuenta</h1>
 
           <div class="input-box">
@@ -23,7 +23,7 @@
                 name="email"
                 placeholder="asd@gmail.com"
                 value="<%= locals.old && old.email ? old.email : '' %>"
-              class="email"/>
+              class="email e-email"/>
               <i class="bx bxs-user"></i>
               <!--comentario para los errores-->
               <% if (locals.errors && errors.email) { %>
@@ -35,7 +35,7 @@
           <div class="input-box">
             <label for="password">Contraseña</label>
             <div>
-              <input type="password" name="password" placeholder="Contraseña" />
+              <input type="password" name="password" placeholder="Contraseña" class="e-password"/>
               <i class="bx bxs-lock-alt"></i>
               <!--comentario para los errores-->
               <% if (locals.errors && errors.password) { %>
