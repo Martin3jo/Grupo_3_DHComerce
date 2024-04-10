@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
     let formulario = document.querySelector(".e-form");
     let email = document.querySelector(".e-email");
-    let password = document.querySelectorAll(".e-password");
+    let password = document.querySelector(".e-password");
 
     let errorEmail = document.createElement('span');
     let errorPassword = document.createElement('span');
