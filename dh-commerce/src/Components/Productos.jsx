@@ -29,6 +29,7 @@ const Productos = ({ categoriaId }) => {
         <ul>
           {productosCategoriaSeleccionada.map((producto) => (
             <li key={producto.idproducto}>
+              <img src={`../src/assets/images/avatars/${producto.avatar}`} alt="imagen" className="tamaño"/>
                <p>
                 <strong>Marca:</strong> {producto.marca}
               </p>
@@ -48,10 +49,7 @@ const Productos = ({ categoriaId }) => {
     </div>
   );
 
-  {
-  }
-  {
-  }
+
 };
 
 export default Productos;

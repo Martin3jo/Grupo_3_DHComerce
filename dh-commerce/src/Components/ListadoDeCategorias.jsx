@@ -4,7 +4,7 @@ import Categorias from "./Categorias";
 
 const ListadoDeCategorias = () => {
   const [Categoria, setTotalCategoria] = useState([]);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,21 +20,7 @@ const ListadoDeCategorias = () => {
     fetchData();
   }, []);
 
-  const handleCategoriaClick = async (categoriaId) => {
-    try {
-      const response = await fetch(
-        `http://localhost:4000/api/categorias/${categoriaId}`
-      );
-      const data = await response.json();
-      setProductosCategoria((prevProductosCategoria) => ({
-        ...prevProductosCategoria,
-        [categoriaId]: data.data.Producto,
-      }));
-    } catch (error) {
-      console.log("Error fetching productos de la categoría:", error);
-    }
-  };
-
+ 
   return (
     <div className="row">
       <div className="col-lg-12 mb-4  ">
@@ -51,7 +37,6 @@ const ListadoDeCategorias = () => {
                   <Categorias
                     nombre={categoria.nombre}
                     cantProd={categoria.cantProd}
-                    onClick={() => handleCategoriaClick(categoria.idcategoria)}
                     categoriaId={categoria.idcategoria}
                   />
                 </div>

@@ -597,6 +597,9 @@ pre code {
 .bg-color{
     background-color: rgb(152, 171, 238);
 }
+.tamaño{
+    width: 100px;
+}
 @media (min-width:576px) {
     .container {
         max-width: 540px
